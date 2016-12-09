@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<version val="AP3.6.0"/>
+    <comps>
+        <!-- 用户模块 -->
+        <comp module="USR" plaf="APPLE" mandatory="YES" value="WAAPUser" desc="APPLE用户账户"/>
+        
+        <!-- 支付模块 -->
+        <comp module="PAY" plaf="APPLE" mandatory="YES" value="WAAPPay" desc="APPLE支付"/>
+    </comps>
+</config>

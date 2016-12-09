@@ -1,0 +1,1 @@
+../../../../WAFbImpl/frameworks/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>wasdk_install_btn</key>
+	<string>Instalar</string>
+	<key>wasdk_play_btn</key>
+	<string>Jogar</string>
+	<key>wasdk_info_btn</key>
+	<string>INFO</string>
+	<key>wasdk_app_btn</key>
+	<string>APP</string>
+	<key>wasdk_app_wall_guide_words</key>
+	<string>Clique aqui para abrir o menu popup</string>
+	<key>wasdk_sdk_version</key>
+	<string>Versão SDK</string>
+	<key>wasdk_patch_version</key>
+	<string>Versão Patch</string>
+	<key>wasdk_has_no_patch</key>
+	<string>Nenhum</string>
+	<key>wasdk_login</key>
+	<string>Entrar</string>
+	<key>wasdk_login_facebook</key>
+	<string>Facebook</string>
+	<key>wasdk_login_game_center</key>
+	<string>Game Center</string>
+	<key>wasdk_confirm</key>
+	<string>Confirmar</string>
+	<key>wasdk_cancel</key>
+	<string>Cancelar</string>
+	<key>wasdk_loading</key>
+	<string>Carregando</string>
+	<key>wasdk_visitor</key>
+	<string>Visitante</string>
+	<key>wasdk_bind</key>
+	<string>Vincular</string>
+	<key>wasdk_unbind</key>
+	<string>Desvincular</string>
+	<key>wasdk_bound</key>
+	<string>Vinculada</string>
+	<key>wasdk_unbound</key>
+	<string>Desvinculada</string>
+	<key>wasdk_create_ccount</key>
+	<string>Criar conta</string>
+	<key>wasdk_account_management</key>
+	<string>Gerenciar conta</string>
+	<key>wasdk_change_account</key>
+	<string>Mudar conta</string>
+	<key>wasdk_unbind_account</key>
+	<string>Desvincular conta</string>
+	<key>wasdk_tip_warning</key>
+	<string>Aviso</string>
+	<key>wasdk_tip_unbind_unique_third_party</key>
+	<string>Se você desvincular sua conta, seus dados serão apagados. Continuar?</string>
+	<key>wasdk_tip_can_not_unbind</key>
+	<string>Você não pode desvincular esta conta.</string>
+	<key>wasdk_tip_create_account_lost_data</key>
+	<string>Se você criar outra conta mas não vincular, seus dados anteriores serão perdidos permanentemente. Após vincular sua conta, você poderá utilizá-la para logar no aplicativo.</string>
+	<key>wasdk_tip_fail_change_account</key>
+	<string>Falha em mudar sua conta. Por favor, tente mais tarde.</string>
+	<key>wasdk_tip_relog</key>
+	<string>Por favor faça login novamente.</string>
+	<key>wasdk_tip_fail_access_account_data</key>
+	<string>Falha ao acessar os dados da sua conta. Por favor tente mais tarde.</string>
+	<key>wasdk_tip_bind_succ</key>
+	<string>Vinculada com sucesso!</string>
+	<key>wasdk_tip_bind_fail</key>
+	<string>Falha ao vincular. Por favor tente mais tarde.</string>
+	<key>wasdk_tip_bind_fail_other_user</key>
+	<string>This account has been bound to another user.</string>
+	<key>wasdk_tip_unbind_succ</key>
+	<string>Unbinded successfully!</string>
+	<key>wasdk_tip_unbind_fail</key>
+	<string>Falha ao desvincular. Por favor tente mais tarde.</string>
+	<key>wasdk_tip_create_user_fail</key>
+	<string>Falha ao criar novo usuário. Por favor tente mais tarde.</string>
+	<key>wasdk_drag_up_fresh</key>
+	<string>Aperte ou deslize para saber mais</string>
+	<key>wasdk_no_more_data</key>
+	<string>Você chegou ao final da página</string>
+	<key>wasdk_load_more</key>
+	<string>Carregando ...</string>
+	<key>wasdk_pull_down_refresh</key>
+	<string>Deslize para baixo para atualizar</string>
+	<key>wasdk_release_refresh</key>
+	<string>Deslize para baixo para atualizar</string>
+	<key>wasdk_purchase</key>
+	<string>Recarregar</string>
+	<key>wasdk_pay_exit_alert</key>
+	<string>Você tem certeza que deseja cancelar esta compra?</string>
+	<key>wasdk_notice</key>
+	<string>Aviso</string>
+	<key>wasdk_jailbreak_not_purchase</key>
+	<string>proibido compras em telefones com jailbreak</string>
+</dict>
+</plist>

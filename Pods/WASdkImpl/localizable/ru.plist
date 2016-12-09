@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>wasdk_install_btn</key>
+	<string>Установка</string>
+	<key>wasdk_play_btn</key>
+	<string>Открыть</string>
+	<key>wasdk_info_btn</key>
+	<string>Инфо</string>
+	<key>wasdk_app_btn</key>
+	<string>Прилож</string>
+	<key>wasdk_app_wall_guide_words</key>
+	<string>Нажмите для вызова всплывающего меню</string>
+	<key>wasdk_sdk_version</key>
+	<string>Версия SDK</string>
+	<key>wasdk_patch_version</key>
+	<string>Версия патча</string>
+	<key>wasdk_has_no_patch</key>
+	<string>Нет</string>
+	<key>wasdk_login</key>
+	<string>Вход</string>
+	<key>wasdk_login_facebook</key>
+	<string>Facebook</string>
+	<key>wasdk_login_game_center</key>
+	<string>Игровой Центр</string>
+	<key>wasdk_login_vk</key>
+	<string>VK</string>
+	<key>wasdk_confirm</key>
+	<string>Подтвердить</string>
+	<key>wasdk_cancel</key>
+	<string>Отмена</string>
+	<key>wasdk_loading</key>
+	<string>Загрузка</string>
+	<key>wasdk_visitor</key>
+	<string>Посетитель</string>
+	<key>wasdk_bind</key>
+	<string>Привяз</string>
+	<key>wasdk_unbind</key>
+	<string>Отвяз</string>
+	<key>wasdk_bound</key>
+	<string>Привяз</string>
+	<key>wasdk_unbound</key>
+	<string>Отвяз</string>
+	<key>wasdk_create_ccount</key>
+	<string>Созд аккаунт</string>
+	<key>wasdk_account_management</key>
+	<string>Управление аккаунтом</string>
+	<key>wasdk_change_account</key>
+	<string>Смен аккаунт</string>
+	<key>wasdk_unbind_account</key>
+	<string>Отвязать учетную запись</string>
+	<key>wasdk_tip_warning</key>
+	<string>Предупреждение</string>
+	<key>wasdk_tip_unbind_unique_third_party</key>
+	<string>Если вы отвяжете вашу уникальную учетную запись внешней платформы, ваши данные будут утеряны. Продолжить?</string>
+	<key>wasdk_tip_can_not_unbind</key>
+	<string>Вы не можете отвязать учетную запись.</string>
+	<key>wasdk_tip_create_account_lost_data</key>
+	<string>Если вы создадите другую учетную запись и не привяжете ее к внешней учетной записи, ваши предыдущие данные будут утеряны навсегда. После привязки вашей учетной записи, вы сможете осуществлять вход в приложения с помощью учетных данных внешних платформ.</string>
+	<key>wasdk_tip_fail_change_account</key>
+	<string>Не удалось сменить учетную запись. Пожалуйста, попробуйте позже.</string>
+	<key>wasdk_tip_relog</key>
+	<string>Пожалуйста, войдите в приложение заново.</string>
+	<key>wasdk_tip_fail_access_account_data</key>
+	<string>Не удалось получить доступ к данным вашей учетной записи. Пожалуйста, попробуйте позже.</string>
+	<key>wasdk_tip_bind_succ</key>
+	<string>Привязка прошла успешно!</string>
+	<key>wasdk_tip_bind_fail</key>
+	<string>Не удалось выполнить привязку. Пожалуйста, попробуйте позже.  </string>
+	<key>wasdk_tip_bind_fail_other_user</key>
+	<string>Эта учетная запись была привязана к другому пользователю.</string>
+	<key>wasdk_tip_unbind_succ</key>
+	<string>Отвязка прошла успешно!  </string>
+	<key>wasdk_tip_unbind_fail</key>
+	<string>Не удалось выполнить отвязку. Пожалуйста, попробуйте позже.</string>
+	<key>wasdk_tip_create_user_fail</key>
+	<string>Не удалось создать нового пользователя. Пожалуйста, попробуйте позже.</string>
+	<key>wasdk_drag_up_fresh</key>
+	<string>Нажмите или перетяните сюда, чтобы загрузить еще.</string>
+	<key>wasdk_no_more_data</key>
+	<string>Больше информации нет</string>
+	<key>wasdk_load_more</key>
+	<string>Загрузка ...</string>
+	<key>wasdk_pull_down_refresh</key>
+	<string>Опустите вниз для обновления</string>
+	<key>wasdk_release_refresh</key>
+	<string>Отпустите для обновления</string>
+	<key>wasdk_purchase</key>
+	<string>Купить</string>
+	<key>wasdk_pay_exit_alert</key>
+	<string>Вы уверены, что хотите отменить эту покупку?</string>
+	<key>wasdk_notice</key>
+	<string>Уведомление</string>
+	<key>wasdk_jailbreak_not_purchase</key>
+	<string>Вы не можете совершать покупки на взломанном устройстве</string>
+</dict>
+</plist>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<version val="FB3.6"/>
+    <comps>
+        <!-- 用户模块 -->
+        <comp module="USR" plaf="FACEBOOK" mandatory="NO" value="WAFBUser" desc="FACEBOOK用户账户"/>
+        
+        <!-- 数据收集模块 -->
+        <comp module="TRA" plaf="FACEBOOK" mandatory="NO" value="WAFBTrack" desc="FACEBOOK数据统计"/>
+        
+        <!-- 公共模块 -->
+        <comp module="CORE" plaf="FACEBOOK" mandatory="YES" value="WAFBCore" desc="公共模块"/>
+
+        <!-- 社交模块 -->
+        <comp module="SOC" plaf="FACEBOOK" mandatory="NO" value="WAFBSocial"  desc="Facebook社交"/>
+    </comps>
+    <ops>
+        <op type="copy" category="res" isFile="NO" from="frameworks" to="wasdk/fb/frameworks" />
+    </ops>
+</config>

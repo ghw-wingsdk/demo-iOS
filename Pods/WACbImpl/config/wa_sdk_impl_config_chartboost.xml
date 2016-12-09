@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<version val="CB3.6.0"/>
+    <comps>
+        <!-- 数据收集模块 -->
+        <comp module="TRA" plaf="CHARTBOOST" mandatory="YES" value="WACBTrack" desc="CHARTBOOST数据统计"/>
+    </comps>
+</config>

@@ -1,0 +1,1 @@
+../../../../WAApImpl/frameworks/WAApImpl.framework/Headers/WAAPIapSingleton.h

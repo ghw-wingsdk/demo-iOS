@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<version val="WA3.6.0"/>
+    <comps>
+        <!-- 用户模块 -->
+        <comp module="USR" plaf="WINGA" mandatory="YES" value="WASdkUser" desc="WINGA用户账户"/>
+        <!-- 基础支付模块 -->
+        <comp module="PAY" plaf="WINGA" value="WASdkPay" desc="基础支付"/>
+        <!-- 数据收集模块 -->
+        <comp module="TRA" plaf="WINGA" mandatory="YES" value="WASdkTrack" desc="WINGA数据统计"/>
+        <!-- 数据收集模块 -->
+        <comp module="SOC" plaf="WINGA" mandatory="YES" value="WASdkSocial" desc="WINGA社交"/>
+        <!-- 应用墙模块 -->
+        <comp module="APW" plaf="WINGA" mandatory="NO" value="WASdkAppWall" desc="应用墙"/>
+        <!-- 热更新 -->
+        <comp module="HUP" plaf="WINGA" mandatory="NO" value="WASdkHotUpdate" desc="热更新"/>
+        
+        <!-- 公共模块 -->
+        <comp module="CORE" plaf="WINGA" mandatory="YES" value="WASdkCore" desc="公共模块"/>
+    </comps>
+</config>

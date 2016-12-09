@@ -1,0 +1,6 @@
+framework module WAWebPayImpl {
+  umbrella header "WAWebPayImpl.h"
+
+  export *
+  module * { export * }
+}

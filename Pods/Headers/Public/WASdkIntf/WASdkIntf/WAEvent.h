@@ -1,0 +1,1 @@
+../../../../WASdkIntf/frameworks/WASdkIntf.framework/Headers/WAEvent.h

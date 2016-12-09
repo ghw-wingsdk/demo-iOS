@@ -1,0 +1,6 @@
+framework module wax {
+  umbrella header "wax.h"
+
+  export *
+  module * { export * }
+}

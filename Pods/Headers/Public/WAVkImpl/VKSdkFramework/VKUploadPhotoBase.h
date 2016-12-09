@@ -1,0 +1,1 @@
+../../../../WAVkImpl/frameworks/VKSdkFramework.framework/Headers/VKUploadPhotoBase.h

@@ -1,0 +1,1 @@
+../../../../WASdkImpl/frameworks/MJRefresh.framework/Headers/MJRefreshAutoFooter.h

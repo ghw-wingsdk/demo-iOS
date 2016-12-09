@@ -1,0 +1,4 @@
+## WASdkIntf
+
+WASdkIntf.framework
+

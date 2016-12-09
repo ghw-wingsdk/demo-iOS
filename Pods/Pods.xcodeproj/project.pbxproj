@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9214E642F75DA5F84F2B2AE0DBB747C8 /* Pods-WADemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1041CE96E37C18D77810F8A4732C0790 /* Pods-WADemo-dummy.m */; };
+		BF1D94B4FFD0B72F8515F097B0BBD649 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01FB80DDFFFF27CCE2C6DDE1F2219E1C /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = frameworks/Chartboost.framework; sourceTree = "<group>"; };
+		1041CE96E37C18D77810F8A4732C0790 /* Pods-WADemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WADemo-dummy.m"; sourceTree = "<group>"; };
+		11984B8222700886DDF745ACFB9FA000 /* WACbImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WACbImpl.framework; path = frameworks/WACbImpl.framework; sourceTree = "<group>"; };
+		122A87A257E56D4D8CB3B599B30022AE /* Pods-WADemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WADemo-resources.sh"; sourceTree = "<group>"; };
+		1B9E292E7D7DF88652DA56BBF40ABB6A /* pt-BR.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "pt-BR.plist"; path = "localizable/pt-BR.plist"; sourceTree = "<group>"; };
+		1BC774BD4120E451827F1831A178C143 /* WAAfImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAAfImpl.framework; path = frameworks/WAAfImpl.framework; sourceTree = "<group>"; };
+		303B817CE7D5B21568D73187B48FD719 /* WAVkImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAVkImpl.framework; path = frameworks/WAVkImpl.framework; sourceTree = "<group>"; };
+		36D724B979C03FBAD6044E4BE94A9EAC /* wa_sdk_impl_config_facebook.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_facebook.xml; path = config/wa_sdk_impl_config_facebook.xml; sourceTree = "<group>"; };
+		3737BB051DBC220B0520E5257260B6A4 /* Pods-WADemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WADemo-frameworks.sh"; sourceTree = "<group>"; };
+		3C2A7D1BD9502DAD871E8A3CA8AF532C /* WAApImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAApImpl.framework; path = frameworks/WAApImpl.framework; sourceTree = "<group>"; };
+		3CEAD0E9AC8DBB2AC309138321FB65C7 /* wax.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = wax.framework; path = frameworks/wax.framework; sourceTree = "<group>"; };
+		57AD3927FD04C784DA84C627EBFD3A6F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		5F9136F56CDD8F9DD0960A292402D0C0 /* zh-Hans.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "zh-Hans.plist"; path = "localizable/zh-Hans.plist"; sourceTree = "<group>"; };
+		6006A093011C1959D06424909AD74CDC /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = frameworks/VKSdkFramework.framework; sourceTree = "<group>"; };
+		62E61CC2626DC894F5F129BC00289243 /* Pods-WADemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WADemo.debug.xcconfig"; sourceTree = "<group>"; };
+		6B769DBD807BD0AF763ED42C77C5D649 /* wa_sdk_impl_config_apple.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_apple.xml; path = config/wa_sdk_impl_config_apple.xml; sourceTree = "<group>"; };
+		6DABAF0810CD845B45FCA870B59AB5F5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		6EEAA2FA4237461343212634DD78C145 /* WASDK-Resource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = "WASDK-Resource.bundle"; path = "bundle/WASDK-Resource.bundle"; sourceTree = "<group>"; };
+		6F6D520D1F0DDBA0C41F7B6EE139B3D0 /* Pods-WADemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WADemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		752712D5826BB939AA635591C59918A8 /* en.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = en.plist; path = localizable/en.plist; sourceTree = "<group>"; };
+		7916B56323453E7376396E0D2FD4295B /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMDB.framework; path = frameworks/FMDB.framework; sourceTree = "<group>"; };
+		7BAAEA72A8119051151B6E861591F5B6 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = frameworks/MJRefresh.framework; sourceTree = "<group>"; };
+		7BD3B4813A89D62C2B03259FE4DC9343 /* WAFbImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAFbImpl.framework; path = frameworks/WAFbImpl.framework; sourceTree = "<group>"; };
+		8C1C53C4A0CD0FCBECEA44C47F697640 /* wa_sdk_impl_config_vk.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_vk.xml; path = config/wa_sdk_impl_config_vk.xml; sourceTree = "<group>"; };
+		8E18053596118B9C0BA3A79B3C86AE27 /* Toast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Toast.framework; path = frameworks/Toast.framework; sourceTree = "<group>"; };
+		919617045A55560B46EE32792730F889 /* wa_sdk_impl_config_webpay.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_webpay.xml; path = config/wa_sdk_impl_config_webpay.xml; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A30AB40C298592150E847315DDAB606C /* Pods-WADemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WADemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A332B25391137EA32DD7BB340E53C63B /* ru.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = ru.plist; path = localizable/ru.plist; sourceTree = "<group>"; };
+		A4769435693CA2198DB838E25B14D711 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A62384189730DD8593B2CFD571F3FC65 /* wa_sdk_impl_config_winga.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_winga.xml; path = config/wa_sdk_impl_config_winga.xml; sourceTree = "<group>"; };
+		A6A0EC762B766535E04696DEA9D254D2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = frameworks/Bolts.framework; sourceTree = "<group>"; };
+		AC38388FEFFEAA5D5100A9C6F0B5394F /* WASdkIntf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WASdkIntf.framework; path = frameworks/WASdkIntf.framework; sourceTree = "<group>"; };
+		B9190C32269E27D419B1AB67D5341DCC /* ZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZipArchive.framework; path = frameworks/ZipArchive.framework; sourceTree = "<group>"; };
+		BBB2445DF74284EE776EAA7788DC9114 /* wa_sdk_impl_config_chartboost.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_chartboost.xml; path = config/wa_sdk_impl_config_chartboost.xml; sourceTree = "<group>"; };
+		C0BF543AAADB68D2D78C0D558F71F906 /* Pods-WADemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WADemo.release.xcconfig"; sourceTree = "<group>"; };
+		CAF2D979F3CA006AD8A8D9066C57E380 /* wa_sdk_impl_config_appsflyer.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_appsflyer.xml; path = config/wa_sdk_impl_config_appsflyer.xml; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D07F4AE1C1FD30A2173DEECDAA997272 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = frameworks/AFNetworking.framework; sourceTree = "<group>"; };
+		DBD6108EAC06C841364F731F61569807 /* WACommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WACommon.framework; path = frameworks/WACommon.framework; sourceTree = "<group>"; };
+		E3F09360D0D57692ED9983680BB6EFE5 /* base.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = base.plist; path = localizable/base.plist; sourceTree = "<group>"; };
+		EBED37657F73B9CD18E3749636F99440 /* lua.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lua.framework; path = frameworks/lua.framework; sourceTree = "<group>"; };
+		EC685780513DF1BA4F24563FCB72F9F1 /* wa_sdk.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = wa_sdk.plist; path = config/wa_sdk.plist; sourceTree = "<group>"; };
+		F16E9EC7742ADD4887824908574B9EED /* WAWebPayImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAWebPayImpl.framework; path = frameworks/WAWebPayImpl.framework; sourceTree = "<group>"; };
+		F5A8E124D0843F925E8E328354768D7E /* libPods-WADemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-WADemo.a"; path = "libPods-WADemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6499EC2FF0CCD365C2AB8849B6F34AC /* wa_sdk_track_config.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = wa_sdk_track_config.plist; path = config/wa_sdk_track_config.plist; sourceTree = "<group>"; };
+		F7A6C55B2723DBD255E45050D2E2B43D /* WASdkImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WASdkImpl.framework; path = frameworks/WASdkImpl.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		384BAA77D1E01C86D7D9764CB4725299 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF1D94B4FFD0B72F8515F097B0BBD649 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0931037358B15AE00B8A73BF537F3EBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01FB80DDFFFF27CCE2C6DDE1F2219E1C /* Chartboost.framework */,
+				11984B8222700886DDF745ACFB9FA000 /* WACbImpl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C123F19B237CE3D9A4ABA82B0ABC0D2 /* WAAfImpl */ = {
+			isa = PBXGroup;
+			children = (
+				3AA0D0E4AE66B1ECF73FEB432811558E /* Frameworks */,
+				3E2A54433EC7051D816572FED2950185 /* Resources */,
+			);
+			name = WAAfImpl;
+			path = WAAfImpl;
+			sourceTree = "<group>";
+		};
+		0C39521DE34A4B44E86FEFFE9BC05063 /* WAFbImpl */ = {
+			isa = PBXGroup;
+			children = (
+				F9D7ECA17C40013C939A3873A5F4B4A0 /* Frameworks */,
+				6D1880632878AE71F0A91847039D8F2E /* Resources */,
+			);
+			name = WAFbImpl;
+			path = WAFbImpl;
+			sourceTree = "<group>";
+		};
+		104E46F3C9F41610D155B5E65091017D /* WAApImpl */ = {
+			isa = PBXGroup;
+			children = (
+				FE7C2EFC6A8C934276A3AC3C9900C7B8 /* Frameworks */,
+				7970304303A43EB8AD822C265EEF835D /* Resources */,
+			);
+			name = WAApImpl;
+			path = WAApImpl;
+			sourceTree = "<group>";
+		};
+		154FD8680CC21AFCF83476838E18DC6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D07F4AE1C1FD30A2173DEECDAA997272 /* AFNetworking.framework */,
+				7916B56323453E7376396E0D2FD4295B /* FMDB.framework */,
+				EBED37657F73B9CD18E3749636F99440 /* lua.framework */,
+				7BAAEA72A8119051151B6E861591F5B6 /* MJRefresh.framework */,
+				8E18053596118B9C0BA3A79B3C86AE27 /* Toast.framework */,
+				DBD6108EAC06C841364F731F61569807 /* WACommon.framework */,
+				F7A6C55B2723DBD255E45050D2E2B43D /* WASdkImpl.framework */,
+				3CEAD0E9AC8DBB2AC309138321FB65C7 /* wax.framework */,
+				B9190C32269E27D419B1AB67D5341DCC /* ZipArchive.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19D55949F4F934A206F66A11BB92CBA4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E3F09360D0D57692ED9983680BB6EFE5 /* base.plist */,
+				752712D5826BB939AA635591C59918A8 /* en.plist */,
+				1B9E292E7D7DF88652DA56BBF40ABB6A /* pt-BR.plist */,
+				A332B25391137EA32DD7BB340E53C63B /* ru.plist */,
+				A62384189730DD8593B2CFD571F3FC65 /* wa_sdk_impl_config_winga.xml */,
+				6EEAA2FA4237461343212634DD78C145 /* WASDK-Resource.bundle */,
+				5F9136F56CDD8F9DD0960A292402D0C0 /* zh-Hans.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1D9CF0EFB242CB45456F1BACCDFECE9E /* WASdkIntf */ = {
+			isa = PBXGroup;
+			children = (
+				87A6DA2A5FCA8ADCDF98746ED00F60D7 /* Frameworks */,
+				AAEE0368AC17CD49AA3FAE90F857FB8A /* Resources */,
+			);
+			name = WASdkIntf;
+			path = WASdkIntf;
+			sourceTree = "<group>";
+		};
+		3AA0D0E4AE66B1ECF73FEB432811558E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BC774BD4120E451827F1831A178C143 /* WAAfImpl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BCA7DB8BA78E021286D7BCC8443EC48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5A8E124D0843F925E8E328354768D7E /* libPods-WADemo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E2A54433EC7051D816572FED2950185 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CAF2D979F3CA006AD8A8D9066C57E380 /* wa_sdk_impl_config_appsflyer.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		451AFFEB52FA96DF506A78B0636C4D40 /* WAVkImpl */ = {
+			isa = PBXGroup;
+			children = (
+				71C442B97E547852A741CFE179702E9A /* Frameworks */,
+				F85E4582DE5CA4D28CD96E197078FCB9 /* Resources */,
+			);
+			name = WAVkImpl;
+			path = WAVkImpl;
+			sourceTree = "<group>";
+		};
+		4FAE80840AEE464B57E9329C2F4BF9AF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				919617045A55560B46EE32792730F889 /* wa_sdk_impl_config_webpay.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5B2D1DBC99E7DA1B7175CDA27B0643B4 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEF7404C8D6813A1CB111608AC8DA5F1 /* Pods-WADemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6D1880632878AE71F0A91847039D8F2E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				36D724B979C03FBAD6044E4BE94A9EAC /* wa_sdk_impl_config_facebook.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		71C442B97E547852A741CFE179702E9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6006A093011C1959D06424909AD74CDC /* VKSdkFramework.framework */,
+				303B817CE7D5B21568D73187B48FD719 /* WAVkImpl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7970304303A43EB8AD822C265EEF835D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6B769DBD807BD0AF763ED42C77C5D649 /* wa_sdk_impl_config_apple.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				F90FC14738A692C839D10DFD4FE80694 /* Pods */,
+				3BCA7DB8BA78E021286D7BCC8443EC48 /* Products */,
+				5B2D1DBC99E7DA1B7175CDA27B0643B4 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		80D06FB090CF78851554155D4F6F6E01 /* WACbImpl */ = {
+			isa = PBXGroup;
+			children = (
+				0931037358B15AE00B8A73BF537F3EBB /* Frameworks */,
+				BEEE54C499321FB3DD93A0A5C548AEAB /* Resources */,
+			);
+			name = WACbImpl;
+			path = WACbImpl;
+			sourceTree = "<group>";
+		};
+		831C6E1DF2873849917B94C88B936577 /* WAWebPayImpl */ = {
+			isa = PBXGroup;
+			children = (
+				DC5486A7D60797D6F2098588FD491D37 /* Frameworks */,
+				4FAE80840AEE464B57E9329C2F4BF9AF /* Resources */,
+			);
+			name = WAWebPayImpl;
+			path = WAWebPayImpl;
+			sourceTree = "<group>";
+		};
+		87A6DA2A5FCA8ADCDF98746ED00F60D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC38388FEFFEAA5D5100A9C6F0B5394F /* WASdkIntf.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAEE0368AC17CD49AA3FAE90F857FB8A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EC685780513DF1BA4F24563FCB72F9F1 /* wa_sdk.plist */,
+				F6499EC2FF0CCD365C2AB8849B6F34AC /* wa_sdk_track_config.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B181447D7B0307134454D5005C0D9C2F /* WASdkImpl */ = {
+			isa = PBXGroup;
+			children = (
+				154FD8680CC21AFCF83476838E18DC6F /* Frameworks */,
+				19D55949F4F934A206F66A11BB92CBA4 /* Resources */,
+			);
+			name = WASdkImpl;
+			path = WASdkImpl;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEEE54C499321FB3DD93A0A5C548AEAB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBB2445DF74284EE776EAA7788DC9114 /* wa_sdk_impl_config_chartboost.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DC5486A7D60797D6F2098588FD491D37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F16E9EC7742ADD4887824908574B9EED /* WAWebPayImpl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEF7404C8D6813A1CB111608AC8DA5F1 /* Pods-WADemo */ = {
+			isa = PBXGroup;
+			children = (
+				A30AB40C298592150E847315DDAB606C /* Pods-WADemo-acknowledgements.markdown */,
+				6F6D520D1F0DDBA0C41F7B6EE139B3D0 /* Pods-WADemo-acknowledgements.plist */,
+				1041CE96E37C18D77810F8A4732C0790 /* Pods-WADemo-dummy.m */,
+				3737BB051DBC220B0520E5257260B6A4 /* Pods-WADemo-frameworks.sh */,
+				122A87A257E56D4D8CB3B599B30022AE /* Pods-WADemo-resources.sh */,
+				62E61CC2626DC894F5F129BC00289243 /* Pods-WADemo.debug.xcconfig */,
+				C0BF543AAADB68D2D78C0D558F71F906 /* Pods-WADemo.release.xcconfig */,
+			);
+			name = "Pods-WADemo";
+			path = "Target Support Files/Pods-WADemo";
+			sourceTree = "<group>";
+		};
+		F85E4582DE5CA4D28CD96E197078FCB9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8C1C53C4A0CD0FCBECEA44C47F697640 /* wa_sdk_impl_config_vk.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F90FC14738A692C839D10DFD4FE80694 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C123F19B237CE3D9A4ABA82B0ABC0D2 /* WAAfImpl */,
+				104E46F3C9F41610D155B5E65091017D /* WAApImpl */,
+				80D06FB090CF78851554155D4F6F6E01 /* WACbImpl */,
+				0C39521DE34A4B44E86FEFFE9BC05063 /* WAFbImpl */,
+				B181447D7B0307134454D5005C0D9C2F /* WASdkImpl */,
+				1D9CF0EFB242CB45456F1BACCDFECE9E /* WASdkIntf */,
+				451AFFEB52FA96DF506A78B0636C4D40 /* WAVkImpl */,
+				831C6E1DF2873849917B94C88B936577 /* WAWebPayImpl */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F9D7ECA17C40013C939A3873A5F4B4A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6A0EC762B766535E04696DEA9D254D2 /* Bolts.framework */,
+				6DABAF0810CD845B45FCA870B59AB5F5 /* FBSDKCoreKit.framework */,
+				A4769435693CA2198DB838E25B14D711 /* FBSDKLoginKit.framework */,
+				57AD3927FD04C784DA84C627EBFD3A6F /* FBSDKShareKit.framework */,
+				7BD3B4813A89D62C2B03259FE4DC9343 /* WAFbImpl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE7C2EFC6A8C934276A3AC3C9900C7B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A7D1BD9502DAD871E8A3CA8AF532C /* WAApImpl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2432E0C4B0C1C68AB31DF6C0A403B80 /* Pods-WADemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 679B68B19DF080FA0C266BED1937AF46 /* Build configuration list for PBXNativeTarget "Pods-WADemo" */;
+			buildPhases = (
+				622DD34291342615A7B9CF2C351ED66A /* Sources */,
+				384BAA77D1E01C86D7D9764CB4725299 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-WADemo";
+			productName = "Pods-WADemo";
+			productReference = F5A8E124D0843F925E8E328354768D7E /* libPods-WADemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 3BCA7DB8BA78E021286D7BCC8443EC48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2432E0C4B0C1C68AB31DF6C0A403B80 /* Pods-WADemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		622DD34291342615A7B9CF2C351ED66A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9214E642F75DA5F84F2B2AE0DBB747C8 /* Pods-WADemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		79B0C2E66EFA9917ED6EDDB8FC6A7684 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6AE4DBA43E3824B9A22034CE9721632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0BF543AAADB68D2D78C0D558F71F906 /* Pods-WADemo.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CF7953F66E785E8876EB4D370D777D50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		EA804CDCAE1CCA6EEB39C4CF346C9049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62E61CC2626DC894F5F129BC00289243 /* Pods-WADemo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF7953F66E785E8876EB4D370D777D50 /* Debug */,
+				79B0C2E66EFA9917ED6EDDB8FC6A7684 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		679B68B19DF080FA0C266BED1937AF46 /* Build configuration list for PBXNativeTarget "Pods-WADemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA804CDCAE1CCA6EEB39C4CF346C9049 /* Debug */,
+				A6AE4DBA43E3824B9A22034CE9721632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

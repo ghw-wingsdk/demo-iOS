@@ -1,0 +1,6 @@
+framework module WAAfImpl {
+  umbrella header "WAAfImpl.h"
+
+  export *
+  module * { export * }
+}

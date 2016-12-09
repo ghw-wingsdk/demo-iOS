@@ -1,0 +1,6 @@
+framework module WACommon {
+  umbrella header "WACommon.h"
+
+  export *
+  module * { export * }
+}

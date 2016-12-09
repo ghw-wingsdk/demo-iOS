@@ -1,0 +1,6 @@
+framework module WACbImpl {
+  umbrella header "WACbImpl.h"
+
+  export *
+  module * { export * }
+}

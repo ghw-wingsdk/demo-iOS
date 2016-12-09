@@ -1,0 +1,6 @@
+framework module WASdkImpl {
+  umbrella header "WASdkImpl.h"
+
+  export *
+  module * { export * }
+}

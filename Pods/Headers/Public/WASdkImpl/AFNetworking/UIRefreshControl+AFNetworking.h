@@ -1,0 +1,1 @@
+../../../../WASdkImpl/frameworks/AFNetworking.framework/Headers/UIRefreshControl+AFNetworking.h

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<version val="AF3.6.0"/>
+    <comps>
+        <!-- 数据收集模块 -->
+        <comp module="TRA" plaf="APPSFLYER" mandatory="YES" value="WAAFTrack" desc="APPSFLYER数据统计"/>
+    </comps>
+</config>

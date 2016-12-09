@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<version val="WEBPAY3.6.0"/>
+    <comps>
+        <!-- 支付模块 -->
+        <comp module="PAY" plaf="WEBPAY" mandatory="YES" value="WAWebPay" desc="WEB支付"/>
+    </comps>
+</config>

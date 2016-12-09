@@ -1,0 +1,1 @@
+../../../../WAVkImpl/frameworks/VKSdkFramework.framework/Headers/NSError+VKError.h

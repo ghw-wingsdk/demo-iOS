@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>wasdk_install_btn</key>
+	<string>Install</string>
+	<key>wasdk_play_btn</key>
+	<string>Play</string>
+	<key>wasdk_info_btn</key>
+	<string>INFO</string>
+	<key>wasdk_app_btn</key>
+	<string>APP</string>
+	<key>wasdk_app_wall_guide_words</key>
+	<string>Click here to popup menu</string>
+	<key>wasdk_sdk_version</key>
+	<string>SDK Version</string>
+	<key>wasdk_patch_version</key>
+	<string>Patch Version</string>
+	<key>wasdk_has_no_patch</key>
+	<string>None</string>
+	<key>wasdk_login</key>
+	<string>Login</string>
+	<key>wasdk_login_facebook</key>
+	<string>Facebook</string>
+	<key>wasdk_login_game_center</key>
+	<string>Game Center</string>
+	<key>wasdk_login_vk</key>
+	<string>VK</string>
+	<key>wasdk_confirm</key>
+	<string>Confirm</string>
+	<key>wasdk_cancel</key>
+	<string>Cancel</string>
+	<key>wasdk_loading</key>
+	<string>Loading</string>
+	<key>wasdk_visitor</key>
+	<string>Visitor</string>
+	<key>wasdk_bind</key>
+	<string>Bind</string>
+	<key>wasdk_unbind</key>
+	<string>Unbind</string>
+	<key>wasdk_bound</key>
+	<string>Bound</string>
+	<key>wasdk_unbound</key>
+	<string>Unbound</string>
+	<key>wasdk_create_ccount</key>
+	<string>Create Account</string>
+	<key>wasdk_account_management</key>
+	<string>Account Management</string>
+	<key>wasdk_change_account</key>
+	<string>Change Account</string>
+	<key>wasdk_unbind_account</key>
+	<string>Unbind Account</string>
+	<key>wasdk_tip_warning</key>
+	<string>Warning</string>
+	<key>wasdk_tip_unbind_unique_third_party</key>
+	<string>If you unbind your unique third-party platform account, your data will be lost. Continue?</string>
+	<key>wasdk_tip_can_not_unbind</key>
+	<string>You can’t unbind the account.</string>
+	<key>wasdk_tip_create_account_lost_data</key>
+	<string>If you create another account but don’t bind it to a third-party account, your previous one’s data will be lost permanently. After the account binding, you can use your third-party platform’s account to log into the applications.</string>
+	<key>wasdk_tip_fail_change_account</key>
+	<string>Failed to change your account. Please try again later.</string>
+	<key>wasdk_tip_relog</key>
+	<string>Please relog into the application.</string>
+	<key>wasdk_tip_fail_access_account_data</key>
+	<string>Failed to access your account data. Please try again later.</string>
+	<key>wasdk_tip_bind_succ</key>
+	<string>Binded successfully!</string>
+	<key>wasdk_tip_bind_fail</key>
+	<string>Failed to bind. Please try again later.</string>
+	<key>wasdk_tip_bind_fail_other_user</key>
+	<string>This account has been bound to another user.</string>
+	<key>wasdk_tip_unbind_succ</key>
+	<string>Unbinded successfully!</string>
+	<key>wasdk_tip_unbind_fail</key>
+	<string>Failed to unbind. Please try again later.</string>
+	<key>wasdk_tip_create_user_fail</key>
+	<string>Failed to create a new user. Please try again later.</string>
+	<key>wasdk_drag_up_fresh</key>
+	<string>Click or drag up to load more</string>
+	<key>wasdk_no_more_data</key>
+	<string>No more data</string>
+	<key>wasdk_load_more</key>
+	<string>Loading ...</string>
+	<key>wasdk_pull_down_refresh</key>
+	<string>Pull down to refresh</string>
+	<key>wasdk_release_refresh</key>
+	<string>Release to refresh</string>
+	<key>wasdk_purchase</key>
+	<string>Purchase</string>
+	<key>wasdk_pay_exit_alert</key>
+	<string>Are you sure you want to cancel this purchase?</string>
+	<key>wasdk_notice</key>
+	<string>Notice</string>
+	<key>wasdk_jailbreak_not_purchase</key>
+	<string>You can not do purchase in a jailbreak device.</string>
+</dict>
+</plist>

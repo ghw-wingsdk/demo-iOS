@@ -1,0 +1,6 @@
+framework module WAVkImpl {
+  umbrella header "WAVkImpl.h"
+
+  export *
+  module * { export * }
+}
