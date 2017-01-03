@@ -82,26 +82,26 @@
 //    [btn11 setTitle:@"contentView" forState:UIControlStateNormal];
 //    [btn11 addTarget:self action:@selector(contentView) forControlEvents:UIControlEventTouchUpInside];
 //    [btns addObject:btn11];
-    WADemoButtonMain* btn12 = [[WADemoButtonMain alloc]init];
-    [btn12 setTitle:@"share" forState:UIControlStateNormal];
-    [btn12 addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn12];
-    WADemoButtonMain* btn13 = [[WADemoButtonMain alloc]init];
-    [btn13 setTitle:@"invite" forState:UIControlStateNormal];
-    [btn13 addTarget:self action:@selector(invite) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn13];
+//    WADemoButtonMain* btn12 = [[WADemoButtonMain alloc]init];
+//    [btn12 setTitle:@"share" forState:UIControlStateNormal];
+//    [btn12 addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn12];
+//    WADemoButtonMain* btn13 = [[WADemoButtonMain alloc]init];
+//    [btn13 setTitle:@"invite" forState:UIControlStateNormal];
+//    [btn13 addTarget:self action:@selector(invite) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn13];
 //    WADemoButtonMain* btn14 = [[WADemoButtonMain alloc]init];
 //    [btn14 setTitle:@"reEngage" forState:UIControlStateNormal];
 //    [btn14 addTarget:self action:@selector(reEngage) forControlEvents:UIControlEventTouchUpInside];
 //    [btns addObject:btn14];
-    WADemoButtonMain* btn15 = [[WADemoButtonMain alloc]init];
-    [btn15 setTitle:@"update" forState:UIControlStateNormal];
-    [btn15 addTarget:self action:@selector(update) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn15];
-    WADemoButtonMain* btn16 = [[WADemoButtonMain alloc]init];
-    [btn16 setTitle:@"openedFromPushNotification" forState:UIControlStateNormal];
-    [btn16 addTarget:self action:@selector(openedFromPushNotification) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn16];
+//    WADemoButtonMain* btn15 = [[WADemoButtonMain alloc]init];
+//    [btn15 setTitle:@"update" forState:UIControlStateNormal];
+//    [btn15 addTarget:self action:@selector(update) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn15];
+//    WADemoButtonMain* btn16 = [[WADemoButtonMain alloc]init];
+//    [btn16 setTitle:@"openedFromPushNotification" forState:UIControlStateNormal];
+//    [btn16 addTarget:self action:@selector(openedFromPushNotification) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn16];
     WADemoButtonMain* btn17 = [[WADemoButtonMain alloc]init];
     [btn17 setTitle:@"userCreate" forState:UIControlStateNormal];
     [btn17 addTarget:self action:@selector(userCreate) forControlEvents:UIControlEventTouchUpInside];
@@ -129,7 +129,7 @@
     [btn22 setTitle:@"custom" forState:UIControlStateNormal];
     [btn22 addTarget:self action:@selector(custom) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn22];
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1]];
     self.title = @"数据收集";
     self.btnLayout = btnLayout;
     self.btns = btns;
@@ -169,10 +169,6 @@
     
     WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventPurchase];
     [self addSubview:view];
-}
-
-- (void)heartbeat {
-    
 }
 
 - (void)levelAchieve {

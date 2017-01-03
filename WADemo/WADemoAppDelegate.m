@@ -25,6 +25,7 @@
     [WACoreProxy setServerId:@"China"];
     [WACoreProxy setLevel:10];
     [WACoreProxy setGameUserId:@"12345"];
+//    [WACoreProxy setClientId:@"clientId_xxxx"];
     
     if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
     {
@@ -66,6 +67,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save us er data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [WAUserProxy applicationDidEnterBackground:application];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -74,6 +76,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [WAUserProxy applicationDidBecomeActive:application];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

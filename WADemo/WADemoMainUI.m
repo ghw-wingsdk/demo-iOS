@@ -21,6 +21,11 @@
 #import "WADemoPayView.h"
 #import "WADemoInvite.h"
 #import "WADemoGiftView.h"
+//#import <WASdkImpl/WASdkLoginHandler.h>
+@interface WADemoMainUI () <WAPaymentDelegate>
+
+@end
+
 @implementation WADemoMainUI
 
 -(instancetype)init{
@@ -77,13 +82,17 @@
     [btn11 setTitle:@"检查更新" forState:UIControlStateNormal];
     [btn11 addTarget:self action:@selector(checkUpdate) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn11];
+    WADemoButtonMain* btn12 = [[WADemoButtonMain alloc]init];
+    [btn12 setTitle:@"购买商品" forState:UIControlStateNormal];
+    [btn12 addTarget:self action:@selector(payProduct) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn12];
     WADemoButtonMain* btn10 = [[WADemoButtonMain alloc]init];
     [btn10 setTitle:@"闪退测试" forState:UIControlStateNormal];
     [btn10 addTarget:self action:@selector(crash) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn10];
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@1,@0,@1]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@0,@1]];
 
-    self.title = @"WADemo3.6.0";
+    self.title = @"WADemo3.6.1";
     self.btnLayout = btnLayout;
     self.btns = btns;
 }
@@ -193,6 +202,11 @@
     [payView moveIn];
 }
 
+- (void)payProduct
+{
+    [WAPayProxy payWithProductId:@"10086" extInfo:@"" delegate:self];
+}
+
 -(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
     [self setNeedsLayout];
 }
@@ -203,6 +217,33 @@
     hotUpdate.hasBackBtn = YES;
     [vc.view addSubview:hotUpdate];
     [hotUpdate moveIn];
+}
+
+#pragma mark 实现 WAPaymentDelegate
+-(void)paymentDidCompleteWithResult:(WAIapResult*)iapResult andPlatform:(NSString*)platform{
+    if (!iapResult) {
+        NSLog(@"%@ 购买失败!", platform);
+    }else{
+        if (iapResult.resultCode == 1) {
+            NSLog(@"%@ 支付成功.", platform);
+        }else if (iapResult.resultCode == 2) {
+            NSLog(@"%@ 支付失败.", platform);
+        }else if (iapResult.resultCode == 3) {
+            NSLog(@"%@ 取消.", platform);
+        }else if (iapResult.resultCode == 4) {
+            NSLog(@"%@ 上报失败.", platform);
+        }else if (iapResult.resultCode == 5) {
+            NSLog(@"%@ 商品未消耗.", platform);
+        }else if (iapResult.resultCode == 6) {
+            NSLog(@"%@ 创建订单失败.", platform);
+        }
+    }
+}
+
+-(void)paymentDidFailWithError:(NSError*)error andPlatform:(NSString*)platform{
+    if (error) {
+        NSLog(@"paymentDidFailWithError:%@",error.description);
+    }
 }
 
 -(void)dealloc{

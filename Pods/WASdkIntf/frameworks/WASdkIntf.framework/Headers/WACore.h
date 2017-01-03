@@ -16,6 +16,7 @@
 -(BOOL)isDebugMode;
 -(void)setDebugMode:(BOOL)isDebugMode;
 -(BOOL)displayLog;
+-(void)setClientId:(NSString*)clientId;
 -(NSString*)getUserId;
 -(void)setServerId:(NSString *)serverId;
 -(NSString*)getGameUserId;

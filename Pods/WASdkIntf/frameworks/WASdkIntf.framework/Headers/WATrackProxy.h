@@ -61,7 +61,6 @@ extern NSString *const WAEventInitiatedPayment;
 extern NSString *const WAEventPayment;
 extern NSString *const WAEventInitiatedPurchase;
 extern NSString *const WAEventPurchase;
-extern NSString *const WAEventHeartBeat;
 extern NSString *const WAEventLevelAchieved;
 extern NSString *const WAEventAddToCart;
 extern NSString *const WAEventAddToWishlist;
@@ -79,6 +78,7 @@ extern NSString *const WAEventUserCreate;
 extern NSString *const WAEventTaskUpdate;
 extern NSString *const WAEventGoldUpdate;
 extern NSString *const WAEventUserImport;
+extern NSString *const WAEventSession;
 
 extern NSString *const WAEventParameterNameRegistrationMethod;
 
@@ -109,7 +109,7 @@ extern NSString *const WAEventParameterNameServerId;
 
 extern NSString *const WAEventParameterNameStartTime;
 extern NSString *const WAEventParameterNameNowTime;
-
+extern NSString *const WAEventParameterNameSessionType;
 extern NSString *const WAEventParameterNameTransactionId;
 extern NSString *const WAEventParameterNamePaymentType;
 extern NSString *const WAEventParameterNameCurrencyAmount;
@@ -121,6 +121,7 @@ extern NSString *const WAEventParameterNameIAPAmount;
 extern NSString *const WAEventParameterNameIAPId;
 extern NSString *const WAEventParameterNameReceipt;
 extern NSString *const WAEventParameterNameProductIdentifier;
+extern NSString *const WAEventParameterNameRevenue;
 
 extern NSString *const WAEventParameterNameIsFirstEnter;
 

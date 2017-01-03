@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/WAFbImpl.h</key>
 		<data>
-		m/LeZtlEuX5lNPKwxg1W/Pg6e7c=
+		xCqiH/vu30CmKUc5zfn6Zi0F5kg=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2UKAls9uDNRDELR1XmqvHww+gpM=
+		5f2ETg/RUnshI+k6RQ3OWa8W/PQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -20,13 +20,27 @@
 	<key>files2</key>
 	<dict>
 		<key>Headers/WAFbImpl.h</key>
-		<data>
-		m/LeZtlEuX5lNPKwxg1W/Pg6e7c=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			xCqiH/vu30CmKUc5zfn6Zi0F5kg=
+			</data>
+			<key>hash2</key>
+			<data>
+			BpXFB45B50dMcWhh4remafdM8Z3dwgHotP7stVmQi6w=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		aluEAfoepN7iG0XAQ2K460rYr48=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			aluEAfoepN7iG0XAQ2K460rYr48=
+			</data>
+			<key>hash2</key>
+			<data>
+			IOWlGGw3g4xNNlhNXd2C86neVQIHFzRDjoHCd7w6lc0=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
@@ -45,6 +59,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -90,6 +109,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>

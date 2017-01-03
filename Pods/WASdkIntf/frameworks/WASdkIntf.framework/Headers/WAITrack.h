@@ -55,8 +55,9 @@
 -(void)purchase;
 /**
  *  在线时长
+ *  @param type 0->开启,1->关闭
  */
--(void)heartbeat;
+-(void)session:(int)type;
 /**
  *  等级或分数
  */

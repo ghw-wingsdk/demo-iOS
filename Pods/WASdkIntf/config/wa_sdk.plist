@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>WaSdkServerUrl</key>
-	<string>https://api.wingsdk.com/sdkapi/</string>
+	<string>https://sdkapi.gamehollywood.com/sdkapi/</string>
 	<key>appKey</key>
 	<string>abc</string>
 	<key>appId</key>

@@ -172,9 +172,8 @@
 /*!
  @abstract 打开group
  @param platform 平台
- @param groupUri
+ @param groupUri 组Uri
  @param extInfo 扩展信息
- @param block 回调
  */
 +(void)openGroupPageWithPlatform:(NSString *const)platform groupUri:(NSString *const)groupUri extInfo:(NSString*)extInfo;
 
@@ -220,7 +219,7 @@
  @param requestType 请求类型
  @param title 标题
  @param message 信息
- @param objectId
+ @param objectId 对象id
  @param receiptIds 接受者id
  @param delegate 委托
  */
@@ -230,7 +229,7 @@
  @abstract 下面的三个方法是关于奖励机制的,邀请奖励,自定义奖励事件
  @discussion 此方法用来提交Facebook邀请信息
  @param platform 平台
- @param result 这是发完邀请请求成功在WAGameRequestDialogDelegate的方法:[- (void)gameRequestDialog:(WAGameRequestDialog *)gameRequestDialog platform:(NSString *const)platform didCompleteWithResults:(NSDictionary *)results]的results
+ @param results 这是发完邀请请求成功在WAGameRequestDialogDelegate的方法:[- (void)gameRequestDialog:(WAGameRequestDialog *)gameRequestDialog platform:(NSString *const)platform didCompleteWithResults:(NSDictionary *)results]的results
  @param handler 回调block 当code为200时成功
  */
 +(void)createInviteInfoWithPlatform:(NSString *const)platform results:(NSDictionary*)results handler:(void (^)(NSUInteger code,NSString* msg, NSError* error)) handler;

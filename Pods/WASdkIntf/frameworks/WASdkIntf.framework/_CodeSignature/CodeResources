@@ -46,11 +46,11 @@
 		</data>
 		<key>Headers/WACore.h</key>
 		<data>
-		cQy6cSvYVBa2gRGQDboqK1+9B5I=
+		kxjkBwOjl+iJdtHpoC8sRSeklz4=
 		</data>
 		<key>Headers/WACoreProxy.h</key>
 		<data>
-		WLCmt9dT8cZqb61Iqhy/MMORnfI=
+		Kl5Pr28Td7eTaWXs3E18Z0Tyvp8=
 		</data>
 		<key>Headers/WAError.h</key>
 		<data>
@@ -110,11 +110,11 @@
 		</data>
 		<key>Headers/WAITrack.h</key>
 		<data>
-		8X+ypjtELiRZcowbwt7V8ME1wxc=
+		EtoSUvhE95LNDMOsBeX01GPKo1o=
 		</data>
 		<key>Headers/WAIUser.h</key>
 		<data>
-		F0snTUA6UbV37Tj4FMgW4Unv/Ok=
+		X2s4bYfEI4DWYXqSlcykqbIkLtI=
 		</data>
 		<key>Headers/WAIapProduct.h</key>
 		<data>
@@ -134,11 +134,11 @@
 		</data>
 		<key>Headers/WAPayProxy.h</key>
 		<data>
-		JemYp6qebO6rgl/7hRXY19VoMOA=
+		KynhztMZcNR/wi2nS7+PFa8UlqI=
 		</data>
 		<key>Headers/WASdkIntf.h</key>
 		<data>
-		N7BH2PsvAmxnpqv7prWAvUsQKbs=
+		c3E2gvOl4a5/fOAMd/HvSIWzUqQ=
 		</data>
 		<key>Headers/WAShareLinkContent.h</key>
 		<data>
@@ -166,11 +166,11 @@
 		</data>
 		<key>Headers/WASocialProxy.h</key>
 		<data>
-		QWW2cXdMoIDLsRiLlFQta9xt5ao=
+		KSYZvOEQMkNWKaiBe9OzhyhAVZY=
 		</data>
 		<key>Headers/WATrackProxy.h</key>
 		<data>
-		SvxICa/fvJ4i530LvzzYiekAvUc=
+		VwTR7n9vq1CB6kX+/Qa4EM0NBtU=
 		</data>
 		<key>Headers/WAUpdateInfo.h</key>
 		<data>
@@ -178,11 +178,11 @@
 		</data>
 		<key>Headers/WAUserProxy.h</key>
 		<data>
-		J5Rjvsvb4FPqX3yd2ATbxNy6axo=
+		FmfOZMnJUdqq3Rv2aNERLsp8xCk=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		fqkISPnKl8FGxvvpKgABp+0UNnc=
+		qtdbkV82k1FPV6ei3f06E2kqnl8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -192,185 +192,500 @@
 	<key>files2</key>
 	<dict>
 		<key>Headers/WAAccount.h</key>
-		<data>
-		mPLGfDWmeBVPhSO3IfKMujJdbwk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			mPLGfDWmeBVPhSO3IfKMujJdbwk=
+			</data>
+			<key>hash2</key>
+			<data>
+			m1ZKtCAHKT51nMd/si4J73+xrlQrrmAbIcG85qKirBY=
+			</data>
+		</dict>
 		<key>Headers/WAAppInviteContent.h</key>
-		<data>
-		5QV/wDPZDQr+xzY+qjR1sy6Z9UE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			5QV/wDPZDQr+xzY+qjR1sy6Z9UE=
+			</data>
+			<key>hash2</key>
+			<data>
+			BSw1rfuwuCJTxbpJ187VNf4rpc2k4r6jdArUP+3NcHw=
+			</data>
+		</dict>
 		<key>Headers/WAAppInviteDialog.h</key>
-		<data>
-		bLlAAObn6loWAX8H/aXoWqAE0As=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			bLlAAObn6loWAX8H/aXoWqAE0As=
+			</data>
+			<key>hash2</key>
+			<data>
+			qoxv3WlVDkrqi2s7N+xlIYkIBEF2Qz/EBPictV4b+P8=
+			</data>
+		</dict>
 		<key>Headers/WAAppUser.h</key>
-		<data>
-		42Pmb2oFpRbkKHLvFpfJtNRg2us=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			42Pmb2oFpRbkKHLvFpfJtNRg2us=
+			</data>
+			<key>hash2</key>
+			<data>
+			9R1EIkeWznGqI5xhIWKlLP6mK+xNeEcvtQfAz0tkSTg=
+			</data>
+		</dict>
 		<key>Headers/WAApwProxy.h</key>
-		<data>
-		tOCJygnwEeUMaghcl8V/L3C7dpw=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			tOCJygnwEeUMaghcl8V/L3C7dpw=
+			</data>
+			<key>hash2</key>
+			<data>
+			xCbZ06RAlf2gK9c7D89qFUTK+/lm8AAG83PF0x1/SYs=
+			</data>
+		</dict>
 		<key>Headers/WABindingResult.h</key>
-		<data>
-		Jp82QhtdBBtwxsZUCeQYkntNLGo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Jp82QhtdBBtwxsZUCeQYkntNLGo=
+			</data>
+			<key>hash2</key>
+			<data>
+			5Ne3Qj+W7v8Zj78pOpg9PjkQx1/DRUxb50OYHXppJMg=
+			</data>
+		</dict>
 		<key>Headers/WAClassGenerator.h</key>
-		<data>
-		XlfLFA3Q2o5w/+mSnUpy9pnmHbI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			XlfLFA3Q2o5w/+mSnUpy9pnmHbI=
+			</data>
+			<key>hash2</key>
+			<data>
+			JC+LoF0ElyQQcKx4IktNpnHGrtTjBfJIzbxl4GIo/v0=
+			</data>
+		</dict>
 		<key>Headers/WACode.h</key>
-		<data>
-		UlLyj++V9sgqf4tCW/4V9WIctjs=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			UlLyj++V9sgqf4tCW/4V9WIctjs=
+			</data>
+			<key>hash2</key>
+			<data>
+			tIQO7qbir4fyFPrPKQI7YPupGASva4YdJnOYMIV7+Hw=
+			</data>
+		</dict>
 		<key>Headers/WAComponent.h</key>
-		<data>
-		luonnU8Q1XZNDB1A4lLup24ob7o=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			luonnU8Q1XZNDB1A4lLup24ob7o=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZyRWmDLjDKOPRbKsOo15HXWbACfL2S9b+1kCYlaCId4=
+			</data>
+		</dict>
 		<key>Headers/WAConstants.h</key>
-		<data>
-		WDmenmv/VRToA416MNUaG152NCE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			WDmenmv/VRToA416MNUaG152NCE=
+			</data>
+			<key>hash2</key>
+			<data>
+			cFF54Qi81lkFvc+Qaskl9d5l/+3azFYzVJk9gPI/ZRg=
+			</data>
+		</dict>
 		<key>Headers/WACore.h</key>
-		<data>
-		cQy6cSvYVBa2gRGQDboqK1+9B5I=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			kxjkBwOjl+iJdtHpoC8sRSeklz4=
+			</data>
+			<key>hash2</key>
+			<data>
+			eHwK328oCkAyepFk5nmn2ow/47/0geOrdJzyyAxMu6Q=
+			</data>
+		</dict>
 		<key>Headers/WACoreProxy.h</key>
-		<data>
-		WLCmt9dT8cZqb61Iqhy/MMORnfI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Kl5Pr28Td7eTaWXs3E18Z0Tyvp8=
+			</data>
+			<key>hash2</key>
+			<data>
+			HSoKcNSMJsT+QHvSq2opjomT3nBBhHqYI9URhTwtS9A=
+			</data>
+		</dict>
 		<key>Headers/WAError.h</key>
-		<data>
-		q/8AzQKs007znBipUxijZTCyKBw=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			q/8AzQKs007znBipUxijZTCyKBw=
+			</data>
+			<key>hash2</key>
+			<data>
+			xGcd9AgcVLsu4t3gRuva9hyIP3WGLmyY0pH35kOmnKo=
+			</data>
+		</dict>
 		<key>Headers/WAErrorCode.h</key>
-		<data>
-		BWMUY8lvwWLezGppa0Jybhcks/E=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			BWMUY8lvwWLezGppa0Jybhcks/E=
+			</data>
+			<key>hash2</key>
+			<data>
+			T4AVr32M2M2xC9iCfkh+q+7m9pLAuKFLfmr18v824Nk=
+			</data>
+		</dict>
 		<key>Headers/WAEvent.h</key>
-		<data>
-		tghaYCX+ot/mxteHkW/fF+HIu30=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			tghaYCX+ot/mxteHkW/fF+HIu30=
+			</data>
+			<key>hash2</key>
+			<data>
+			vOCI6nV5bcEe4NmPS3X8joNFgQyI2v40fhNNiO0VkWA=
+			</data>
+		</dict>
 		<key>Headers/WAFBAppRequest.h</key>
-		<data>
-		aCoCODrmoMEINUqytRhrxS77jQY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			aCoCODrmoMEINUqytRhrxS77jQY=
+			</data>
+			<key>hash2</key>
+			<data>
+			tmiD38JZWr+k+bsOJ7UddJumHmMj2t0vRprBGFDRGsQ=
+			</data>
+		</dict>
 		<key>Headers/WAFBApplication.h</key>
-		<data>
-		JQB9dTvONPXpkPdpha2ZSc2Fzq8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			JQB9dTvONPXpkPdpha2ZSc2Fzq8=
+			</data>
+			<key>hash2</key>
+			<data>
+			dUHJ5gMLQjfCbaBs3rZ893zmZGS2ajyMZ8BAhRekAuI=
+			</data>
+		</dict>
 		<key>Headers/WAFBObject.h</key>
-		<data>
-		mGJd0WBhCoGPXyXJihAAqH5U7OY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			mGJd0WBhCoGPXyXJihAAqH5U7OY=
+			</data>
+			<key>hash2</key>
+			<data>
+			zsEJVbfpXHQQj5nSuhi/wj+DUY/4q70ce1tH6AivLD0=
+			</data>
+		</dict>
 		<key>Headers/WAGameRequestContent.h</key>
-		<data>
-		2qttZ/ixigWUFFHC6GVd8Lg050g=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			2qttZ/ixigWUFFHC6GVd8Lg050g=
+			</data>
+			<key>hash2</key>
+			<data>
+			yuUGPZUoELfS4rBmrSBbmyCIWRNwRIsSKJHLiOi8bfE=
+			</data>
+		</dict>
 		<key>Headers/WAGameRequestDialog.h</key>
-		<data>
-		/Hi2uJ2K1zutcX38spbEXEtKdqo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			/Hi2uJ2K1zutcX38spbEXEtKdqo=
+			</data>
+			<key>hash2</key>
+			<data>
+			9/EvsK5IO7IikqtJTNLw7mjgB0JYhhO+MlASEbckqwU=
+			</data>
+		</dict>
 		<key>Headers/WAGroup.h</key>
-		<data>
-		95Ook+32C0ANb+fcnHV3kPx0f5E=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			95Ook+32C0ANb+fcnHV3kPx0f5E=
+			</data>
+			<key>hash2</key>
+			<data>
+			TxfatqTG2Ddk2VdHaPZOr+beD7eHeKIYaxHlvfhW+RE=
+			</data>
+		</dict>
 		<key>Headers/WAHotUpdate.h</key>
-		<data>
-		Qz7AV+xZ2ALKCTgT0LwcA3Qk3zk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Qz7AV+xZ2ALKCTgT0LwcA3Qk3zk=
+			</data>
+			<key>hash2</key>
+			<data>
+			Bkxpf8ju3GRgCAcRaEqb4sEliE7FZKCxa2btWMRa6lE=
+			</data>
+		</dict>
 		<key>Headers/WAHupProxy.h</key>
-		<data>
-		Pf4DNml5wZ0d42R4tr0cUQ0GrE8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Pf4DNml5wZ0d42R4tr0cUQ0GrE8=
+			</data>
+			<key>hash2</key>
+			<data>
+			qB7NoiFClA7wrn6ROmE1HRX4Ke/dfORVFGINdkCZzx4=
+			</data>
+		</dict>
 		<key>Headers/WAIAppWall.h</key>
-		<data>
-		RsOfbNQyPjHI05/SNdYH85dI1CI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			RsOfbNQyPjHI05/SNdYH85dI1CI=
+			</data>
+			<key>hash2</key>
+			<data>
+			8SWiI09XhQJjByHaqJ4ZLKoP+CuSiktESCyj7eNQ2uc=
+			</data>
+		</dict>
 		<key>Headers/WAIPay.h</key>
-		<data>
-		hoReRwkwXoZRAl6H4ah1cI6V7hM=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			hoReRwkwXoZRAl6H4ah1cI6V7hM=
+			</data>
+			<key>hash2</key>
+			<data>
+			g7YbYwvrMk+pKj1SjalZtVPdGBdPoxuZp3Zy5HVtEaw=
+			</data>
+		</dict>
 		<key>Headers/WAISocial.h</key>
-		<data>
-		9CXo9+tTiap++1MNxkwVlG+WJ7I=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			9CXo9+tTiap++1MNxkwVlG+WJ7I=
+			</data>
+			<key>hash2</key>
+			<data>
+			58cqhgBAfXfBKjPzQoWCtVs3v2GJ3Sqph5SN0kmN9RA=
+			</data>
+		</dict>
 		<key>Headers/WAITrack.h</key>
-		<data>
-		8X+ypjtELiRZcowbwt7V8ME1wxc=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			EtoSUvhE95LNDMOsBeX01GPKo1o=
+			</data>
+			<key>hash2</key>
+			<data>
+			dHvBf0edszW1mB6QJFDVet3xp/80JO9H7bkCT0XTYj8=
+			</data>
+		</dict>
 		<key>Headers/WAIUser.h</key>
-		<data>
-		F0snTUA6UbV37Tj4FMgW4Unv/Ok=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			X2s4bYfEI4DWYXqSlcykqbIkLtI=
+			</data>
+			<key>hash2</key>
+			<data>
+			LFTnoTYfr4WBI9uZiHwpDgegoyKcY447iU4Phu8G+M4=
+			</data>
+		</dict>
 		<key>Headers/WAIapProduct.h</key>
-		<data>
-		2Jnwjw1wlNRqsF6EQfd0YXO3gpE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			2Jnwjw1wlNRqsF6EQfd0YXO3gpE=
+			</data>
+			<key>hash2</key>
+			<data>
+			ccOwnvFHOQuB6DuIIFjj/Hc1OdNrHbTcGauNFeDUf8U=
+			</data>
+		</dict>
 		<key>Headers/WAIapResult.h</key>
-		<data>
-		sm4Snt9M+DGxSJY771vq0HUFUGI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			sm4Snt9M+DGxSJY771vq0HUFUGI=
+			</data>
+			<key>hash2</key>
+			<data>
+			FTUxSWddm3ChrcZbOrbLh4st3YFLNw5rqULnlV8SWkA=
+			</data>
+		</dict>
 		<key>Headers/WALoginResult.h</key>
-		<data>
-		wV3Olv9z3tBJntMHqGU3PMljKDI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			wV3Olv9z3tBJntMHqGU3PMljKDI=
+			</data>
+			<key>hash2</key>
+			<data>
+			1VeGc3rkkOsF2jAWKZ7nOzpIynq1HkW22gGl1TE/m8M=
+			</data>
+		</dict>
 		<key>Headers/WAPayChannel.h</key>
-		<data>
-		GGmMq0N+Ph/nQo87qL7GojBVKXk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			GGmMq0N+Ph/nQo87qL7GojBVKXk=
+			</data>
+			<key>hash2</key>
+			<data>
+			cm8eB8GnO6KxdvzMO5p9ILu/tnceW8cOWr+eLCoZO+4=
+			</data>
+		</dict>
 		<key>Headers/WAPayProxy.h</key>
-		<data>
-		JemYp6qebO6rgl/7hRXY19VoMOA=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			KynhztMZcNR/wi2nS7+PFa8UlqI=
+			</data>
+			<key>hash2</key>
+			<data>
+			vph3lJumAH9HYbIhzXK4qcoVtLfRh/yQ7LZWRasJRw0=
+			</data>
+		</dict>
 		<key>Headers/WASdkIntf.h</key>
-		<data>
-		N7BH2PsvAmxnpqv7prWAvUsQKbs=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			c3E2gvOl4a5/fOAMd/HvSIWzUqQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			qzh5LO2gzTjVTo54Nvqf4Ls+HVDRupXfg+qP0JwLZOg=
+			</data>
+		</dict>
 		<key>Headers/WAShareLinkContent.h</key>
-		<data>
-		l59sg1+q2rPnK/Hr5meS5Bo1puk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			l59sg1+q2rPnK/Hr5meS5Bo1puk=
+			</data>
+			<key>hash2</key>
+			<data>
+			R7B8YWxeqS3wGikityE6lO3rwcPUE1YEf/aT12sxlec=
+			</data>
+		</dict>
 		<key>Headers/WASharePhoto.h</key>
-		<data>
-		qSgciuFTEQtMrzm0prZ+US4m+Yg=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			qSgciuFTEQtMrzm0prZ+US4m+Yg=
+			</data>
+			<key>hash2</key>
+			<data>
+			ElHPXabZ93iJR1BNSYf9xuMaRvbWacTL1g4KWhjEtAM=
+			</data>
+		</dict>
 		<key>Headers/WASharePhotoContent.h</key>
-		<data>
-		bqs0RLnKlGQ3oxrMFQs+eadfe04=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			bqs0RLnKlGQ3oxrMFQs+eadfe04=
+			</data>
+			<key>hash2</key>
+			<data>
+			SOfVDnEkD0HKhciI/j9cDai4T6Jseg3en1M7fZI+puU=
+			</data>
+		</dict>
 		<key>Headers/WAShareVideo.h</key>
-		<data>
-		YEt6+RQ6Ejl33Xm6blHLKtNduEQ=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			YEt6+RQ6Ejl33Xm6blHLKtNduEQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			8ge71ulyPq8/fkeETG5DVHLiLIUDdJzgmpzwxBU++4s=
+			</data>
+		</dict>
 		<key>Headers/WAShareVideoContent.h</key>
-		<data>
-		Tm8bYgHtHJUWtPEtncfr0LtB9FI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Tm8bYgHtHJUWtPEtncfr0LtB9FI=
+			</data>
+			<key>hash2</key>
+			<data>
+			zuhrf27anhDsI2+m8d3BKrwM+PBR1wMzxIWedBY5k8k=
+			</data>
+		</dict>
 		<key>Headers/WASharingContent.h</key>
-		<data>
-		qwO2A5KZi82gSVXSjkcVfusQSBg=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			qwO2A5KZi82gSVXSjkcVfusQSBg=
+			</data>
+			<key>hash2</key>
+			<data>
+			nS950tqhSUSMAfHjVVRHHsJBqleeCuzHgTYEhdC3XW4=
+			</data>
+		</dict>
 		<key>Headers/WASocialProxy.h</key>
-		<data>
-		QWW2cXdMoIDLsRiLlFQta9xt5ao=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			KSYZvOEQMkNWKaiBe9OzhyhAVZY=
+			</data>
+			<key>hash2</key>
+			<data>
+			/VH6sPSL41dkqVNr2yD14MUUId+KvxM17D4qTOgqveE=
+			</data>
+		</dict>
 		<key>Headers/WATrackProxy.h</key>
-		<data>
-		SvxICa/fvJ4i530LvzzYiekAvUc=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			VwTR7n9vq1CB6kX+/Qa4EM0NBtU=
+			</data>
+			<key>hash2</key>
+			<data>
+			2dp/PLtLb5T43QQtOHhR/3CsAOU6dfucHCgca5dZVdU=
+			</data>
+		</dict>
 		<key>Headers/WAUpdateInfo.h</key>
-		<data>
-		OZKNhkhoWzJ+BzXAwJ/9RN4w+lM=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			OZKNhkhoWzJ+BzXAwJ/9RN4w+lM=
+			</data>
+			<key>hash2</key>
+			<data>
+			zbGxUaMuDkjslzjk9E4y8ETOQ1zeUnDaQWEF4fT+Vsc=
+			</data>
+		</dict>
 		<key>Headers/WAUserProxy.h</key>
-		<data>
-		J5Rjvsvb4FPqX3yd2ATbxNy6axo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			FmfOZMnJUdqq3Rv2aNERLsp8xCk=
+			</data>
+			<key>hash2</key>
+			<data>
+			c3O13AauFhAPX+4tffxCpHgn6WjWfFrFCENpWD0lA7Y=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		degAbkU8ZlFlBfMfAbcnbZ0a88M=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			degAbkU8ZlFlBfMfAbcnbZ0a88M=
+			</data>
+			<key>hash2</key>
+			<data>
+			x1LOuvJCwQ1h8THKQ7PFY8mbxaeJ5vug3UPEcBsh724=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
@@ -389,6 +704,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -434,6 +754,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>

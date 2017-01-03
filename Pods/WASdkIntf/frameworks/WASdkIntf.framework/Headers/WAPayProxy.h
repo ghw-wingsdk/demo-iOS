@@ -19,13 +19,11 @@
 /*!
  @abstract 查询成功
  @param Inventory 是一个数组，保存着WAIapProduct类型的实例
- @param platform 支付平台
  */
 -(void)queryInventoryDidCompleteWithResult:(NSArray<WAIapProduct *>*)Inventory;
 /*!
  @abstract 查询失败
  @param error 错误
- @param platform 支付平台
  */
 -(void)queryInventoryDidFailWithError:(NSError*)error;
 @end
@@ -55,19 +53,18 @@
 @interface WAPayProxy : NSObject
 /*!
  @abstract 应用内支付初始化
- @param platform 支付平台
  */
 +(void)init4Iap;
 /*!
  @abstract 查询商品列表调用方法
- @param platform 支付平台
+ @param delegate 委托
  */
 +(void)queryInventoryWithDelegate:(id<WAInventoryDelegate>)delegate;
 /*!
  @abstract 支付某个商品
  @param productId 商品id
- @param platform 支付平台
  @param extInfo 扩展信息
+ @param delegate 委托
  */
 +(void)payWithProductId:(NSString*)productId extInfo:(NSString*)extInfo delegate:(id<WAPaymentDelegate>)delegate;
 /*!

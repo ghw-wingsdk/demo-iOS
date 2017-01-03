@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/WACommon.h</key>
 		<data>
-		IlUBxUYesRZDSO+I4vJVGTKJJjc=
+		VcOXFB6w1qOuNcBCsrvxRDJ3IvA=
 		</data>
 		<key>Headers/WAHelper.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TrBfCQujXJ8BYfd40EtIoRNK9h8=
+		lejOioxilRC0vDptH5x2t1A6PbE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -36,29 +36,71 @@
 	<key>files2</key>
 	<dict>
 		<key>Headers/LocalizedStringUtil.h</key>
-		<data>
-		EOIGwgwxesjbtjaUwtKtUQkUD/0=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			EOIGwgwxesjbtjaUwtKtUQkUD/0=
+			</data>
+			<key>hash2</key>
+			<data>
+			oWsDX6Trj3NiP+oZ8LC8rY4m1HlHPzbjRk8dTshafaM=
+			</data>
+		</dict>
 		<key>Headers/WACommConstants.h</key>
-		<data>
-		pZ4EPVFyh6Xs8MTvu0uxFDtIW+Q=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			pZ4EPVFyh6Xs8MTvu0uxFDtIW+Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			9xsV3I0i27A2Tst/BRUaIAqrCBafmLYoSwjHSwIs5n8=
+			</data>
+		</dict>
 		<key>Headers/WACommon.h</key>
-		<data>
-		IlUBxUYesRZDSO+I4vJVGTKJJjc=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			VcOXFB6w1qOuNcBCsrvxRDJ3IvA=
+			</data>
+			<key>hash2</key>
+			<data>
+			Sek/oxOQFC8+uPFCRq7XpUJvUl0hyc7c7YkCFdiWJTs=
+			</data>
+		</dict>
 		<key>Headers/WAHelper.h</key>
-		<data>
-		d2CWdCKE/GlmA2I2ERU0xGASLdY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			d2CWdCKE/GlmA2I2ERU0xGASLdY=
+			</data>
+			<key>hash2</key>
+			<data>
+			S7dTpqWQN07oLBsnoJtsyoYzUre0L4L/ijH12tTGYeg=
+			</data>
+		</dict>
 		<key>Headers/WAHttpHelper.h</key>
-		<data>
-		jJD8Rc3DdU0bzLHnV4oNNB8nvKY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			jJD8Rc3DdU0bzLHnV4oNNB8nvKY=
+			</data>
+			<key>hash2</key>
+			<data>
+			SwMIvyB6fQqp8ETWYwZtSyuGP0C+GNAXq7iWCMJgvuU=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		OOS0vz1SfFUsVYlRNnL8U/DaeD8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			OOS0vz1SfFUsVYlRNnL8U/DaeD8=
+			</data>
+			<key>hash2</key>
+			<data>
+			FaE0KORSSYJGsrZ3BBPedf6NZLbUA9y+ficKNgR+9jI=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
@@ -77,6 +119,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -122,6 +169,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>

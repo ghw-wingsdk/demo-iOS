@@ -44,4 +44,6 @@ extern NSString *CACHE_KEY_PAYMENT_TRANSACTION;
  *  @param skPaymentTransaction
  */
 +(void)removeUncomsumeListWithPaymentTransaction:(SKPaymentTransaction *)skPaymentTransaction;
+
++(BOOL)isInit;
 @end

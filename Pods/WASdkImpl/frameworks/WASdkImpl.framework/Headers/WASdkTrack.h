@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <WASdkIntf/WASdkIntf.h>
-@interface WASdkTrack : WAITrack
+@interface WASdkTrack : WAITrack<NSCopying>
 @property(copy,nonatomic)NSString *deviceid;
 @property(copy,nonatomic)NSString *deviceType;
 @property(copy,nonatomic)NSString *deviceBrand;
@@ -24,5 +24,6 @@
 @property(strong,nonatomic)NSDictionary* trackerConfig;
 @property(copy,nonatomic)NSString *url;
 +(WASdkTrack*)shareTracker;
++(WASdkTrack*)getNewTrackerInstance;
 +(NSString*)getSessionId;
 @end

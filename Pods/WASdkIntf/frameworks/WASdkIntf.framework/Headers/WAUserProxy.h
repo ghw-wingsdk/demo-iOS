@@ -21,7 +21,7 @@
 @required
 /*!
  @abstract 登录成功
- @param results 登录结果
+ @param result 登录结果
  */
 -(void)loginDidCompleteWithResults:(WALoginResult*)result;
 /*!
@@ -164,15 +164,13 @@
 /*!
  @discussion 切换账号接口
  @param platform 切换平台
- @param error 错误
- @param result 登录结果
+ @param completeBlock 回调结果：包括error(错误)和result(登录结果)
  */
 +(void)switchAccountWithPlatform:(NSString *const)platform completeBlock:(void(^)(NSError* error,WALoginResult* result))completeBlock;
 
 /*!
  @discussion 创建账号接口
- @param error 错误
- @param result 创建结果
+ @param completeBlock 回调结果：包括error(错误)和result(创建结果)
  */
 +(void)createNewAccountWithCompleteBlock:(void(^)(NSError* error,WALoginResult* result))completeBlock;
 
@@ -211,9 +209,14 @@
 + (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 
 /*!
- @discussion 处理UIApplicationDelegate的方法[+ (void)applicationDidBecomeActive:(UIApplication *)application]传递过来的参数。
+ @discussion 处理UIApplicationDelegate的方法[- (void)applicationDidBecomeActive:(UIApplication *)application]传递过来的参数。
  */
 + (void)applicationDidBecomeActive:(UIApplication *)application;
+
+/*!
+ @discussion 处理UIApplicationDelegate的方法[- (void)applicationDidEnterBackground:(UIApplication *)application]传递过来的参数。
+ */
++ (void)applicationDidEnterBackground:(UIApplication *)application;
 
 /*!
  @discussion 处理UIApplicationDelegate的方法[-(BOOL)application:(UIApplication *)application

@@ -44,33 +44,33 @@ static NSMutableArray* _waEventDataArray;
     NSMutableArray* _waEventDataArray = [NSMutableArray array];
     
     //*** event WAEventCompleteRegistration start ***
-    WADemoEventData* data1 = [[WADemoEventData alloc]init];
-    data1.eventName = WAEventCompleteRegistration;
-    data1.on = YES;
-    data1.eventNameOn = YES;
-    data1.paramDictOn = YES;
-    WADemoEventParam* param1_1 = [[WADemoEventParam alloc]init];
-    param1_1.paramName = WAEventParameterNameRegistrationMethod;
-    param1_1.paramDesc = @"string";
-    param1_1.paramType = GHWParamTypeString;
-    param1_1.paramDefValue = @"Facebook";
-    [data1.params addObject:param1_1];
-    WADemoEventParam* param1_2 = [[WADemoEventParam alloc]init];
-    param1_2.paramName = WAEventParameterNameGender;
-    param1_2.paramDesc = @"int(0,1,2)";
-    param1_2.paramType = GHWParamTypeInt;
-    [data1.params addObject:param1_2];
-    WADemoEventParam* param1_3 = [[WADemoEventParam alloc]init];
-    param1_3.paramName = WAEventParameterNameAge;
-    param1_3.paramDesc = @"int";
-    param1_3.paramType = GHWParamTypeInt;
-    [data1.params addObject:param1_3];
-    WADemoEventParam* param1_4 = [[WADemoEventParam alloc]init];
-    param1_4.paramName = WAEventParameterNameSuccess;
-    param1_4.paramDesc = @"bool";
-    param1_4.paramType = GHWParamTypeBool;
-    [data1.params addObject:param1_4];
-    [_waEventDataArray addObject:data1];
+//    WADemoEventData* data1 = [[WADemoEventData alloc]init];
+//    data1.eventName = WAEventCompleteRegistration;
+//    data1.on = YES;
+//    data1.eventNameOn = YES;
+//    data1.paramDictOn = YES;
+//    WADemoEventParam* param1_1 = [[WADemoEventParam alloc]init];
+//    param1_1.paramName = WAEventParameterNameRegistrationMethod;
+//    param1_1.paramDesc = @"string";
+//    param1_1.paramType = GHWParamTypeString;
+//    param1_1.paramDefValue = @"Facebook";
+//    [data1.params addObject:param1_1];
+//    WADemoEventParam* param1_2 = [[WADemoEventParam alloc]init];
+//    param1_2.paramName = WAEventParameterNameGender;
+//    param1_2.paramDesc = @"int(0,1,2)";
+//    param1_2.paramType = GHWParamTypeInt;
+//    [data1.params addObject:param1_2];
+//    WADemoEventParam* param1_3 = [[WADemoEventParam alloc]init];
+//    param1_3.paramName = WAEventParameterNameAge;
+//    param1_3.paramDesc = @"int";
+//    param1_3.paramType = GHWParamTypeInt;
+//    [data1.params addObject:param1_3];
+//    WADemoEventParam* param1_4 = [[WADemoEventParam alloc]init];
+//    param1_4.paramName = WAEventParameterNameSuccess;
+//    param1_4.paramDesc = @"bool";
+//    param1_4.paramType = GHWParamTypeBool;
+//    [data1.params addObject:param1_4];
+//    [_waEventDataArray addObject:data1];
     //*** event WAEventCompleteRegistration end ***
     
     
@@ -80,6 +80,11 @@ static NSMutableArray* _waEventDataArray;
     data2.on = YES;
     data2.eventNameOn = YES;
     data2.paramDictOn = YES;
+    WADemoEventParam* param2_1 = [[WADemoEventParam alloc]init];
+//    param2_1.paramName = WAEventParameterNameRevenue;
+    param2_1.paramDesc = @"int";
+    param2_1.paramType = GHWParamTypeInt;
+    [data2.params addObject:param2_1];
     [_waEventDataArray addObject:data2];
     //*** event 2）	WAEventLogin end ***
     
@@ -90,6 +95,11 @@ static NSMutableArray* _waEventDataArray;
     data3.on = YES;
     data3.eventNameOn = YES;
     data3.paramDictOn = YES;
+    WADemoEventParam* param3_1 = [[WADemoEventParam alloc]init];
+//    param3_1.paramName = WAEventParameterNameRevenue;
+    param3_1.paramDesc = @"int";
+    param3_1.paramType = GHWParamTypeInt;
+    [data3.params addObject:param3_1];
     [_waEventDataArray addObject:data3];
     //*** event WAEventInitiatedPayment end ***
     
@@ -135,6 +145,11 @@ static NSMutableArray* _waEventDataArray;
     param4_7.paramDesc = @"int";
     param4_7.paramType = GHWParamTypeInt;
     [data4.params addObject:param4_7];
+    WADemoEventParam* param4_8 = [[WADemoEventParam alloc]init];
+//    param4_8.paramName = WAEventParameterNameRevenue;
+    param4_8.paramDesc = @"int";
+    param4_8.paramType = GHWParamTypeInt;
+    [data4.params addObject:param4_8];
     [_waEventDataArray addObject:data4];
     //*** event WAEventPayment end ***
     
@@ -145,6 +160,11 @@ static NSMutableArray* _waEventDataArray;
     data5.on = YES;
     data5.eventNameOn = YES;
     data5.paramDictOn = YES;
+    WADemoEventParam* param5_1 = [[WADemoEventParam alloc]init];
+//    param5_1.paramName = WAEventParameterNameRevenue;
+    param5_1.paramDesc = @"int";
+    param5_1.paramType = GHWParamTypeInt;
+    [data5.params addObject:param5_1];
     [_waEventDataArray addObject:data5];
     //*** event WAEventInitiatedPurchase end ***
     
@@ -169,7 +189,11 @@ static NSMutableArray* _waEventDataArray;
     param6_3.paramDesc = @"double";
     param6_3.paramType = GHWParamTypeDouble;
     [data6.params addObject:param6_3];
-    
+    WADemoEventParam* param6_4 = [[WADemoEventParam alloc]init];
+//    param6_4.paramName = WAEventParameterNameRevenue;
+    param6_4.paramDesc = @"int";
+    param6_4.paramType = GHWParamTypeInt;
+    [data6.params addObject:param6_4];
     [_waEventDataArray addObject:data6];
     //*** event WAEventPurchase end ***
     
@@ -210,237 +234,242 @@ static NSMutableArray* _waEventDataArray;
     param7_6.paramDesc = @"string";
     param7_6.paramType = GHWParamTypeString;
     [data7.params addObject:param7_6];
+    WADemoEventParam* param7_7 = [[WADemoEventParam alloc]init];
+//    param7_7.paramName = WAEventParameterNameRevenue;
+    param7_7.paramDesc = @"int";
+    param7_7.paramType = GHWParamTypeInt;
+    [data7.params addObject:param7_7];
     [_waEventDataArray addObject:data7];
     //*** event WAEventLevelAchieved end ***
     
     
     //*** event WAEventAddToCart start ***
-    WADemoEventData* data8 = [[WADemoEventData alloc]init];
-    data8.eventName = WAEventAddToCart;
-    data8.on = YES;
-    data8.eventNameOn = YES;
-    data8.paramDictOn = YES;
-    WADemoEventParam* param8_1 = [[WADemoEventParam alloc]init];
-    param8_1.paramName = WAEventParameterNamePrice;
-    param8_1.paramDesc = @"double";
-    param8_1.paramType = GHWParamTypeDouble;
-    [data8.params addObject:param8_1];
-    WADemoEventParam* param8_2 = [[WADemoEventParam alloc]init];
-    param8_2.paramName = WAEventParameterNameContentType;
-    param8_2.paramDesc = @"string";
-    param8_2.paramType = GHWParamTypeString;
-    [data8.params addObject:param8_2];
-    WADemoEventParam* param8_3 = [[WADemoEventParam alloc]init];
-    param8_3.paramName = WAEventParameterNameContentID;
-    param8_3.paramDesc = @"string";
-    param8_3.paramType = GHWParamTypeString;
-    [data8.params addObject:param8_3];
-    WADemoEventParam* param8_4 = [[WADemoEventParam alloc]init];
-    param8_4.paramName = WAEventParameterNameCurrencyType;
-    param8_4.paramDesc = @"string";
-    param8_4.paramType = GHWParamTypeString;
-    param8_4.paramDefValue = @"USD";
-    [data8.params addObject:param8_4];
-    WADemoEventParam* param8_5 = [[WADemoEventParam alloc]init];
-    param8_5.paramName = WAEventParameterNameQuantity;
-    param8_5.paramDesc = @"int";
-    param8_5.paramType = GHWParamTypeInt;
-    [data8.params addObject:param8_5];
-    [_waEventDataArray addObject:data8];
+//    WADemoEventData* data8 = [[WADemoEventData alloc]init];
+//    data8.eventName = WAEventAddToCart;
+//    data8.on = YES;
+//    data8.eventNameOn = YES;
+//    data8.paramDictOn = YES;
+//    WADemoEventParam* param8_1 = [[WADemoEventParam alloc]init];
+//    param8_1.paramName = WAEventParameterNamePrice;
+//    param8_1.paramDesc = @"double";
+//    param8_1.paramType = GHWParamTypeDouble;
+//    [data8.params addObject:param8_1];
+//    WADemoEventParam* param8_2 = [[WADemoEventParam alloc]init];
+//    param8_2.paramName = WAEventParameterNameContentType;
+//    param8_2.paramDesc = @"string";
+//    param8_2.paramType = GHWParamTypeString;
+//    [data8.params addObject:param8_2];
+//    WADemoEventParam* param8_3 = [[WADemoEventParam alloc]init];
+//    param8_3.paramName = WAEventParameterNameContentID;
+//    param8_3.paramDesc = @"string";
+//    param8_3.paramType = GHWParamTypeString;
+//    [data8.params addObject:param8_3];
+//    WADemoEventParam* param8_4 = [[WADemoEventParam alloc]init];
+//    param8_4.paramName = WAEventParameterNameCurrencyType;
+//    param8_4.paramDesc = @"string";
+//    param8_4.paramType = GHWParamTypeString;
+//    param8_4.paramDefValue = @"USD";
+//    [data8.params addObject:param8_4];
+//    WADemoEventParam* param8_5 = [[WADemoEventParam alloc]init];
+//    param8_5.paramName = WAEventParameterNameQuantity;
+//    param8_5.paramDesc = @"int";
+//    param8_5.paramType = GHWParamTypeInt;
+//    [data8.params addObject:param8_5];
+//    [_waEventDataArray addObject:data8];
     //*** event WAEventAddToCart end ***
     
     
     //*** event WAEventAddToWishlist start ***
-    WADemoEventData* data9 = [[WADemoEventData alloc]init];
-    data9.eventName = WAEventAddToWishlist;
-    data9.on = YES;
-    data9.eventNameOn = YES;
-    data9.paramDictOn = YES;
-    WADemoEventParam* param9_1 = [[WADemoEventParam alloc]init];
-    param9_1.paramName = WAEventParameterNamePrice;
-    param9_1.paramDesc = @"double";
-    param9_1.paramType = GHWParamTypeDouble;
-    [data9.params addObject:param9_1];
-    WADemoEventParam* param9_2 = [[WADemoEventParam alloc]init];
-    param9_2.paramName = WAEventParameterNameContentType;
-    param9_2.paramDesc = @"string";
-    param9_2.paramType = GHWParamTypeString;
-    [data9.params addObject:param9_2];
-    WADemoEventParam* param9_3 = [[WADemoEventParam alloc]init];
-    param9_3.paramName = WAEventParameterNameContentID;
-    param9_3.paramDesc = @"string";
-    param9_3.paramType = GHWParamTypeString;
-    [data9.params addObject:param9_3];
-    WADemoEventParam* param9_4 = [[WADemoEventParam alloc]init];
-    param9_4.paramName = WAEventParameterNameCurrencyType;
-    param9_4.paramDesc = @"string";
-    param9_4.paramType = GHWParamTypeString;
-    param9_4.paramDefValue = @"USD";
-    [data9.params addObject:param9_4];
-    WADemoEventParam* param9_5 = [[WADemoEventParam alloc]init];
-    param9_5.paramName = WAEventParameterNameQuantity;
-    param9_5.paramDesc = @"int";
-    param9_5.paramType = GHWParamTypeInt;
-    [data9.params addObject:param9_5];
-    [_waEventDataArray addObject:data9];
+//    WADemoEventData* data9 = [[WADemoEventData alloc]init];
+//    data9.eventName = WAEventAddToWishlist;
+//    data9.on = YES;
+//    data9.eventNameOn = YES;
+//    data9.paramDictOn = YES;
+//    WADemoEventParam* param9_1 = [[WADemoEventParam alloc]init];
+//    param9_1.paramName = WAEventParameterNamePrice;
+//    param9_1.paramDesc = @"double";
+//    param9_1.paramType = GHWParamTypeDouble;
+//    [data9.params addObject:param9_1];
+//    WADemoEventParam* param9_2 = [[WADemoEventParam alloc]init];
+//    param9_2.paramName = WAEventParameterNameContentType;
+//    param9_2.paramDesc = @"string";
+//    param9_2.paramType = GHWParamTypeString;
+//    [data9.params addObject:param9_2];
+//    WADemoEventParam* param9_3 = [[WADemoEventParam alloc]init];
+//    param9_3.paramName = WAEventParameterNameContentID;
+//    param9_3.paramDesc = @"string";
+//    param9_3.paramType = GHWParamTypeString;
+//    [data9.params addObject:param9_3];
+//    WADemoEventParam* param9_4 = [[WADemoEventParam alloc]init];
+//    param9_4.paramName = WAEventParameterNameCurrencyType;
+//    param9_4.paramDesc = @"string";
+//    param9_4.paramType = GHWParamTypeString;
+//    param9_4.paramDefValue = @"USD";
+//    [data9.params addObject:param9_4];
+//    WADemoEventParam* param9_5 = [[WADemoEventParam alloc]init];
+//    param9_5.paramName = WAEventParameterNameQuantity;
+//    param9_5.paramDesc = @"int";
+//    param9_5.paramType = GHWParamTypeInt;
+//    [data9.params addObject:param9_5];
+//    [_waEventDataArray addObject:data9];
     //*** event WAEventAddToWishlist end ***
     
     
     //*** event WAEventSearch start ***
-    WADemoEventData* data10 = [[WADemoEventData alloc]init];
-    data10.eventName = WAEventSearch;
-    data10.on = YES;
-    data10.eventNameOn = YES;
-    data10.paramDictOn = YES;
-    WADemoEventParam* param10_1 = [[WADemoEventParam alloc]init];
-    param10_1.paramName = WAEventParameterNameContentType;
-    param10_1.paramDesc = @"string";
-    param10_1.paramType = GHWParamTypeString;
-    [data10.params addObject:param10_1];
-    WADemoEventParam* param10_2 = [[WADemoEventParam alloc]init];
-    param10_2.paramName = WAEventParameterNameSearchString;
-    param10_2.paramDesc = @"string";
-    param10_2.paramType = GHWParamTypeString;
-    [data10.params addObject:param10_2];
-    WADemoEventParam* param10_3 = [[WADemoEventParam alloc]init];
-    param10_3.paramName = WAEventParameterNameSuccess;
-    param10_3.paramDesc = @"bool";
-    param10_3.paramType = GHWParamTypeBool;
-    [data10.params addObject:param10_3];
-    [_waEventDataArray addObject:data10];
+//    WADemoEventData* data10 = [[WADemoEventData alloc]init];
+//    data10.eventName = WAEventSearch;
+//    data10.on = YES;
+//    data10.eventNameOn = YES;
+//    data10.paramDictOn = YES;
+//    WADemoEventParam* param10_1 = [[WADemoEventParam alloc]init];
+//    param10_1.paramName = WAEventParameterNameContentType;
+//    param10_1.paramDesc = @"string";
+//    param10_1.paramType = GHWParamTypeString;
+//    [data10.params addObject:param10_1];
+//    WADemoEventParam* param10_2 = [[WADemoEventParam alloc]init];
+//    param10_2.paramName = WAEventParameterNameSearchString;
+//    param10_2.paramDesc = @"string";
+//    param10_2.paramType = GHWParamTypeString;
+//    [data10.params addObject:param10_2];
+//    WADemoEventParam* param10_3 = [[WADemoEventParam alloc]init];
+//    param10_3.paramName = WAEventParameterNameSuccess;
+//    param10_3.paramDesc = @"bool";
+//    param10_3.paramType = GHWParamTypeBool;
+//    [data10.params addObject:param10_3];
+//    [_waEventDataArray addObject:data10];
     //*** event WAEventSearch end ***
     
     
     //*** event WAEventSpentCredits start ***
-    WADemoEventData* data11 = [[WADemoEventData alloc]init];
-    data11.eventName = WAEventSearch;
-    data11.on = YES;
-    data11.eventNameOn = YES;
-    data11.paramDictOn = YES;
-    WADemoEventParam* param11_1 = [[WADemoEventParam alloc]init];
-    param11_1.paramName = WAEventParameterNamePrice;
-    param11_1.paramDesc = @"double";
-    param11_1.paramType = GHWParamTypeDouble;
-    [data11.params addObject:param11_1];
-    WADemoEventParam* param11_2 = [[WADemoEventParam alloc]init];
-    param11_2.paramName = WAEventParameterNameContentType;
-    param11_2.paramDesc = @"string";
-    param11_2.paramType = GHWParamTypeString;
-    [data11.params addObject:param11_2];
-    WADemoEventParam* param11_3 = [[WADemoEventParam alloc]init];
-    param11_3.paramName = WAEventParameterNameContentType;
-    param11_3.paramDesc = @"string";
-    param11_3.paramType = GHWParamTypeString;
-    [data11.params addObject:param11_3];
-    [_waEventDataArray addObject:data11];
+//    WADemoEventData* data11 = [[WADemoEventData alloc]init];
+//    data11.eventName = WAEventSearch;
+//    data11.on = YES;
+//    data11.eventNameOn = YES;
+//    data11.paramDictOn = YES;
+//    WADemoEventParam* param11_1 = [[WADemoEventParam alloc]init];
+//    param11_1.paramName = WAEventParameterNamePrice;
+//    param11_1.paramDesc = @"double";
+//    param11_1.paramType = GHWParamTypeDouble;
+//    [data11.params addObject:param11_1];
+//    WADemoEventParam* param11_2 = [[WADemoEventParam alloc]init];
+//    param11_2.paramName = WAEventParameterNameContentType;
+//    param11_2.paramDesc = @"string";
+//    param11_2.paramType = GHWParamTypeString;
+//    [data11.params addObject:param11_2];
+//    WADemoEventParam* param11_3 = [[WADemoEventParam alloc]init];
+//    param11_3.paramName = WAEventParameterNameContentType;
+//    param11_3.paramDesc = @"string";
+//    param11_3.paramType = GHWParamTypeString;
+//    [data11.params addObject:param11_3];
+//    [_waEventDataArray addObject:data11];
     //*** event WAEventSpentCredits end ***
     
     //*** event WAEventAchievementUnlocked start ***
-    WADemoEventData* data12 = [[WADemoEventData alloc]init];
-    data12.eventName = WAEventAchievementUnlocked;
-    data12.on = YES;
-    data12.eventNameOn = YES;
-    data12.paramDictOn = YES;
-    WADemoEventParam* param12_1 = [[WADemoEventParam alloc]init];
-    param12_1.paramName = WAEventParameterNameDescription;
-    param12_1.paramDesc = @"string";
-    param12_1.paramType = GHWParamTypeString;
-    [data12.params addObject:param12_1];
-    [_waEventDataArray addObject:data12];
+//    WADemoEventData* data12 = [[WADemoEventData alloc]init];
+//    data12.eventName = WAEventAchievementUnlocked;
+//    data12.on = YES;
+//    data12.eventNameOn = YES;
+//    data12.paramDictOn = YES;
+//    WADemoEventParam* param12_1 = [[WADemoEventParam alloc]init];
+//    param12_1.paramName = WAEventParameterNameDescription;
+//    param12_1.paramDesc = @"string";
+//    param12_1.paramType = GHWParamTypeString;
+//    [data12.params addObject:param12_1];
+//    [_waEventDataArray addObject:data12];
     //*** event WAEventAchievementUnlocked end ***
     
     
     //*** event WAEventContentView start ***
-    WADemoEventData* data13 = [[WADemoEventData alloc]init];
-    data13.eventName = WAEventContentView;
-    data13.on = YES;
-    data13.eventNameOn = YES;
-    data13.paramDictOn = YES;
-    WADemoEventParam* param13_1 = [[WADemoEventParam alloc]init];
-    param13_1.paramName = WAEventParameterNamePrice;
-    param13_1.paramDesc = @"double";
-    param13_1.paramType = GHWParamTypeDouble;
-    [data13.params addObject:param13_1];
-    WADemoEventParam* param13_2 = [[WADemoEventParam alloc]init];
-    param13_2.paramName = WAEventParameterNameContentType;
-    param13_2.paramDesc = @"string";
-    param13_2.paramType = GHWParamTypeString;
-    [data13.params addObject:param13_2];
-    WADemoEventParam* param13_3 = [[WADemoEventParam alloc]init];
-    param13_3.paramName = WAEventParameterNameContentID;
-    param13_3.paramDesc = @"string";
-    param13_3.paramType = GHWParamTypeString;
-    [data13.params addObject:param13_3];
-    WADemoEventParam* param13_4 = [[WADemoEventParam alloc]init];
-    param13_4.paramName = WAEventParameterNameCurrencyType;
-    param13_4.paramDesc = @"string";
-    param13_4.paramType = GHWParamTypeString;
-    param13_4.paramDefValue = @"USD";
-    [data13.params addObject:param13_4];
-    [_waEventDataArray addObject:data13];
+//    WADemoEventData* data13 = [[WADemoEventData alloc]init];
+//    data13.eventName = WAEventContentView;
+//    data13.on = YES;
+//    data13.eventNameOn = YES;
+//    data13.paramDictOn = YES;
+//    WADemoEventParam* param13_1 = [[WADemoEventParam alloc]init];
+//    param13_1.paramName = WAEventParameterNamePrice;
+//    param13_1.paramDesc = @"double";
+//    param13_1.paramType = GHWParamTypeDouble;
+//    [data13.params addObject:param13_1];
+//    WADemoEventParam* param13_2 = [[WADemoEventParam alloc]init];
+//    param13_2.paramName = WAEventParameterNameContentType;
+//    param13_2.paramDesc = @"string";
+//    param13_2.paramType = GHWParamTypeString;
+//    [data13.params addObject:param13_2];
+//    WADemoEventParam* param13_3 = [[WADemoEventParam alloc]init];
+//    param13_3.paramName = WAEventParameterNameContentID;
+//    param13_3.paramDesc = @"string";
+//    param13_3.paramType = GHWParamTypeString;
+//    [data13.params addObject:param13_3];
+//    WADemoEventParam* param13_4 = [[WADemoEventParam alloc]init];
+//    param13_4.paramName = WAEventParameterNameCurrencyType;
+//    param13_4.paramDesc = @"string";
+//    param13_4.paramType = GHWParamTypeString;
+//    param13_4.paramDefValue = @"USD";
+//    [data13.params addObject:param13_4];
+//    [_waEventDataArray addObject:data13];
     //*** event WAEventContentView end ***
     
     
     //*** event WAEventShare start ***
-    WADemoEventData* data14 = [[WADemoEventData alloc]init];
-    data14.eventName = WAEventShare;
-    data14.on = YES;
-    data14.eventNameOn = YES;
-    data14.paramDictOn = YES;
-    WADemoEventParam* param14_1 = [[WADemoEventParam alloc]init];
-    param14_1.paramName = WAEventParameterNameDescription;
-    param14_1.paramDesc = @"string";
-    param14_1.paramType = GHWParamTypeString;
-    [data14.params addObject:param14_1];
-    [_waEventDataArray addObject:data14];
+//    WADemoEventData* data14 = [[WADemoEventData alloc]init];
+//    data14.eventName = WAEventShare;
+//    data14.on = YES;
+//    data14.eventNameOn = YES;
+//    data14.paramDictOn = YES;
+//    WADemoEventParam* param14_1 = [[WADemoEventParam alloc]init];
+//    param14_1.paramName = WAEventParameterNameDescription;
+//    param14_1.paramDesc = @"string";
+//    param14_1.paramType = GHWParamTypeString;
+//    [data14.params addObject:param14_1];
+//    [_waEventDataArray addObject:data14];
     //*** event WAEventShare end ***
     
     
     //*** event WAEventInvite start ***
-    WADemoEventData* data15 = [[WADemoEventData alloc]init];
-    data15.eventName = WAEventShare;
-    data15.on = YES;
-    data15.eventNameOn = YES;
-    data15.paramDictOn = YES;
-    WADemoEventParam* param15_1 = [[WADemoEventParam alloc]init];
-    param15_1.paramName = WAEventParameterNameDescription;
-    param15_1.paramDesc = @"string";
-    param15_1.paramType = GHWParamTypeString;
-    [data15.params addObject:param15_1];
-    [_waEventDataArray addObject:data15];
+//    WADemoEventData* data15 = [[WADemoEventData alloc]init];
+//    data15.eventName = WAEventShare;
+//    data15.on = YES;
+//    data15.eventNameOn = YES;
+//    data15.paramDictOn = YES;
+//    WADemoEventParam* param15_1 = [[WADemoEventParam alloc]init];
+//    param15_1.paramName = WAEventParameterNameDescription;
+//    param15_1.paramDesc = @"string";
+//    param15_1.paramType = GHWParamTypeString;
+//    [data15.params addObject:param15_1];
+//    [_waEventDataArray addObject:data15];
     //*** event WAEventShare end ***
     
     
     //*** event WAEventReEngage start ***
-    WADemoEventData* data16 = [[WADemoEventData alloc]init];
-    data16.eventName = WAEventShare;
-    data16.on = YES;
-    data16.eventNameOn = YES;
-    data16.paramDictOn = YES;
-    WADemoEventParam* param16_1 = [[WADemoEventParam alloc]init];
-    param16_1.paramName = WAEventParameterNameDescription;
-    param16_1.paramDesc = @"string";
-    param16_1.paramType = GHWParamTypeString;
-    [data16.params addObject:param16_1];
-    [_waEventDataArray addObject:data16];
+//    WADemoEventData* data16 = [[WADemoEventData alloc]init];
+//    data16.eventName = WAEventShare;
+//    data16.on = YES;
+//    data16.eventNameOn = YES;
+//    data16.paramDictOn = YES;
+//    WADemoEventParam* param16_1 = [[WADemoEventParam alloc]init];
+//    param16_1.paramName = WAEventParameterNameDescription;
+//    param16_1.paramDesc = @"string";
+//    param16_1.paramType = GHWParamTypeString;
+//    [data16.params addObject:param16_1];
+//    [_waEventDataArray addObject:data16];
     //*** event WAEventReEngage end ***
     
     //*** event WAEventUpdate start ***
-    WADemoEventData* data17 = [[WADemoEventData alloc]init];
-    data17.eventName = WAEventShare;
-    data17.on = YES;
-    data17.eventNameOn = YES;
-    data17.paramDictOn = YES;
-    [_waEventDataArray addObject:data17];
+//    WADemoEventData* data17 = [[WADemoEventData alloc]init];
+//    data17.eventName = WAEventShare;
+//    data17.on = YES;
+//    data17.eventNameOn = YES;
+//    data17.paramDictOn = YES;
+//    [_waEventDataArray addObject:data17];
     //*** event WAEventUpdate end ***
     
     //*** event WAEventOpenedFromPushNotification start ***
-    WADemoEventData* data18 = [[WADemoEventData alloc]init];
-    data18.eventName = WAEventShare;
-    data18.on = YES;
-    data18.eventNameOn = YES;
-    data18.paramDictOn = YES;
-    [_waEventDataArray addObject:data18];
+//    WADemoEventData* data18 = [[WADemoEventData alloc]init];
+//    data18.eventName = WAEventShare;
+//    data18.on = YES;
+//    data18.eventNameOn = YES;
+//    data18.paramDictOn = YES;
+//    [_waEventDataArray addObject:data18];
     //*** event WAEventOpenedFromPushNotification end ***
     
     
@@ -503,6 +532,11 @@ static NSMutableArray* _waEventDataArray;
     param19_10.paramDesc = @"int";
     param19_10.paramType = GHWParamTypeInt;
     [data19.params addObject:param19_10];
+    WADemoEventParam* param19_11 = [[WADemoEventParam alloc]init];
+//    param19_11.paramName = WAEventParameterNameRevenue;
+    param19_11.paramDesc = @"int";
+    param19_11.paramType = GHWParamTypeInt;
+    [data19.params addObject:param19_11];
     [_waEventDataArray addObject:data19];
     //*** event WAEventUserCreate end ***
     
@@ -528,6 +562,11 @@ static NSMutableArray* _waEventDataArray;
     param20_3.paramDesc = @"string";
     param20_3.paramType = GHWParamTypeString;
     [data20.params addObject:param20_3];
+    WADemoEventParam* param20_4 = [[WADemoEventParam alloc]init];
+//    param20_4.paramName = WAEventParameterNameRevenue;
+    param20_4.paramDesc = @"int";
+    param20_4.paramType = GHWParamTypeInt;
+    [data20.params addObject:param20_4];
     [_waEventDataArray addObject:data20];
     //*** event WAEventOpenedFromPushNotification end ***
     
@@ -559,6 +598,11 @@ static NSMutableArray* _waEventDataArray;
     param21_4.paramDesc = @"int";
     param21_4.paramType = GHWParamTypeInt;
     [data21.params addObject:param21_4];
+    WADemoEventParam* param21_5 = [[WADemoEventParam alloc]init];
+//    param21_5.paramName = WAEventParameterNameRevenue;
+    param21_5.paramDesc = @"int";
+    param21_5.paramType = GHWParamTypeInt;
+    [data21.params addObject:param21_5];
     [_waEventDataArray addObject:data21];
     //*** event WAEventGoldUpdate end ***
     
@@ -588,7 +632,11 @@ static NSMutableArray* _waEventDataArray;
     param22_4.paramDesc = @"int(1,2,3,4)";
     param22_4.paramType = GHWParamTypeString;
     [data22.params addObject:param22_4];
-    
+    WADemoEventParam* param22_5 = [[WADemoEventParam alloc]init];
+//    param22_5.paramName = WAEventParameterNameRevenue;
+    param22_5.paramDesc = @"int";
+    param22_5.paramType = GHWParamTypeInt;
+    [data22.params addObject:param22_5];
     [_waEventDataArray addObject:data22];
     //*** event WAEventTaskUpdate end ***
     
@@ -604,6 +652,16 @@ static NSMutableArray* _waEventDataArray;
     param23_1.paramDesc = @"int(0,1)";
     param23_1.paramType = GHWParamTypeInt;
     [data23.params addObject:param23_1];
+    WADemoEventParam* param23_2 = [[WADemoEventParam alloc]init];
+    param23_2.paramName = WAEventParameterNameServerId;
+    param23_2.paramDesc = @"string";
+    param23_2.paramType = GHWParamTypeString;
+    [data23.params addObject:param23_2];
+    WADemoEventParam* param23_3 = [[WADemoEventParam alloc]init];
+//    param23_3.paramName = WAEventParameterNameRevenue;
+    param23_3.paramDesc = @"int";
+    param23_3.paramType = GHWParamTypeInt;
+    [data23.params addObject:param23_3];
     [_waEventDataArray addObject:data23];
     //*** event WAEventUserImport end ***
 

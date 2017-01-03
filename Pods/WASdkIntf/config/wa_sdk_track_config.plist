@@ -5,7 +5,7 @@
 	<key>FACEBOOK</key>
 	<dict>
 		<key>Enabled</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>CHARTBOOST</key>
 	<dict>
@@ -14,69 +14,16 @@
 		<key>AppSignature</key>
 		<string>0964f36276dcdc991eee51723abf86191668a9ec</string>
 		<key>Enabled</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>WINGA</key>
 	<dict>
 		<key>ChannelId</key>
 		<string>AppleStore</string>
 		<key>URL</key>
-		<string>https://api.wingsdk.com/data/</string>
+		<string>https://sdkapi.gamehollywood.com/data/</string>
 		<key>Enabled</key>
 		<true/>
-		<key>Mapping</key>
-		<dict>
-			<key>ghw_launch</key>
-			<string></string>
-			<key>ghw_startup</key>
-			<string></string>
-			<key>ghw_complete_registration</key>
-			<string></string>
-			<key>ghw_login</key>
-			<string></string>
-			<key>ghw_initiated_payment</key>
-			<string></string>
-			<key>ghw_payment</key>
-			<string></string>
-			<key>ghw_initiated_purchase</key>
-			<string></string>
-			<key>ghw_purchase</key>
-			<string></string>
-			<key>ghw_heartbeat</key>
-			<string></string>
-			<key>ghw_level_achieved</key>
-			<string></string>
-			<key>ghw_add_to_cart</key>
-			<string></string>
-			<key>ghw_add_to_wishlist</key>
-			<string></string>
-			<key>ghw_search</key>
-			<string></string>
-			<key>ghw_spent_credits</key>
-			<string></string>
-			<key>ghw_achievement_unlocked</key>
-			<string></string>
-			<key>ghw_content_view</key>
-			<string></string>
-			<key>ghw_share</key>
-			<string></string>
-			<key>ghw_invite</key>
-			<string></string>
-			<key>ghw_re_engage</key>
-			<string></string>
-			<key>ghw_update</key>
-			<string></string>
-			<key>ghw_user_create</key>
-			<string></string>
-			<key>ghw_user_info_update</key>
-			<string></string>
-			<key>ghw_task_update</key>
-			<string></string>
-			<key>ghw_gold_update</key>
-			<string></string>
-			<key>ghw_opened_from_push_notification</key>
-			<string></string>
-		</dict>
 	</dict>
 	<key>APPSFLYER</key>
 	<dict>

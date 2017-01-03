@@ -10,11 +10,11 @@
 		</data>
 		<key>Headers/WAWebPayImpl.h</key>
 		<data>
-		wfH2hv1QpU4uBMxi9x8//Ju6GNs=
+		tUrdWrwmZ8bOquN5Xjv7iSSrzmk=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MKjq1qtgNhtSKujerKpG+kyu5vM=
+		HkPIj80cb68oHPvmZ0BLuEeTgS4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -24,17 +24,38 @@
 	<key>files2</key>
 	<dict>
 		<key>Headers/WAWebPay.h</key>
-		<data>
-		zX0UPs1pISnFR37Cpe9JdUQP0pY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			zX0UPs1pISnFR37Cpe9JdUQP0pY=
+			</data>
+			<key>hash2</key>
+			<data>
+			rOIriDQS68P2Mn8lairbW2MEAPW4gaFTk0CcpLjPf2c=
+			</data>
+		</dict>
 		<key>Headers/WAWebPayImpl.h</key>
-		<data>
-		wfH2hv1QpU4uBMxi9x8//Ju6GNs=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			tUrdWrwmZ8bOquN5Xjv7iSSrzmk=
+			</data>
+			<key>hash2</key>
+			<data>
+			yRn4JQD1OXaWe+lfJ+4JGOGnnfRsDNo3HPOLHkwmLT8=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		XrvS2zzfsxlRSlo8hgsT71ckq34=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			XrvS2zzfsxlRSlo8hgsT71ckq34=
+			</data>
+			<key>hash2</key>
+			<data>
+			WNoxo0rqt0aHYQAuMqV75LAaIjF9geYtlux9M5EtE+o=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
@@ -53,6 +74,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -98,6 +124,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>
