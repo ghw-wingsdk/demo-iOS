@@ -30,7 +30,9 @@
 
 -(void)applicationDidBecomeActive:(UIApplication *)application;
 
-- (void)applicationDidEnterBackground:(UIApplication *)application;
+-(void)applicationWillEnterForeground:(UIApplication *)application;
+
+-(void)applicationDidEnterBackground:(UIApplication *)application;
 
 -(BOOL)application:(UIApplication *)application
            openURL:(NSURL *)url

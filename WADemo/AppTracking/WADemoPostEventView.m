@@ -271,7 +271,23 @@
     }
     
     event.eventNameDict = mEventNameDict;
-    event.valueDict = @{WA_PLATFORM_APPSFLYER:[NSNumber numberWithInt:[_afParam.value doubleValue]],WA_PLATFORM_CHARTBOOST:[NSNumber numberWithInt:[_cbParam.value doubleValue]],WA_PLATFORM_FACEBOOK:[NSNumber numberWithInt:[_fbParam.value doubleValue]],WA_PLATFORM_WINGA:[NSNumber numberWithInt:[_ghwParam.value doubleValue]]};
+    NSMutableDictionary* valueDict = [NSMutableDictionary dictionary];
+    
+    if (![_afParam.value isEqualToString:@""]) {
+        [valueDict setObject:[NSNumber numberWithDouble:[_afParam.value doubleValue]] forKey:WA_PLATFORM_APPSFLYER];
+    }
+    if (![_cbParam.value isEqualToString:@""]) {
+        [valueDict setObject:[NSNumber numberWithDouble:[_cbParam.value doubleValue]] forKey:WA_PLATFORM_CHARTBOOST];
+    }
+    if (![_fbParam.value isEqualToString:@""]) {
+        [valueDict setObject:[NSNumber numberWithDouble:[_fbParam.value doubleValue]] forKey:WA_PLATFORM_FACEBOOK];
+    }
+    if (![_ghwParam.value isEqualToString:@""]) {
+        [valueDict setObject:[NSNumber numberWithDouble:[_ghwParam.value doubleValue]] forKey:WA_PLATFORM_WINGA];
+    }
+    //    event.valueDict = @{WA_PLATFORM_APPSFLYER:[NSNumber numberWithDouble:[_afParam.value doubleValue]],WA_PLATFORM_CHARTBOOST:[NSNumber numberWithDouble:[_cbParam.value doubleValue]],WA_PLATFORM_FACEBOOK:[NSNumber numberWithDouble:[_fbParam.value doubleValue]],WA_PLATFORM_WINGA:[NSNumber numberWithDouble:[_ghwParam.value doubleValue]]};
+    
+    event.valueDict = valueDict;
     
     
     NSMutableDictionary* mParamValueDict = [NSMutableDictionary dictionary];

@@ -211,12 +211,17 @@
 /*!
  @discussion 处理UIApplicationDelegate的方法[- (void)applicationDidBecomeActive:(UIApplication *)application]传递过来的参数。
  */
-+ (void)applicationDidBecomeActive:(UIApplication *)application;
++(void)applicationDidBecomeActive:(UIApplication *)application;
+
+/*!
+ @discussion 处理UIApplicationDelegate的方法[- (void)applicationWillEnterForeground:(UIApplication *)application]传递过来的参数。
+ */
++(void)applicationWillEnterForeground:(UIApplication *)application;
 
 /*!
  @discussion 处理UIApplicationDelegate的方法[- (void)applicationDidEnterBackground:(UIApplication *)application]传递过来的参数。
  */
-+ (void)applicationDidEnterBackground:(UIApplication *)application;
++(void)applicationDidEnterBackground:(UIApplication *)application;
 
 /*!
  @discussion 处理UIApplicationDelegate的方法[-(BOOL)application:(UIApplication *)application

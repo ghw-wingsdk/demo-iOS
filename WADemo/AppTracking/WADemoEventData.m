@@ -80,11 +80,6 @@ static NSMutableArray* _waEventDataArray;
     data2.on = YES;
     data2.eventNameOn = YES;
     data2.paramDictOn = YES;
-    WADemoEventParam* param2_1 = [[WADemoEventParam alloc]init];
-//    param2_1.paramName = WAEventParameterNameRevenue;
-    param2_1.paramDesc = @"int";
-    param2_1.paramType = GHWParamTypeInt;
-    [data2.params addObject:param2_1];
     [_waEventDataArray addObject:data2];
     //*** event 2）	WAEventLogin end ***
     
@@ -95,11 +90,6 @@ static NSMutableArray* _waEventDataArray;
     data3.on = YES;
     data3.eventNameOn = YES;
     data3.paramDictOn = YES;
-    WADemoEventParam* param3_1 = [[WADemoEventParam alloc]init];
-//    param3_1.paramName = WAEventParameterNameRevenue;
-    param3_1.paramDesc = @"int";
-    param3_1.paramType = GHWParamTypeInt;
-    [data3.params addObject:param3_1];
     [_waEventDataArray addObject:data3];
     //*** event WAEventInitiatedPayment end ***
     
@@ -145,11 +135,6 @@ static NSMutableArray* _waEventDataArray;
     param4_7.paramDesc = @"int";
     param4_7.paramType = GHWParamTypeInt;
     [data4.params addObject:param4_7];
-    WADemoEventParam* param4_8 = [[WADemoEventParam alloc]init];
-//    param4_8.paramName = WAEventParameterNameRevenue;
-    param4_8.paramDesc = @"int";
-    param4_8.paramType = GHWParamTypeInt;
-    [data4.params addObject:param4_8];
     [_waEventDataArray addObject:data4];
     //*** event WAEventPayment end ***
     
@@ -160,11 +145,6 @@ static NSMutableArray* _waEventDataArray;
     data5.on = YES;
     data5.eventNameOn = YES;
     data5.paramDictOn = YES;
-    WADemoEventParam* param5_1 = [[WADemoEventParam alloc]init];
-//    param5_1.paramName = WAEventParameterNameRevenue;
-    param5_1.paramDesc = @"int";
-    param5_1.paramType = GHWParamTypeInt;
-    [data5.params addObject:param5_1];
     [_waEventDataArray addObject:data5];
     //*** event WAEventInitiatedPurchase end ***
     
@@ -189,11 +169,6 @@ static NSMutableArray* _waEventDataArray;
     param6_3.paramDesc = @"double";
     param6_3.paramType = GHWParamTypeDouble;
     [data6.params addObject:param6_3];
-    WADemoEventParam* param6_4 = [[WADemoEventParam alloc]init];
-//    param6_4.paramName = WAEventParameterNameRevenue;
-    param6_4.paramDesc = @"int";
-    param6_4.paramType = GHWParamTypeInt;
-    [data6.params addObject:param6_4];
     [_waEventDataArray addObject:data6];
     //*** event WAEventPurchase end ***
     
@@ -234,11 +209,6 @@ static NSMutableArray* _waEventDataArray;
     param7_6.paramDesc = @"string";
     param7_6.paramType = GHWParamTypeString;
     [data7.params addObject:param7_6];
-    WADemoEventParam* param7_7 = [[WADemoEventParam alloc]init];
-//    param7_7.paramName = WAEventParameterNameRevenue;
-    param7_7.paramDesc = @"int";
-    param7_7.paramType = GHWParamTypeInt;
-    [data7.params addObject:param7_7];
     [_waEventDataArray addObject:data7];
     //*** event WAEventLevelAchieved end ***
     
@@ -532,11 +502,6 @@ static NSMutableArray* _waEventDataArray;
     param19_10.paramDesc = @"int";
     param19_10.paramType = GHWParamTypeInt;
     [data19.params addObject:param19_10];
-    WADemoEventParam* param19_11 = [[WADemoEventParam alloc]init];
-//    param19_11.paramName = WAEventParameterNameRevenue;
-    param19_11.paramDesc = @"int";
-    param19_11.paramType = GHWParamTypeInt;
-    [data19.params addObject:param19_11];
     [_waEventDataArray addObject:data19];
     //*** event WAEventUserCreate end ***
     
@@ -562,11 +527,6 @@ static NSMutableArray* _waEventDataArray;
     param20_3.paramDesc = @"string";
     param20_3.paramType = GHWParamTypeString;
     [data20.params addObject:param20_3];
-    WADemoEventParam* param20_4 = [[WADemoEventParam alloc]init];
-//    param20_4.paramName = WAEventParameterNameRevenue;
-    param20_4.paramDesc = @"int";
-    param20_4.paramType = GHWParamTypeInt;
-    [data20.params addObject:param20_4];
     [_waEventDataArray addObject:data20];
     //*** event WAEventOpenedFromPushNotification end ***
     
@@ -598,11 +558,6 @@ static NSMutableArray* _waEventDataArray;
     param21_4.paramDesc = @"int";
     param21_4.paramType = GHWParamTypeInt;
     [data21.params addObject:param21_4];
-    WADemoEventParam* param21_5 = [[WADemoEventParam alloc]init];
-//    param21_5.paramName = WAEventParameterNameRevenue;
-    param21_5.paramDesc = @"int";
-    param21_5.paramType = GHWParamTypeInt;
-    [data21.params addObject:param21_5];
     [_waEventDataArray addObject:data21];
     //*** event WAEventGoldUpdate end ***
     
@@ -632,11 +587,6 @@ static NSMutableArray* _waEventDataArray;
     param22_4.paramDesc = @"int(1,2,3,4)";
     param22_4.paramType = GHWParamTypeString;
     [data22.params addObject:param22_4];
-    WADemoEventParam* param22_5 = [[WADemoEventParam alloc]init];
-//    param22_5.paramName = WAEventParameterNameRevenue;
-    param22_5.paramDesc = @"int";
-    param22_5.paramType = GHWParamTypeInt;
-    [data22.params addObject:param22_5];
     [_waEventDataArray addObject:data22];
     //*** event WAEventTaskUpdate end ***
     
@@ -657,11 +607,6 @@ static NSMutableArray* _waEventDataArray;
     param23_2.paramDesc = @"string";
     param23_2.paramType = GHWParamTypeString;
     [data23.params addObject:param23_2];
-    WADemoEventParam* param23_3 = [[WADemoEventParam alloc]init];
-//    param23_3.paramName = WAEventParameterNameRevenue;
-    param23_3.paramDesc = @"int";
-    param23_3.paramType = GHWParamTypeInt;
-    [data23.params addObject:param23_3];
     [_waEventDataArray addObject:data23];
     //*** event WAEventUserImport end ***
 
