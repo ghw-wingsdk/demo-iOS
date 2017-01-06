@@ -62,7 +62,9 @@
     WADemoGiftListView* giftList = [[WADemoGiftListView alloc]init];
     giftList.hasBackBtn = YES;
     [vc.view addSubview:giftList];
-    [giftList moveIn];
+    [giftList moveIn:^{
+        [giftList getGiftList];
+    }];
 }
 
 - (void)getFriendList{
