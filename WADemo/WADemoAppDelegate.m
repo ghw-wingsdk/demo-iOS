@@ -8,6 +8,7 @@
 
 #import "WADemoAppDelegate.h"
 #import <WASdkIntf/WASdkIntf.h>
+#import <WACommon/WACommon.h>
 @interface WADemoAppDelegate ()
 
 @end
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [WAHelper deleteClientId];
+    [WAHelper setClientId:@"20170106_OOXX_01"];
     [WACoreProxy init];
     [WACoreProxy setDebugMode:YES];
     [WACoreProxy initAppEventTracker];

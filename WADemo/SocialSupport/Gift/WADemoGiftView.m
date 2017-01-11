@@ -54,7 +54,7 @@
     WADemoFBGiftView* fbGiftView = [[WADemoFBGiftView alloc]init];
     fbGiftView.hasBackBtn = YES;
     [vc.view addSubview:fbGiftView];
-    [fbGiftView moveIn];
+    [fbGiftView moveIn:nil];
 }
 
 -(void)vk{
@@ -62,6 +62,6 @@
     WADemoVKGiftView* vkGiftView = [[WADemoVKGiftView alloc]init];
     vkGiftView.hasBackBtn = YES;
     [vc.view addSubview:vkGiftView];
-    [vkGiftView moveIn];
+    [vkGiftView moveIn:nil];
 }
 @end

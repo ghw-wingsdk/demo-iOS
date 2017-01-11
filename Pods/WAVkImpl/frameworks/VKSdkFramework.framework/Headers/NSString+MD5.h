@@ -22,8 +22,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (VKSMD5)
+@interface NSString (MD5)
 
-- (NSString *)vks_md5;
+- (NSString *)MD5;
 
 @end

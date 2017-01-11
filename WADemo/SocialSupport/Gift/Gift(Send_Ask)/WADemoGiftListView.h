@@ -9,5 +9,5 @@
 #import "WADemoNaviView.h"
 #import <WASdkIntf/WASdkIntf.h>
 @interface WADemoGiftListView : WADemoNaviView
-
+-(void)getGiftList;
 @end

@@ -18,6 +18,6 @@
 @property(nonatomic,strong)WADemoScrollView* scrollView;
 -(instancetype)initWithBtns:(NSMutableArray *)btns btnLayout:(NSMutableArray *)btnLayout;
 -(void)initUI;
--(void)moveIn;
+-(void)moveIn:(void (^)(void))finishedBlock;
 -(void)removeView;
 @end

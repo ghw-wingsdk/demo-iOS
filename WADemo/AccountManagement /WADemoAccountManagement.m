@@ -205,7 +205,7 @@
     WADemoAccountSwitch* acctSwitch = [[WADemoAccountSwitch alloc]init];
     acctSwitch.hasBackBtn = YES;
     [vc.view addSubview:acctSwitch];
-    [acctSwitch moveIn];
+    [acctSwitch moveIn:nil];
 }
 
 //查询已绑定账户

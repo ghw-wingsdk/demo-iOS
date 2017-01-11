@@ -14,9 +14,9 @@ PODS:
   - WASdkImpl (3.6.1):
     - WASdkIntf (~> 3.6.1)
   - WASdkIntf (3.6.1)
-  - WAVkImpl (3.6.1):
-    - WASdkImpl (~> 3.6.1)
-    - WASdkIntf (~> 3.6.1)
+  - WAVkImpl (3.6.0):
+    - WASdkImpl (~> 3.6.0)
+    - WASdkIntf (~> 3.6.0)
   - WAWebPayImpl (3.6.1):
     - WASdkImpl (~> 3.6.1)
     - WASdkIntf (~> 3.6.1)
@@ -28,7 +28,7 @@ DEPENDENCIES:
   - WAFbImpl (~> 3.6.1)
   - WASdkImpl (~> 3.6.1)
   - WASdkIntf (~> 3.6.1)
-  - WAVkImpl (~> 3.6.1)
+  - WAVkImpl (~> 3.6.0)
   - WAWebPayImpl (~> 3.6.1)
 
 SPEC CHECKSUMS:
@@ -38,9 +38,9 @@ SPEC CHECKSUMS:
   WAFbImpl: a80e5e666a4124d95a24f1a56873176ab97f1481
   WASdkImpl: 9f4024b8fc27fe84ace303fcf9984f1390c35020
   WASdkIntf: a406ec39c09566ec3b5933a0eecdddb20d883b2d
-  WAVkImpl: d03826105961a07830ae1352dd155aa1f1b1f501
+  WAVkImpl: e0464796edcd1841e79c6bc487f4a0aaaa229986
   WAWebPayImpl: 5adae5e35cf192f269ea1ab220c18af31b062542
 
-PODFILE CHECKSUM: 0da4282f968449c75d6b467783eeec9e6cf688cc
+PODFILE CHECKSUM: b50b5801c3754650aa50ba5ee8dad1cfb2368a5e
 
 COCOAPODS: 1.1.1

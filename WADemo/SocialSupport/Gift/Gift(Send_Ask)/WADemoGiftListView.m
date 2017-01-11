@@ -19,7 +19,7 @@
         //添加界面旋转通知
         [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
-        [self getGiftList];
+//        [self getGiftList];
     }
     return self;
 }
@@ -27,6 +27,7 @@
 -(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
     [self setNeedsLayout];
 }
+
 
 -(void)initBtnAndLayout{
     NSMutableArray* btns = [NSMutableArray array];

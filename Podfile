@@ -19,7 +19,7 @@ pod 'WAAfImpl', '~> 3.6.1'
 pod 'WAApImpl', '~> 3.6.1'
 pod 'WACbImpl', '~> 3.6.1'
 pod 'WAFbImpl', '~> 3.6.1'
-pod 'WAVkImpl', '~> 3.6.1'
+pod 'WAVkImpl', '~> 3.6.0'
 pod 'WAWebPayImpl', '~> 3.6.1'
 
 end

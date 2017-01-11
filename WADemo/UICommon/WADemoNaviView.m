@@ -183,7 +183,7 @@
     
 }
 
--(void)moveIn{
+-(void)moveIn:(void (^)(void))finishedBlock{
     __block CGRect frame = self.frame;
     frame.origin.x = [UIScreen mainScreen].bounds.size.width;
     self.frame = frame;
@@ -191,6 +191,9 @@
     [UIView animateWithDuration:.2 animations:^{
         frame.origin.x = 0;
         weakSelf.frame = frame;
+        if (finishedBlock) {
+            finishedBlock();
+        }
     }];
 }
 

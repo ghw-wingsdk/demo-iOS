@@ -81,7 +81,7 @@
             groupView.groups = groups;
             groupView.hasBackBtn = YES;
             [vc.view addSubview:groupView];
-            [groupView moveIn];
+            [groupView moveIn:nil];
         }else{
             WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"失败" message:error.description cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
             [alert show];
@@ -100,7 +100,7 @@
             groupView.groups = groups;
             groupView.hasBackBtn = YES;
             [vc.view addSubview:groupView];
-            [groupView moveIn];
+            [groupView moveIn:nil];
         }else{
             WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"失败" message:error.description cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
             [alert show];
@@ -119,7 +119,7 @@
             groupView.groups = groups;
             groupView.hasBackBtn = YES;
             [vc.view addSubview:groupView];
-            [groupView moveIn];
+            [groupView moveIn:nil];
         }else{
             WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"失败" message:error.description cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
             [alert show];

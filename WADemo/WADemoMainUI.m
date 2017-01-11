@@ -127,7 +127,7 @@
     WADemoLoginUI* loginUI = [[WADemoLoginUI alloc]init];
     loginUI.hasBackBtn = YES;
     [vc.view addSubview:loginUI];
-    [loginUI moveIn];
+    [loginUI moveIn:nil];
 }
 
 //账号管理
@@ -136,7 +136,7 @@
     WADemoAccountManagement* acctMgmt = [[WADemoAccountManagement alloc]init];
     acctMgmt.hasBackBtn = YES;
     [vc.view addSubview:acctMgmt];
-    [acctMgmt moveIn];
+    [acctMgmt moveIn:nil];
 }
 //应用内支付
 -(void)iap{
@@ -144,7 +144,7 @@
     WADemoIapView* productList = [[WADemoIapView alloc]init];
     productList.hasBackBtn = YES;
     [vc.view addSubview:productList];
-    [productList moveIn];
+    [productList moveIn:nil];
 }
 //数据收集
 -(void)appTracking{
@@ -152,7 +152,7 @@
     WADemoAppTrackingView* appTrackView = [[WADemoAppTrackingView alloc]init];
     appTrackView.hasBackBtn = YES;
     [vc.view addSubview:appTrackView];
-    [appTrackView moveIn];
+    [appTrackView moveIn:nil];
 }
 //facebook分享
 -(void)facebookShare{
@@ -160,7 +160,7 @@
     WADemoFBShareView* fbShareView = [[WADemoFBShareView alloc]init];
     fbShareView.hasBackBtn = YES;
     [vc.view addSubview:fbShareView];
-    [fbShareView moveIn];
+    [fbShareView moveIn:nil];
 }
 //facebook邀请
 -(void)facebookInvite{
@@ -173,7 +173,7 @@
     WADemoInvite* inviteView = [[WADemoInvite alloc]init];
     inviteView.hasBackBtn = YES;
     [vc.view addSubview:inviteView];
-    [inviteView moveIn];
+    [inviteView moveIn:nil];
 }
 
 //礼物
@@ -182,7 +182,7 @@
     WADemoGiftView* giftView = [[WADemoGiftView alloc]init];
     giftView.hasBackBtn = YES;
     [vc.view addSubview:giftView];
-    [giftView moveIn];
+    [giftView moveIn:nil];
 }
 
 - (void)crash {
@@ -199,7 +199,7 @@
     WADemoPayView* payView = [[WADemoPayView alloc]init];
     payView.hasBackBtn = YES;
     [vc.view addSubview:payView];
-    [payView moveIn];
+    [payView moveIn:nil];
 }
 
 - (void)payProduct
@@ -216,7 +216,7 @@
     WADemoHotUpdateView* hotUpdate = [[WADemoHotUpdateView alloc]init];
     hotUpdate.hasBackBtn = YES;
     [vc.view addSubview:hotUpdate];
-    [hotUpdate moveIn];
+    [hotUpdate moveIn:nil];
 }
 
 #pragma mark 实现 WAPaymentDelegate

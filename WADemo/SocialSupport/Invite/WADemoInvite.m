@@ -50,7 +50,7 @@
     WADemoFBInviteView* fbInviteView = [[WADemoFBInviteView alloc]init];
     fbInviteView.hasBackBtn = YES;
     [vc.view addSubview:fbInviteView];
-    [fbInviteView moveIn];
+    [fbInviteView moveIn:nil];
 }
 
 -(void)vk{
@@ -58,7 +58,7 @@
     WADemoVKInviteView* vkInviteView = [[WADemoVKInviteView alloc]init];
     vkInviteView.hasBackBtn = YES;
     [vc.view addSubview:vkInviteView];
-    [vkInviteView moveIn];
+    [vkInviteView moveIn:nil];
 }
 
 -(void)dealloc{

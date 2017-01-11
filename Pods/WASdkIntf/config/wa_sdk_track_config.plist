@@ -5,7 +5,7 @@
 	<key>FACEBOOK</key>
 	<dict>
 		<key>Enabled</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>CHARTBOOST</key>
 	<dict>
@@ -14,7 +14,7 @@
 		<key>AppSignature</key>
 		<string>0964f36276dcdc991eee51723abf86191668a9ec</string>
 		<key>Enabled</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>WINGA</key>
 	<dict>
