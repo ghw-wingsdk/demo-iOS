@@ -253,6 +253,8 @@
     }
     
     event.defaultValue = [self.defParam.value doubleValue];
+//    event.defaultNumValue = [NSNumber numberWithDouble:[self.defParam.value doubleValue]];
+//    event.defaultValue = 8.11111;
     
     
     
@@ -273,17 +275,21 @@
     event.eventNameDict = mEventNameDict;
     NSMutableDictionary* valueDict = [NSMutableDictionary dictionary];
     
-    if (![_afParam.value isEqualToString:@""]) {
-        [valueDict setObject:[NSNumber numberWithDouble:[_afParam.value doubleValue]] forKey:WA_PLATFORM_APPSFLYER];
+    if (![_afParam.value isEqualToString:@""]&&_afParam.value.doubleValue!= 0) {
+//        [valueDict setObject:[NSNumber numberWithDouble:[_afParam.value doubleValue]] forKey:WA_PLATFORM_APPSFLYER];
+        [valueDict setObject:[NSDecimalNumber decimalNumberWithString:_afParam.value] forKey:WA_PLATFORM_APPSFLYER];
     }
-    if (![_cbParam.value isEqualToString:@""]) {
-        [valueDict setObject:[NSNumber numberWithDouble:[_cbParam.value doubleValue]] forKey:WA_PLATFORM_CHARTBOOST];
+    if (![_cbParam.value isEqualToString:@""]&&_cbParam.value.doubleValue!= 0) {
+//        [valueDict setObject:[NSNumber numberWithDouble:[_cbParam.value doubleValue]] forKey:WA_PLATFORM_CHARTBOOST];
+        [valueDict setObject:[NSDecimalNumber decimalNumberWithString:_cbParam.value] forKey:WA_PLATFORM_CHARTBOOST];
     }
-    if (![_fbParam.value isEqualToString:@""]) {
-        [valueDict setObject:[NSNumber numberWithDouble:[_fbParam.value doubleValue]] forKey:WA_PLATFORM_FACEBOOK];
+    if (![_fbParam.value isEqualToString:@""]&&_fbParam.value.doubleValue!= 0) {
+//        [valueDict setObject:[NSNumber numberWithDouble:[_fbParam.value doubleValue]] forKey:WA_PLATFORM_FACEBOOK];
+        [valueDict setObject:[NSDecimalNumber decimalNumberWithString:_fbParam.value] forKey:WA_PLATFORM_FACEBOOK];
     }
-    if (![_ghwParam.value isEqualToString:@""]) {
-        [valueDict setObject:[NSNumber numberWithDouble:[_ghwParam.value doubleValue]] forKey:WA_PLATFORM_WINGA];
+    if (![_ghwParam.value isEqualToString:@""]&&_ghwParam.value.doubleValue!=0) {
+//        [valueDict setObject:[NSNumber numberWithDouble:[_ghwParam.value doubleValue]] forKey:WA_PLATFORM_WINGA];
+        [valueDict setObject:[NSDecimalNumber decimalNumberWithString:_ghwParam.value] forKey:WA_PLATFORM_WINGA];
     }
     //    event.valueDict = @{WA_PLATFORM_APPSFLYER:[NSNumber numberWithDouble:[_afParam.value doubleValue]],WA_PLATFORM_CHARTBOOST:[NSNumber numberWithDouble:[_cbParam.value doubleValue]],WA_PLATFORM_FACEBOOK:[NSNumber numberWithDouble:[_fbParam.value doubleValue]],WA_PLATFORM_WINGA:[NSNumber numberWithDouble:[_ghwParam.value doubleValue]]};
     
