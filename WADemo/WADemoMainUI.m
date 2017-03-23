@@ -92,7 +92,7 @@
     [btns addObject:btn10];
     NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@0,@1]];
 
-    self.title = @"WADemo3.6.1";
+    self.title = @"WADemo3.6.1.1";
     self.btnLayout = btnLayout;
     self.btns = btns;
 }

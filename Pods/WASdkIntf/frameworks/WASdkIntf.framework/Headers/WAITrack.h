@@ -11,10 +11,12 @@
 @interface WAITrack : NSObject
 @property(strong,nonatomic)NSMutableDictionary *params;
 @property(nonatomic)double value;
+@property(copy,nonatomic)NSDecimalNumber* numValue;
 @property(copy,nonatomic)NSString* eventName;
 
 -(void)initTracker;
 -(void)trackWithEventName:(NSString *const)eventName valueToSum:(double)value params:(NSDictionary*)params;
+-(void)trackWithEventName:(NSString *const)eventName numValueToSum:(NSDecimalNumber*)numValue params:(NSDictionary*)params;
 -(void)autoTriggerAfterPayment:(BOOL)isAuto;
 -(BOOL)getAutoTriggerAfterPayment;
 -(NSString*)getCollectionInfo;
