@@ -10,7 +10,7 @@
 	<string>Инфо</string>
 	<key>wasdk_app_btn</key>
 	<string>Прилож</string>
-	<key>wasdk_app_wall_guide_words</key>
+	<key>wasdk_apw_guide_words</key>
 	<string>Нажмите для вызова всплывающего меню</string>
 	<key>wasdk_sdk_version</key>
 	<string>Версия SDK</string>

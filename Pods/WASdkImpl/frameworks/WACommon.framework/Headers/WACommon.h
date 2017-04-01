@@ -19,6 +19,10 @@ FOUNDATION_EXPORT const unsigned char WACommonVersionString[];
 #import <WACommon/WAHelper.h>
 #import <WACommon/WAHttpHelper.h>
 #import <WACommon/LocalizedStringUtil.h>
+#import <WACommon/WASandboxHelper.h>
+#import <WACommon/WADownloadHandler.h>
+#import <WACommon/WACommon.h>
+#import <WACommon/WADevice.h>
 
-//time:2017/3/22 15:29
+//time:2017/3/25 11:31
 

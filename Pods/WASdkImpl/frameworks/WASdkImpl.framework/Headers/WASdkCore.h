@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <WASdkIntf/WASdkIntf.h>
 #import <WACommon/WACommon.h>
-#import "WASdkParamConfigObj.h"
 
 #define WASdkLog(fmt,...) {\
 if([WACoreProxy isDebugMode]){\
@@ -96,9 +95,9 @@ NSLog((@"WASDK LOG [(version %@) %s ]:" fmt), [WASdkCore getVersion],__FUNCTION_
 
 +(void)addEventContentWithString:(NSString*)string;
 
-+(void)setParamConfig:(void(^)(NSError* error,WASdkParamConfigObj* config))block;
++(void)setParamConfig:(void(^)(NSError* error,WAParamConfigObj* config))block;
 
-+(WASdkParamConfigObj*)getParamConfig;
++(WAParamConfigObj*)getParamConfig;
 /**
  *  版本信息
  */

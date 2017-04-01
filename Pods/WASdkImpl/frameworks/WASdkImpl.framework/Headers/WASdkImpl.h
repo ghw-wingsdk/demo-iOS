@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char WASdkImplVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WASdkImpl/PublicHeader.h>
 
-//time:2017/3/22 16:08 ver:3.6.1.1
+//time:2017/3/28 10:34 ver:3.6.2

@@ -1,6 +1,6 @@
 //
-//  GHWSDKPatchInfo.h
-//  GHWSdkUI
+//  WAUpdateInfo.h
+//  WASdkIntfUI
 //
 //  Created by wuyx on 15/10/21.
 //  Copyright © 2015年 GHW-T-01. All rights reserved.

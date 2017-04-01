@@ -25,7 +25,7 @@
 +(NSString*)getSDKTempPath;//SDK temp 文件夹
 +(NSString*)getSDKPatchTempPath;//SDK patchTemp文件夹
 +(NSString*)getSDKPatchOldPath;//SDK patchOld 文件夹
-+(NSString*)getSDKAppWallImgCachePath;//SDK应用墙缓存图片路径
++(NSString*)getSDKApwImgCachePath;//SDK应用墙缓存图片路径
 +(NSString*)getSDKCrashLogPath;//SDK闪退日志保存路径
 +(NSString*)getSDKDatabasePath;//SDK数据库文件目录
 @end

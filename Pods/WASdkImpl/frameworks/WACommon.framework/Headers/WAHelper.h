@@ -40,6 +40,7 @@
 +(void)deleteObjFromKeyChainWithKey:(NSString *const)key;
 +(NSString*)getIDFV;
 +(NSString*)getIDFA;
++(NSString*)getSimulateIDFA;
 +(NSString*)getPreferredLanguage;
 /**
  *  获取本地时间

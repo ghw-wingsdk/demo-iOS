@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+@class WAParamConfigObj;
 @interface WACore : NSObject
 -(void)initialize;
 -(void)initAppEventTracker;
@@ -37,6 +38,7 @@
 -(NSString*)getSdkId;
 -(NSString*)getSessionId;
 -(NSString*)getDeepLinkWithUrl:(NSURL*)url;
+-(WAParamConfigObj*)getParamConfig;
 -(void)fetchDeferredAppLink:(void(^)(NSURL *url, NSError *error))handler;
 -(void)addEventContentWithString:(NSString*)string;
 -(void)eventLogWithPlatform:(NSString*)platform eventName:(NSString*)eventName parameters:(NSDictionary*)parameters color:(UIColor*)color;

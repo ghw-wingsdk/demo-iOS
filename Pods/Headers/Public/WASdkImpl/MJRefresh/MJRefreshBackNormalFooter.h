@@ -1,1 +1,0 @@
-../../../../WASdkImpl/frameworks/MJRefresh.framework/Headers/MJRefreshBackNormalFooter.h

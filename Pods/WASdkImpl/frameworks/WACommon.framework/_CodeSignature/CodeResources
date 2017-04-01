@@ -10,19 +10,31 @@
 		</data>
 		<key>Headers/WACommConstants.h</key>
 		<data>
-		pZ4EPVFyh6Xs8MTvu0uxFDtIW+Q=
+		1RxyFfmLNpqNC0fEcQ6KTu2gfXI=
 		</data>
 		<key>Headers/WACommon.h</key>
 		<data>
-		qoFrfzlZ+MLFpUu2uUqrbW2yF0M=
+		Uy/d7yilraJrEUyrJmAco7duhPc=
+		</data>
+		<key>Headers/WADevice.h</key>
+		<data>
+		2z6JOYFGygwiR07YGldt9VqtrIY=
+		</data>
+		<key>Headers/WADownloadHandler.h</key>
+		<data>
+		Swf2q3rMjFMsKISSutPhSrj0dlA=
 		</data>
 		<key>Headers/WAHelper.h</key>
 		<data>
-		d2CWdCKE/GlmA2I2ERU0xGASLdY=
+		qbZ0Inkiod98JT9MyVli6hY3ZHA=
 		</data>
 		<key>Headers/WAHttpHelper.h</key>
 		<data>
 		jJD8Rc3DdU0bzLHnV4oNNB8nvKY=
+		</data>
+		<key>Headers/WASandboxHelper.h</key>
+		<data>
+		DpJAnPjQDxT5VM7bGEy+sOGslXQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -50,33 +62,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pZ4EPVFyh6Xs8MTvu0uxFDtIW+Q=
+			1RxyFfmLNpqNC0fEcQ6KTu2gfXI=
 			</data>
 			<key>hash2</key>
 			<data>
-			9xsV3I0i27A2Tst/BRUaIAqrCBafmLYoSwjHSwIs5n8=
+			s5q0HwyB/UdLoxTXXQThqBMlJGLX8TsflHubfzb6mxU=
 			</data>
 		</dict>
 		<key>Headers/WACommon.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qoFrfzlZ+MLFpUu2uUqrbW2yF0M=
+			Uy/d7yilraJrEUyrJmAco7duhPc=
 			</data>
 			<key>hash2</key>
 			<data>
-			ny8FYVmH+sa6DpULAqP0pBbPXdMwKgI3Rg+Cv8Mf0Vw=
+			l7BFc9/BHxXMcgwzHuDYMDwYlUkcCOoMiZREJO/Pkug=
+			</data>
+		</dict>
+		<key>Headers/WADevice.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2z6JOYFGygwiR07YGldt9VqtrIY=
+			</data>
+			<key>hash2</key>
+			<data>
+			8ZS3cj5YZuzvfbtgdfnfyrl32jNmzJ1zdhHl7K1AfoI=
+			</data>
+		</dict>
+		<key>Headers/WADownloadHandler.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Swf2q3rMjFMsKISSutPhSrj0dlA=
+			</data>
+			<key>hash2</key>
+			<data>
+			D6qOBBYstGwSiDCv/JD/WGsWwlh//hL4Yj4xSqoCxio=
 			</data>
 		</dict>
 		<key>Headers/WAHelper.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			d2CWdCKE/GlmA2I2ERU0xGASLdY=
+			qbZ0Inkiod98JT9MyVli6hY3ZHA=
 			</data>
 			<key>hash2</key>
 			<data>
-			S7dTpqWQN07oLBsnoJtsyoYzUre0L4L/ijH12tTGYeg=
+			aULHpnoZeaWYlQIh122wNAjdkKBOwIQ/44cPYVe3vS8=
 			</data>
 		</dict>
 		<key>Headers/WAHttpHelper.h</key>
@@ -88,6 +122,17 @@
 			<key>hash2</key>
 			<data>
 			SwMIvyB6fQqp8ETWYwZtSyuGP0C+GNAXq7iWCMJgvuU=
+			</data>
+		</dict>
+		<key>Headers/WASandboxHelper.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			DpJAnPjQDxT5VM7bGEy+sOGslXQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			K19M8nNveIEM7wfeXMcpVl8YLlfN/vqyw0/RK/EhGCY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

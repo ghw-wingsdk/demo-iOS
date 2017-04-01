@@ -1,1 +1,0 @@
-../../../../WASdkImpl/frameworks/MJRefresh.framework/Headers/UIScrollView+MJRefresh.h

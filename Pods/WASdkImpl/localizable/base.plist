@@ -10,7 +10,7 @@
 	<string>INFO</string>
 	<key>wasdk_app_btn</key>
 	<string>APP</string>
-	<key>wasdk_app_wall_guide_words</key>
+	<key>wasdk_apw_guide_words</key>
 	<string>Click here to popup menu</string>
 	<key>wasdk_sdk_version</key>
 	<string>SDK Version</string>

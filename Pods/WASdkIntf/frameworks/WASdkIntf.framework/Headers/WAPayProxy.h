@@ -68,10 +68,9 @@
  */
 +(void)payWithProductId:(NSString*)productId extInfo:(NSString*)extInfo delegate:(id<WAPaymentDelegate>)delegate;
 /*!
- @abstract 查询是否某个支付平台
- @param platform 支付平台
+ @abstract 查询是否支持支付
  @return bool 是否支持某个支付平台
  */
-+(BOOL)isPayServiceAvailableWithPlatform:(NSString *const)platform;
++(BOOL)isPayServiceAvailable;
 
 @end

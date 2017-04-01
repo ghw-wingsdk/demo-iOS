@@ -19,6 +19,7 @@
 @property(copy,nonatomic)NSString *tz;
 @property(copy,nonatomic)NSString *currencyCode;
 
+
 @property(copy,nonatomic)NSString *userId;
 @property(strong,nonatomic)NSDictionary* mapping;
 @property(strong,nonatomic)NSDictionary* trackerConfig;

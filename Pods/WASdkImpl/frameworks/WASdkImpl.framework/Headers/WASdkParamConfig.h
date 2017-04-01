@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <WACommon/WACommon.h>
-#import "WASdkParamConfigObj.h"
+#import <WASdkIntf/WASdkIntf.h>
+
 @interface WASdkParamConfig : NSObject
-+(void)requestWithCompleteBlock:(void(^)(NSError* error,WASdkParamConfigObj* config))block;
++(void)requestWithCompleteBlock:(void(^)(NSError* error,WAParamConfigObj* config))block;
++(WAParamConfigObj*)parserWithDict:(NSDictionary*)dict;
 @end

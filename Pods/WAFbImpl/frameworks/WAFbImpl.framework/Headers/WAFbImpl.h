@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char WAFbImplVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WAFbImpl/PublicHeader.h>
 
-//time:2017/1/19 10:09 ver:3.6.1
+//time:2017/3/25 11:56 ver:3.6.2

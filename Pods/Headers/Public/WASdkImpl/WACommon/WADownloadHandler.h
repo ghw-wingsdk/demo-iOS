@@ -1,0 +1,1 @@
+../../../../WASdkImpl/frameworks/WACommon.framework/Headers/WADownloadHandler.h

@@ -76,6 +76,7 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "WAAfImpl/config/wa_sdk_impl_config_appsflyer.xml"
   install_resource "WAApImpl/config/wa_sdk_impl_config_apple.xml"
+  install_resource "WAApwImpl/config/wa_sdk_impl_config_apw.xml"
   install_resource "WACbImpl/config/wa_sdk_impl_config_chartboost.xml"
   install_resource "WAFbImpl/config/wa_sdk_impl_config_facebook.xml"
   install_resource "WASdkImpl/config/wa_sdk_impl_config_winga.xml"
@@ -93,6 +94,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "WAAfImpl/config/wa_sdk_impl_config_appsflyer.xml"
   install_resource "WAApImpl/config/wa_sdk_impl_config_apple.xml"
+  install_resource "WAApwImpl/config/wa_sdk_impl_config_apw.xml"
   install_resource "WACbImpl/config/wa_sdk_impl_config_chartboost.xml"
   install_resource "WAFbImpl/config/wa_sdk_impl_config_facebook.xml"
   install_resource "WASdkImpl/config/wa_sdk_impl_config_winga.xml"

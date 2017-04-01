@@ -29,6 +29,8 @@ extern NSString *const WA_PLATFORM_WINGA;
 extern NSString *const WA_PLATFORM_BOACOMPRA;
 extern NSString *const WA_PLATFORM_VK;
 extern NSString *const WA_PLATFORM_WECHAT;
+extern NSString *const WA_PLATFORM_HUP;
+extern NSString *const WA_PLATFORM_APW;
 
 
 extern NSString *const WA_CONSTANT_GUEST;

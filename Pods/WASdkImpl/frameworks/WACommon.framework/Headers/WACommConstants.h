@@ -115,23 +115,23 @@ extern NSString *const WASDK_RESULT_KEY_IAP_VCA;
 extern NSString *const WASDK_RESULT_KEY_IAP_VCCY;
 
 //热更新
-extern NSString *const WASDK_HOT_UPDATE_KEY_PATCH_VERSION;
-extern NSString *const WASDK_HOT_UPDATE_KEY_SDK_ID;
-extern NSString *const WASDK_HOT_UPDATE_KEY_SDK_VERSION;
-extern NSString *const WASDK_HOT_UPDATE_KEY_APP_ID;
-extern NSString *const WASDK_HOT_UPDATE_KEY_PUBLIST_APP_ID;
-extern NSString *const WASDK_HOT_UPDATE_KEY_PUBLIST_APP_VER;
-extern NSString *const WASDK_HOT_UPDATE_KEY_PLATFORM_ID;
-extern NSString *const WASDK_HOT_UPDATE_KEY_CLIENT_OS;
-extern NSString *const WASDK_HOT_UPDATE_KEY_CLIENT_OS_VERSION;
-extern NSString *const WASDK_HOT_UPDATE_KEY_CLIENT_MODEL;
-extern NSString *const WASDK_HOT_UPDATE_KEY_DEVICE_ID;
-extern NSString *const WASDK_HOT_UPDATE_KEY_CLIENT_ID;
-extern NSString *const WASDK_HOT_UPDATE_KEY_OTS;
-extern NSString *const WASDK_HOT_UPDATE_KEY_USER_ID;
-extern NSString *const WASDK_HOT_UPDATE_KEY_PATCH_ID;
-extern NSString *const WASDK_HOT_UPDATE_KEY_PROGRESS;
-extern NSString *const WASDK_HOT_UPDATE_KEY_STATUS;
+extern NSString *const WASDK_HUP_KEY_PATCH_VERSION;
+extern NSString *const WASDK_HUP_KEY_SDK_ID;
+extern NSString *const WASDK_HUP_KEY_SDK_VERSION;
+extern NSString *const WASDK_HUP_KEY_APP_ID;
+extern NSString *const WASDK_HUP_KEY_PUBLIST_APP_ID;
+extern NSString *const WASDK_HUP_KEY_PUBLIST_APP_VER;
+extern NSString *const WASDK_HUP_KEY_PLATFORM_ID;
+extern NSString *const WASDK_HUP_KEY_CLIENT_OS;
+extern NSString *const WASDK_HUP_KEY_CLIENT_OS_VERSION;
+extern NSString *const WASDK_HUP_KEY_CLIENT_MODEL;
+extern NSString *const WASDK_HUP_KEY_DEVICE_ID;
+extern NSString *const WASDK_HUP_KEY_CLIENT_ID;
+extern NSString *const WASDK_HUP_KEY_OTS;
+extern NSString *const WASDK_HUP_KEY_USER_ID;
+extern NSString *const WASDK_HUP_KEY_PATCH_ID;
+extern NSString *const WASDK_HUP_KEY_PROGRESS;
+extern NSString *const WASDK_HUP_KEY_STATUS;
 
 
 
@@ -166,7 +166,7 @@ extern NSString *const WASDK_PATCH_UPDATE_CHECK;
 extern NSString *const WASDK_PATCH_DOWNLOAD;
 //更新补丁回调接口
 extern NSString *const WASDK_PATCH_UPDATE_CALLBACK;
-extern NSString *const WASDK_APP_WALL;
+extern NSString *const WASDK_APW;
 
 //闪退日志收集接口
 extern NSString *const WASDK_CRASH_REPORT;
@@ -174,8 +174,8 @@ extern NSString *const WASDK_CRASH_REPORT;
 //数据收集接口
 extern NSString *const WASDK_DATA_COLLECTION_URL;
 
-extern NSString *const WASDK_APP_WALL_TRACKING;
-extern NSString *const WASDK_APP_WALL_FIRST_LAUNCH;
+extern NSString *const WASDK_APW_TRACKING;
+extern NSString *const WASDK_FIRST_LAUNCH;
 
 extern NSString *const WASDK_USER_LIST;
 

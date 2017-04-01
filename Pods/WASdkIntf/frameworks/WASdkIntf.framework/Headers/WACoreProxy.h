@@ -158,6 +158,10 @@ NSLog((@"WASDK LOG [(version %@) %s ]:" fmt), [WACoreProxy getSdkVer],__FUNCTION
 
 +(void)fetchDeferredAppLink:(void(^)(NSURL *url, NSError *error))handler;
 /*!
+ @abstract 获取后台配置参数
+ */
++(WAParamConfigObj*)getParamConfig;
+/*!
  @abstract 下面四个方法是关于打印日志的,CP不用关注
  */
 +(void)addLogWithString:(NSString*)string;

@@ -10,7 +10,7 @@
 	<string>资讯</string>
 	<key>wasdk_app_btn</key>
 	<string>应用</string>
-	<key>wasdk_app_wall_guide_words</key>
+	<key>wasdk_apw_guide_words</key>
 	<string>点击此处弹出菜单</string>
 	<key>wasdk_sdk_version</key>
 	<string>SDK版本</string>

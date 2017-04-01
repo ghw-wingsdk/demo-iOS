@@ -6,13 +6,14 @@
 //  Copyright © 2016年 GHW-T-01. All rights reserved.
 //
 
-#import <WASdkIntf/WAIAppWall.h>
+#import <WASdkIntf/WAIApw.h>
 #import <WASdkIntf/WAApwProxy.h>
 #import <WASdkIntf/WAConstants.h>
 #import <WASdkIntf/WAComponent.h>
 #import <WASdkIntf/WACore.h>
 #import <WASdkIntf/WACoreProxy.h>
-#import <WASdkIntf/WAHotUpdate.h>
+#import <WASdkIntf/WAParamConfigObj.h>
+#import <WASdkIntf/WAIHup.h>
 #import <WASdkIntf/WAHupProxy.h>
 #import <WASdkIntf/WAUpdateInfo.h>
 #import <WASdkIntf/WAIPay.h>
@@ -58,4 +59,4 @@ FOUNDATION_EXPORT const unsigned char WASdkIntfVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WASdkIntf/PublicHeader.h>
 
-//time:2017/1/19 10:08 ver:3.6.1
+//time:2017/3/25 11:35 ver:3.6.2
