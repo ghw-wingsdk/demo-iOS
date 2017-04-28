@@ -11,7 +11,7 @@
 #import "WADemoProductList.h"
 #import "WADemoUtil.h"
 #import "WADemoAlertView.h"
-
+#import <Toast/Toast.h>
 @implementation WADemoPayView
 
 -(instancetype)init{
@@ -55,6 +55,7 @@
     WADemoProductList* productList = [[WADemoProductList alloc]initWithFrame:self.scrollView.bounds];
     productList.goToType = GoToTypeWA;
     productList.products = Inventory;
+    productList.naviView = self;
     [self.scrollView addSubview:productList];
 }
 

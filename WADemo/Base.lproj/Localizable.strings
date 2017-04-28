@@ -9,7 +9,7 @@
 "wasdk_play_btn" = "Play";
 "wasdk_info_btn" = "INFO";
 "wasdk_app_btn" = "APP";
-"wasdk_app_wall_guide_words" = "Click here to popup menu";
+"wasdk_apw_guide_words" = "Click here to popup menu";
 "wasdk_sdk_version" = "SDK Version";
 "wasdk_patch_version" = "Patch Version";
 "wasdk_has_no_patch" = "None";

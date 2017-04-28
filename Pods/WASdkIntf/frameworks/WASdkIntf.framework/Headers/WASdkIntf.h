@@ -6,6 +6,8 @@
 //  Copyright © 2016年 GHW-T-01. All rights reserved.
 //
 
+#import <WASdkIntf/WAIPush.h>
+#import <WASdkIntf/WAPushProxy.h>
 #import <WASdkIntf/WAIApw.h>
 #import <WASdkIntf/WAApwProxy.h>
 #import <WASdkIntf/WAConstants.h>
@@ -59,4 +61,4 @@ FOUNDATION_EXPORT const unsigned char WASdkIntfVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WASdkIntf/PublicHeader.h>
 
-//time:2017/3/25 11:35 ver:3.6.2
+//time:2017/4/25 14:31 ver:3.6.3

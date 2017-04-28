@@ -8,6 +8,7 @@
 
 #import "WADemoProductList.h"
 #import "WADemoUtil.h"
+#import <Toast/Toast.h>
 static NSString* productCellIdentifier = @"ProductCellIdentifier";
 @interface WADemoProductList()
 @property(nonatomic)float naviheight;
@@ -99,23 +100,32 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
 
 #pragma mark 实现 WAPaymentDelegate
 -(void)paymentDidCompleteWithResult:(WAIapResult*)iapResult andPlatform:(NSString*)platform{
+    NSString* msg = @"";
     if (!iapResult) {
+        msg = [NSString stringWithFormat:@"%@ 购买失败！",platform];
         NSLog(@"%@ 购买失败!", platform);
     }else{
         if (iapResult.resultCode == 1) {
+            msg = [NSString stringWithFormat:@"%@ 支付成功。",platform];
             NSLog(@"%@ 支付成功.", platform);
         }else if (iapResult.resultCode == 2) {
+            msg = [NSString stringWithFormat:@"%@ 支付失败。",platform];
             NSLog(@"%@ 支付失败.", platform);
         }else if (iapResult.resultCode == 3) {
-            NSLog(@"%@ 取消.", platform);
+            msg = [NSString stringWithFormat:@"%@ 支付取消。",platform];
+            NSLog(@"%@ 支付取消.", platform);
         }else if (iapResult.resultCode == 4) {
-            NSLog(@"%@ 上报失败.", platform);
+            msg = [NSString stringWithFormat:@"%@ 支付上报失败。",platform];
+            NSLog(@"%@ 支付上报失败.", platform);
         }else if (iapResult.resultCode == 5) {
-            NSLog(@"%@ 商品未消耗.", platform);
+            msg = [NSString stringWithFormat:@"%@ 支付商品未消耗。",platform];
+            NSLog(@"%@ 支付商品未消耗.", platform);
         }else if (iapResult.resultCode == 6) {
+            msg = [NSString stringWithFormat:@"%@ 创建订单失败。",platform];
             NSLog(@"%@ 创建订单失败.", platform);
         }
     }
+    [self.naviView makeToast:msg];
 }
 -(void)paymentDidFailWithError:(NSError*)error andPlatform:(NSString*)platform{
     if (error) {

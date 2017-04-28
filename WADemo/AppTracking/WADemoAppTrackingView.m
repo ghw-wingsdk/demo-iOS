@@ -146,8 +146,9 @@
 
 - (void)login {
 
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventLogin];
-    [self addSubview:view];
+//    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventLogin];
+//    [self addSubview:view];
+    [WATrackProxy trackWithEventName:WAEventLogin valueToSum:8.11111 params:nil];
 }
 
 - (void)initiatedPayment {

@@ -94,5 +94,7 @@
 	<string>Уведомление</string>
 	<key>wasdk_jailbreak_not_purchase</key>
 	<string>Вы не можете совершать покупки на взломанном устройстве</string>
+	<key>wasdk_copy</key>
+	<string>Copy</string>
 </dict>
 </plist>

@@ -190,6 +190,14 @@
     NSArray* array = [NSArray array];
     int i = (int)array[1];
     NSLog(@"%d",i);
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
+    
+//    NSURL * url = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8"];
+//    NSURL * url = [NSURL URLWithString:@"weixin://"];
+//    // 如果已经安装了这个应用,就跳转
+//    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+//        [[UIApplication sharedApplication] openURL:url];
+//    }
     
 }
 

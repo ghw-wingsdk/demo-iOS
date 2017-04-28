@@ -145,6 +145,9 @@ extern NSString *const WASDK_GUEST_LOGIN_USERID_CACHE;
 extern NSString *const WASDK_ACOUNT_BINDING_PREUSERID;
 extern NSString *const WASDK_ACOUNT_BINDING_PREPLATFORM;
 
+// 消息推送
+extern NSString *const WASDK_ACCESS_TOKEN;
+extern NSString *const WASDK_MSG_ID;
 
 extern NSString *const WASDK_IAP_URL_PROLIST;
 extern NSString *const WASDK_IAP_URL_NOTIFY_SERVER;
@@ -209,6 +212,16 @@ extern NSString *const WASDK_LOGIN_URL_UPDATE_PWD;
 extern NSString *const WASDK_LOGIN_URL_BIND_MOBILE;
 // 免密码登录接口
 extern NSString *const WASDK_LOGIN_URL_FAST_LOGIN;
+
+// 消息推送
+// 更新第三方消息服务的accessToken
+extern NSString *const WASDK_LOGIN_URL_MESSAGE_REFRESH_TOKEN;
+// 客户端拉取消息
+extern NSString *const WASDK_LOGIN_URL_MESSAGE_CLIENT_PULL;
+// 消息推送回执
+extern NSString *const WASDK_LOGIN_URL_MESSAGE_SEND_RECEIPT;
+// 消息打开确认
+extern NSString *const WASDK_LOGIN_URL_MESSAGE_OPEN_MESSAGE_CONFIRM;
 
 extern NSString *const WASDK_FB_INVITE_FROM_USERID;
 extern NSString *const WASDK_FB_INVITE_TO_USERID;

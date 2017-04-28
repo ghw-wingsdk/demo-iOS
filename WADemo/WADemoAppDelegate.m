@@ -8,8 +8,11 @@
 
 #import "WADemoAppDelegate.h"
 #import <WASdkIntf/WASdkIntf.h>
-#import <WACommon/WACommon.h>
-@interface WADemoAppDelegate ()
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
+
+@interface WADemoAppDelegate () <UNUserNotificationCenterDelegate>
 
 @end
 
@@ -18,49 +21,54 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [WAHelper deleteClientId];
-    [WAHelper setClientId:@"20170106_OOXX_01"];
     [WACoreProxy init];
     [WACoreProxy setDebugMode:YES];
     [WACoreProxy initAppEventTracker];
-    //    [WAPayProxy init4IapWithPlatform:WA_PLATFORM_APPLE];
     [WAPayProxy init4Iap];
     [WACoreProxy setServerId:@"China"];
     [WACoreProxy setLevel:10];
     [WACoreProxy setGameUserId:@"12345"];
-//    [WACoreProxy setClientId:@"clientId_xxxx"];
     
-    if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
-    {
-        //IOS8
-        //创建UIUserNotificationSettings，并设置消息的显示类类型
-        UIUserNotificationSettings *notiSettings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIRemoteNotificationTypeSound) categories:nil];
-        
-        [application registerUserNotificationSettings:notiSettings];
-        
-    } else{ // ios7
-        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge                                       |UIRemoteNotificationTypeSound                                      |UIRemoteNotificationTypeAlert)];
-    }
-
-    return [WAUserProxy application:application didFinishLaunchingWithOptions:launchOptions];
+    [WAPushProxy application:application initPushWithDelegate:self];
+    
+    return [WACoreProxy application:application didFinishLaunchingWithOptions:launchOptions];
     
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {
-    [application registerForRemoteNotifications];
+    [WACoreProxy application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    NSString *token = [NSString stringWithFormat:@"%@", deviceToken];
-    //获取终端设备标识，这个标识需要通过接口发送到服务器端，服务器端推送消息到APNS时需要知道终端的标识，APNS通过注册的终端标识找到终端设备。
-    NSLog(@"My token is:%@", token);
+    [WACoreProxy application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    NSString *error_str = [NSString stringWithFormat: @"%@", error];
-    NSLog(@"Failed to get token, error:%@", error_str);
+    [WACoreProxy application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
+#pragma mark IOS8 IOS9 Push Notification Receive
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    [WACoreProxy application:application didReceiveLocalNotification:notification];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
+{
+    [WACoreProxy application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
+
+#pragma mark IOS10 Push Notification Receive
+//App处于前台接收通知时
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
+    
+    [WACoreProxy userNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
+}
+
+// 通知的点击事件
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
+    [WACoreProxy userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -70,17 +78,17 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save us er data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    [WAUserProxy applicationDidEnterBackground:application];
+    [WACoreProxy applicationDidEnterBackground:application];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    [WAUserProxy applicationWillEnterForeground:application];
+    [WACoreProxy applicationWillEnterForeground:application];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [WAUserProxy applicationDidBecomeActive:application];
+    [WACoreProxy applicationDidBecomeActive:application];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -89,7 +97,7 @@
 //
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     
-    return [WAUserProxy application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+    return [WACoreProxy application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 @end

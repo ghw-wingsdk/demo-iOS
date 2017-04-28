@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface WAClassGenerator : NSObject
+//
++(NSMutableArray*)generatorAllModule;
 +(NSArray*)getCompsWithModule:(NSString *const)module;
 //根据module生成实例数组
 +(NSMutableArray*)generatorWithModule:(NSString *const)module;

@@ -92,5 +92,7 @@
 	<string>Aviso</string>
 	<key>wasdk_jailbreak_not_purchase</key>
 	<string>proibido compras em telefones com jailbreak</string>
+	<key>wasdk_copy</key>
+	<string>Copy</string>
 </dict>
 </plist>

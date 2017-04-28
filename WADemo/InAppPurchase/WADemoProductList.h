@@ -16,4 +16,5 @@ typedef NS_ENUM(NSInteger, GoToType) {
 @interface WADemoProductList : UITableView<UITableViewDataSource,WAPaymentDelegate>
 @property (nonatomic, assign) GoToType goToType;
 @property(strong,nonatomic)NSArray* products;
+@property(weak,nonatomic)UIView* naviView;
 @end

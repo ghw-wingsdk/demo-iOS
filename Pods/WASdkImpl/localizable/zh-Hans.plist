@@ -94,5 +94,7 @@
 	<string>注意</string>
 	<key>wasdk_jailbreak_not_purchase</key>
 	<string>您不能在越狱的机器上进行购买    </string>
+	<key>wasdk_copy</key>
+	<string>复制</string>
 </dict>
 </plist>

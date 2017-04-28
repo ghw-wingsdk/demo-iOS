@@ -94,5 +94,7 @@
 	<string>Notice</string>
 	<key>wasdk_jailbreak_not_purchase</key>
 	<string>You can not do purchase in a jailbreak device.</string>
+	<key>wasdk_copy</key>
+	<string>Copy</string>
 </dict>
 </plist>

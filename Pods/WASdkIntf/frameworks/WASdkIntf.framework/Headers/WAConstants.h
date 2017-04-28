@@ -19,6 +19,7 @@ extern NSString *const WA_MODULE_SOC;//社交模块
 extern NSString *const WA_MODULE_APW;//应用墙模块
 extern NSString *const WA_MODULE_CORE;//公共模块
 extern NSString *const WA_MODULE_HUP;//热更新模块
+extern NSString *const WA_MODULE_PUSH;//热更新模块
 
 extern NSString *const WA_PLATFORM_FACEBOOK;
 extern NSString *const WA_PLATFORM_APPLE;
@@ -31,6 +32,7 @@ extern NSString *const WA_PLATFORM_VK;
 extern NSString *const WA_PLATFORM_WECHAT;
 extern NSString *const WA_PLATFORM_HUP;
 extern NSString *const WA_PLATFORM_APW;
+extern NSString *const WA_PLATFORM_PUSH;
 
 
 extern NSString *const WA_CONSTANT_GUEST;

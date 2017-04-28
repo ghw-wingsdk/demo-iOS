@@ -322,10 +322,7 @@
     event.defaultValue = 1;
     event.defaultParamValues = @{
                                  WAEventParameterNameScore:@100,
-                                 WAEventParameterNameFighting:@1000,
-                                 WAEventParameterNameLevelInfo:@"levelInfo",
-                                 WAEventParameterNameLevelType:@2,
-                                 WAEventParameterNameDescription:@"description"
+                                 WAEventParameterNameFighting:@1000
                                  };
     event.eventNameDict = @{WA_PLATFORM_APPSFLYER:WAEventLevelAchieved,WA_PLATFORM_CHARTBOOST:WAEventLevelAchieved,WA_PLATFORM_FACEBOOK:@"FacebookLevelAchieved",WA_PLATFORM_WINGA:WAEventLevelAchieved};
     event.valueDict = @{WA_PLATFORM_APPSFLYER:@1,WA_PLATFORM_CHARTBOOST:@1,WA_PLATFORM_FACEBOOK:@2,WA_PLATFORM_WINGA:@1};
@@ -335,31 +332,19 @@
     @{
       WA_PLATFORM_APPSFLYER:@{
               WAEventParameterNameScore:@100,
-              WAEventParameterNameFighting:@1000,
-              WAEventParameterNameLevelInfo:@"levelInfo",
-              WAEventParameterNameLevelType:@2,
-              WAEventParameterNameDescription:@"description"
+              WAEventParameterNameFighting:@1000
               },
       WA_PLATFORM_CHARTBOOST:@{
               WAEventParameterNameScore:@100,
-              WAEventParameterNameFighting:@1000,
-              WAEventParameterNameLevelInfo:@"levelInfo",
-              WAEventParameterNameLevelType:@2,
-              WAEventParameterNameDescription:@"description"
+              WAEventParameterNameFighting:@1000
               },
       WA_PLATFORM_FACEBOOK:@{
               WAEventParameterNameScore:@100,
-              WAEventParameterNameFighting:@1000,
-              WAEventParameterNameLevelInfo:@"FacebookLevelInfo",
-              WAEventParameterNameLevelType:@2,
-              WAEventParameterNameDescription:@"FacebookDescription"
+              WAEventParameterNameFighting:@1000
               },
       WA_PLATFORM_WINGA:@{
               WAEventParameterNameScore:@100,
-              WAEventParameterNameFighting:@1000,
-              WAEventParameterNameLevelInfo:@"levelInfo",
-              WAEventParameterNameLevelType:@2,
-              WAEventParameterNameDescription:@"description"
+              WAEventParameterNameFighting:@1000
               }
       };
     

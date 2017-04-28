@@ -69,7 +69,7 @@
 +(void)payWithProductId:(NSString*)productId extInfo:(NSString*)extInfo delegate:(id<WAPaymentDelegate>)delegate;
 /*!
  @abstract 查询是否支持支付
- @return bool 是否支持某个支付平台
+ @return bool 是否支持支付
  */
 +(BOOL)isPayServiceAvailable;
 

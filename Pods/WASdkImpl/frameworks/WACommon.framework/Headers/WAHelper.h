@@ -41,6 +41,7 @@
 +(NSString*)getIDFV;
 +(NSString*)getIDFA;
 +(NSString*)getSimulateIDFA;
++(NSString*)getSimulateIDFAParams;
 +(NSString*)getPreferredLanguage;
 /**
  *  获取本地时间

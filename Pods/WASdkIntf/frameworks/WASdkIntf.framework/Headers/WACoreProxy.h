@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WACore.h"
+#import "WAIPush.h"
 @class WACoreProxy;
 
 #define WALog(fmt,...) {\
@@ -172,6 +173,61 @@ NSLog((@"WASDK LOG [(version %@) %s ]:" fmt), [WACoreProxy getSdkVer],__FUNCTION
 
 +(void)eventLogWithPlatform:(NSString*)platform eventName:(NSString*)eventName parameters:(NSDictionary*)parameters color:(UIColor*)color;
 
+/*!
+ @discussion 处理UIApplicationDelegate的方法[-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions]传递过来的参数。
+ */
++ (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 
+#pragma mark 消息通知
+// 注册通知
++ (void)application:(UIApplication *)application initPushWithDelegate:(id<UNUserNotificationCenterDelegate>)delegate;
+
+// 调用过用户注册通知方法之后执行
++ (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings;
+
+// 获取deviceToken
++ (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
+
+// 注册失败
++ (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
+
+#pragma mark IOS8 IOS9 Push Notification Receive
+// 接收本地通知
++ (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification;
+// 接收远程通知
++ (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler;
+
+#pragma mark IOS10 Push Notification Receive
+//App处于前台接收通知时
++ (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler;
+
+// 通知的点击事件
++ (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler;
+
+/*!
+ 程序进入后台
+ @discussion 处理UIApplicationDelegate的方法[- (void)applicationDidEnterBackground:(UIApplication *)application]传递过来的参数。
+ */
++ (void)applicationDidEnterBackground:(UIApplication *)application;
+
+/*!
+ 程序将进入前台
+ @discussion 处理UIApplicationDelegate的方法[- (void)applicationWillEnterForeground:(UIApplication *)application]传递过来的参数。
+ */
++ (void)applicationWillEnterForeground:(UIApplication *)application;
+
+/*!
+ 程序进入前台
+ @discussion 处理UIApplicationDelegate的方法[- (void)applicationDidBecomeActive:(UIApplication *)application]传递过来的参数。
+ */
++ (void)applicationDidBecomeActive:(UIApplication *)application;
+
+/*!
+ @discussion 处理UIApplicationDelegate的方法[-(BOOL)application:(UIApplication *)application
+ openURL:(NSURL *)url
+ sourceApplication:(NSString *)sourceApplication
+ annotation:(id)annotation]传递过来的参数。
+ */
++ (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
 
 @end
