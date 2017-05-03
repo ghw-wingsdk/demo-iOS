@@ -5,9 +5,9 @@ PODS:
   - WAApImpl (3.6.2):
     - WASdkImpl (~> 3.6.2)
     - WASdkIntf (~> 3.6.2)
-  - WAApwImpl (3.6.2):
-    - WASdkImpl (~> 3.6.2)
-    - WASdkIntf (~> 3.6.2)
+  - WAApwImpl (3.6.3):
+    - WASdkImpl (~> 3.6.3)
+    - WASdkIntf (~> 3.6.3)
   - WACbImpl (3.6.2):
     - WASdkImpl (~> 3.6.2)
     - WASdkIntf (~> 3.6.2)
@@ -30,7 +30,7 @@ PODS:
 DEPENDENCIES:
   - WAAfImpl (= 3.6.2)
   - WAApImpl (= 3.6.2)
-  - WAApwImpl (= 3.6.2)
+  - WAApwImpl (= 3.6.3)
   - WACbImpl (= 3.6.2)
   - WAFbImpl (= 3.6.2)
   - WAPushImpl (= 3.6.3)
@@ -40,17 +40,17 @@ DEPENDENCIES:
   - WAWebPayImpl (= 3.6.2)
 
 SPEC CHECKSUMS:
-  WAAfImpl: 2d3d30d6493c5f5a5f308b736798d7f835b17ef2
-  WAApImpl: a6f8c9fcd3021b603b90ce3800655973eefca6f9
-  WAApwImpl: 284d4c8d29ef47f1126b8df0f81395aee47f7e79
-  WACbImpl: 335288d8cc216eba46fc5d9a7893cdeb53388b50
-  WAFbImpl: f3799650d0b8ca257ae5a0e9e450983e6f8e75eb
-  WAPushImpl: f5045c7ddb4b67f430262506fdc4555a784fc4ab
-  WASdkImpl: 09917637444e2f0c28bc39382dd7d1fb106e6caf
-  WASdkIntf: 6907b77b7a43ce22ac7151e59f8faf3cd8aa66a4
-  WAVkImpl: fb78b77fc4ef6b18ad491f0d6d09022f17c45e3a
-  WAWebPayImpl: 67411ad28d5b4468e2461df7e8a63c5d8d2d9ab9
+  WAAfImpl: af899a704402af5e10c56ed2ad513f7dc985d537
+  WAApImpl: 9bc6df9d197e15d6b2f5c0c16d3efb58f64da28c
+  WAApwImpl: 9a599a7677cf25737ecb501719d7559ec7cb68c5
+  WACbImpl: 7e096815f145c26bbfb5286697252c34cd860b6b
+  WAFbImpl: 4b4396415ab58999b138fb54dba462360ee23df1
+  WAPushImpl: ba296887dde97912df85f57b43a9b94486b73b96
+  WASdkImpl: b9e09d3f031bc27b1dbb12d6db35f8f6ddc0ce1e
+  WASdkIntf: e0a0960cf8b60a257a831a485afe9e2fa7333cd2
+  WAVkImpl: 10ac0bc5d73d0fd8fe623fe292726b28cac041a3
+  WAWebPayImpl: d8903620474ef6020645da6e131c9c713aca84a6
 
-PODFILE CHECKSUM: 40e24dd0ad170385920eaa9be0f2c265e1459b1a
+PODFILE CHECKSUM: 7f244a7d6bfa1b0c9ef7e8c9d7ab844d597a0687
 
 COCOAPODS: 1.1.1

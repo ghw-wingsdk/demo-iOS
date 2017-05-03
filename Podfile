@@ -26,7 +26,7 @@ source 'http://repo.wingsdk.cn:8082/r/WAWebPayImpl.git'
 target "WADemo" do
 pod 'WASdkIntf','3.6.3'
 pod 'WASdkImpl', '3.6.3'
-pod 'WAApwImpl', '3.6.2'
+pod 'WAApwImpl', '3.6.3'
 pod 'WAApImpl', '3.6.2'
 pod 'WAAfImpl', '3.6.2'
 pod 'WACbImpl', '3.6.2'

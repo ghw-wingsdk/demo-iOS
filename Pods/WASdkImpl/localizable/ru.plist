@@ -14,9 +14,9 @@
 	<string>Нажмите для вызова всплывающего меню</string>
 	<key>wasdk_sdk_version</key>
 	<string>Версия SDK</string>
-	<key>wasdk_patch_version</key>
+	<key>wasdk_pat_version</key>
 	<string>Версия патча</string>
-	<key>wasdk_has_no_patch</key>
+	<key>wasdk_has_no_pat</key>
 	<string>Нет</string>
 	<key>wasdk_login</key>
 	<string>Вход</string>

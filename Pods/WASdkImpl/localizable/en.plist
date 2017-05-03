@@ -14,9 +14,9 @@
 	<string>Click here to popup menu</string>
 	<key>wasdk_sdk_version</key>
 	<string>SDK Version</string>
-	<key>wasdk_patch_version</key>
-	<string>Patch Version</string>
-	<key>wasdk_has_no_patch</key>
+	<key>wasdk_pat_version</key>
+	<string>Pat Version</string>
+	<key>wasdk_has_no_pat</key>
 	<string>None</string>
 	<key>wasdk_login</key>
 	<string>Login</string>

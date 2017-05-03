@@ -14,9 +14,9 @@
 	<string>点击此处弹出菜单</string>
 	<key>wasdk_sdk_version</key>
 	<string>SDK版本</string>
-	<key>wasdk_patch_version</key>
-	<string>补丁版本</string>
-	<key>wasdk_has_no_patch</key>
+	<key>wasdk_pat_version</key>
+	<string>Pat版本</string>
+	<key>wasdk_has_no_pat</key>
 	<string>无</string>
 	<key>wasdk_login</key>
 	<string>登录</string>
