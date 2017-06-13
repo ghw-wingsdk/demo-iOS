@@ -24,15 +24,23 @@
 //#import <WASdkImpl/WASdkLoginHandler.h>
 @interface WADemoMainUI () <WAPaymentDelegate>
 
+@property (nonatomic, strong) WADemoLoginUI* loginUI;
+@property (nonatomic, strong) WADemoAccountManagement* acctMgmt;
+@property (nonatomic, strong) WADemoIapView* productList;
+@property (nonatomic, strong) WADemoAppTrackingView* appTrackView;
+@property (nonatomic, strong) WADemoFBShareView* fbShareView;
+@property (nonatomic, strong) WADemoInvite* inviteView;
+@property (nonatomic, strong) WADemoGiftView* giftView;
+@property (nonatomic, strong) WADemoPayView* payView;
+@property (nonatomic, strong) WADemoHotUpdateView* hotUpdate;
+
 @end
 
 @implementation WADemoMainUI
 
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
     }
     return self;
@@ -92,7 +100,12 @@
     [btns addObject:btn10];
     NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@0,@1]];
 
-    self.title = @"WADemo3.6.2";
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    CFShow((__bridge CFTypeRef)(infoDictionary));
+    // app版本
+    NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    
+    self.title = [NSString stringWithFormat:@"WADemo%@", appVersion];
     self.btnLayout = btnLayout;
     self.btns = btns;
 }
@@ -124,43 +137,43 @@
 //登录
 -(void)login{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoLoginUI* loginUI = [[WADemoLoginUI alloc]init];
-    loginUI.hasBackBtn = YES;
-    [vc.view addSubview:loginUI];
-    [loginUI moveIn:nil];
+    _loginUI = [[WADemoLoginUI alloc]initWithFrame:self.bounds];
+    self.loginUI.hasBackBtn = YES;
+    [vc.view addSubview:self.loginUI];
+    [self.loginUI moveIn:nil];
 }
 
 //账号管理
 -(void)acctManagement{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoAccountManagement* acctMgmt = [[WADemoAccountManagement alloc]init];
-    acctMgmt.hasBackBtn = YES;
-    [vc.view addSubview:acctMgmt];
-    [acctMgmt moveIn:nil];
+    _acctMgmt = [[WADemoAccountManagement alloc]initWithFrame:self.bounds];
+    self.acctMgmt.hasBackBtn = YES;
+    [vc.view addSubview:self.acctMgmt];
+    [self.acctMgmt moveIn:nil];
 }
 //应用内支付
 -(void)iap{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoIapView* productList = [[WADemoIapView alloc]init];
-    productList.hasBackBtn = YES;
-    [vc.view addSubview:productList];
-    [productList moveIn:nil];
+    _productList = [[WADemoIapView alloc]initWithFrame:self.bounds];
+    self.productList.hasBackBtn = YES;
+    [vc.view addSubview:self.productList];
+    [self.productList moveIn:nil];
 }
 //数据收集
 -(void)appTracking{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoAppTrackingView* appTrackView = [[WADemoAppTrackingView alloc]init];
-    appTrackView.hasBackBtn = YES;
-    [vc.view addSubview:appTrackView];
-    [appTrackView moveIn:nil];
+    _appTrackView = [[WADemoAppTrackingView alloc]initWithFrame:self.bounds];
+    self.appTrackView.hasBackBtn = YES;
+    [vc.view addSubview:self.appTrackView];
+    [self.appTrackView moveIn:nil];
 }
 //facebook分享
 -(void)facebookShare{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoFBShareView* fbShareView = [[WADemoFBShareView alloc]init];
-    fbShareView.hasBackBtn = YES;
-    [vc.view addSubview:fbShareView];
-    [fbShareView moveIn:nil];
+    _fbShareView = [[WADemoFBShareView alloc]initWithFrame:self.bounds];
+    self.fbShareView.hasBackBtn = YES;
+    [vc.view addSubview:self.fbShareView];
+    [self.fbShareView moveIn:nil];
 }
 //facebook邀请
 -(void)facebookInvite{
@@ -170,19 +183,19 @@
 //    [vc.view addSubview:fbInviteView];
 //    [fbInviteView moveIn];
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoInvite* inviteView = [[WADemoInvite alloc]init];
-    inviteView.hasBackBtn = YES;
-    [vc.view addSubview:inviteView];
-    [inviteView moveIn:nil];
+    _inviteView = [[WADemoInvite alloc]initWithFrame:self.bounds];
+    self.inviteView.hasBackBtn = YES;
+    [vc.view addSubview:self.inviteView];
+    [self.inviteView moveIn:nil];
 }
 
 //礼物
 -(void)gifting{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoGiftView* giftView = [[WADemoGiftView alloc]init];
-    giftView.hasBackBtn = YES;
-    [vc.view addSubview:giftView];
-    [giftView moveIn:nil];
+    _giftView = [[WADemoGiftView alloc]initWithFrame:self.bounds];
+    self.giftView.hasBackBtn = YES;
+    [vc.view addSubview:self.giftView];
+    [self.giftView moveIn:nil];
 }
 
 - (void)crash {
@@ -204,10 +217,10 @@
 - (void)pay
 {
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoPayView* payView = [[WADemoPayView alloc]init];
-    payView.hasBackBtn = YES;
-    [vc.view addSubview:payView];
-    [payView moveIn:nil];
+    _payView = [[WADemoPayView alloc]initWithFrame:self.bounds];
+    self.payView.hasBackBtn = YES;
+    [vc.view addSubview:self.payView];
+    [self.payView moveIn:nil];
 }
 
 - (void)payProduct
@@ -215,16 +228,12 @@
     [WAPayProxy payWithProductId:@"10086" extInfo:@"" delegate:self];
 }
 
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
-}
-
 -(void)checkUpdate{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoHotUpdateView* hotUpdate = [[WADemoHotUpdateView alloc]init];
-    hotUpdate.hasBackBtn = YES;
-    [vc.view addSubview:hotUpdate];
-    [hotUpdate moveIn:nil];
+    _hotUpdate = [[WADemoHotUpdateView alloc]initWithFrame:self.bounds];
+    self.hotUpdate.hasBackBtn = YES;
+    [vc.view addSubview:self.hotUpdate];
+    [self.hotUpdate moveIn:nil];
 }
 
 #pragma mark 实现 WAPaymentDelegate
@@ -254,8 +263,36 @@
     }
 }
 
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
+- (void)deviceOrientationDidChange
+{
+    [super deviceOrientationDidChange];
+    
+    if (self.loginUI)
+        [self.loginUI deviceOrientationDidChange];
+    
+    if (self.acctMgmt)
+        [self.acctMgmt deviceOrientationDidChange];
+    
+    if (self.productList)
+        [self.productList deviceOrientationDidChange];
+    
+    if (self.appTrackView)
+        [self.appTrackView deviceOrientationDidChange];
+    
+    if (self.fbShareView)
+        [self.fbShareView deviceOrientationDidChange];
+    
+    if (self.inviteView)
+        [self.inviteView deviceOrientationDidChange];
+    
+    if (self.giftView)
+        [self.giftView deviceOrientationDidChange];
+    
+    if (self.payView)
+        [self.payView deviceOrientationDidChange];
+    
+    if (self.hotUpdate)
+        [self.hotUpdate deviceOrientationDidChange];
 }
 
 @end

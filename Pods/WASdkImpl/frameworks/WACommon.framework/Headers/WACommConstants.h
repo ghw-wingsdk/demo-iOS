@@ -73,6 +73,7 @@ extern NSString *const WASDK_PARAM_KEY_COLLECTION_INFO;
 extern NSString *const WASDK_PARAM_KEY_ORDER_AMOUNT_MICROS;
 extern NSString *const WASDK_PARAM_KEY_PRODUCT_ID;
 extern NSString *const WASDK_PARAM_KEY_PRODUCT_NAME;
+extern NSString *const WASDK_PARAM_KEY_PRODUCT_DESC;
 extern NSString *const WASDK_PARAM_KEY_IAP_URL_PRO_LIST;
 extern NSString *const WASDK_PARAM_KEY_IAP_URL_CREATE_ORDER;
 extern NSString *const WASDK_PARAM_KEY_IAP_URL_NOTIFY_SERVER;
@@ -80,6 +81,9 @@ extern NSString *const WASDK_PARAM_KEY_SEND_SEQ;
 
 extern NSString *const WASDK_PARAM_KEY_QUERY_TYPE;
 extern NSString *const WASDK_PARAM_KEY_IS_REPORTDATA;
+
+extern NSString *const WASDK_PARAM_KEY_REAL_NAME;
+extern NSString *const WASDK_PARAM_KEY_ID_CARD;
 
 extern NSString *const WASDK_PARAM_KEY_PRODUCT_LIST;
 extern NSString *const WASDK_PARAM_KEY_GAME_CURRENCY_AMOUNT;
@@ -145,9 +149,14 @@ extern NSString *const WASDK_GUEST_LOGIN_USERID_CACHE;
 extern NSString *const WASDK_ACOUNT_BINDING_PREUSERID;
 extern NSString *const WASDK_ACOUNT_BINDING_PREPLATFORM;
 
+//绑定账号 支付订单购买日志
+extern NSString *const WASDK_TIME_STAMP;
+extern NSString *const WASDK_LOG_INFO;
+
 // 消息推送
 extern NSString *const WASDK_ACCESS_TOKEN;
 extern NSString *const WASDK_MSG_ID;
+extern NSString *const WASDK_ACTION_TYPE;
 
 extern NSString *const WASDK_IAP_URL_PROLIST;
 extern NSString *const WASDK_IAP_URL_NOTIFY_SERVER;
@@ -184,6 +193,8 @@ extern NSString *const WASDK_USER_LIST;
 
 // 获取客户端未统计上报的订单列表
 extern NSString *const WASDK_ORDER_LIST;
+// 客户端订单购买日志收集
+extern NSString *const WASDK_CLIENT_PURCHASE_LOG;
 // 更新订单的客户端统计上报状态
 extern NSString *const WASDK_CLT_STATUS_DONE;
 
@@ -212,6 +223,8 @@ extern NSString *const WASDK_LOGIN_URL_UPDATE_PWD;
 extern NSString *const WASDK_LOGIN_URL_BIND_MOBILE;
 // 免密码登录接口
 extern NSString *const WASDK_LOGIN_URL_FAST_LOGIN;
+// 使用TOKEN实名验证
+extern NSString *const WASDK_REAL_NAME_AUTHENTICATION;
 
 // 消息推送
 // 更新第三方消息服务的accessToken

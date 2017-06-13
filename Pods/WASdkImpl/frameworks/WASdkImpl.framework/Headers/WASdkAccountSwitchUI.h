@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <WACommon/WACommon.h>
 #import "WASdkAccountMainUI.h"
-@interface WASdkAccountSwitchUI : UIView
+@interface WASdkAccountSwitchUI : UIScrollView
 @property(nonatomic,weak)WASdkAccountMainUI* mainUI;
 @end

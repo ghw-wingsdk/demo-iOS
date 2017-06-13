@@ -19,18 +19,12 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         self.naviheight = [UIScreen mainScreen].bounds.size.height - frame.size.height;
         [self registerClass:[UITableViewCell class] forCellReuseIdentifier:productCellIdentifier];
         self.dataSource = self;
         
     }
     return self;
-}
-
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -89,13 +83,8 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
     }
 }
 
--(void)layoutSubviews{
-    [super layoutSubviews];
-    self.frame = CGRectMake(0, _naviheight, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - _naviheight);
-}
-
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
+-(void)deviceOrientationDidChange{
+    
 }
 
 #pragma mark 实现 WAPaymentDelegate

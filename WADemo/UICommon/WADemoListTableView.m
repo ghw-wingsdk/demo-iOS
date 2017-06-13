@@ -18,15 +18,15 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        UIViewController *rootController = [[UIApplication sharedApplication] keyWindow].rootViewController;
-        
-        _heightForContentView = frame.size.height;
+//        _heightForContentView = frame.size.height;
+        _heightForContentView = 250;
         _heightForHearder = 100;
         _heightForFooter = 60;
         
         _left = 0;
-        _top = 44;
-        float width = rootController.view.frame.size.width - 2*_left;
+//        _top = 44;
+        _top = 80;
+        float width = frame.size.width - 2*_left;
         float height = _heightForContentView + _heightForHearder + _heightForFooter;
         
         self.frame = CGRectMake(_left, _top, width, height);
@@ -35,10 +35,10 @@
         self.layer.borderWidth = 2;
         
         self.delegate =self;
-        self.tableHeaderView = [self fateHeaderViewWithTableView:self];
-        self.tableFooterView = [self fatefooterViewWithTableView:self];
-        [self headerViewWithTableView:self];
-        [self footerViewWithTableView:self];
+//        self.tableHeaderView = [self fateHeaderViewWithTableView:self];
+//        self.tableFooterView = [self fatefooterViewWithTableView:self];
+        self.tableHeaderView = [self headerViewWithTableView:self];
+        self.tableFooterView = [self footerViewWithTableView:self];
     }
     return self;
 }
@@ -65,44 +65,45 @@
         self.layer.borderWidth = 2;
         
         self.delegate =self;
-        self.tableHeaderView = [self fateHeaderViewWithTableView:self];
-        self.tableFooterView = [self fatefooterViewWithTableView:self];
-        [self headerViewWithTableView:self];
-        [self footerViewWithTableView:self];
-        
-
+//        self.tableHeaderView = [self fateHeaderViewWithTableView:self];
+//        self.tableFooterView = [self fatefooterViewWithTableView:self];
+        self.tableHeaderView = [self headerViewWithTableView:self];
+        self.tableFooterView = [self footerViewWithTableView:self];
     }
     return self;
 }
 
--(UIView*)fateHeaderViewWithTableView:(UITableView*)tableView{
-    CGRect frame = CGRectMake(0, 0, tableView.frame.size.width, _heightForHearder);
-    UIView* fhv = [[UIView alloc]initWithFrame:frame];
-    return fhv;
-}
-
--(UIView*)fatefooterViewWithTableView:(UITableView*)tableView{
-    CGRect frame = CGRectMake(0, tableView.frame.size.height - _heightForFooter, tableView.frame.size.width, _heightForFooter);
-    UIView* fhv = [[UIView alloc]initWithFrame:frame];
-    return fhv;
-}
+//-(UIView*)fateHeaderViewWithTableView:(UITableView*)tableView{
+//    CGRect frame = CGRectMake(0, 0, tableView.frame.size.width, _heightForHearder);
+//    UIView* fhv = [[UIView alloc]initWithFrame:frame];
+//    return fhv;
+//}
+//
+//-(UIView*)fatefooterViewWithTableView:(UITableView*)tableView{
+//    CGRect frame = CGRectMake(0, tableView.frame.size.height - _heightForFooter, tableView.frame.size.width, _heightForFooter);
+//    UIView* fhv = [[UIView alloc]initWithFrame:frame];
+//    return fhv;
+//}
 
 -(void)setTableViewFrame{
     UIViewController *rootController = [[UIApplication sharedApplication] keyWindow].rootViewController;
     float width = rootController.view.frame.size.width - 2*_left;
     float height = _heightForContentView + _heightForHearder + _heightForFooter;
     
+    if (height > self.superview.frame.size.height - _top)
+        height = self.superview.frame.size.height - _top;
+        
     self.frame = CGRectMake(_left, _top, width, height);
 }
 
 
--(void)setHeightForHearder:(float)heightForHearder{
-    _heightForHearder = heightForHearder;
-    [self setTableViewFrame];
-    [self headerViewWithTableView:self];
-    self.tableHeaderView = [self fateHeaderViewWithTableView:self];
-    self.tableHeaderView = [self fatefooterViewWithTableView:self];
-}
+//-(void)setHeightForHearder:(float)heightForHearder{
+//    _heightForHearder = heightForHearder;
+//    [self setTableViewFrame];
+//    [self headerViewWithTableView:self];
+//    self.tableHeaderView = [self fateHeaderViewWithTableView:self];
+//    self.tableHeaderView = [self fatefooterViewWithTableView:self];
+//}
 
 -(void)setHeightForContentView:(float)heightForCell{
     _heightForContentView = heightForCell;
@@ -167,7 +168,7 @@
     _btnView.backgroundColor = [UIColor whiteColor];
     
     [self drawBtnInView:_btnView];
-    [self addSubview:_headerView];
+//    [self addSubview:_headerView];
     return _headerView;
 }
 
@@ -177,7 +178,8 @@
     float btnHeight = _heightForFooter - 2*space;
     float btnWidth = tableView.frame.size.width - 2*space;
     float ftvHeight = btnHeight + 2*space;
-    CGRect frame = CGRectMake(0, tableView.frame.size.height - ftvHeight, tableView.frame.size.width, ftvHeight);
+//    CGRect frame = CGRectMake(0, tableView.frame.size.height - ftvHeight, tableView.frame.size.width, ftvHeight);
+    CGRect frame = CGRectMake(0, 0, tableView.frame.size.width, ftvHeight);
     if (!_footerView) {
         _footerView = [[UIView alloc]init];
     }
@@ -186,14 +188,14 @@
     
     if (!_bottomBtn) {
         _bottomBtn = [[UIButton alloc]init];
+        [_footerView addSubview:_bottomBtn];
     }
     
     _bottomBtn.backgroundColor = self.subjectColor;
     frame = CGRectMake(space, space, btnWidth, btnHeight);
     _bottomBtn.frame = frame;
     
-    [_footerView addSubview:_bottomBtn];
-    [self addSubview:_footerView];
+//    [self addSubview:_footerView];
     return _footerView;
 }
 
@@ -228,19 +230,41 @@
     
 }
 
--(void)layoutSubviews{
-    [super layoutSubviews];
-}
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGRect frame = self.headerView.frame;
-    frame.origin.y = scrollView.contentOffset.y;
-    self.headerView.frame = frame;
+//    CGRect frame = self.headerView.frame;
+//    frame.origin.y = scrollView.contentOffset.y;
+//    self.headerView.frame = frame;
+//    
+//    frame = self.footerView.frame;
+//    frame.origin.y = self.frame.size.height + scrollView.contentOffset.y - _footerView.frame.size.height;
+//    self.footerView.frame = frame;
+}
+
+- (void)deviceOrientationDidChange
+{
+    [self setTableViewFrame];
+    self.tableHeaderView = [self headerViewWithTableView:self];
+    self.tableFooterView = [self footerViewWithTableView:self];
     
-    frame = self.footerView.frame;
-    frame.origin.y = self.frame.size.height + scrollView.contentOffset.y - _footerView.frame.size.height;
-    self.footerView.frame = frame;
+//    // header
+//    CGRect frame = CGRectMake(0, 0, self.frame.size.width, _heightForHearder);
+//    _headerView.frame = frame;
+//    _labelInHeaderView.frame = frame;
+//    frame.origin.y = _heightForHearder/2;
+//    _btnView.frame = frame;
+//    
+//    [self drawBtnInView:_btnView];
+//    
+//    // footer
+//    float space = 0;
+//    float btnHeight = _heightForFooter - 2*space;
+//    float btnWidth = self.frame.size.width - 2*space;
+//    float ftvHeight = btnHeight + 2*space;
+//    frame = CGRectMake(0, self.frame.size.height - ftvHeight, self.frame.size.width, ftvHeight);
+//    _footerView.frame = frame;
+//    frame = CGRectMake(space, space, btnWidth, btnHeight);
+//    _bottomBtn.frame = frame;
 }
 
 -(void)close{

@@ -11,7 +11,7 @@
 #import <WACommon/WACommon.h>
 
 @interface WASdkLoginHandler : NSObject
-+(void)loginWithResult:(WALoginResult*)loginResult delegate:(id<WALoginDelegate>)delegate;
+//+(void)loginWithResult:(WALoginResult*)loginResult delegate:(id<WALoginDelegate>)delegate;
 +(void)loginWithResult:(WALoginResult*)loginResult extInfo:(NSString*)extInfo delegate:(id<WALoginDelegate>)delegate;
 +(void)refreshTokenWithBlock:(void(^)(NSError* error ,NSString* token))block;
 +(void)getLoginWay:(void(^)(NSError* error ,NSArray* loginWays))block;

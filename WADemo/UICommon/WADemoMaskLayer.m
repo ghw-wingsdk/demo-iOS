@@ -19,9 +19,10 @@ static WADemoMaskLayer* ghwMaskLayer_;
     if (self) {
         //添加界面旋转通知
         [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
-        self.frame = [UIScreen mainScreen].bounds;
+        
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.4];
         [self initUI];
+        [self orientationDidChange];
     }
     return self;
 }
@@ -38,10 +39,20 @@ static WADemoMaskLayer* ghwMaskLayer_;
     [self addSubview:_maskLayerIndicator];
 }
 
--(void)layoutSubviews{
-    [super layoutSubviews];
-    self.frame = [UIScreen mainScreen].bounds;
-    _maskLayerIndicator.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/2);
+-(void)orientationDidChange
+{
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if (((orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown) && width > height)
+        || ((orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) && width < height))
+    {
+        width = [UIScreen mainScreen].bounds.size.height;
+        height = [UIScreen mainScreen].bounds.size.width;
+    }
+    self.frame = CGRectMake(0, 0, width, height);
+    
+    _maskLayerIndicator.center = CGPointMake(width / 2, height / 2);
 }
 
 +(void)startAnimating{
@@ -54,6 +65,13 @@ static WADemoMaskLayer* ghwMaskLayer_;
 +(void)stopAnimating{
     [ghwMaskLayer_ removeFromSuperview];
     ghwMaskLayer_ = nil;
+}
+
++(void)deviceOrientationDidChange
+{
+    if (ghwMaskLayer_) {
+        [ghwMaskLayer_ orientationDidChange];
+    }
 }
 
 -(void)dealloc{

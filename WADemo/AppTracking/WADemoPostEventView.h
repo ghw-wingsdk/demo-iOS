@@ -18,4 +18,5 @@
 @property(nonatomic,copy)NSString* eventName;
 -(instancetype)initWithViewControllerView:(UIViewController*)viewController eventName:(NSString*)eventName;
 -(instancetype)initWithNaviHeight:(float)naviHeight eventName:(NSString*)eventName;
+- (void)deviceOrientationDidChange;
 @end

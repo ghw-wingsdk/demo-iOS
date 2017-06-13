@@ -15,14 +15,18 @@
 #import "WADemoViewController.h"
 #import "WADemoBindingAccountList.h"
 
+@interface WADemoAccountManagement ()
+
+@property (nonatomic, strong) WADemoAccountSwitch* acctSwitch;
+@property (nonatomic, strong) WADemoBindingAccountList* accountList;
+
+@end
+
 @implementation WADemoAccountManagement
 
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
-        
         [self initBtnAndLayout];
         [self bindAddObserver];
     }
@@ -118,11 +122,6 @@
     }
 }
 
-
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
-}
-
 -(void)initBtnAndLayout{
     NSMutableArray* btns = [NSMutableArray array];
     WADemoButtonMain* btn1 = [[WADemoButtonMain alloc]init];
@@ -133,32 +132,40 @@
     [btn2 setTitle:@"绑定Apple账号" forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(bindApple) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn2];
-    WADemoButtonMain* btn7 = [[WADemoButtonMain alloc]init];
-    [btn7 setTitle:@"绑定VK账号" forState:UIControlStateNormal];
-    [btn7 addTarget:self action:@selector(bindVK) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn7];
     WADemoButtonMain* btn3 = [[WADemoButtonMain alloc]init];
-    [btn3 setTitle:@"新建账户" forState:UIControlStateNormal];
-    [btn3 addTarget:self action:@selector(newAccount) forControlEvents:UIControlEventTouchUpInside];
+    [btn3 setTitle:@"绑定VK账号" forState:UIControlStateNormal];
+    [btn3 addTarget:self action:@selector(bindVK) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn3];
     WADemoButtonMain* btn4 = [[WADemoButtonMain alloc]init];
-    [btn4 setTitle:@"切换账户" forState:UIControlStateNormal];
-    [btn4 addTarget:self action:@selector(accoutSwitch) forControlEvents:UIControlEventTouchUpInside];
+    [btn4 setTitle:@"绑定Twitter账号" forState:UIControlStateNormal];
+    [btn4 addTarget:self action:@selector(bindTwitter) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn4];
     WADemoButtonMain* btn5 = [[WADemoButtonMain alloc]init];
-    [btn5 setTitle:@"查询已绑定账户" forState:UIControlStateNormal];
-    [btn5 addTarget:self action:@selector(bindingList) forControlEvents:UIControlEventTouchUpInside];
+    [btn5 setTitle:@"绑定Instagram账号" forState:UIControlStateNormal];
+    [btn5 addTarget:self action:@selector(bindInstagram) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn5];
     WADemoButtonMain* btn6 = [[WADemoButtonMain alloc]init];
-    [btn6 setTitle:@"打开SDK内置账号管理界面" forState:UIControlStateNormal];
-    [btn6 addTarget:self action:@selector(popAcctManagementUI) forControlEvents:UIControlEventTouchUpInside];
+    [btn6 setTitle:@"新建账户" forState:UIControlStateNormal];
+    [btn6 addTarget:self action:@selector(newAccount) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn6];
+    WADemoButtonMain* btn7 = [[WADemoButtonMain alloc]init];
+    [btn7 setTitle:@"切换账户" forState:UIControlStateNormal];
+    [btn7 addTarget:self action:@selector(accoutSwitch) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn7];
     WADemoButtonMain* btn8 = [[WADemoButtonMain alloc]init];
-    [btn8 setTitle:@"获取当前账户信息(getAccountInfo-VK)" forState:UIControlStateNormal];
-    [btn8 addTarget:self action:@selector(getAccountInfo) forControlEvents:UIControlEventTouchUpInside];
+    [btn8 setTitle:@"查询已绑定账户" forState:UIControlStateNormal];
+    [btn8 addTarget:self action:@selector(bindingList) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn8];
+    WADemoButtonMain* btn9 = [[WADemoButtonMain alloc]init];
+    [btn9 setTitle:@"打开SDK内置账号管理界面" forState:UIControlStateNormal];
+    [btn9 addTarget:self action:@selector(popAcctManagementUI) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn9];
+    WADemoButtonMain* btn10 = [[WADemoButtonMain alloc]init];
+    [btn10 setTitle:@"获取当前账户信息(getAccountInfo-VK)" forState:UIControlStateNormal];
+    [btn10 addTarget:self action:@selector(getAccountInfo) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn10];
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@1,@1]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@1,@1]];
     //
     self.title = @"账户管理";
     self.btnLayout = btnLayout;
@@ -181,6 +188,16 @@
     [WADemoMaskLayer startAnimating];
     [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_VK extInfo:nil delegate:self];
 }
+
+-(void)bindTwitter{
+    [WADemoMaskLayer startAnimating];
+    [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_TWITTER extInfo:nil delegate:self];
+}
+
+-(void)bindInstagram{
+    [WADemoMaskLayer startAnimating];
+    [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_INSTAGRAM extInfo:nil delegate:self];
+}
 //新建账户
 
 -(void)newAccount{
@@ -202,10 +219,10 @@
 //切换账户
 -(void)accoutSwitch{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoAccountSwitch* acctSwitch = [[WADemoAccountSwitch alloc]init];
-    acctSwitch.hasBackBtn = YES;
-    [vc.view addSubview:acctSwitch];
-    [acctSwitch moveIn:nil];
+    self.acctSwitch = [[WADemoAccountSwitch alloc]initWithFrame:self.bounds];
+    self.acctSwitch.hasBackBtn = YES;
+    [vc.view addSubview:self.acctSwitch];
+    [self.acctSwitch moveIn:nil];
 }
 
 //查询已绑定账户
@@ -214,9 +231,9 @@
         if (error) {
             NSLog(@"error : %@",error.description);
         }else{
-            WADemoBindingAccountList* accountList = [[WADemoBindingAccountList alloc]init];
-            accountList.accounts = accounts;
-            [self addSubview:accountList];
+            _accountList = [[WADemoBindingAccountList alloc]initWithFrame:self.bounds];
+            self.accountList.accounts = accounts;
+            [self addSubview:self.accountList];
         }
     }];
     
@@ -299,12 +316,21 @@
     [alert show];
 }
 
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
+-(void)removeView{
     [self bindRemoveObserver];
-}
--(void)removeFromSuperview{
     
+    [super removeView];
+}
+
+- (void)deviceOrientationDidChange
+{
+    [super deviceOrientationDidChange];
+    
+    if (self.acctSwitch)
+        [self.acctSwitch deviceOrientationDidChange];
+    
+    if (self.accountList)
+        [self.accountList deviceOrientationDidChange];
 }
 
 @end

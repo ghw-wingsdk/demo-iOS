@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.6.2</string>
+	<string>3.6.4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -33,6 +33,14 @@
 				<string>myapp://wasdk</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>twitterkit-SPRwO9pH5p9bJCAbUHaiV8oQY</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>3</string>
@@ -40,6 +48,15 @@
 	<string>1811388679079227</string>
 	<key>FacebookDisplayName</key>
 	<string>com.ghw.sdk应用</string>
+	<key>Instagram</key>
+	<dict>
+		<key>clientId</key>
+		<string>ccfca0cf46714799819e865e6b499bb5</string>
+		<key>clientSecret</key>
+		<string>13e7578a86904cc79714b75d22d86192</string>
+		<key>redirectUri</key>
+		<string>http://blog.wing-analytics.com</string>
+	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -58,8 +75,8 @@
 		<string>app870200932</string>
 		<string>fbshareextension</string>
 		<string>vkauthorize</string>
-		<string>weixin</string>
-		<string>wechat</string>
+		<string>twitter</string>
+		<string>twitterauth</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -91,6 +108,13 @@
 				<false/>
 			</dict>
 		</dict>
+	</dict>
+	<key>Twitter</key>
+	<dict>
+		<key>consumerKey</key>
+		<string>SPRwO9pH5p9bJCAbUHaiV8oQY</string>
+		<key>consumerSecret</key>
+		<string>9i6bo6KjPNl0k08kVPR29qjoaBLwbFWPZzYoBZ6jS7JuQZEPCa</string>
 	</dict>
 	<key>UIBackgroundModes</key>
 	<array>

@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char WAVkImplVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WAVkImpl/PublicHeader.h>
 
-//time:2017/3/25 12:03 ver:3.6.2
+//time:2017/6/12 14:38 ver:3.6.4

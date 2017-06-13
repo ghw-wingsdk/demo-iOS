@@ -12,6 +12,8 @@
 
 @interface WADemoViewController ()
 
+@property (nonatomic, strong) WADemoMainUI* mainUI;
+
 @end
 
 @implementation WADemoViewController
@@ -19,18 +21,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
+    
+    [self initUI];
     
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self initUI];
 }
 
 -(void)initUI{
-    WADemoMainUI* mainUI = [[WADemoMainUI alloc]init];
-    [self.view addSubview:mainUI];   
+    self.mainUI = [[WADemoMainUI alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:self.mainUI];   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +67,11 @@
 -(void)switchAcctDidCompleteWithResult:(WALoginResult*)result{
     WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"切换账户成功" message:[NSString stringWithFormat:@"platform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@",result.platform,result.pUserId,result.pToken,result.token,result.userId] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self.mainUI deviceOrientationDidChange];
 }
 
 @end

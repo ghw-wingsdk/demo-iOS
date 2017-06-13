@@ -39,6 +39,8 @@
  sourceApplication:(NSString *)sourceApplication
         annotation:(id)annotation;
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
+
 -(void)loginWithResult:(WALoginResult*)result delegate:(id<WALoginDelegate>)delegate;
 -(void)loginWithResult:(WALoginResult*)result extInfo:(NSString*)extInfo delegate:(id<WALoginDelegate>)delegate;
 

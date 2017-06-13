@@ -70,8 +70,6 @@
         self.btns = btns;
         [self initUI];
         self.scrollEnabled = YES;
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
     }
     return self;
 }
@@ -104,26 +102,23 @@
     [_btns enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [weakSelf addSubview:obj];
     }];
+    
+    [self deviceOrientationDidChange];
 }
 
 
 #pragma mark Layout
 
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
-}
-
--(void)layoutSubviews{
-    [super layoutSubviews];
-    
+-(void)deviceOrientationDidChange
+{
     if (!_btnLayout||!_btns) {
         return;
     }
     
-    CGRect frame = self.frame;
-    frame.size.width = self.superview.bounds.size.width;
-    frame.size.height = self.superview.bounds.size.height;
-    self.frame = frame;
+//    CGRect frame = self.frame;
+//    frame.size.width = self.superview.bounds.size.width;
+//    frame.size.height = self.superview.bounds.size.height;
+//    self.frame = frame;
     __block int btnIndex = 0;
     __block NSUInteger line;
     [_btnLayout enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -131,7 +126,7 @@
         NSNumber* numOfBtn = obj;//当前行的按钮个数
 
         float btn_h = _btnHeight;//高度一样
-        float viewW = self.superview.bounds.size.width;
+        float viewW = self.bounds.size.width;
         for (int i = 1; i < numOfBtn.intValue + 1; i++) {
             float btn_w = (viewW - _left - _right - (numOfBtn.intValue - 1)* _mid_space_h)/numOfBtn.intValue;
             float btn_x = _left + (btn_w + _mid_space_h)*(i - 1);
@@ -154,10 +149,6 @@
     }
     self.contentSize = CGSizeMake(self.bounds.size.width, contentHeight);
     
-}
-
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
 }
 
 @end

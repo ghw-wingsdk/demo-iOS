@@ -96,5 +96,9 @@
 	<string>您不能在越狱的机器上进行购买    </string>
 	<key>wasdk_copy</key>
 	<string>复制</string>
+	<key>wasdk_login_twitter</key>
+	<string>Twitter</string>
+	<key>wasdk_login_instagram</key>
+	<string>Instagram</string>
 </dict>
 </plist>

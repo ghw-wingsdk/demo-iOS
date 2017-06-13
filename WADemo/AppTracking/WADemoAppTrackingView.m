@@ -12,18 +12,12 @@
 #import "WADemoPostEventView.h"
 @implementation WADemoAppTrackingView
 
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
     }
     return self;
-}
-
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
 }
 
 -(void)initBtnAndLayout{
@@ -287,8 +281,14 @@
     [self addSubview:view];
 }
 
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
+- (void)deviceOrientationDidChange
+{
+    [super deviceOrientationDidChange];
+    if ([self.subviews.lastObject isKindOfClass:[WADemoPostEventView class]])
+    {
+        WADemoPostEventView* viewCurr = self.subviews.lastObject;
+        [viewCurr deviceOrientationDidChange];
+    }
 }
 
 @end

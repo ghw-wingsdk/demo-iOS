@@ -1,0 +1,1 @@
+../../../../WATwitterImpl/frameworks/TwitterKit.framework/Headers/TWTRTweetEntity.h

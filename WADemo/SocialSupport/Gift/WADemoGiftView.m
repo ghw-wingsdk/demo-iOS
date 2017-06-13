@@ -12,19 +12,12 @@
 #import "WADemoFBGiftView.h"
 #import "WADemoVKGiftView.h"
 @implementation WADemoGiftView
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
     }
     return self;
-}
-
-
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
 }
 
 -(void)initBtnAndLayout{
@@ -51,7 +44,7 @@
 -(void)fb{
     
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoFBGiftView* fbGiftView = [[WADemoFBGiftView alloc]init];
+    WADemoFBGiftView* fbGiftView = [[WADemoFBGiftView alloc]initWithFrame:self.bounds];
     fbGiftView.hasBackBtn = YES;
     [vc.view addSubview:fbGiftView];
     [fbGiftView moveIn:nil];
@@ -59,7 +52,7 @@
 
 -(void)vk{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoVKGiftView* vkGiftView = [[WADemoVKGiftView alloc]init];
+    WADemoVKGiftView* vkGiftView = [[WADemoVKGiftView alloc]initWithFrame:self.bounds];
     vkGiftView.hasBackBtn = YES;
     [vc.view addSubview:vkGiftView];
     [vkGiftView moveIn:nil];

@@ -48,6 +48,28 @@
  @abstract 是否绑定手机号
  */
 @property BOOL isBindMobile;
+/**!
+ @abstract 是否绑定手机号 用户状态(有效用户返回)：
+ * 0:已实名
+ * 1:未实名
+ */
+@property NSInteger userStatus;
+/**!
+ @abstract 登录实名验证：
+ * 0:不需要实名验证
+ * 1:提示用户实名验证，这里返回的token可作为登录及用户实名验证使用
+ * 2:强制用户实名验证，此时返回的仅是token是实名验证token
+ */
+@property NSInteger loginRna;
+/**!
+ @abstract 支付实名验证：
+ * 0:不需要实名验证
+ * 1:提示用户实名验证
+ * 2:强制用户实名验证
+ * 注：当有该字段返回时，token可作为登录及用户实名验证使用
+ */
+@property NSInteger paymentRna;
+
 -(id)initWithPUserId:(NSString*)userId pToken:(NSString*)token platform:(NSString*)platform;
 +(id)loginResultWithPUserId:(NSString*)userId pToken:(NSString*)token platform:(NSString*)platform;
 @end

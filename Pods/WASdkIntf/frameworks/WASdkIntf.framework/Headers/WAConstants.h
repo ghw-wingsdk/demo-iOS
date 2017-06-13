@@ -33,6 +33,8 @@ extern NSString *const WA_PLATFORM_WECHAT;
 extern NSString *const WA_PLATFORM_HUP;
 extern NSString *const WA_PLATFORM_APW;
 extern NSString *const WA_PLATFORM_PUSH;
+extern NSString *const WA_PLATFORM_TWITTER;
+extern NSString *const WA_PLATFORM_INSTAGRAM;
 
 
 extern NSString *const WA_CONSTANT_GUEST;

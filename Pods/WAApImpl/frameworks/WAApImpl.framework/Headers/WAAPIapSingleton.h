@@ -51,11 +51,12 @@ extern NSString * const IAPResultNotification;
 /**
  *  单个商品购买
  *
+ *  @param waProductId 对应wa产品id
  *  @param product 对应苹果商品类
  *  @param serverId服务器id
  *  @param extInfo一些额外信息
  */
-+(void)singlePurchase:(SKProduct*)product withServerId:(NSString*)serverId withExtInfo:(NSString*)extInfo;
++(void)singlePurchaseWithWAProductId:(NSString *)waProductId product:(SKProduct*)product withServerId:(NSString*)serverId withExtInfo:(NSString*)extInfo;
 /**
  *  单个商品购买
  *

@@ -13,8 +13,8 @@
 @end
 @implementation WADemoBindingAccountList
 
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
         [self initUI];
         [self registerClass:[UITableViewCell class] forCellReuseIdentifier:@"GHWSDKBindingAccountCell"];

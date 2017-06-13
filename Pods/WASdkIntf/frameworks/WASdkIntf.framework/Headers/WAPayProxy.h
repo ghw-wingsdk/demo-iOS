@@ -73,4 +73,6 @@
  */
 +(BOOL)isPayServiceAvailable;
 
++(void)payLog:(NSString *)logInfo;
+
 @end

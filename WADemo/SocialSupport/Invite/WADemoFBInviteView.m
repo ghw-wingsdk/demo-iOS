@@ -14,11 +14,9 @@
 #import "WADemoUtil.h"
 @implementation WADemoFBInviteView
 
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
     }
     return self;
@@ -100,8 +98,14 @@
 
 //邀请成功
 - (void)appInviteDialog:(WAAppInviteDialog *)appInviteDialog platform:(NSString *const)platform didCompleteWithResults:(NSDictionary *)results{
-    NSLog(@"邀请成功:result:%@",results);
-    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"邀请成功" message:[NSString stringWithFormat:@"邀请成功:result:%@",results] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+    NSString *msg = @"邀请成功";
+    if (!results || ![results isKindOfClass:[NSDictionary class]] || [@"cancel" isEqualToString:results[@"completionGesture"]])
+    {
+        msg = @"邀请取消";
+    }
+    
+    NSLog(@"%@:result:%@", msg, results);
+    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:msg message:[NSString stringWithFormat:@"%@:result:%@",msg, results] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
 }
 
@@ -110,11 +114,6 @@
     NSLog(@"邀请失败:error:%@",error.description);
     WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"邀请失败" message:[NSString stringWithFormat:@"邀请失败:error:%@",error.description] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
-}
-
-
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
 }
 
 @end

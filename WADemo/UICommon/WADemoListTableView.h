@@ -21,5 +21,7 @@
 @property(nonatomic,strong)UIView* headerView;//表头视图
 @property(nonatomic,strong)UIView* footerView;
 @property(nonatomic,strong)UIButton* bottomBtn;
+
+- (void)deviceOrientationDidChange;
 -(void)close;
 @end

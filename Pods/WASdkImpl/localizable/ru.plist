@@ -96,5 +96,9 @@
 	<string>Вы не можете совершать покупки на взломанном устройстве</string>
 	<key>wasdk_copy</key>
 	<string>Copy</string>
+    <key>wasdk_login_twitter</key>
+    <string>Twitter</string>
+    <key>wasdk_login_instagram</key>
+    <string>Instagram</string>
 </dict>
 </plist>

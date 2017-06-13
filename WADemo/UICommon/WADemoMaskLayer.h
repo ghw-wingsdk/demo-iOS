@@ -11,4 +11,5 @@
 @interface WADemoMaskLayer : UIView
 +(void)startAnimating;
 +(void)stopAnimating;
++(void)deviceOrientationDidChange;
 @end

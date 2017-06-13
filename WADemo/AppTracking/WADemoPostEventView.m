@@ -46,7 +46,9 @@
 -(instancetype)initWithNaviHeight:(float)naviHeight eventName:(NSString*)eventName{
     self = [super init];
     if (self) {
-        self.naviHeight = naviHeight;
+        CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
+        CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
+        self.naviHeight = naviHeight + heightStatus;
         self.eventName = eventName;
         [self initData];
         [self initUI];
@@ -78,9 +80,6 @@
 }
 
 -(void)initUI{
-    
-    //添加界面旋转通知
-    [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
     
     self.backgroundColor = [UIColor whiteColor];
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -133,7 +132,7 @@
     [_closeBtn addTarget:self action:@selector(closeView) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_closeBtn];
     
-    
+    [self deviceOrientationDidChange];
 }
 
 -(void)closeView{
@@ -167,7 +166,7 @@
     [self setNeedsDisplay];
 }
 
--(void)layoutSubviews{
+-(void)deviceOrientationDidChange{
     float screenH = [UIScreen mainScreen].bounds.size.height;
     float screenW = [UIScreen mainScreen].bounds.size.width;
     if (_naviHeight!=0) {
@@ -351,102 +350,4 @@
     [event trackEvent];
 }
 
-/*
- -(void)postData{
- GHWSDKEvent* event = [[GHWSDKEvent alloc]init];
- 
- WAEventData* params = _afParam;
- event.channelSwitcherDict = @{WA_PLATFORM_APPSFLYER:[NSNumber numberWithBool:_afParam.on],WA_PLATFORM_CHARTBOOST:[NSNumber numberWithBool:_cbParam.on],WA_PLATFORM_FACEBOOK:[NSNumber numberWithBool:_fbParam.on],WA_PLATFORM_WINGA:[NSNumber numberWithBool:_ghwParam.on]};
- 
- if (_defParam.eventNameOn) {
- event.defaultEventName = self.defParam.eventName;
- }
- if (_defParam.paramDictOn) {
- event.defaultParamValues = @{
- WAEventParameterNameLevel:[NSNumber numberWithInt:[_defParam.level intValue]],
- WAEventParameterNameScore:[NSNumber numberWithInt:[_defParam.score intValue]],
- WAEventParameterNameFighting:[NSNumber numberWithInt:[_defParam.fighting intValue]],
- WAEventParameterNameLevelInfo:_defParam.levelInfo,
- WAEventParameterNameLevelType:[NSNumber numberWithInt:[_defParam.levelType intValue]],
- WAEventParameterNameDescription:_defParam.desc
- };
- }
- 
- event.defaultValue = [self.defParam.value doubleValue];
- 
- 
- 
- NSMutableDictionary* mEventNameDict = [NSMutableDictionary dictionary];
- if (_afParam.eventNameOn) {
- [mEventNameDict setObject:_afParam.eventName forKey:WA_PLATFORM_APPSFLYER];
- }
- if (_cbParam.eventNameOn) {
- [mEventNameDict setObject:_cbParam.eventName forKey:WA_PLATFORM_CHARTBOOST];
- }
- if (_ghwParam.eventNameOn) {
- [mEventNameDict setObject:_ghwParam.eventName forKey:WA_PLATFORM_WINGA];
- }
- if (_fbParam.eventNameOn) {
- [mEventNameDict setObject:_fbParam.eventName forKey:WA_PLATFORM_FACEBOOK];
- }
- 
- event.eventNameDict = mEventNameDict;
- event.valueDict = @{WA_PLATFORM_APPSFLYER:[NSNumber numberWithInt:[_afParam.value doubleValue]],WA_PLATFORM_CHARTBOOST:[NSNumber numberWithInt:[_cbParam.value doubleValue]],WA_PLATFORM_FACEBOOK:[NSNumber numberWithInt:[_fbParam.value doubleValue]],WA_PLATFORM_WINGA:[NSNumber numberWithInt:[_ghwParam.value doubleValue]]};
- 
- 
- NSMutableDictionary* mParamValueDict = [NSMutableDictionary dictionary];
- if (_afParam.paramDictOn) {
- [mParamValueDict setObject:@{
- WAEventParameterNameLevel:[NSNumber numberWithInt:[_afParam.level intValue]],
- WAEventParameterNameScore:[NSNumber numberWithInt:[_afParam.score intValue]],
- WAEventParameterNameFighting:[NSNumber numberWithInt:[_afParam.fighting intValue]],
- WAEventParameterNameLevelInfo:_afParam.levelInfo,
- WAEventParameterNameLevelType:[NSNumber numberWithInt:[_afParam.levelType intValue]],
- WAEventParameterNameDescription:_afParam.desc
- } forKey:WA_PLATFORM_APPSFLYER];
- }
- if (_cbParam.paramDictOn) {
- [mParamValueDict setObject:@{
- WAEventParameterNameLevel:[NSNumber numberWithInt:[_cbParam.level intValue]],
- WAEventParameterNameScore:[NSNumber numberWithInt:[_cbParam.score intValue]],
- WAEventParameterNameFighting:[NSNumber numberWithInt:[_cbParam.fighting intValue]],
- WAEventParameterNameLevelInfo:_cbParam.levelInfo,
- WAEventParameterNameLevelType:[NSNumber numberWithInt:[_cbParam.levelType intValue]],
- WAEventParameterNameDescription:_cbParam.desc
- } forKey:WA_PLATFORM_CHARTBOOST];
- }
- if (_ghwParam.paramDictOn) {
- [mParamValueDict setObject:@{
- WAEventParameterNameLevel:[NSNumber numberWithInt:[_ghwParam.level intValue]],
- WAEventParameterNameScore:[NSNumber numberWithInt:[_ghwParam.score intValue]],
- WAEventParameterNameFighting:[NSNumber numberWithInt:[_ghwParam.fighting intValue]],
- WAEventParameterNameLevelInfo:_ghwParam.levelInfo,
- WAEventParameterNameLevelType:[NSNumber numberWithInt:[_ghwParam.levelType intValue]],
- WAEventParameterNameDescription:_ghwParam.desc
- } forKey:WA_PLATFORM_WINGA];
- }
- if (_fbParam.paramDictOn) {
- [mParamValueDict setObject:@{
- WAEventParameterNameLevel:[NSNumber numberWithInt:[_fbParam.level intValue]],
- WAEventParameterNameScore:[NSNumber numberWithInt:[_fbParam.score intValue]],
- WAEventParameterNameFighting:[NSNumber numberWithInt:[_fbParam.fighting intValue]],
- WAEventParameterNameLevelInfo:_fbParam.levelInfo,
- WAEventParameterNameLevelType:[NSNumber numberWithInt:[_fbParam.levelType intValue]],
- WAEventParameterNameDescription:_fbParam.desc
- } forKey:WA_PLATFORM_FACEBOOK];
- }
- 
- 
- 
- event.paramValuesDict = mParamValueDict;
- 
- [event trackEvent];
- }
- 
- 
- */
-
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
-}
 @end

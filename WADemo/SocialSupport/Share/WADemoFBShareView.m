@@ -11,19 +11,13 @@
 #import "WADemoUtil.h"
 @implementation WADemoFBShareView
 
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
         
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
     }
     return self;
-}
-
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
 }
 
 -(void)initBtnAndLayout{
@@ -192,10 +186,6 @@ static int flag = -1;//0:PhotoUI 1:PhotoApi 2:VideoUI 3:VideoApi
         NSLog(@"...................");
     }];
     
-}
-
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
 }
 
 @end

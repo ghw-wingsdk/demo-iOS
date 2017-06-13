@@ -528,6 +528,7 @@
 				TargetAttributes = {
 					7FC4E2B41C8EEE7C0075FC7D = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = BVZ75RDYN8;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 0;
@@ -832,7 +833,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BVZ75RDYN8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -850,7 +851,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BVZ75RDYN8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

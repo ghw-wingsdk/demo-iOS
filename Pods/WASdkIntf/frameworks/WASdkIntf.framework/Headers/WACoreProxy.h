@@ -230,4 +230,5 @@ NSLog((@"WASDK LOG [(version %@) %s ]:" fmt), [WACoreProxy getSdkVer],__FUNCTION
  */
 + (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
 
++ (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
 @end

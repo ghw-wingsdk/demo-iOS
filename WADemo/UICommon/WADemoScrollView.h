@@ -21,4 +21,5 @@
 @property(nonatomic,strong)NSMutableArray* btnLayout;
 -(instancetype)initWithFrame:(CGRect)frame btns:(NSMutableArray*)btns btnLayout:(NSMutableArray*)btnLayout;
 //-(instancetype)initWithFrame:(CGRect)frame btns:(NSMutableArray*)btns btnLayout:(NSMutableArray*)btnLayout naviHeight:(float)naviHeight;
+-(void)deviceOrientationDidChange;
 @end

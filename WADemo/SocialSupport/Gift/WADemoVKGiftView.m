@@ -14,11 +14,9 @@
 #import "WADemoAlertView.h"
 
 @implementation WADemoVKGiftView
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
     }
     return self;
@@ -86,9 +84,5 @@
 - (void)showGiftBox {
 //    WADemoGiftBoxTV* giftBox = [[WADemoGiftBoxTV alloc]init];
 //    [self addSubview:giftBox];
-}
-
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
 }
 @end

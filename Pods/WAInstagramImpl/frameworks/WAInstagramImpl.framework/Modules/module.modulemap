@@ -1,0 +1,6 @@
+framework module WAInstagramImpl {
+  umbrella header "WAInstagramImpl.h"
+
+  export *
+  module * { export * }
+}

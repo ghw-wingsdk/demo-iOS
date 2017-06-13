@@ -14,11 +14,9 @@
 #import "WADemoGroups.h"
 #import "WADemoAlertView.h"
 @implementation WADemoVKInviteView
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
     }
     return self;
@@ -154,9 +152,5 @@
             //查询失败
         }
     }];
-}
-
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
 }
 @end

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <version val="WAInstagram3.6.4"/>
+    <comps>
+        <!-- 公共模块 -->
+        <comp module="CORE" plaf="INSTAGRAM" mandatory="YES" value="WAInstagramCore" desc="公共模块"/>
+        <!-- 用户模块 -->
+        <comp module="USR" plaf="INSTAGRAM" mandatory="NO" value="WAInstagramUser" desc="Instagram用户账户"/>
+    </comps>
+</config>

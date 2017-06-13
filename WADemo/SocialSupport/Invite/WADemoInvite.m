@@ -11,19 +11,21 @@
 #import "WADemoUtil.h"
 #import "WADemoFBInviteView.h"
 #import "WADemoVKInviteView.h"
+
+@interface WADemoInvite ()
+
+@property (nonatomic, strong) WADemoFBInviteView* fbInviteView;
+@property (nonatomic, strong) WADemoVKInviteView* vkInviteView;
+
+@end
+
 @implementation WADemoInvite
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
     }
     return self;
-}
-
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
 }
 
 -(void)initBtnAndLayout{
@@ -47,21 +49,29 @@
 -(void)fb{
     
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoFBInviteView* fbInviteView = [[WADemoFBInviteView alloc]init];
-    fbInviteView.hasBackBtn = YES;
-    [vc.view addSubview:fbInviteView];
-    [fbInviteView moveIn:nil];
+    _fbInviteView = [[WADemoFBInviteView alloc]initWithFrame:self.bounds];
+    self.fbInviteView.hasBackBtn = YES;
+    [vc.view addSubview:self.fbInviteView];
+    [self.fbInviteView moveIn:nil];
 }
 
 -(void)vk{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoVKInviteView* vkInviteView = [[WADemoVKInviteView alloc]init];
-    vkInviteView.hasBackBtn = YES;
-    [vc.view addSubview:vkInviteView];
-    [vkInviteView moveIn:nil];
+    _vkInviteView = [[WADemoVKInviteView alloc]initWithFrame:self.bounds];
+    self.vkInviteView.hasBackBtn = YES;
+    [vc.view addSubview:self.vkInviteView];
+    [self.vkInviteView moveIn:nil];
 }
 
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
+- (void)deviceOrientationDidChange
+{
+    [super deviceOrientationDidChange];
+    
+    if (self.fbInviteView)
+        [self.fbInviteView deviceOrientationDidChange];
+    
+    if (self.vkInviteView)
+        [self.vkInviteView deviceOrientationDidChange];
 }
+
 @end

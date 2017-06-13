@@ -28,4 +28,5 @@
 +(NSString*)getSDKApwImgCachePath;//SDK应用墙缓存图片路径
 +(NSString*)getSDKCrashLogPath;//SDK闪退日志保存路径
 +(NSString*)getSDKDatabasePath;//SDK数据库文件目录
++(NSString*)getSDKPayLogPath;//SDK支付日子报错路径
 @end

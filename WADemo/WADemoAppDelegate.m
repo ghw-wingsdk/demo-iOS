@@ -100,4 +100,9 @@
     return [WACoreProxy application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+    return [WACoreProxy application:app openURL:url options:options];
+}
+
 @end

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<version val="WATwitter3.6.4"/>
+    <comps>
+        <!-- 公共模块 -->
+        <comp module="CORE" plaf="TWITTER" mandatory="YES" value="WATwitterCore" desc="公共模块"/>
+        <!-- 用户模块 -->
+        <comp module="USR" plaf="TWITTER" mandatory="NO" value="WATwitterUser" desc="Twitter用户账户"/>
+    </comps>
+</config>

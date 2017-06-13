@@ -12,21 +12,22 @@
 #import "WADemoUtil.h"
 #import "WADemoAlertView.h"
 #import <Toast/Toast.h>
+
+@interface WADemoPayView ()
+
+@property (nonatomic, strong) WADemoProductList* productList;
+
+@end
+
 @implementation WADemoPayView
 
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
         [self pay];
     }
     return self;
-}
-
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
 }
 
 -(void)initBtnAndLayout{
@@ -46,17 +47,12 @@
 
 -(void)queryInventoryDidCompleteWithResult:(NSArray<WAIapProduct *> *)Inventory{
     [WADemoMaskLayer stopAnimating];
-    for (WAIapProduct *iapProdict in Inventory)
-    {
-        iapProdict.localizedTitle = iapProdict.productIdentifier;
-        iapProdict.localizedDescription = iapProdict.productIdentifier;
-    }
-    
-    WADemoProductList* productList = [[WADemoProductList alloc]initWithFrame:self.scrollView.bounds];
-    productList.goToType = GoToTypeWA;
-    productList.products = Inventory;
-    productList.naviView = self;
-    [self.scrollView addSubview:productList];
+
+    _productList = [[WADemoProductList alloc]initWithFrame:self.scrollView.bounds];
+    self.productList.goToType = GoToTypeWA;
+    self.productList.products = Inventory;
+    self.productList.naviView = self;
+    [self.scrollView addSubview:self.productList];
 }
 
 -(void)queryInventoryDidFailWithError:(NSError*)error{
@@ -72,8 +68,11 @@
     [WADemoMaskLayer stopAnimating];
 }
 
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
+- (void)deviceOrientationDidChange
+{
+    [super deviceOrientationDidChange];
+    self.productList.frame = self.scrollView.bounds;
+    [self.productList deviceOrientationDidChange];
 }
 
 @end

@@ -19,4 +19,5 @@
 -(SKProduct*)getCurrentProduct;
 -(NSData*)getCurrentReceipt;
 -(float)getReorderLimitTime;
+-(void)payLog:(NSString *)logInfo;
 @end

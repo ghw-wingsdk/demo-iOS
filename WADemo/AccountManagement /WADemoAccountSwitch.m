@@ -11,47 +11,55 @@
 #import "WADemoUtil.h"
 #import "WADemoAlertView.h"
 #import "WADemoMaskLayer.h"
+
+@interface WADemoAccountSwitch ()
+
+@property (nonatomic, strong) NSDictionary *loginTypeDict;
+
+@end
+
 @implementation WADemoAccountSwitch
 
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
     }
     return self;
 }
 
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
-}
-
 -(void)initBtnAndLayout{
-    NSMutableArray* btns = [NSMutableArray array];
-    WADemoButtonMain* btn1 = [[WADemoButtonMain alloc]init];
-    [btn1 setTitle:@"Facebook" forState:UIControlStateNormal];
-    btn1.tag = 1;
-    [btn1 addTarget:self action:@selector(switchAccount:) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn1];
-    WADemoButtonMain* btn2 = [[WADemoButtonMain alloc]init];
-    [btn2 setTitle:@"Apple" forState:UIControlStateNormal];
-    btn2.tag = 2;
-    [btn2 addTarget:self action:@selector(switchAccount:) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn2];
+    _loginTypeDict = @{@"Facebook" : WA_PLATFORM_FACEBOOK,
+                       @"Apple" : WA_PLATFORM_APPLE,
+                       @"VK" : WA_PLATFORM_VK,
+                       @"Twitter" : WA_PLATFORM_TWITTER,
+                       @"Instagram" : WA_PLATFORM_INSTAGRAM};
+    NSArray *titleStrs = @[@"Facebook", @"Apple", @"VK", @"Twitter", @"Instagram"];
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1]];
+    NSMutableArray* btns = [NSMutableArray array];
+    NSMutableArray* btnLayout = [NSMutableArray array];
+    
+    WADemoButtonMain *button;
+    for (NSString *titleStr in titleStrs)
+    {
+        button = [[WADemoButtonMain alloc]init];
+        [button setTitle:titleStr forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(switchAccount:) forControlEvents:UIControlEventTouchUpInside];
+        [btns addObject:button];
+        
+        [btnLayout addObject:@1];
+    }
     //
     self.title = @"切换账户";
     self.btnLayout = btnLayout;
     self.btns = btns;
 }
 
--(void)switchAccount:(UIButton*)btn{
+-(void)switchAccount:(UIButton*)btn
+{
     [WADemoMaskLayer startAnimating];
-    NSString* loginType;
-    if (btn.tag == 1) loginType = WA_PLATFORM_FACEBOOK;
-    else if(btn.tag ==2) loginType = WA_PLATFORM_APPLE;
+    
+    NSString* loginType = [self.loginTypeDict objectForKey:[btn titleForState:UIControlStateNormal]];
     
     [WAUserProxy switchAccountWithPlatform:loginType completeBlock:^(NSError *error, WALoginResult *result) {
         if (!error) {
@@ -68,10 +76,6 @@
         
         [WADemoMaskLayer stopAnimating];
     }];
-}
-
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
 }
 
 @end

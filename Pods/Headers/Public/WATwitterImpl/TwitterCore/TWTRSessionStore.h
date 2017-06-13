@@ -1,0 +1,1 @@
+../../../../WATwitterImpl/frameworks/TwitterCore.framework/Headers/TWTRSessionStore.h

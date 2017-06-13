@@ -25,18 +25,12 @@
     return self;
 }
 
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         [self initBtnAndLayout];
     }
     return self;
-}
-
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
 }
 
 -(void)initBtnAndLayout{
@@ -61,45 +55,60 @@
     [btn3 setTitle:@"Apple登录" forState:UIControlStateNormal];
     [btn3 addTarget:self action:@selector(appleLogin) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn3];
-    WADemoButtonMain* btn8 = [[WADemoButtonMain alloc]init];
-    [btn8 setTitle:@"VK登录" forState:UIControlStateNormal];
-    [btn8 addTarget:self action:@selector(vkLogin) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn8];
     WADemoButtonMain* btn4 = [[WADemoButtonMain alloc]init];
-    [btn4 setTitle:@"访客登录" forState:UIControlStateNormal];
-    [btn4 addTarget:self action:@selector(anonymousLogin) forControlEvents:UIControlEventTouchUpInside];
+    [btn4 setTitle:@"VK登录" forState:UIControlStateNormal];
+    [btn4 addTarget:self action:@selector(vkLogin) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn4];
-    WADemoButtonMain* btn9 = [[WADemoButtonMain alloc]init];
-    [btn9 setTitle:@"应用内登录" forState:UIControlStateNormal];
-    [btn9 addTarget:self action:@selector(appSelfLogin) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn9];
     WADemoButtonMain* btn5 = [[WADemoButtonMain alloc]init];
-    [btn5 setTitle:@"登录窗口" forState:UIControlStateNormal];
-    [btn5 addTarget:self action:@selector(popLoginUI) forControlEvents:UIControlEventTouchUpInside];
+    [btn5 setTitle:@"Twitter登录" forState:UIControlStateNormal];
+    [btn5 addTarget:self action:@selector(twitterLogin) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn5];
     WADemoButtonMain* btn6 = [[WADemoButtonMain alloc]init];
-    
-    NSString* btnTitle6;
-    if (_cacheEnabled == NO) {
-        btnTitle6 = @"不缓存登录方式";
-    }else{
-        btnTitle6 = @"缓存登录方式";
-    }
-    
-    [btn6 setTitle:btnTitle6 forState:UIControlStateNormal];
-    [btn6 addTarget:self action:@selector(setCache:) forControlEvents:UIControlEventTouchUpInside];
+    [btn6 setTitle:@"Instagram登录" forState:UIControlStateNormal];
+    [btn6 addTarget:self action:@selector(instagramLogin) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn6];
     WADemoButtonMain* btn7 = [[WADemoButtonMain alloc]init];
-    [btn7 setTitle:@"登出" forState:UIControlStateNormal];
-    [btn7 addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+    [btn7 setTitle:@"访客登录" forState:UIControlStateNormal];
+    [btn7 addTarget:self action:@selector(anonymousLogin) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn7];
+    WADemoButtonMain* btn8 = [[WADemoButtonMain alloc]init];
+    [btn8 setTitle:@"应用内登录" forState:UIControlStateNormal];
+    [btn8 addTarget:self action:@selector(appSelfLogin) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn8];
+    WADemoButtonMain* btn9 = [[WADemoButtonMain alloc]init];
+    [btn9 setTitle:@"登录窗口" forState:UIControlStateNormal];
+    [btn9 addTarget:self action:@selector(popLoginUI) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn9];
+    WADemoButtonMain* btn10 = [[WADemoButtonMain alloc]init];
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@1,@2,@1]];
+    NSString* btnTitle10;
+    if (_cacheEnabled == NO) {
+        btnTitle10 = @"不缓存登录方式";
+    }else{
+        btnTitle10 = @"缓存登录方式";
+    }
+    
+    [btn10 setTitle:btnTitle10 forState:UIControlStateNormal];
+    [btn10 addTarget:self action:@selector(setCache:) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn10];
+    WADemoButtonMain* btn11 = [[WADemoButtonMain alloc]init];
+    [btn11 setTitle:@"登出" forState:UIControlStateNormal];
+    [btn11 addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn11];
+    
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@1,@2,@1]];
 //
     self.title = @"登录";
     self.btnLayout = btnLayout;
     self.btns = btns;
 }
+
+- (void)deviceOrientationDidChange
+{
+    [super deviceOrientationDidChange];
+    [WADemoMaskLayer deviceOrientationDidChange];
+}
+
 #pragma btn action
 //登录
 -(void)facebookLogin{
@@ -117,8 +126,8 @@
 
 -(void)appSelfLogin{
     [WADemoMaskLayer startAnimating];
-    NSString* extInfo = @"{\"appUserId\":\"12345\",\"extInfo\":\"extInfo String\",\"appToken\":\"o1akkfjia81FMvFSO8kxC96TgQYlhEEr\",\"appSelfLogin\":true}";
-    [WAUserProxy loginWithPlatform:WA_PLATFORM_WINGA extInfo:extInfo delegate:self];
+    NSString* extra = @"{\"puserId\":\"12345\",\"extInfo\":\"extInfo String\",\"accessToken\":\"o1akkfjia81FMvFSO8kxC96TgQYlhEEr\",\"appSelfLogin\":true}";
+    [WAUserProxy loginWithPlatform:WA_PLATFORM_WINGA extInfo:extra delegate:self];
 }
 
 -(void)appleLogin{
@@ -132,6 +141,16 @@
 -(void)vkLogin{
     [WADemoMaskLayer startAnimating];
     [WAUserProxy loginWithPlatform:WA_PLATFORM_VK extInfo:nil delegate:self];
+}
+
+-(void)twitterLogin{
+    [WADemoMaskLayer startAnimating];
+    [WAUserProxy loginWithPlatform:WA_PLATFORM_TWITTER extInfo:nil delegate:self];
+}
+
+-(void)instagramLogin{
+    [WADemoMaskLayer startAnimating];
+    [WAUserProxy loginWithPlatform:WA_PLATFORM_INSTAGRAM extInfo:nil delegate:self];
 }
 
 //修改登录流程
@@ -223,10 +242,6 @@
 -(void)loginDidCancel:(WALoginResult *)result{
     [WADemoMaskLayer stopAnimating];
     NSLog(@"loginDidCancel--platform:%@",result.platform);
-}
-
--(void)dealloc{
-    [WADemoUtil removeOrientationNotification:self object:nil];
 }
 
 @end
