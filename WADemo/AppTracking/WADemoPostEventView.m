@@ -163,7 +163,7 @@
     _afTV = [[WADemoEventTableView alloc]initWithFrame:CGRectZero channel:channel param:param];
     _afTV.eventView = self;
     [self addSubview:_afTV];
-    [self setNeedsDisplay];
+    [self deviceOrientationDidChange];
 }
 
 -(void)deviceOrientationDidChange{
