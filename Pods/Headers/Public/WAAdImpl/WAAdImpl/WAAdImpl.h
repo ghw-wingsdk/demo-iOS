@@ -1,0 +1,1 @@
+../../../../WAAdImpl/frameworks/WAAdImpl.framework/Headers/WAAdImpl.h

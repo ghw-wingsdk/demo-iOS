@@ -1,28 +1,31 @@
 PODS:
-  - WAAfImpl (3.6.4):
-    - WASdkImpl (~> 3.6.4)
-    - WASdkIntf (~> 3.6.4)
+  - WAAdImpl (3.6.5):
+    - WASdkImpl (~> 3.6.5)
+    - WASdkIntf (~> 3.6.5)
+  - WAAfImpl (3.6.5):
+    - WASdkImpl (~> 3.6.5)
+    - WASdkIntf (~> 3.6.5)
   - WAApImpl (3.6.4):
     - WASdkImpl (~> 3.6.4)
     - WASdkIntf (~> 3.6.4)
   - WAApwImpl (3.6.4):
     - WASdkImpl (~> 3.6.4)
     - WASdkIntf (~> 3.6.4)
-  - WACbImpl (3.6.4):
+  - WACbImpl (3.6.5):
     - WASdkImpl (~> 3.6.4)
     - WASdkIntf (~> 3.6.4)
-  - WAFbImpl (3.6.4):
+  - WAFbImpl (3.6.5):
     - WASdkImpl (~> 3.6.4)
     - WASdkIntf (~> 3.6.4)
   - WAInstagramImpl (3.6.4):
     - WASdkImpl (~> 3.6.4)
     - WASdkIntf (~> 3.6.4)
   - WAPushImpl (3.6.4):
-    - WASdkImpl (= 3.6.4)
-    - WASdkIntf (= 3.6.4)
-  - WASdkImpl (3.6.4):
+    - WASdkImpl (~> 3.6.4)
     - WASdkIntf (~> 3.6.4)
-  - WASdkIntf (3.6.4)
+  - WASdkImpl (3.6.5):
+    - WASdkIntf (~> 3.6.5)
+  - WASdkIntf (3.6.5)
   - WATwitterImpl (3.6.4):
     - WASdkImpl (~> 3.6.4)
     - WASdkIntf (~> 3.6.4)
@@ -34,33 +37,35 @@ PODS:
     - WASdkIntf (~> 3.6.4)
 
 DEPENDENCIES:
-  - WAAfImpl (= 3.6.4)
+  - WAAdImpl (= 3.6.5)
+  - WAAfImpl (= 3.6.5)
   - WAApImpl (= 3.6.4)
   - WAApwImpl (= 3.6.4)
-  - WACbImpl (= 3.6.4)
-  - WAFbImpl (= 3.6.4)
+  - WACbImpl (= 3.6.5)
+  - WAFbImpl (= 3.6.5)
   - WAInstagramImpl (= 3.6.4)
   - WAPushImpl (= 3.6.4)
-  - WASdkImpl (= 3.6.4)
-  - WASdkIntf (= 3.6.4)
+  - WASdkImpl (= 3.6.5)
+  - WASdkIntf (= 3.6.5)
   - WATwitterImpl (= 3.6.4)
   - WAVkImpl (= 3.6.4)
   - WAWebPayImpl (= 3.6.4)
 
 SPEC CHECKSUMS:
-  WAAfImpl: 40c649ededb6cd29b1b0d3a2614c9261c47b66f9
+  WAAdImpl: 9084f2f2540a2a2818061c51acfae811f4c83ff5
+  WAAfImpl: 0fedd0de24f29a4450ec6b5e33a40c458281fb7d
   WAApImpl: db340ad75ecdca1a4ab3fbcdb375e55204e17a40
   WAApwImpl: e389b5bb5e8fee746787d0d5c5aa072336221720
-  WACbImpl: baf130e6ccd0a0528ed05411c57349f2b1839d60
-  WAFbImpl: 51f1e6228e0e1f0d0aa1d3f54ebdd11a50ea4a42
+  WACbImpl: dcdf2861e04cca69881fafe30c6d8c040df88c75
+  WAFbImpl: 9cbbc1894ce9037f1f815c1fe34868b0c6177c6b
   WAInstagramImpl: be238f8fd70767b9f3b8a1e6b531ba7efbd418c5
-  WAPushImpl: f3960c74fd2ecf69dde31eda866f2a101f4c3d56
-  WASdkImpl: 1e27ddf8845724f83d4784eee56634ae6f320d2a
-  WASdkIntf: b1291e0e8e451122b2efd4bf50c358620035d7a4
+  WAPushImpl: 3e693121e438ad76a43b68f52af650af45cd0bdd
+  WASdkImpl: 2f13ec2b45aa209863a263c7f876a9e1fc16b54c
+  WASdkIntf: 6290bf40ad22b7a758aa6e2b2e4cebba8c6a1a39
   WATwitterImpl: 430c3ac501185555168289ea8c97bb27382e83b9
   WAVkImpl: e03d1b70d0b20c23c6a2d5293e12680fe46c4504
   WAWebPayImpl: f4414ea54e2a9002910f149c7d19193944f89782
 
-PODFILE CHECKSUM: 1879a58b7511849c52b855105fb664ea1d5f8a45
+PODFILE CHECKSUM: 3abbf1d4e25ab9d97a25bcb9ef7cf48efa71e527
 
 COCOAPODS: 1.1.1

@@ -74,6 +74,7 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "WAAdImpl/config/wa_sdk_impl_config_ad.xml"
   install_resource "WAAfImpl/config/wa_sdk_impl_config_appsflyer.xml"
   install_resource "WAApImpl/config/wa_sdk_impl_config_apple.xml"
   install_resource "WAApwImpl/config/wa_sdk_impl_config_apw.xml"
@@ -97,6 +98,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "WAWebPayImpl/config/wa_sdk_impl_config_webpay.xml"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "WAAdImpl/config/wa_sdk_impl_config_ad.xml"
   install_resource "WAAfImpl/config/wa_sdk_impl_config_appsflyer.xml"
   install_resource "WAApImpl/config/wa_sdk_impl_config_apple.xml"
   install_resource "WAApwImpl/config/wa_sdk_impl_config_apw.xml"

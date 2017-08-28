@@ -179,29 +179,46 @@ NSLog((@"WASDK LOG [(version %@) %s ]:" fmt), [WACoreProxy getSdkVer],__FUNCTION
 + (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 
 #pragma mark 消息通知
-// 注册通知
+/*!
+@abstract 注册通知
+*/
 + (void)application:(UIApplication *)application initPushWithDelegate:(id<UNUserNotificationCenterDelegate>)delegate;
 
-// 调用过用户注册通知方法之后执行
+/*!
+ @abstract 调用过用户注册通知方法之后执行
+ */
 + (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings;
 
-// 获取deviceToken
+/*!
+ @abstract 获取deviceToken
+ */
 + (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 
-// 注册失败
+/*!
+ @abstract 注册失败
+ */
 + (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
 
 #pragma mark IOS8 IOS9 Push Notification Receive
-// 接收本地通知
+/*!
+ @abstract 接收本地通知
+ */
 + (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification;
-// 接收远程通知
+
+/*!
+ @abstract 接收远程通知
+ */
 + (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler;
 
 #pragma mark IOS10 Push Notification Receive
-//App处于前台接收通知时
+/*!
+ @abstractApp 处于前台接收通知时
+ */
 + (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler;
 
-// 通知的点击事件
+/*!
+ @abstract 通知的点击事件
+ */
 + (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler;
 
 /*!
@@ -231,4 +248,10 @@ NSLog((@"WASDK LOG [(version %@) %s ]:" fmt), [WACoreProxy getSdkVer],__FUNCTION
 + (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
 
 + (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
+
+/*!
+ @abstract 设备是否越狱
+ */
++ (BOOL)isJailBreak;
+
 @end

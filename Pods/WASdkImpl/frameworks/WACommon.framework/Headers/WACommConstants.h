@@ -236,6 +236,13 @@ extern NSString *const WASDK_LOGIN_URL_MESSAGE_SEND_RECEIPT;
 // 消息打开确认
 extern NSString *const WASDK_LOGIN_URL_MESSAGE_OPEN_MESSAGE_CONFIRM;
 
+// 获取视频广告列表
+extern NSString *const WASDK_AD_URL_GET_AD_LIST;
+// 提交广告展示事件
+extern NSString *const WASDK_AD_URL_SUBMIT_SHOW_EVENT;
+// 更新展示广告状态
+extern NSString *const WASDK_AD_URL_UPDATE_STATUS;
+
 extern NSString *const WASDK_FB_INVITE_FROM_USERID;
 extern NSString *const WASDK_FB_INVITE_TO_USERID;
 extern NSString *const WASDK_FB_INVITE_SERVERID;

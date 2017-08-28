@@ -12,62 +12,64 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0CDD52229B73A79EA9F4146869A67613 /* WAInstagramImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAInstagramImpl.framework; path = frameworks/WAInstagramImpl.framework; sourceTree = "<group>"; };
+		00274C6B145D1895DC8ADB945DB7BACC /* WATwitterImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WATwitterImpl.framework; path = frameworks/WATwitterImpl.framework; sourceTree = "<group>"; };
+		00A98B215529A40AA4CB5FFAC04EAB6C /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = frameworks/MJRefresh.framework; sourceTree = "<group>"; };
+		01D30E3492F2510041EF04F96A8D3874 /* wa_sdk_impl_config_ twitter.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = "wa_sdk_impl_config_ twitter.xml"; path = "config/wa_sdk_impl_config_ twitter.xml"; sourceTree = "<group>"; };
+		04D63A6BB725C1BBF440F1AC8A83858E /* WAWebPayImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAWebPayImpl.framework; path = frameworks/WAWebPayImpl.framework; sourceTree = "<group>"; };
+		0981B7CE4BFA32CD1F6586506733C024 /* wa_sdk_impl_config_apple.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_apple.xml; path = config/wa_sdk_impl_config_apple.xml; sourceTree = "<group>"; };
 		1041CE96E37C18D77810F8A4732C0790 /* Pods-WADemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WADemo-dummy.m"; sourceTree = "<group>"; };
-		115C84127A50C55A9255699369F761D0 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = frameworks/TwitterCore.framework; sourceTree = "<group>"; };
 		122A87A257E56D4D8CB3B599B30022AE /* Pods-WADemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WADemo-resources.sh"; sourceTree = "<group>"; };
-		13C96A5A3D251EEC599BCDB43B95C71B /* wa_sdk_track_config.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = wa_sdk_track_config.plist; path = config/wa_sdk_track_config.plist; sourceTree = "<group>"; };
-		208F09E8F06B497267AD2E1AB98FD895 /* wa_sdk_impl_config_push.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_push.xml; path = config/wa_sdk_impl_config_push.xml; sourceTree = "<group>"; };
-		224CC268DA2A527269FA587413335703 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = frameworks/TwitterKit.framework; sourceTree = "<group>"; };
-		2568CFBE09A2A814C84B710D0A955FE4 /* wa_sdk_impl_config_ twitter.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = "wa_sdk_impl_config_ twitter.xml"; path = "config/wa_sdk_impl_config_ twitter.xml"; sourceTree = "<group>"; };
-		2579396FEDA12A17026BF072E3EAA5DD /* wa_sdk_impl_config_webpay.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_webpay.xml; path = config/wa_sdk_impl_config_webpay.xml; sourceTree = "<group>"; };
-		3319932C2FF96C7573E4E4AE03F2A786 /* WASdkIntf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WASdkIntf.framework; path = frameworks/WASdkIntf.framework; sourceTree = "<group>"; };
+		148E3B5CD16B17A1980FE3F2D73D9195 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = frameworks/TwitterKit.framework/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		14C47846B11525A3A247E9E82DFECA41 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = frameworks/TwitterCore.framework; sourceTree = "<group>"; };
+		16950BC3C5AC8B6BD55709C36AB232B9 /* WAApwImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAApwImpl.framework; path = frameworks/WAApwImpl.framework; sourceTree = "<group>"; };
+		19D4AC66F3D8E6DC001ED973D8E7FD71 /* wa_sdk_impl_config_instagram.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_instagram.xml; path = config/wa_sdk_impl_config_instagram.xml; sourceTree = "<group>"; };
+		1FA5573E0D9DBE342018526A7F2B600B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = frameworks/TwitterKit.framework; sourceTree = "<group>"; };
+		2DD516257F2B1A4E54A1AD0C71A70231 /* en.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = en.plist; path = localizable/en.plist; sourceTree = "<group>"; };
+		2E983EE3446B7C3D308442F0ACCE8ADA /* wa_sdk_impl_config_webpay.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_webpay.xml; path = config/wa_sdk_impl_config_webpay.xml; sourceTree = "<group>"; };
 		3737BB051DBC220B0520E5257260B6A4 /* Pods-WADemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WADemo-frameworks.sh"; sourceTree = "<group>"; };
-		397F6082D01840C98643E588E71F6A61 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		3BE6E0A8CED6D13C4A7D02108254B2E2 /* WATwitterImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WATwitterImpl.framework; path = frameworks/WATwitterImpl.framework; sourceTree = "<group>"; };
-		41197FB767769075893933EB21F3EEF9 /* wa_sdk_impl_config_apple.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_apple.xml; path = config/wa_sdk_impl_config_apple.xml; sourceTree = "<group>"; };
-		4430747F0BC62AED1A8D696FC9F2505A /* WACbImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WACbImpl.framework; path = frameworks/WACbImpl.framework; sourceTree = "<group>"; };
-		44C2A03D1CC4ED653CEEBAA291A3E9DD /* wa_sdk_impl_config_chartboost.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_chartboost.xml; path = config/wa_sdk_impl_config_chartboost.xml; sourceTree = "<group>"; };
-		515BDC9D79029A877EA12DEF9BC77059 /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterShareExtensionUIResources.bundle; path = frameworks/TwitterKit.framework/TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
-		5192DFC039DBE277235949747D748545 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = frameworks/TwitterKit.framework/TwitterKitResources.bundle; sourceTree = "<group>"; };
-		51CC1E1320C3E66F945205A06DBC089B /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = frameworks/Chartboost.framework; sourceTree = "<group>"; };
-		61A79C7D11E697667A1E2D1DEFBA1026 /* wa_sdk_impl_config_vk.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_vk.xml; path = config/wa_sdk_impl_config_vk.xml; sourceTree = "<group>"; };
+		3C066108E7C9DAE48F2D72943E0E042C /* wa_sdk_impl_config_vk.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_vk.xml; path = config/wa_sdk_impl_config_vk.xml; sourceTree = "<group>"; };
+		3C9247F462D88B97A89DB043DE8066E1 /* wa_sdk_impl_config_winga.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_winga.xml; path = config/wa_sdk_impl_config_winga.xml; sourceTree = "<group>"; };
+		3D390E721FAAE236D4C2D400CC9BDB22 /* WASdkImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WASdkImpl.framework; path = frameworks/WASdkImpl.framework; sourceTree = "<group>"; };
+		423AC345F97EEE6489D764F18782BF42 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		461060EAD3B7877860C443E2A4081713 /* ru.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = ru.plist; path = localizable/ru.plist; sourceTree = "<group>"; };
+		4BB467DF20C55A5A4D7AA66BD2601B51 /* wa_sdk.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = wa_sdk.plist; path = config/wa_sdk.plist; sourceTree = "<group>"; };
+		58234D0E4369AC8CD1BBEA36B69BC525 /* wa_sdk_impl_config_push.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_push.xml; path = config/wa_sdk_impl_config_push.xml; sourceTree = "<group>"; };
+		5A7D23D2FE43EF182D33EECDFE7D19AE /* Toast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Toast.framework; path = frameworks/Toast.framework; sourceTree = "<group>"; };
 		62E61CC2626DC894F5F129BC00289243 /* Pods-WADemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WADemo.debug.xcconfig"; sourceTree = "<group>"; };
-		62EC964199C36722C53E2E25E33C0707 /* WAApImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAApImpl.framework; path = frameworks/WAApImpl.framework; sourceTree = "<group>"; };
-		66540EA836C483BA60A0BFCBCBBB78EE /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMDB.framework; path = frameworks/FMDB.framework; sourceTree = "<group>"; };
-		692653BF645D31CE2471938DF2FEC836 /* WACommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WACommon.framework; path = frameworks/WACommon.framework; sourceTree = "<group>"; };
-		6CAA12380ADEDF75F74B23183E1FEDE9 /* base.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = base.plist; path = localizable/base.plist; sourceTree = "<group>"; };
+		63BCA988161C2DBDFE23950BAEA1D4F8 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = frameworks/VKSdkFramework.framework; sourceTree = "<group>"; };
+		68CB495359CE2BB679999642A3347C3A /* WAPushImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAPushImpl.framework; path = frameworks/WAPushImpl.framework; sourceTree = "<group>"; };
 		6F6D520D1F0DDBA0C41F7B6EE139B3D0 /* Pods-WADemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WADemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		723FB7D00FA47BC54FA7A5B5C6CCC6E5 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = frameworks/VKSdkFramework.framework; sourceTree = "<group>"; };
-		797BF5F2B00EC40D470CF15B31C9FA17 /* WAAfImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAAfImpl.framework; path = frameworks/WAAfImpl.framework; sourceTree = "<group>"; };
-		7AE9446192FE23F5A53C430F050D3592 /* WAVkImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAVkImpl.framework; path = frameworks/WAVkImpl.framework; sourceTree = "<group>"; };
-		812A70D0CC273138AA3AF627F2CDDB2C /* wa_sdk_impl_config_instagram.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_instagram.xml; path = config/wa_sdk_impl_config_instagram.xml; sourceTree = "<group>"; };
+		7D0DD5E914EDB5FDA20711F48B4531D6 /* wa_sdk_impl_config_ad.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_ad.xml; path = config/wa_sdk_impl_config_ad.xml; sourceTree = "<group>"; };
+		7F1F2ABA666E560B0860059E38FD8CF7 /* WAInstagramImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAInstagramImpl.framework; path = frameworks/WAInstagramImpl.framework; sourceTree = "<group>"; };
+		8002D95F51C00D60E88F61D695E634EC /* wa_sdk_impl_config_facebook.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_facebook.xml; path = config/wa_sdk_impl_config_facebook.xml; sourceTree = "<group>"; };
+		8CDADE59860AFFF60578D4580E7D69E1 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = frameworks/Chartboost.framework; sourceTree = "<group>"; };
+		920E59712F4978A6BB1A77D73E069C2E /* pt-BR.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "pt-BR.plist"; path = "localizable/pt-BR.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2062AC2222F90FDDCBFBF317ABB9A6F /* WAAfImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAAfImpl.framework; path = frameworks/WAAfImpl.framework; sourceTree = "<group>"; };
 		A30AB40C298592150E847315DDAB606C /* Pods-WADemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WADemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A3B41EEBEA583D5307981C15A054D53D /* WASDK-Resource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = "WASDK-Resource.bundle"; path = "bundle/WASDK-Resource.bundle"; sourceTree = "<group>"; };
-		B5D3511FF689F985B152ECB0DDB6115C /* wa_sdk_impl_config_winga.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_winga.xml; path = config/wa_sdk_impl_config_winga.xml; sourceTree = "<group>"; };
-		B6E2DEE83B44DEC4698FFF7D2F58802A /* WAApwImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAApwImpl.framework; path = frameworks/WAApwImpl.framework; sourceTree = "<group>"; };
-		BAB2CE2D5F8731FBBA77A478D39D122A /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = frameworks/MJRefresh.framework; sourceTree = "<group>"; };
-		BD1FD5863DB95465B818B8D69CE29785 /* wa_sdk_impl_config_apw.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_apw.xml; path = config/wa_sdk_impl_config_apw.xml; sourceTree = "<group>"; };
-		C0BE955773AF0E266A0971B4F8791075 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = frameworks/AFNetworking.framework; sourceTree = "<group>"; };
+		A8D64A5A4450DDFD6662774663713F34 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A90C02F3AF53D03F9E765E787A71A284 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = frameworks/AFNetworking.framework; sourceTree = "<group>"; };
+		AC036E832CA95D950132878F70BFBFC3 /* WAAdImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAAdImpl.framework; path = frameworks/WAAdImpl.framework; sourceTree = "<group>"; };
+		B08989F04866A07739385460F3311A3E /* WASDK-Resource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = "WASDK-Resource.bundle"; path = "bundle/WASDK-Resource.bundle"; sourceTree = "<group>"; };
+		B182874559FF596A45A35E588014ACEB /* WACommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WACommon.framework; path = frameworks/WACommon.framework; sourceTree = "<group>"; };
+		B65465AABF23C1F4852BDE0E494B2D89 /* wa_sdk_track_config.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = wa_sdk_track_config.plist; path = config/wa_sdk_track_config.plist; sourceTree = "<group>"; };
+		BAF951CC6D1C8A075F89624B6415A79F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		C0BF543AAADB68D2D78C0D558F71F906 /* Pods-WADemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WADemo.release.xcconfig"; sourceTree = "<group>"; };
-		C207A64A1561530A6A7FCDC7182EE5D6 /* WAPushImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAPushImpl.framework; path = frameworks/WAPushImpl.framework; sourceTree = "<group>"; };
-		C9E7BEAC8E47EF90DCBC3C217CC4A65A /* wa_sdk_impl_config_appsflyer.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_appsflyer.xml; path = config/wa_sdk_impl_config_appsflyer.xml; sourceTree = "<group>"; };
-		CAB85C17191B8915B741B1245E71EF8B /* ru.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = ru.plist; path = localizable/ru.plist; sourceTree = "<group>"; };
+		C36FC4DDB483BBC2DA9A2C7594971301 /* WAVkImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAVkImpl.framework; path = frameworks/WAVkImpl.framework; sourceTree = "<group>"; };
+		C57987D9F0CBBCC5A3D0D9EBD043FE95 /* WASdkIntf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WASdkIntf.framework; path = frameworks/WASdkIntf.framework; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CC4392C63F22CB9D29C6FBAD1764E974 /* WAFbImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAFbImpl.framework; path = frameworks/WAFbImpl.framework; sourceTree = "<group>"; };
-		CCB027210434B16112D7A45DFDA9A75D /* en.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = en.plist; path = localizable/en.plist; sourceTree = "<group>"; };
-		CE7F7136F6FF67F80D2E3DC614600893 /* WASdkImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WASdkImpl.framework; path = frameworks/WASdkImpl.framework; sourceTree = "<group>"; };
-		D2DF75DB55C8DCD66EE4249514EC3E69 /* WAWebPayImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAWebPayImpl.framework; path = frameworks/WAWebPayImpl.framework; sourceTree = "<group>"; };
-		D44D7E9A9C1BC6CCC2541C6E2545D32B /* wa_sdk_impl_config_facebook.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_facebook.xml; path = config/wa_sdk_impl_config_facebook.xml; sourceTree = "<group>"; };
-		D6D578B65BF50DBA3A5B7662EE54BB59 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		E19005CEB158AB4BBC7EAAF64D168F9F /* wa_sdk.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = wa_sdk.plist; path = config/wa_sdk.plist; sourceTree = "<group>"; };
-		E41F918DEA017E8A58AB2A146AFDC1C4 /* zh-Hans.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "zh-Hans.plist"; path = "localizable/zh-Hans.plist"; sourceTree = "<group>"; };
-		E5B57D8703C0465F2FED5C66925CDC08 /* pt-BR.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "pt-BR.plist"; path = "localizable/pt-BR.plist"; sourceTree = "<group>"; };
-		EC697ACBA834222F90F7396B55984C17 /* Toast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Toast.framework; path = frameworks/Toast.framework; sourceTree = "<group>"; };
+		CC5EA88ED25EBAEBB216BBE79E67FB6B /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterShareExtensionUIResources.bundle; path = frameworks/TwitterKit.framework/TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
+		CD74CC5C5717EA5E3935E9ABE59C6BF6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = frameworks/Bolts.framework; sourceTree = "<group>"; };
+		D2CD2EC26E82AFC5A05CCE06897167BD /* WAApImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAApImpl.framework; path = frameworks/WAApImpl.framework; sourceTree = "<group>"; };
+		DD9A04E0DC5533991AF39BA62E7B9274 /* zh-Hans.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "zh-Hans.plist"; path = "localizable/zh-Hans.plist"; sourceTree = "<group>"; };
+		E3E7AF9F3D4B61E8346239AC5630FA46 /* WAFbImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAFbImpl.framework; path = frameworks/WAFbImpl.framework; sourceTree = "<group>"; };
+		E5A7CC581F0DF4CB7EA10B92C007ABBA /* WACbImpl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WACbImpl.framework; path = frameworks/WACbImpl.framework; sourceTree = "<group>"; };
+		EA7608E20A5038DAA419CABE8002755E /* base.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = base.plist; path = localizable/base.plist; sourceTree = "<group>"; };
+		F47CBCC1526B78D58ABC08D0808F1079 /* wa_sdk_impl_config_apw.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_apw.xml; path = config/wa_sdk_impl_config_apw.xml; sourceTree = "<group>"; };
+		F573C23A938C5DA0B116066B5706DED3 /* wa_sdk_impl_config_appsflyer.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_appsflyer.xml; path = config/wa_sdk_impl_config_appsflyer.xml; sourceTree = "<group>"; };
 		F5A8E124D0843F925E8E328354768D7E /* libPods-WADemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-WADemo.a"; path = "libPods-WADemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8C3EBDAB7E4A31D72422BA5FB9548BD /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = frameworks/Bolts.framework; sourceTree = "<group>"; };
-		FE62FCEF971D88DD76D05CBFC3D80B55 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		F94E3BACB5CD19D9809E607C37F6E2B4 /* wa_sdk_impl_config_chartboost.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = wa_sdk_impl_config_chartboost.xml; path = config/wa_sdk_impl_config_chartboost.xml; sourceTree = "<group>"; };
+		FB6352FF940829EFE3E1CC887402E86A /* FMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMDB.framework; path = frameworks/FMDB.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,102 +84,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		039E62B8F0A5390613F4C97BD59568CB /* Frameworks */ = {
+		133F813227916426FC2CBBD2146DE7C4 /* WAAdImpl */ = {
 			isa = PBXGroup;
 			children = (
-				51CC1E1320C3E66F945205A06DBC089B /* Chartboost.framework */,
-				4430747F0BC62AED1A8D696FC9F2505A /* WACbImpl.framework */,
+				236631209F7BF1300E326402B4129B2F /* Frameworks */,
+				EBE67A7B07013225319A50FB43BB9F6A /* Resources */,
+			);
+			name = WAAdImpl;
+			path = WAAdImpl;
+			sourceTree = "<group>";
+		};
+		236631209F7BF1300E326402B4129B2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC036E832CA95D950132878F70BFBFC3 /* WAAdImpl.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		064A9041A2FF60A8A623A1243F2F2CEE /* Resources */ = {
+		2B1C91B0625BFEF9D6A8AC20F9D3EECF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				812A70D0CC273138AA3AF627F2CDDB2C /* wa_sdk_impl_config_instagram.xml */,
+				8002D95F51C00D60E88F61D695E634EC /* wa_sdk_impl_config_facebook.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		064E8F29067B09DF95192B07E8D9D6FD /* WAApImpl */ = {
+		2D2119D5711F6527BDCB9F9A327E040F /* WASdkImpl */ = {
 			isa = PBXGroup;
 			children = (
-				69FF257C44BCB68BF82779F99762C0A4 /* Frameworks */,
-				67628705548239CEB718CFA955E58620 /* Resources */,
+				D5B78C739306505B94FA7F8632E3E3B2 /* Frameworks */,
+				3DEC0512238AAB097B9143023D52951D /* Resources */,
 			);
-			name = WAApImpl;
-			path = WAApImpl;
+			name = WASdkImpl;
+			path = WASdkImpl;
 			sourceTree = "<group>";
 		};
-		16D991EFCC1DCF04E6ED71E40E9E562C /* Resources */ = {
+		310C400EBD4F11AD952F30B93E5969D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D44D7E9A9C1BC6CCC2541C6E2545D32B /* wa_sdk_impl_config_facebook.xml */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		1EBF0C6A3DCE74E6D51DC95A41E999D8 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5192DFC039DBE277235949747D748545 /* TwitterKitResources.bundle */,
-				515BDC9D79029A877EA12DEF9BC77059 /* TwitterShareExtensionUIResources.bundle */,
-				2568CFBE09A2A814C84B710D0A955FE4 /* wa_sdk_impl_config_ twitter.xml */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		21DE86E46BACF90938E8244C370D4BB6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				208F09E8F06B497267AD2E1AB98FD895 /* wa_sdk_impl_config_push.xml */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		291D20EBE4B35B8102D3082D38C6874A /* WATwitterImpl */ = {
-			isa = PBXGroup;
-			children = (
-				4152DFFC14B2AD9474AECF4170EDC419 /* Frameworks */,
-				1EBF0C6A3DCE74E6D51DC95A41E999D8 /* Resources */,
-			);
-			name = WATwitterImpl;
-			path = WATwitterImpl;
-			sourceTree = "<group>";
-		};
-		2A6FFB8FDCED74E62F1742F997F37B37 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BAB2CE2D5F8731FBBA77A478D39D122A /* MJRefresh.framework */,
-				B6E2DEE83B44DEC4698FFF7D2F58802A /* WAApwImpl.framework */,
+				68CB495359CE2BB679999642A3347C3A /* WAPushImpl.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2ADFAFDC704B6996EC6491794DF52C7C /* Frameworks */ = {
+		38392B6EDE553C76D13CBA8CB3150AB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F8C3EBDAB7E4A31D72422BA5FB9548BD /* Bolts.framework */,
-				397F6082D01840C98643E588E71F6A61 /* FBSDKCoreKit.framework */,
-				D6D578B65BF50DBA3A5B7662EE54BB59 /* FBSDKLoginKit.framework */,
-				FE62FCEF971D88DD76D05CBFC3D80B55 /* FBSDKShareKit.framework */,
-				CC4392C63F22CB9D29C6FBAD1764E974 /* WAFbImpl.framework */,
+				8CDADE59860AFFF60578D4580E7D69E1 /* Chartboost.framework */,
+				E5A7CC581F0DF4CB7EA10B92C007ABBA /* WACbImpl.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		32DB2764EE7741E51112CE03C2ED3026 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6CAA12380ADEDF75F74B23183E1FEDE9 /* base.plist */,
-				CCB027210434B16112D7A45DFDA9A75D /* en.plist */,
-				E5B57D8703C0465F2FED5C66925CDC08 /* pt-BR.plist */,
-				CAB85C17191B8915B741B1245E71EF8B /* ru.plist */,
-				B5D3511FF689F985B152ECB0DDB6115C /* wa_sdk_impl_config_winga.xml */,
-				A3B41EEBEA583D5307981C15A054D53D /* WASDK-Resource.bundle */,
-				E41F918DEA017E8A58AB2A146AFDC1C4 /* zh-Hans.plist */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		3BCA7DB8BA78E021286D7BCC8443EC48 /* Products */ = {
@@ -188,49 +145,74 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4134F97715C15F1662B3BF850FED1B00 /* WASdkIntf */ = {
+		3DEC0512238AAB097B9143023D52951D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E2A02AF62EE11E6973B6551AF6820DC6 /* Frameworks */,
-				A6F37663B2F4998228528D6E25AC6E90 /* Resources */,
+				EA7608E20A5038DAA419CABE8002755E /* base.plist */,
+				2DD516257F2B1A4E54A1AD0C71A70231 /* en.plist */,
+				920E59712F4978A6BB1A77D73E069C2E /* pt-BR.plist */,
+				461060EAD3B7877860C443E2A4081713 /* ru.plist */,
+				3C9247F462D88B97A89DB043DE8066E1 /* wa_sdk_impl_config_winga.xml */,
+				B08989F04866A07739385460F3311A3E /* WASDK-Resource.bundle */,
+				DD9A04E0DC5533991AF39BA62E7B9274 /* zh-Hans.plist */,
 			);
-			name = WASdkIntf;
-			path = WASdkIntf;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		4152DFFC14B2AD9474AECF4170EDC419 /* Frameworks */ = {
+		406F735C719192CCE11CE519AF0372FC /* WAApwImpl */ = {
 			isa = PBXGroup;
 			children = (
-				115C84127A50C55A9255699369F761D0 /* TwitterCore.framework */,
-				224CC268DA2A527269FA587413335703 /* TwitterKit.framework */,
-				3BE6E0A8CED6D13C4A7D02108254B2E2 /* WATwitterImpl.framework */,
+				4A3A8B0D2EE417B8B7F8194B22DE5801 /* Frameworks */,
+				5C2C70A59D38DE73DE1ADDEB311B8F45 /* Resources */,
+			);
+			name = WAApwImpl;
+			path = WAApwImpl;
+			sourceTree = "<group>";
+		};
+		45DDEBCE581DA9C4F97004B8511A7AA6 /* WACbImpl */ = {
+			isa = PBXGroup;
+			children = (
+				38392B6EDE553C76D13CBA8CB3150AB3 /* Frameworks */,
+				8785370495594B97AA4884D42A3A8FDD /* Resources */,
+			);
+			name = WACbImpl;
+			path = WACbImpl;
+			sourceTree = "<group>";
+		};
+		45FBD8F66301F0D0D51B6CC5FF37F88A /* WAApImpl */ = {
+			isa = PBXGroup;
+			children = (
+				6C75AB62FD60A3CC21ABFB5DB39E2DF1 /* Frameworks */,
+				78A094AED8A11252CA2D92556667A8DB /* Resources */,
+			);
+			name = WAApImpl;
+			path = WAApImpl;
+			sourceTree = "<group>";
+		};
+		4A3A8B0D2EE417B8B7F8194B22DE5801 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00A98B215529A40AA4CB5FFAC04EAB6C /* MJRefresh.framework */,
+				16950BC3C5AC8B6BD55709C36AB232B9 /* WAApwImpl.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4CC54C6EA379A49E736F562A376CA3E1 /* Frameworks */ = {
+		4FCEAFB4ADB98165C1191501852681E3 /* WAFbImpl */ = {
 			isa = PBXGroup;
 			children = (
-				D2DF75DB55C8DCD66EE4249514EC3E69 /* WAWebPayImpl.framework */,
+				AB7D6E91859F6479081D53DB049405FC /* Frameworks */,
+				2B1C91B0625BFEF9D6A8AC20F9D3EECF /* Resources */,
 			);
-			name = Frameworks;
+			name = WAFbImpl;
+			path = WAFbImpl;
 			sourceTree = "<group>";
 		};
-		56A4D2C779FB7F6651A1C16F7392A8A2 /* WAInstagramImpl */ = {
+		51F00250DC8597D607704712875A8BBD /* WAWebPayImpl */ = {
 			isa = PBXGroup;
 			children = (
-				A997FD106775F9BA16DC92BCB096FC52 /* Frameworks */,
-				064A9041A2FF60A8A623A1243F2F2CEE /* Resources */,
-			);
-			name = WAInstagramImpl;
-			path = WAInstagramImpl;
-			sourceTree = "<group>";
-		};
-		57C98E97AC0A194805451814C7944188 /* WAWebPayImpl */ = {
-			isa = PBXGroup;
-			children = (
-				4CC54C6EA379A49E736F562A376CA3E1 /* Frameworks */,
-				CEA5244D905CD1E5188D43BD1737CD75 /* Resources */,
+				B14096A86104E0E79EEDF08BCE66BF52 /* Frameworks */,
+				AEE3A641A83D4072D9A5D4B60549C4B6 /* Resources */,
 			);
 			name = WAWebPayImpl;
 			path = WAWebPayImpl;
@@ -244,35 +226,36 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		67628705548239CEB718CFA955E58620 /* Resources */ = {
+		5C2C70A59D38DE73DE1ADDEB311B8F45 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				41197FB767769075893933EB21F3EEF9 /* wa_sdk_impl_config_apple.xml */,
+				F47CBCC1526B78D58ABC08D0808F1079 /* wa_sdk_impl_config_apw.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		69FF257C44BCB68BF82779F99762C0A4 /* Frameworks */ = {
+		5CB987B6FA4DD0A5968FA7D807B75CE9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				62EC964199C36722C53E2E25E33C0707 /* WAApImpl.framework */,
+				148E3B5CD16B17A1980FE3F2D73D9195 /* TwitterKitResources.bundle */,
+				CC5EA88ED25EBAEBB216BBE79E67FB6B /* TwitterShareExtensionUIResources.bundle */,
+				01D30E3492F2510041EF04F96A8D3874 /* wa_sdk_impl_config_ twitter.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6C75AB62FD60A3CC21ABFB5DB39E2DF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2CD2EC26E82AFC5A05CCE06897167BD /* WAApImpl.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7068319112DC69F153C3725F6F01F510 /* Resources */ = {
+		6F5FBFF9B919D497F79AE1D788C794A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				44C2A03D1CC4ED653CEEBAA291A3E9DD /* wa_sdk_impl_config_chartboost.xml */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		7107FE98A3C351F9CB58724532943F2B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				723FB7D00FA47BC54FA7A5B5C6CCC6E5 /* VKSdkFramework.framework */,
-				7AE9446192FE23F5A53C430F050D3592 /* WAVkImpl.framework */,
+				A2062AC2222F90FDDCBFBF317ABB9A6F /* WAAfImpl.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -285,14 +268,22 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7858218C04A77018960EB87293778BC2 /* WAFbImpl */ = {
+		77F93367A09A7CEC0E5C5C7E51982163 /* WAPushImpl */ = {
 			isa = PBXGroup;
 			children = (
-				2ADFAFDC704B6996EC6491794DF52C7C /* Frameworks */,
-				16D991EFCC1DCF04E6ED71E40E9E562C /* Resources */,
+				310C400EBD4F11AD952F30B93E5969D1 /* Frameworks */,
+				B5452F0F0E9AEE6E6DB87C25A52EBE24 /* Resources */,
 			);
-			name = WAFbImpl;
-			path = WAFbImpl;
+			name = WAPushImpl;
+			path = WAPushImpl;
+			sourceTree = "<group>";
+		};
+		78A094AED8A11252CA2D92556667A8DB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0981B7CE4BFA32CD1F6586506733C024 /* wa_sdk_impl_config_apple.xml */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -300,90 +291,105 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				A6B9D7FF0F62729D812B8FFA4C4F809C /* Pods */,
+				C1FD24C7E577D175D8C055DE907BF3BA /* Pods */,
 				3BCA7DB8BA78E021286D7BCC8443EC48 /* Products */,
 				5B2D1DBC99E7DA1B7175CDA27B0643B4 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7E9F75EA10A0FDCA3D365AF5023DE6B0 /* Resources */ = {
+		8785370495594B97AA4884D42A3A8FDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C9E7BEAC8E47EF90DCBC3C217CC4A65A /* wa_sdk_impl_config_appsflyer.xml */,
+				F94E3BACB5CD19D9809E607C37F6E2B4 /* wa_sdk_impl_config_chartboost.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		7F09919A9A17F5C2F608CC2B2B65FEA8 /* Frameworks */ = {
+		8BBDFB155C1188F2345464800F78D958 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C207A64A1561530A6A7FCDC7182EE5D6 /* WAPushImpl.framework */,
+				C57987D9F0CBBCC5A3D0D9EBD043FE95 /* WASdkIntf.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9A2F253CB4E7C039ABFAC0A0DE855D7E /* WAPushImpl */ = {
+		985F0F78FD29E877BC6715A92E3A5145 /* WASdkIntf */ = {
 			isa = PBXGroup;
 			children = (
-				7F09919A9A17F5C2F608CC2B2B65FEA8 /* Frameworks */,
-				21DE86E46BACF90938E8244C370D4BB6 /* Resources */,
+				8BBDFB155C1188F2345464800F78D958 /* Frameworks */,
+				A2BE630174166DEFF746F01A8DBE9B8F /* Resources */,
 			);
-			name = WAPushImpl;
-			path = WAPushImpl;
+			name = WASdkIntf;
+			path = WASdkIntf;
 			sourceTree = "<group>";
 		};
-		A050C5F5B98108F71931F832D668E0CA /* WAApwImpl */ = {
+		9EF3BA91B4A8C9DCB859E68271D8B5BA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2A6FFB8FDCED74E62F1742F997F37B37 /* Frameworks */,
-				C345A3BD40AED4252E8FBE7FFBFB9A7E /* Resources */,
-			);
-			name = WAApwImpl;
-			path = WAApwImpl;
-			sourceTree = "<group>";
-		};
-		A694D5AFE76FF29F5205214DFB167748 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				61A79C7D11E697667A1E2D1DEFBA1026 /* wa_sdk_impl_config_vk.xml */,
+				F573C23A938C5DA0B116066B5706DED3 /* wa_sdk_impl_config_appsflyer.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		A6B9D7FF0F62729D812B8FFA4C4F809C /* Pods */ = {
+		A00620903AC310A5365C98F750C34BC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D23169F8CD2D13B0BB295A69DC975EDE /* WAAfImpl */,
-				064E8F29067B09DF95192B07E8D9D6FD /* WAApImpl */,
-				A050C5F5B98108F71931F832D668E0CA /* WAApwImpl */,
-				DD93BAF12475C4ED60B8C7031CE57D7F /* WACbImpl */,
-				7858218C04A77018960EB87293778BC2 /* WAFbImpl */,
-				56A4D2C779FB7F6651A1C16F7392A8A2 /* WAInstagramImpl */,
-				9A2F253CB4E7C039ABFAC0A0DE855D7E /* WAPushImpl */,
-				C168AAA9428C09833CF75D4B7CA90B25 /* WASdkImpl */,
-				4134F97715C15F1662B3BF850FED1B00 /* WASdkIntf */,
-				291D20EBE4B35B8102D3082D38C6874A /* WATwitterImpl */,
-				D2563B6D184D59CF42ADF4C2416801FA /* WAVkImpl */,
-				57C98E97AC0A194805451814C7944188 /* WAWebPayImpl */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		A6F37663B2F4998228528D6E25AC6E90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E19005CEB158AB4BBC7EAAF64D168F9F /* wa_sdk.plist */,
-				13C96A5A3D251EEC599BCDB43B95C71B /* wa_sdk_track_config.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		A997FD106775F9BA16DC92BCB096FC52 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0CDD52229B73A79EA9F4146869A67613 /* WAInstagramImpl.framework */,
+				7F1F2ABA666E560B0860059E38FD8CF7 /* WAInstagramImpl.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2BE630174166DEFF746F01A8DBE9B8F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4BB467DF20C55A5A4D7AA66BD2601B51 /* wa_sdk.plist */,
+				B65465AABF23C1F4852BDE0E494B2D89 /* wa_sdk_track_config.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AB7D6E91859F6479081D53DB049405FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD74CC5C5717EA5E3935E9ABE59C6BF6 /* Bolts.framework */,
+				423AC345F97EEE6489D764F18782BF42 /* FBSDKCoreKit.framework */,
+				A8D64A5A4450DDFD6662774663713F34 /* FBSDKLoginKit.framework */,
+				BAF951CC6D1C8A075F89624B6415A79F /* FBSDKShareKit.framework */,
+				E3E7AF9F3D4B61E8346239AC5630FA46 /* WAFbImpl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEE3A641A83D4072D9A5D4B60549C4B6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2E983EE3446B7C3D308442F0ACCE8ADA /* wa_sdk_impl_config_webpay.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B14096A86104E0E79EEDF08BCE66BF52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04D63A6BB725C1BBF440F1AC8A83858E /* WAWebPayImpl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5452F0F0E9AEE6E6DB87C25A52EBE24 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				58234D0E4369AC8CD1BBEA36B69BC525 /* wa_sdk_impl_config_push.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B67FA51262B8FA4B4247DD5468406F38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				19D4AC66F3D8E6DC001ED973D8E7FD71 /* wa_sdk_impl_config_instagram.xml */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -394,72 +400,103 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C168AAA9428C09833CF75D4B7CA90B25 /* WASdkImpl */ = {
+		BD54FCC6539EDEE7BD4AE1BCA4BAF4A6 /* WAAfImpl */ = {
 			isa = PBXGroup;
 			children = (
-				CADAB46E87D7509CFF630BB324D51B3F /* Frameworks */,
-				32DB2764EE7741E51112CE03C2ED3026 /* Resources */,
-			);
-			name = WASdkImpl;
-			path = WASdkImpl;
-			sourceTree = "<group>";
-		};
-		C345A3BD40AED4252E8FBE7FFBFB9A7E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				BD1FD5863DB95465B818B8D69CE29785 /* wa_sdk_impl_config_apw.xml */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		CADAB46E87D7509CFF630BB324D51B3F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C0BE955773AF0E266A0971B4F8791075 /* AFNetworking.framework */,
-				66540EA836C483BA60A0BFCBCBBB78EE /* FMDB.framework */,
-				EC697ACBA834222F90F7396B55984C17 /* Toast.framework */,
-				692653BF645D31CE2471938DF2FEC836 /* WACommon.framework */,
-				CE7F7136F6FF67F80D2E3DC614600893 /* WASdkImpl.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CEA5244D905CD1E5188D43BD1737CD75 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2579396FEDA12A17026BF072E3EAA5DD /* wa_sdk_impl_config_webpay.xml */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		D23169F8CD2D13B0BB295A69DC975EDE /* WAAfImpl */ = {
-			isa = PBXGroup;
-			children = (
-				FABC5589DF905BCD2D515E893E69CA41 /* Frameworks */,
-				7E9F75EA10A0FDCA3D365AF5023DE6B0 /* Resources */,
+				6F5FBFF9B919D497F79AE1D788C794A9 /* Frameworks */,
+				9EF3BA91B4A8C9DCB859E68271D8B5BA /* Resources */,
 			);
 			name = WAAfImpl;
 			path = WAAfImpl;
 			sourceTree = "<group>";
 		};
-		D2563B6D184D59CF42ADF4C2416801FA /* WAVkImpl */ = {
+		C1FD24C7E577D175D8C055DE907BF3BA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7107FE98A3C351F9CB58724532943F2B /* Frameworks */,
-				A694D5AFE76FF29F5205214DFB167748 /* Resources */,
+				133F813227916426FC2CBBD2146DE7C4 /* WAAdImpl */,
+				BD54FCC6539EDEE7BD4AE1BCA4BAF4A6 /* WAAfImpl */,
+				45FBD8F66301F0D0D51B6CC5FF37F88A /* WAApImpl */,
+				406F735C719192CCE11CE519AF0372FC /* WAApwImpl */,
+				45DDEBCE581DA9C4F97004B8511A7AA6 /* WACbImpl */,
+				4FCEAFB4ADB98165C1191501852681E3 /* WAFbImpl */,
+				C20D9CEA2339B8505A06775B2CEACC13 /* WAInstagramImpl */,
+				77F93367A09A7CEC0E5C5C7E51982163 /* WAPushImpl */,
+				2D2119D5711F6527BDCB9F9A327E040F /* WASdkImpl */,
+				985F0F78FD29E877BC6715A92E3A5145 /* WASdkIntf */,
+				DB2F71DE21301040AAAB3422D82D3A12 /* WATwitterImpl */,
+				DC83BCA0E3EEE6BFCBAAD2399559647F /* WAVkImpl */,
+				51F00250DC8597D607704712875A8BBD /* WAWebPayImpl */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C20D9CEA2339B8505A06775B2CEACC13 /* WAInstagramImpl */ = {
+			isa = PBXGroup;
+			children = (
+				A00620903AC310A5365C98F750C34BC9 /* Frameworks */,
+				B67FA51262B8FA4B4247DD5468406F38 /* Resources */,
+			);
+			name = WAInstagramImpl;
+			path = WAInstagramImpl;
+			sourceTree = "<group>";
+		};
+		C468CFB793D8B3A337A513CF1DE00DC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63BCA988161C2DBDFE23950BAEA1D4F8 /* VKSdkFramework.framework */,
+				C36FC4DDB483BBC2DA9A2C7594971301 /* WAVkImpl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5B78C739306505B94FA7F8632E3E3B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A90C02F3AF53D03F9E765E787A71A284 /* AFNetworking.framework */,
+				FB6352FF940829EFE3E1CC887402E86A /* FMDB.framework */,
+				5A7D23D2FE43EF182D33EECDFE7D19AE /* Toast.framework */,
+				B182874559FF596A45A35E588014ACEB /* WACommon.framework */,
+				3D390E721FAAE236D4C2D400CC9BDB22 /* WASdkImpl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6B4FAB43ECE8C7FB2C268A8D252BC4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14C47846B11525A3A247E9E82DFECA41 /* TwitterCore.framework */,
+				1FA5573E0D9DBE342018526A7F2B600B /* TwitterKit.framework */,
+				00274C6B145D1895DC8ADB945DB7BACC /* WATwitterImpl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9C77E29FE9F28EB3A3D37044593ED02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3C066108E7C9DAE48F2D72943E0E042C /* wa_sdk_impl_config_vk.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DB2F71DE21301040AAAB3422D82D3A12 /* WATwitterImpl */ = {
+			isa = PBXGroup;
+			children = (
+				D6B4FAB43ECE8C7FB2C268A8D252BC4C /* Frameworks */,
+				5CB987B6FA4DD0A5968FA7D807B75CE9 /* Resources */,
+			);
+			name = WATwitterImpl;
+			path = WATwitterImpl;
+			sourceTree = "<group>";
+		};
+		DC83BCA0E3EEE6BFCBAAD2399559647F /* WAVkImpl */ = {
+			isa = PBXGroup;
+			children = (
+				C468CFB793D8B3A337A513CF1DE00DC8 /* Frameworks */,
+				D9C77E29FE9F28EB3A3D37044593ED02 /* Resources */,
 			);
 			name = WAVkImpl;
 			path = WAVkImpl;
-			sourceTree = "<group>";
-		};
-		DD93BAF12475C4ED60B8C7031CE57D7F /* WACbImpl */ = {
-			isa = PBXGroup;
-			children = (
-				039E62B8F0A5390613F4C97BD59568CB /* Frameworks */,
-				7068319112DC69F153C3725F6F01F510 /* Resources */,
-			);
-			name = WACbImpl;
-			path = WACbImpl;
 			sourceTree = "<group>";
 		};
 		DEF7404C8D6813A1CB111608AC8DA5F1 /* Pods-WADemo */ = {
@@ -477,20 +514,12 @@
 			path = "Target Support Files/Pods-WADemo";
 			sourceTree = "<group>";
 		};
-		E2A02AF62EE11E6973B6551AF6820DC6 /* Frameworks */ = {
+		EBE67A7B07013225319A50FB43BB9F6A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3319932C2FF96C7573E4E4AE03F2A786 /* WASdkIntf.framework */,
+				7D0DD5E914EDB5FDA20711F48B4531D6 /* wa_sdk_impl_config_ad.xml */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FABC5589DF905BCD2D515E893E69CA41 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				797BF5F2B00EC40D470CF15B31C9FA17 /* WAAfImpl.framework */,
-			);
-			name = Frameworks;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -21,8 +21,9 @@
 #import "WADemoPayView.h"
 #import "WADemoInvite.h"
 #import "WADemoGiftView.h"
+#import <Toast/Toast.h>
 //#import <WASdkImpl/WASdkLoginHandler.h>
-@interface WADemoMainUI () <WAPaymentDelegate>
+@interface WADemoMainUI () <WAPaymentDelegate, WAAdRewardedVideoCachedDelegate, WAAdRewardedVideoDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) WADemoLoginUI* loginUI;
 @property (nonatomic, strong) WADemoAccountManagement* acctMgmt;
@@ -33,6 +34,7 @@
 @property (nonatomic, strong) WADemoGiftView* giftView;
 @property (nonatomic, strong) WADemoPayView* payView;
 @property (nonatomic, strong) WADemoHotUpdateView* hotUpdate;
+@property (nonatomic, strong) WADemoButtonMain* btnAd;
 
 @end
 
@@ -42,6 +44,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self initBtnAndLayout];
+        [WAAdProxy setWAAdRewardedVideoCachedDelegate:self];
     }
     return self;
 }
@@ -94,11 +97,21 @@
     [btn12 setTitle:@"购买商品" forState:UIControlStateNormal];
     [btn12 addTarget:self action:@selector(payProduct) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn12];
+    _btnAd = [[WADemoButtonMain alloc]init];
+    [self.btnAd setTitle:@"播放广告" forState:UIControlStateNormal];
+    [self.btnAd addTarget:self action:@selector(playAd) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:self.btnAd];
+    self.btnAd.enabled = [WAAdProxy checkRewardedVideo] > 0;
+    WADemoButtonMain* btn14 = [[WADemoButtonMain alloc]init];
+    [btn14 setTitle:@"播放广告" forState:UIControlStateNormal];
+    [btn14 addTarget:self action:@selector(playAd) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn14];
+    btn14.hidden = YES;
     WADemoButtonMain* btn10 = [[WADemoButtonMain alloc]init];
     [btn10 setTitle:@"闪退测试" forState:UIControlStateNormal];
     [btn10 addTarget:self action:@selector(crash) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn10];
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@0,@1]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@0,@1]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     CFShow((__bridge CFTypeRef)(infoDictionary));
@@ -225,7 +238,22 @@
 
 - (void)payProduct
 {
-    [WAPayProxy payWithProductId:@"10086" extInfo:@"" delegate:self];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"购买商品" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    UITextField *txtName = [alert textFieldAtIndex:0];
+    txtName.placeholder = @"请输入商品ID";
+    [alert show];
+}
+
+- (void)playAd
+{
+    if (! [WAUserProxy getCurrentLoginResult])
+    {
+        [self makeToast:@"请先登录"];
+        return;
+    }
+    if ([WAAdProxy checkRewardedVideo] > 0)
+        [WAAdProxy displayRewardedVideoWithExtInfo:nil delegate:self];
 }
 
 -(void)checkUpdate{
@@ -238,28 +266,101 @@
 
 #pragma mark 实现 WAPaymentDelegate
 -(void)paymentDidCompleteWithResult:(WAIapResult*)iapResult andPlatform:(NSString*)platform{
+    NSString *msg;
     if (!iapResult) {
-        NSLog(@"%@ 购买失败!", platform);
+        msg = [NSString stringWithFormat:@"%@ 购买失败!", platform];
     }else{
         if (iapResult.resultCode == 1) {
-            NSLog(@"%@ 支付成功.", platform);
+            msg = [NSString stringWithFormat:@"%@ 支付成功.", platform];
         }else if (iapResult.resultCode == 2) {
-            NSLog(@"%@ 支付失败.", platform);
+            msg = [NSString stringWithFormat:@"%@ 支付失败.", platform];
         }else if (iapResult.resultCode == 3) {
-            NSLog(@"%@ 取消.", platform);
+            msg = [NSString stringWithFormat:@"%@ 取消.", platform];
         }else if (iapResult.resultCode == 4) {
-            NSLog(@"%@ 上报失败.", platform);
+            msg = [NSString stringWithFormat:@"%@ 上报失败.", platform];
         }else if (iapResult.resultCode == 5) {
-            NSLog(@"%@ 商品未消耗.", platform);
+            msg = [NSString stringWithFormat:@"%@ 商品未消耗.", platform];
         }else if (iapResult.resultCode == 6) {
-            NSLog(@"%@ 创建订单失败.", platform);
+            msg = [NSString stringWithFormat:@"%@ 创建订单失败.", platform];
         }
     }
+    NSLog(@"%@", msg);
+    [self makeToast:msg];
 }
 
 -(void)paymentDidFailWithError:(NSError*)error andPlatform:(NSString*)platform{
     if (error) {
         NSLog(@"paymentDidFailWithError:%@",error.description);
+        [self makeToast:error.description];
+    }
+}
+
+#pragma mark 实现WAAdRewardedVideoCachedDelegate
+- (void)adDidRewardedVideoCachedWithCacheCount:(NSInteger)cacheCount
+{
+    self.btnAd.enabled = cacheCount > 0;
+}
+
+#pragma mark 实现WAAdRewardedVideoDelegate
+- (void) adPreDisplayRewardedVideoWithCampaignId:(NSString *)campaignId
+                                            adSetId:(NSString *)adSetId
+                                           rewarded:(NSString *)rewarded
+                                      rewardedCount:(NSInteger)rewardedCount
+                                            extInfo:(NSString *)extInfo
+{
+    [self makeToast:@"视频准备播放"];
+}
+
+- (void) adDidCancelRewardedVideoWithCampaignId:(NSString *)campaignId
+                                        adSetId:(NSString *)adSetId
+                                        process:(WAAdCancelType)process
+                                        extInfo:(NSString *)extInfo
+{
+    if (process == WAAdCancelTypePlayBefore)        // 播放前取消（播放前提示页面）
+    {
+        [self makeToast:@"播放前取消广告视频播放！"];
+    }
+    else if (process == WAAdCancelTypePlaying)      // 播放过程中取消
+    {
+        [self makeToast:@"播放过程中取消广告视频播放！"];
+    }
+    else if (process == WAAdCancelTypePlayAfter)    // 播放后取消（下载页面取消）
+    {
+        [self makeToast:@"下载页面取消广告视频播放！"];
+    }
+}
+
+- (void) adDidFailToLoadRewardedVideoWithCampaignId:(NSString *)campaignId
+                                            adSetId:(NSString *)adSetId
+                                            extInfo:(NSString *)extInfo
+{
+    [self makeToast:@"播放广告视频失败！"];
+}
+
+- (void) adDidDisplayRewardedVideoWithCampaignId:(NSString *)campaignId
+                                         adSetId:(NSString *)adSetId
+                                        rewarded:(NSString *)rewarded
+                                   rewardedCount:(NSInteger)rewardedCount
+                                         extInfo:(NSString *)extInfo
+{
+    [self makeToast:@"视频播放完成"];
+}
+
+- (void) adDidClickRewardedVideoWithCampaignId:(NSString *)campaignId
+                                       adSetId:(NSString *)adSetId
+                                      rewarded:(NSString *)rewarded
+                                 rewardedCount:(NSInteger)rewardedCount
+                                       extInfo:(NSString *)extInfo
+{
+    [self makeToast:@"点击去下载"];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        NSString *productId = [alertView textFieldAtIndex:0].text;
+        [WAPayProxy payWithProductId:productId extInfo:@"" delegate:self];
     }
 }
 

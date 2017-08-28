@@ -42,4 +42,6 @@
 -(void)fetchDeferredAppLink:(void(^)(NSURL *url, NSError *error))handler;
 -(void)addEventContentWithString:(NSString*)string;
 -(void)eventLogWithPlatform:(NSString*)platform eventName:(NSString*)eventName parameters:(NSDictionary*)parameters color:(UIColor*)color;
+/** 检测设备是否越狱 */
+- (BOOL)isJailBreak;
 @end

@@ -28,7 +28,7 @@
 }
 
 -(void)initUI{
-    self.backgroundColor = [UIColor lightGrayColor];
+//    self.backgroundColor = [UIColor lightGrayColor];
     self.titleLabel.font = [UIFont fontWithName:@"Arial" size:15];//Helvetica-Bold
     [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self setTitleColor:[UIColor orangeColor] forState:UIControlStateSelected];
@@ -43,6 +43,8 @@
     if (frame.origin.x==0&&frame.origin.y==0&&frame.size.width == 0&&frame.size.height ==0) {
         return;
     }
+    
+    [self setBackgroundImage:[self imageWithColor:[UIColor lightGrayColor] size:self.frame.size] forState:UIControlStateNormal];
     [self setBackgroundImage:[self imageWithColor:[UIColor orangeColor] size:frame.size] forState:UIControlStateHighlighted];
 
 }

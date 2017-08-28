@@ -10,11 +10,11 @@
 		</data>
 		<key>Headers/WACommConstants.h</key>
 		<data>
-		3r/7y4k/aHifisr0MZ9T7asAjCQ=
+		eO6cd35wZIfoe51VxvivAWhKbYo=
 		</data>
 		<key>Headers/WACommon.h</key>
 		<data>
-		vRdG4D7B0H86snAwFkneNdJgziY=
+		MyQV6eYHxyNLzebRj1++5/AbcBM=
 		</data>
 		<key>Headers/WADevice.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/WADownloadHandler.h</key>
 		<data>
-		Swf2q3rMjFMsKISSutPhSrj0dlA=
+		fN1oP9mvLktCVO+gCUPIXGXTGDE=
 		</data>
 		<key>Headers/WAHelper.h</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Headers/WASandboxHelper.h</key>
 		<data>
-		DpJAnPjQDxT5VM7bGEy+sOGslXQ=
+		Sm7d7gB8dKfhJz01AzQSjXh4HiE=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ViSxvEixJFOpLSFwHqqHEc+hXQo=
+		GGqWorOKNdhWGBbNdFcp2/TQ7LI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -66,22 +66,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3r/7y4k/aHifisr0MZ9T7asAjCQ=
+			eO6cd35wZIfoe51VxvivAWhKbYo=
 			</data>
 			<key>hash2</key>
 			<data>
-			UFW/PdH15bGcF1k2R2sivdJKdtc5EIC/LFAdXukqrsU=
+			VqqQMLRBM8FYfTAX8xUx9/9Jkg98Jb//57lmr0DwhGw=
 			</data>
 		</dict>
 		<key>Headers/WACommon.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vRdG4D7B0H86snAwFkneNdJgziY=
+			MyQV6eYHxyNLzebRj1++5/AbcBM=
 			</data>
 			<key>hash2</key>
 			<data>
-			njJn8IAvTh+zvy3dH5qJarEuxuUKmdx+cr/C7FeqHGQ=
+			2sfWgUvtPmTL3NktjJR4kpBBfoy8XowFU5GPQ81ghgc=
 			</data>
 		</dict>
 		<key>Headers/WADevice.h</key>
@@ -99,11 +99,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Swf2q3rMjFMsKISSutPhSrj0dlA=
+			fN1oP9mvLktCVO+gCUPIXGXTGDE=
 			</data>
 			<key>hash2</key>
 			<data>
-			D6qOBBYstGwSiDCv/JD/WGsWwlh//hL4Yj4xSqoCxio=
+			h4X418RtJit7ok4Ie4RaYeO4+PxgElbH/klteT2t7cA=
 			</data>
 		</dict>
 		<key>Headers/WAHelper.h</key>
@@ -143,11 +143,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DpJAnPjQDxT5VM7bGEy+sOGslXQ=
+			Sm7d7gB8dKfhJz01AzQSjXh4HiE=
 			</data>
 			<key>hash2</key>
 			<data>
-			K19M8nNveIEM7wfeXMcpVl8YLlfN/vqyw0/RK/EhGCY=
+			AY60LFtfoRML2XIbGyHpwAbiw3IpKhE5qxdyuPcJ180=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

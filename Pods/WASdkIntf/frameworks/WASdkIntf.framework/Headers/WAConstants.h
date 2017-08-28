@@ -19,7 +19,8 @@ extern NSString *const WA_MODULE_SOC;//社交模块
 extern NSString *const WA_MODULE_APW;//应用墙模块
 extern NSString *const WA_MODULE_CORE;//公共模块
 extern NSString *const WA_MODULE_HUP;//热更新模块
-extern NSString *const WA_MODULE_PUSH;//热更新模块
+extern NSString *const WA_MODULE_PUSH;//消息推送模块
+extern NSString *const WA_MODULE_AD; //广告模块
 
 extern NSString *const WA_PLATFORM_FACEBOOK;
 extern NSString *const WA_PLATFORM_APPLE;

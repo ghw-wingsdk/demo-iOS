@@ -25,4 +25,5 @@
 @property(nonatomic,strong)NSNumber* isTestDevice;
 @property(nonatomic,copy)NSString* userAgreementUrl;
 @property(nonatomic,strong)NSNumber* uploadPurchaseLog;
+@property(nonatomic) NSInteger adVideoCacheCount;
 @end

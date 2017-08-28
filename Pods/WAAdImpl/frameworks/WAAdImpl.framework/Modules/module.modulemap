@@ -1,0 +1,6 @@
+framework module WAAdImpl {
+  umbrella header "WAAdImpl.h"
+
+  export *
+  module * { export * }
+}
