@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36356B171F594DB300B767CD /* WADemoAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36356B161F594DB300B767CD /* WADemoAdView.m */; };
 		36F6FBB31CD3092800EB0DBC /* WADemoPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F6FBB21CD3092800EB0DBC /* WADemoPayView.m */; };
 		5F74A0D4AD12DE42C44DF27C /* libPods-WADemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEB9AC630E49E10F3A98DE9 /* libPods-WADemo.a */; };
 		7FA55E781D332BC400341D7A /* WADemoInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA55E771D332BC400341D7A /* WADemoInvite.m */; };
@@ -71,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36356B151F594DB300B767CD /* WADemoAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAdView.h; sourceTree = "<group>"; };
+		36356B161F594DB300B767CD /* WADemoAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAdView.m; sourceTree = "<group>"; };
 		36EF881E1CE2BF5700E7DF11 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		36F6FBB11CD3092800EB0DBC /* WADemoPayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoPayView.h; sourceTree = "<group>"; };
 		36F6FBB21CD3092800EB0DBC /* WADemoPayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoPayView.m; sourceTree = "<group>"; };
@@ -200,6 +203,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36356B141F594DB300B767CD /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				36356B151F594DB300B767CD /* WADemoAdView.h */,
+				36356B161F594DB300B767CD /* WADemoAdView.m */,
+			);
+			path = Ad;
+			sourceTree = "<group>";
+		};
 		36F6FBB01CD3092800EB0DBC /* Pay */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +244,7 @@
 		7FC4E2B71C8EEE7C0075FC7D /* WADemo */ = {
 			isa = PBXGroup;
 			children = (
+				36356B141F594DB300B767CD /* Ad */,
 				36F6FBB01CD3092800EB0DBC /* Pay */,
 				7FC4E2DD1C8EEF3F0075FC7D /* AccountManagement  */,
 				7FC4E2E41C8EEF3F0075FC7D /* AppTracking */,
@@ -660,6 +673,7 @@
 				7FC4E34C1C8EEF3F0075FC7D /* WADemoGiftListView.m in Sources */,
 				7FA55E7B1D33310E00341D7A /* WADemoVKInviteView.m in Sources */,
 				7FA55E8B1D338C1000341D7A /* WADemoGroupCell.m in Sources */,
+				36356B171F594DB300B767CD /* WADemoAdView.m in Sources */,
 				7FA55E7E1D333F8800341D7A /* WADemoVKFriendList.m in Sources */,
 				7FC4E3551C8EEF3F0075FC7D /* WADemoAlertView.m in Sources */,
 				7FC4E3471C8EEF3F0075FC7D /* WADemoLoginUI.m in Sources */,

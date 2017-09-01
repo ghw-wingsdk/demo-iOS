@@ -21,9 +21,10 @@
 #import "WADemoPayView.h"
 #import "WADemoInvite.h"
 #import "WADemoGiftView.h"
+#import "WADemoAdView.h"
 #import <Toast/Toast.h>
 //#import <WASdkImpl/WASdkLoginHandler.h>
-@interface WADemoMainUI () <WAPaymentDelegate, WAAdRewardedVideoCachedDelegate, WAAdRewardedVideoDelegate, UIAlertViewDelegate>
+@interface WADemoMainUI () <WAPaymentDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) WADemoLoginUI* loginUI;
 @property (nonatomic, strong) WADemoAccountManagement* acctMgmt;
@@ -34,7 +35,7 @@
 @property (nonatomic, strong) WADemoGiftView* giftView;
 @property (nonatomic, strong) WADemoPayView* payView;
 @property (nonatomic, strong) WADemoHotUpdateView* hotUpdate;
-@property (nonatomic, strong) WADemoButtonMain* btnAd;
+@property (nonatomic, strong) WADemoAdView* adView;
 
 @end
 
@@ -44,7 +45,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self initBtnAndLayout];
-        [WAAdProxy setWAAdRewardedVideoCachedDelegate:self];
     }
     return self;
 }
@@ -67,9 +67,6 @@
     [btn4 addTarget:self action:@selector(acctManagement) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn4];
     WADemoButtonMain* btn5 = [[WADemoButtonMain alloc]init];
-//    [btn5 setTitle:@"应用内支付" forState:UIControlStateNormal];
-//    [btn5 addTarget:self action:@selector(iap) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn5];
     [btn5 setTitle:@"支付" forState:UIControlStateNormal];
     [btn5 addTarget:self action:@selector(pay) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn5];
@@ -97,15 +94,11 @@
     [btn12 setTitle:@"购买商品" forState:UIControlStateNormal];
     [btn12 addTarget:self action:@selector(payProduct) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn12];
-    _btnAd = [[WADemoButtonMain alloc]init];
-    [self.btnAd setTitle:@"播放广告" forState:UIControlStateNormal];
-    [self.btnAd addTarget:self action:@selector(playAd) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:self.btnAd];
-    self.btnAd.enabled = [WAAdProxy checkRewardedVideo] > 0;
+    WADemoButtonMain* btn13 = [[WADemoButtonMain alloc]init];
+    [btn13 setTitle:@"广告" forState:UIControlStateNormal];
+    [btn13 addTarget:self action:@selector(ad) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn13];
     WADemoButtonMain* btn14 = [[WADemoButtonMain alloc]init];
-    [btn14 setTitle:@"播放广告" forState:UIControlStateNormal];
-    [btn14 addTarget:self action:@selector(playAd) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn14];
     btn14.hidden = YES;
     WADemoButtonMain* btn10 = [[WADemoButtonMain alloc]init];
     [btn10 setTitle:@"闪退测试" forState:UIControlStateNormal];
@@ -245,15 +238,13 @@
     [alert show];
 }
 
-- (void)playAd
+- (void)ad
 {
-    if (! [WAUserProxy getCurrentLoginResult])
-    {
-        [self makeToast:@"请先登录"];
-        return;
-    }
-    if ([WAAdProxy checkRewardedVideo] > 0)
-        [WAAdProxy displayRewardedVideoWithExtInfo:nil delegate:self];
+    UIViewController* vc = [WADemoUtil getCurrentVC];
+    _adView = [[WADemoAdView alloc]initWithFrame:self.bounds];
+    self.adView.hasBackBtn = YES;
+    [vc.view addSubview:self.adView];
+    [self.adView moveIn:nil];
 }
 
 -(void)checkUpdate{
@@ -293,66 +284,6 @@
         NSLog(@"paymentDidFailWithError:%@",error.description);
         [self makeToast:error.description];
     }
-}
-
-#pragma mark 实现WAAdRewardedVideoCachedDelegate
-- (void)adDidRewardedVideoCachedWithCacheCount:(NSInteger)cacheCount
-{
-    self.btnAd.enabled = cacheCount > 0;
-}
-
-#pragma mark 实现WAAdRewardedVideoDelegate
-- (void) adPreDisplayRewardedVideoWithCampaignId:(NSString *)campaignId
-                                            adSetId:(NSString *)adSetId
-                                           rewarded:(NSString *)rewarded
-                                      rewardedCount:(NSInteger)rewardedCount
-                                            extInfo:(NSString *)extInfo
-{
-    [self makeToast:@"视频准备播放"];
-}
-
-- (void) adDidCancelRewardedVideoWithCampaignId:(NSString *)campaignId
-                                        adSetId:(NSString *)adSetId
-                                        process:(WAAdCancelType)process
-                                        extInfo:(NSString *)extInfo
-{
-    if (process == WAAdCancelTypePlayBefore)        // 播放前取消（播放前提示页面）
-    {
-        [self makeToast:@"播放前取消广告视频播放！"];
-    }
-    else if (process == WAAdCancelTypePlaying)      // 播放过程中取消
-    {
-        [self makeToast:@"播放过程中取消广告视频播放！"];
-    }
-    else if (process == WAAdCancelTypePlayAfter)    // 播放后取消（下载页面取消）
-    {
-        [self makeToast:@"下载页面取消广告视频播放！"];
-    }
-}
-
-- (void) adDidFailToLoadRewardedVideoWithCampaignId:(NSString *)campaignId
-                                            adSetId:(NSString *)adSetId
-                                            extInfo:(NSString *)extInfo
-{
-    [self makeToast:@"播放广告视频失败！"];
-}
-
-- (void) adDidDisplayRewardedVideoWithCampaignId:(NSString *)campaignId
-                                         adSetId:(NSString *)adSetId
-                                        rewarded:(NSString *)rewarded
-                                   rewardedCount:(NSInteger)rewardedCount
-                                         extInfo:(NSString *)extInfo
-{
-    [self makeToast:@"视频播放完成"];
-}
-
-- (void) adDidClickRewardedVideoWithCampaignId:(NSString *)campaignId
-                                       adSetId:(NSString *)adSetId
-                                      rewarded:(NSString *)rewarded
-                                 rewardedCount:(NSInteger)rewardedCount
-                                       extInfo:(NSString *)extInfo
-{
-    [self makeToast:@"点击去下载"];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
