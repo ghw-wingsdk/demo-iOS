@@ -1,4 +1,4 @@
 ## WATwitterImpl
 
-Twitter登录
+Twitter
 

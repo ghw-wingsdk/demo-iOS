@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, WAAdCancelType) {
     WAAdCancelTypePlayAfter,      // 播放后取消（下载页面取消）
 };
 
-/** 广告激励视频回调 */
+/** 广告激励视频代理 */
 @protocol WAAdRewardedVideoDelegate <NSObject>
 
 /*!
@@ -84,9 +84,13 @@ typedef NS_ENUM(NSInteger, WAAdCancelType) {
 
 @end
 
-/** 视频广告缓存完回调 */
+/** 视频广告缓存完代理 */
 @protocol WAAdRewardedVideoCachedDelegate <NSObject>
 
+/*!
+ @abstract 视频广告缓存完成回调
+ @param cacheCount 可用广告数量
+ */
 - (void)adDidRewardedVideoCachedWithCacheCount:(NSInteger)cacheCount;
 
 @end

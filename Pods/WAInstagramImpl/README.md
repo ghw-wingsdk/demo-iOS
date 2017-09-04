@@ -1,4 +1,4 @@
 ## WAInstagramImpl
 
-Instagram登录
+Instagram
 
