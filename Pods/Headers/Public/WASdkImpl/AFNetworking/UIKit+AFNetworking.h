@@ -1,1 +1,0 @@
-../../../../WASdkImpl/frameworks/AFNetworking.framework/Headers/UIKit+AFNetworking.h
