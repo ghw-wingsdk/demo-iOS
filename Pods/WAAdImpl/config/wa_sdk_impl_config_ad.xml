@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-	<version val="AD3.6.5"/>
+	<version val="AD3.6.5.1"/>
     <comps>
         <!-- 广告模块 -->
         <comp module="AD" plaf="WINGA" mandatory="NO" value="WAAd" desc="广告"/>

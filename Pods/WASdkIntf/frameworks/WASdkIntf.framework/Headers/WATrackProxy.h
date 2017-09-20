@@ -80,6 +80,8 @@ extern NSString *const WAEventGoldUpdate;
 extern NSString *const WAEventUserImport;
 extern NSString *const WAEventSession;
 
+extern NSString *const WAEventAFTrackingInit;
+
 extern NSString *const WAEventParameterNameRegistrationMethod;
 
 extern NSString *const WAEventParameterNameCurrencyType;

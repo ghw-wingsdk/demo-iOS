@@ -20,8 +20,8 @@ typedef NS_ENUM(NSInteger, WAAdCancelType) {
 
 /*!
  @abstract 显示视频前页面成功时回调
- @param campaignId 推广活动Id
- @param adSetId 广告组Id
+ @param campaignId 活动Id
+ @param adSetId 广告Id
  @param rewarded 奖励物品
  @param rewardedCount 奖励物品数量
  @param extInfo CP扩展字段
@@ -34,8 +34,8 @@ typedef NS_ENUM(NSInteger, WAAdCancelType) {
 
 /*!
  @abstract 点击叉按钮后回调
- @param campaignId 推广活动Id
- @param adSetId 广告组Id
+ @param campaignId 活动Id
+ @param adSetId 广告Id
  @param process WAAdCancelTypePlayBefore 播放前取消，WAAdCancelTypePlaying 播放过程中取消, WAAdCancelTypeAfter 播放后取消（下载页面取消）
  @param extInfo CP扩展字段
  */
@@ -46,8 +46,8 @@ typedef NS_ENUM(NSInteger, WAAdCancelType) {
 
 /*!
  @abstract 加载视频失败回调
- @param campaignId 推广活动Id
- @param adSetId 广告组Id
+ @param campaignId 活动Id
+ @param adSetId 广告Id
  @param extInfo CP扩展字段
  */
 - (void) adDidFailToLoadRewardedVideoWithCampaignId:(NSString *)campaignId
@@ -56,8 +56,8 @@ typedef NS_ENUM(NSInteger, WAAdCancelType) {
 
 /*!
  @abstract 播放视频结束回调
- @param campaignId 推广活动Id
- @param adSetId 广告组Id
+ @param campaignId 活动Id
+ @param adSetId 广告Id
  @param rewarded 奖励物品
  @param rewardedCount 奖励物品数量
  @param extInfo CP扩展字段
@@ -70,8 +70,8 @@ typedef NS_ENUM(NSInteger, WAAdCancelType) {
 
 /*!
  @abstract 播放完视频点击回调
- @param campaignId 推广活动Id
- @param adSetId 广告组Id
+ @param campaignId 活动Id
+ @param adSetId 广告Id
  @param rewarded 奖励物品
  @param rewardedCount 奖励物品数量
  @param extInfo CP扩展字段
@@ -100,13 +100,22 @@ typedef NS_ENUM(NSInteger, WAAdCancelType) {
 /** 加载广告 */
 + (void)loadAd;
 
-/** 设置视频广告缓存完回调 */
+/*!
+ @abstract 设置视频广告缓存完回调
+ @param delegate WAAdRewardedVideoCachedDelegate代理
+ */
 + (void)setWAAdRewardedVideoCachedDelegate:(id<WAAdRewardedVideoCachedDelegate>)delegate;
 
-/** 检测可播放广告数量 */
+/*!
+ @abstract 检测可播放广告数量
+ */
 + (NSInteger) checkRewardedVideo;
 
-/** 显示广告 */
+/*!
+ @abstract 显示广告
+ @param extInfo CP扩展字段
+ @param delegate WAAdRewardedVideoDelegate代理
+ */
 + (void) displayRewardedVideoWithExtInfo:(NSString *)extInfo delegate:(id<WAAdRewardedVideoDelegate>)delegate;
 
 @end

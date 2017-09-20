@@ -16,5 +16,5 @@ FOUNDATION_EXPORT const unsigned char WAAdImplVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WAAdImpl/PublicHeader.h>
 
-//time:2017/9/5 15:32 ver:3.6.5
+//time:2017/9/14 12:26 ver:3.6.5.1
 
