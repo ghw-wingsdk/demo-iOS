@@ -47,7 +47,7 @@
 	<key>FacebookAppID</key>
 	<string>1811388679079227</string>
 	<key>FacebookDisplayName</key>
-	<string>com.ghw.sdk应用</string>
+	<string>com.ghw.sdk</string>
 	<key>Instagram</key>
 	<dict>
 		<key>clientId</key>
