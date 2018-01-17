@@ -26,4 +26,6 @@
 @property(nonatomic,copy)NSString* userAgreementUrl;
 @property(nonatomic,strong)NSNumber* uploadPurchaseLog;
 @property(nonatomic) NSInteger adVideoCacheCount;
+@property(nonatomic) NSInteger enableBindAccount; // 绑定：  0-关闭， 1-打开
+@property(nonatomic) NSInteger enableUnBindAccount; // 解绑：   0-关闭，1-打开
 @end

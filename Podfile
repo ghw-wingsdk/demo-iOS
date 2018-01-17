@@ -30,8 +30,8 @@ source 'http://repo.wingsdk.cn:8082/r/WAInstagramImpl.git'
 source 'http://repo.wingsdk.cn:8082/r/WAAdImpl.git'
 
 target "WADemo" do
-pod 'WASdkIntf','3.6.5.1'
-pod 'WASdkImpl', '3.6.5'
+pod 'WASdkIntf','3.6.5.2'
+pod 'WASdkImpl', '3.6.5.2'
 pod 'WAApwImpl', '3.6.5'
 pod 'WAApImpl', '3.6.4'
 pod 'WAAfImpl', '3.6.5.1'

@@ -96,9 +96,13 @@
 	<string>You can not do purchase in a jailbreak device.</string>
 	<key>wasdk_copy</key>
 	<string>Copy</string>
-    <key>wasdk_login_twitter</key>
-    <string>Twitter</string>
-    <key>wasdk_login_instagram</key>
-    <string>Instagram</string>
+	<key>wasdk_login_twitter</key>
+	<string>Twitter</string>
+	<key>wasdk_login_instagram</key>
+	<string>Instagram</string>
+	<key>wasdk_tip_bind_closed</key>
+	<string>Failed to bind.</string>
+	<key>wasdk_tip_unbind_closed</key>
+	<string>Failed to unbind. </string>
 </dict>
 </plist>

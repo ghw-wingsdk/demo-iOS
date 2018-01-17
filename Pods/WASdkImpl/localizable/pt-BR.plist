@@ -94,9 +94,13 @@
 	<string>proibido compras em telefones com jailbreak</string>
 	<key>wasdk_copy</key>
 	<string>Copy</string>
-    <key>wasdk_login_twitter</key>
-    <string>Twitter</string>
-    <key>wasdk_login_instagram</key>
-    <string>Instagram</string>
+	<key>wasdk_login_twitter</key>
+	<string>Twitter</string>
+	<key>wasdk_login_instagram</key>
+	<string>Instagram</string>
+	<key>wasdk_tip_bind_closed</key>
+	<string>Falha ao vincular</string>
+	<key>wasdk_tip_unbind_closed</key>
+	<string>Falha ao desvincular</string>
 </dict>
 </plist>

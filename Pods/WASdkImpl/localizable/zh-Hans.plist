@@ -100,5 +100,9 @@
 	<string>Twitter</string>
 	<key>wasdk_login_instagram</key>
 	<string>Instagram</string>
+	<key>wasdk_tip_bind_closed</key>
+	<string>绑定失败</string>
+	<key>wasdk_tip_unbind_closed</key>
+	<string>解绑失败</string>
 </dict>
 </plist>

@@ -13,8 +13,8 @@
 #import "WADemoAlertView.h"
 @implementation WADemoGiftListView
 
--(instancetype)init{
-    self = [super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
         //添加界面旋转通知
         [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];

@@ -35,6 +35,8 @@ typedef enum WACode{
     WACodeExchangeRateConversionFailure = 4025 ,//汇率转换失败
     WACodePayPlatformClosed = 4026 ,//支付渠道已关闭
     WACodeLoginPlatformClosed = 4029 ,//登录渠道已关闭
+    WACodeBindAccountClosed = 4048 ,//账号绑定关闭
+    WACodeUnBindAccountClosed = 4049 ,//账号解绑关闭
     WACodeCanNotSwitchToAnonymous = 5001 ,
     WACodeFbObjectType = 5002 ,//facebook的objectType不能为空
     WACodeFbGiftListRequestPrameterLack = 5003 ,//请求gift列表缺少appid,appSecret,objectType参数

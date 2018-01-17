@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/WACode.h</key>
 		<data>
-		UlLyj++V9sgqf4tCW/4V9WIctjs=
+		KpweXIlcVwsPjByRnWkYPu/n0qU=
 		</data>
 		<key>Headers/WAComponent.h</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Headers/WAParamConfigObj.h</key>
 		<data>
-		hMQawyXne4zoBqe9m+zDn+D4On8=
+		q0mbXsHdC6iu0uHAiiw3fQmo51g=
 		</data>
 		<key>Headers/WAPayChannel.h</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>Headers/WASdkIntf.h</key>
 		<data>
-		3yboFjv1m+zgI3UH2Hwq5SMjH1o=
+		hyUAVp29k+68wpVo7FSWnoGHjz8=
 		</data>
 		<key>Headers/WAShareLinkContent.h</key>
 		<data>
@@ -202,7 +202,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		LkRKOBgcsJfYnwXRt0eS6nBci00=
+		e2SnWx5hY0fp0ocgyAmzs/Swekk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -303,11 +303,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UlLyj++V9sgqf4tCW/4V9WIctjs=
+			KpweXIlcVwsPjByRnWkYPu/n0qU=
 			</data>
 			<key>hash2</key>
 			<data>
-			tIQO7qbir4fyFPrPKQI7YPupGASva4YdJnOYMIV7+Hw=
+			GCmgiTOmHtSuZXQoWpxjt4TPxdlev/teryJT/MB94Ww=
 			</data>
 		</dict>
 		<key>Headers/WAComponent.h</key>
@@ -589,11 +589,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hMQawyXne4zoBqe9m+zDn+D4On8=
+			q0mbXsHdC6iu0uHAiiw3fQmo51g=
 			</data>
 			<key>hash2</key>
 			<data>
-			p/rIK8k2UWdgHt9P/y/UPofDTnfBBEtQeXnU3DJumOM=
+			Whfro8GUfc+H6gvdYGXCyncGxScua6vk4NUqNoek+VY=
 			</data>
 		</dict>
 		<key>Headers/WAPayChannel.h</key>
@@ -633,11 +633,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3yboFjv1m+zgI3UH2Hwq5SMjH1o=
+			hyUAVp29k+68wpVo7FSWnoGHjz8=
 			</data>
 			<key>hash2</key>
 			<data>
-			vaJ86nlcGGpkCu7lMkZ1yPe42WgRBTDn59GrMl4fqVk=
+			TEVZhsoDf3BzLdG/VRv5n4UhbolRJWNh1Yi2JNDXxyQ=
 			</data>
 		</dict>
 		<key>Headers/WAShareLinkContent.h</key>
