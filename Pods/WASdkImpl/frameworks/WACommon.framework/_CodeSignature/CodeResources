@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/WACommConstants.h</key>
 		<data>
-		eO6cd35wZIfoe51VxvivAWhKbYo=
+		4wAbuHLPQg4Vqq/j6fdsfPIDgZE=
 		</data>
 		<key>Headers/WACommon.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		GGqWorOKNdhWGBbNdFcp2/TQ7LI=
+		QcbtQ2EGvUEkpHqLTDzR7WX2dqg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -66,11 +66,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eO6cd35wZIfoe51VxvivAWhKbYo=
+			4wAbuHLPQg4Vqq/j6fdsfPIDgZE=
 			</data>
 			<key>hash2</key>
 			<data>
-			VqqQMLRBM8FYfTAX8xUx9/9Jkg98Jb//57lmr0DwhGw=
+			/SnzlFAEKYKuQGIRvGmiVwnhXDwElGTDlPRwL0kUWZg=
 			</data>
 		</dict>
 		<key>Headers/WACommon.h</key>

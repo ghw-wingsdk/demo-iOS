@@ -18,6 +18,8 @@ extern NSString *const WASDK_FLOW_TYPE_DEFAULT;
 extern NSString *const WASDK_FLOW_TYPE_REBIND;
 
 extern NSString *const WASDK_PARAM_KEY_SDK_VER;
+extern NSString *const WASDK_PARAM_KEY_SDK_TYPE;
+extern NSString *const WASDK_PARAM_KEY_RUN_PLATFORM;
 extern NSString *const WASDK_PARAM_KEY_SDK_ID;
 extern NSString *const WASDK_PARAM_KEY_PATCH_ID;
 extern NSString *const WASDK_PARAM_KEY_PATCH_VER;
@@ -158,7 +160,7 @@ extern NSString *const WASDK_ACCESS_TOKEN;
 extern NSString *const WASDK_MSG_ID;
 extern NSString *const WASDK_ACTION_TYPE;
 
-extern NSString *const WASDK_IAP_URL_PROLIST;
+//extern NSString *const WASDK_IAP_URL_PROLIST;
 extern NSString *const WASDK_IAP_URL_NOTIFY_SERVER;
 extern NSString *const WASDK_IAP_URL_CREATE_ORDER;
 extern NSString *const WASDK_REFRESH_TOKEN;

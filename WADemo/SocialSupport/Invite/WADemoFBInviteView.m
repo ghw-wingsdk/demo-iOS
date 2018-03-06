@@ -36,12 +36,8 @@
     [btn2 setTitle:@"Event reward" forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(eventReward) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn2];
-    WADemoButtonMain* btn3 = [[WADemoButtonMain alloc]init];
-    [btn3 setTitle:@"FBAppInvite" forState:UIControlStateNormal];
-    [btn3 addTarget:self action:@selector(fbAppInvite) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn3];
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1,@1]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1]];
     //
     self.title = @"Facebook邀请";
     self.btnLayout = btnLayout;
@@ -86,14 +82,6 @@
 //        }
 //    }];
     
-}
-
-- (void)fbAppInvite{
-    
-    WAAppInviteContent* content = [[WAAppInviteContent alloc]init];
-    content.appLinkURL = [NSURL URLWithString:@"https://fb.me/1831135537104541"];
-    content.appInvitePreviewImageURL = [NSURL URLWithString:@"https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xaf1/t39.2081-0/11057103_1038207922873472_1902526455_n.jpg"];
-    [WASocialProxy appInviteWithPlatform:WA_PLATFORM_FACEBOOK Content:content delegate:self];
 }
 
 //邀请成功

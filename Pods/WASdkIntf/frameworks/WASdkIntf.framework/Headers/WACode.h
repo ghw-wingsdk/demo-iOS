@@ -33,6 +33,10 @@ typedef enum WACode{
     WACodeChannelNotFound = 4023 ,//未找到渠道信息
     WACodeCanNotUnbind = 4024 ,//不可以进行解绑操作
     WACodeExchangeRateConversionFailure = 4025 ,//汇率转换失败
+    WACodeAdsClosed = 4044 ,//CP关闭广告开关或未配置广告奖励信息
+    WACodeAdsNotFound = 4045 ,//查找不到广告展示信息
+    WACodeThridPlatformInsufficientBalance = 4046 ,//第三方平台余额不足
+    WACodeThridPlatformAccountExpired = 4047 ,//第三方平台登录过期
     WACodePayPlatformClosed = 4026 ,//支付渠道已关闭
     WACodeLoginPlatformClosed = 4029 ,//登录渠道已关闭
     WACodeBindAccountClosed = 4048 ,//账号绑定关闭

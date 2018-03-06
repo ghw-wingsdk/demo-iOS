@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>wasdk_install_btn</key>
+	<string>Instalar</string>
+	<key>wasdk_play_btn</key>
+	<string>Jugar</string>
+	<key>wasdk_info_btn</key>
+	<string>INFO</string>
+	<key>wasdk_app_btn</key>
+	<string>APP</string>
+	<key>wasdk_apw_guide_words</key>
+	<string>Clic aquí para abrir el menú</string>
+	<key>wasdk_sdk_version</key>
+	<string>SDK Versión</string>
+	<key>wasdk_pat_version</key>
+	<string>Pat Versión</string>
+	<key>wasdk_has_no_pat</key>
+	<string>Ninguno</string>
+	<key>wasdk_login</key>
+	<string>Conectar</string>
+	<key>wasdk_login_facebook</key>
+	<string>Facebook</string>
+	<key>wasdk_login_game_center</key>
+	<string>Centro de Juegos</string>
+	<key>wasdk_login_vk</key>
+	<string>VK</string>
+	<key>wasdk_confirm</key>
+	<string>Aceptar</string>
+	<key>wasdk_cancel</key>
+	<string>Cancelar</string>
+	<key>wasdk_loading</key>
+	<string>Cargando</string>
+	<key>wasdk_visitor</key>
+	<string>Visitante</string>
+	<key>wasdk_bind</key>
+	<string>Enlazar</string>
+	<key>wasdk_unbind</key>
+	<string>Desenlazar</string>
+	<key>wasdk_bound</key>
+	<string>Enlazado</string>
+	<key>wasdk_unbound</key>
+	<string>No Enlazado</string>
+	<key>wasdk_create_ccount</key>
+	<string>Crear Cuenta</string>
+	<key>wasdk_account_management</key>
+	<string>Gestionar Cuenta</string>
+	<key>wasdk_change_account</key>
+	<string>Cambiar Cuenta</string>
+	<key>wasdk_unbind_account</key>
+	<string>Desenlazar Cuenta</string>
+	<key>wasdk_tip_warning</key>
+	<string>Aviso</string>
+	<key>wasdk_tip_unbind_unique_third_party</key>
+	<string>Si desenlazas tu cuenta de la plataforma de terceros perderás tu progreso. ¿continuar?</string>
+	<key>wasdk_tip_can_not_unbind</key>
+	<string>No puedes desenlazar esta cuenta.</string>
+	<key>wasdk_tip_create_account_lost_data</key>
+	<string>Si creas una nueva cuenta pero no la enlazas a una cuenta de terceros, la información de tu cuenta anterior se perderá permanentemente. Tras enlazar tu cuenta podrás usar una plataforma de terceros para conectarte a la aplicación.</string>
+	<key>wasdk_tip_fail_change_account</key>
+	<string>Fallo al cambiar tu cuenta. Inténtalo de nuevo más tarde.</string>
+	<key>wasdk_tip_relog</key>
+	<string>Por favor, conéctate de nuevo a la aplicación.</string>
+	<key>wasdk_tip_fail_access_account_data</key>
+	<string>Fallo al acceder a la información de tu cuenta. Inténtalo de nuevo más tarde.</string>
+	<key>wasdk_tip_bind_succ</key>
+	<string>¡Enlazada con éxito!</string>
+	<key>wasdk_tip_bind_fail</key>
+	<string>Fallo al enlazar. Inténtalo de nuevo más tarde.</string>
+	<key>wasdk_tip_bind_fail_other_user</key>
+	<string>Esta cuenta está enlazada a otro usuario.</string>
+	<key>wasdk_tip_unbind_succ</key>
+	<string>¡Desenlazada con éxito!</string>
+	<key>wasdk_tip_unbind_fail</key>
+	<string>Fallo al desenlazar. Inténtalo de nuevo más tarde.</string>
+	<key>wasdk_tip_create_user_fail</key>
+	<string>Fallo al crear un nuevo usuario. Inténtalo de nuevo más tarde.</string>
+	<key>wasdk_drag_up_fresh</key>
+	<string>Arrastra hacia arriba para ver más.</string>
+	<key>wasdk_no_more_data</key>
+	<string>No hay más datos.</string>
+	<key>wasdk_load_more</key>
+	<string>Cargando ...</string>
+	<key>wasdk_pull_down_refresh</key>
+	<string>Arrastra hacia abajo para refrescar.</string>
+	<key>wasdk_release_refresh</key>
+	<string>Suelta para refrescar.</string>
+	<key>wasdk_purchase</key>
+	<string>Comprar</string>
+	<key>wasdk_pay_exit_alert</key>
+	<string>¿Quieres cancelar esta compra?</string>
+	<key>wasdk_notice</key>
+	<string>Aviso</string>
+	<key>wasdk_jailbreak_not_purchase</key>
+	<string>No puedes comprar en un sistema operativo pirata</string>
+	<key>wasdk_copy</key>
+	<string>copiar</string>
+	<key>wasdk_login_twitter</key>
+	<string>Twitter</string>
+	<key>wasdk_login_instagram</key>
+	<string>Instagram</string>
+	<key>wasdk_tip_bind_closed</key>
+	<string>Error al enlazar</string>
+	<key>wasdk_tip_unbind_closed</key>
+	<string>Error al desenlazar</string>
+</dict>
+</plist>
