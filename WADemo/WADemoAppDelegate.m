@@ -28,6 +28,7 @@
     [WACoreProxy setServerId:@"China"];
     [WACoreProxy setLevel:10];
     [WACoreProxy setGameUserId:@"12345"];
+    [WACoreProxy setNickName:@"测试角色名称"];
     
     [WAPushProxy application:application initPushWithDelegate:self];
     

@@ -109,6 +109,15 @@ NSLog((@"WASDK LOG [(version %@) %s ]:" fmt), [WACoreProxy getSdkVer],__FUNCTION
  */
 +(NSString*)getGameUserId;
 /*!
+ @abstract 设置nickName
+ @param nickName 游戏角色名
+ */
++(void)setNickName:(NSString*)nickName;
+/*!
+ @abstract 获取nickName
+ */
++(NSString*)getNickName;
+/*!
  @abstract 获取WA Server url
  */
 +(NSString*)getWaSdkServerUrl;

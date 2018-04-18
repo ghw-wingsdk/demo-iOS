@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char WATwitterImplVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WATwitterImpl/PublicHeader.h>
 
-//time:2017/5/13 12:05 ver:3.6.4
+//time:2018/4/11 14:25 ver:3.6.7

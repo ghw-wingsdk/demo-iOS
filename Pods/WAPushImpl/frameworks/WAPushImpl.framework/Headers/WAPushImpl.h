@@ -15,5 +15,5 @@ FOUNDATION_EXPORT double WAPushImplVersionNumber;
 FOUNDATION_EXPORT const unsigned char WAPushImplVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WAPushImpl/PublicHeader.h>
-//time:2017/9/04 16:21 ver:3.6.5
+//time:2018/04/17 09:22 ver:3.6.7
 

@@ -226,6 +226,16 @@
 +(void)sendRequestWithPlatform:(NSString *const)platform requestType:(NSString *const)requestType title:(NSString*)title message:(NSString*)message objectId:(NSString*)objectId receiptIds:(NSArray*)receiptIds delegate:(NSObject<WAGameRequestDialogDelegate>*)delegate;
 
 /*!
+ @abstract 此方法用来取代gameInviteWithPlatform,fbSendGiftWithContent,fbAskForGiftWithContent
+ @param platform 平台
+ @param requestType 请求类型
+ @param title 标题
+ @param message 信息
+ @param delegate 委托
+ */
++(void)sendRequestWithPlatform:(NSString *const)platform requestType:(NSString *const)requestType title:(NSString*)title message:(NSString*)message delegate:(NSObject<WAGameRequestDialogDelegate>*)delegate;
+
+/*!
  @abstract 下面的三个方法是关于奖励机制的,邀请奖励,自定义奖励事件
  @discussion 此方法用来提交Facebook邀请信息
  @param platform 平台

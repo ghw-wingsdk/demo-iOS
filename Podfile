@@ -30,17 +30,17 @@ source 'http://repo.wingsdk.cn:8082/r/WAInstagramImpl.git'
 source 'http://repo.wingsdk.cn:8082/r/WAAdImpl.git'
 
 target "WADemo" do
-pod 'WASdkIntf','3.6.6'
-pod 'WASdkImpl', '3.6.6'
-pod 'WAApwImpl', '3.6.5'
-pod 'WAApImpl', '3.6.6'
-pod 'WAAfImpl', '3.6.5.1'
-pod 'WACbImpl', '3.6.5'
-pod 'WAFbImpl', '3.6.5.1'
-pod 'WAPushImpl', '3.6.5'
-pod 'WAVkImpl', '3.6.4'
-pod 'WAWebPayImpl', '3.6.6'
-pod 'WATwitterImpl', '3.6.4'
-pod 'WAInstagramImpl', '3.6.4'
-pod 'WAAdImpl', '3.6.5.1'
+pod 'WASdkIntf’,’3.6.7’
+pod 'WASdkImpl', ‘3.6.7’
+pod 'WAApwImpl', ‘3.6.7’
+pod 'WAApImpl', ‘3.6.7’
+pod 'WAAfImpl', ‘3.6.7’
+pod 'WACbImpl', ‘3.6.7’
+pod 'WAFbImpl', ‘3.6.7’
+pod 'WAPushImpl', ‘3.6.7’
+pod 'WAVkImpl', ‘3.6.7’
+pod 'WAWebPayImpl', ‘3.6.7’
+pod 'WATwitterImpl', ‘3.6.7’
+pod 'WAInstagramImpl', ‘3.6.7’
+pod 'WAAdImpl', ‘3.6.7’
 end

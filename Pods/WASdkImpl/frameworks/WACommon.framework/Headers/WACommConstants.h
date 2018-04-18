@@ -28,6 +28,8 @@ extern NSString *const WASDK_PARAM_KEY_PUSER_ID;
 extern NSString *const WASDK_PARAM_KEY_PUSER_ID_LOWER;
 extern NSString *const WASDK_PARAM_KEY_PUSER_IDS;
 extern NSString *const WASDK_PARAM_KEY_GAMEUSER_ID;
+extern NSString *const WASDK_PARAM_KEY_NICK_NAME;
+extern NSString *const WASDK_PARAM_KEY_PUSER_NAME;
 extern NSString *const WASDK_PARAM_KEY_SERVER_ID;
 extern NSString *const WASDK_PARAM_KEY_OS;
 extern NSString *const WASDK_PARAM_KEY_OS_VERSION;

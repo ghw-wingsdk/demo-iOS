@@ -500,7 +500,6 @@
 				7FC4E2B11C8EEE7C0075FC7D /* Sources */,
 				7FC4E2B21C8EEE7C0075FC7D /* Frameworks */,
 				7FC4E2B31C8EEE7C0075FC7D /* Resources */,
-				795A1B499BE6F14D1679F475 /* [CP] Embed Pods Frameworks */,
 				4FA04FC8FBB8ECFC5EBA5A4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -607,28 +606,62 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh",
+				"${PODS_ROOT}/WAAdImpl/config/wa_sdk_impl_config_ad.xml",
+				"${PODS_ROOT}/WAAfImpl/config/wa_sdk_impl_config_appsflyer.xml",
+				"${PODS_ROOT}/WAApImpl/config/wa_sdk_impl_config_apple.xml",
+				"${PODS_ROOT}/WAApwImpl/config/wa_sdk_impl_config_apw.xml",
+				"${PODS_ROOT}/WACbImpl/config/wa_sdk_impl_config_chartboost.xml",
+				"${PODS_ROOT}/WAFbImpl/config/wa_sdk_impl_config_facebook.xml",
+				"${PODS_ROOT}/WAFbImpl/bundle/FacebookSDKStrings.bundle",
+				"${PODS_ROOT}/WAInstagramImpl/config/wa_sdk_impl_config_instagram.xml",
+				"${PODS_ROOT}/WAPushImpl/config/wa_sdk_impl_config_push.xml",
+				"${PODS_ROOT}/WASdkImpl/config/wa_sdk_impl_config_winga.xml",
+				"${PODS_ROOT}/WASdkImpl/bundle/WASDK-Resource.bundle",
+				"${PODS_ROOT}/WASdkImpl/localizable/base.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/en.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/es.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/pt-BR.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/ru.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/zh-Hans.plist",
+				"${PODS_ROOT}/WASdkIntf/config/wa_sdk.plist",
+				"${PODS_ROOT}/WASdkIntf/config/wa_sdk_track_config.plist",
+				"${PODS_ROOT}/WATwitterImpl/config/wa_sdk_impl_config_ twitter.xml",
+				"${PODS_ROOT}/WATwitterImpl/frameworks/TwitterKitResources.bundle",
+				"${PODS_ROOT}/WATwitterImpl/frameworks/TwitterShareExtensionUIResources.bundle",
+				"${PODS_ROOT}/WAVkImpl/config/wa_sdk_impl_config_vk.xml",
+				"${PODS_ROOT}/WAWebPayImpl/config/wa_sdk_impl_config_webpay.xml",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_ad.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_appsflyer.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apple.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apw.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_chartboost.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_facebook.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_instagram.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_push.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_winga.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WASDK-Resource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/base.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/es.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ru.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_track_config.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_ twitter.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_vk.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_webpay.xml",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		795A1B499BE6F14D1679F475 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F613B6DE872095947CBC819E /* [CP] Check Pods Manifest.lock */ = {
@@ -637,13 +670,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WADemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

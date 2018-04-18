@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/WAWebPayImpl.h</key>
 		<data>
-		PV23kAqyXdTR2K+rAjFpifl+ukc=
+		cU95hk8XF9el7se+Af4QYGk8Kd0=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -38,11 +38,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PV23kAqyXdTR2K+rAjFpifl+ukc=
+			cU95hk8XF9el7se+Af4QYGk8Kd0=
 			</data>
 			<key>hash2</key>
 			<data>
-			MaOy2PuKO0gA9BvfzIKQWFj+OyhGPoma7htiLYFkwIk=
+			4UVBQCDT2swrDgvR+9h4cjM7/k/aqp64Umw0z8wzwYc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

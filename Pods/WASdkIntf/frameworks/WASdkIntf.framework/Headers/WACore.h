@@ -25,6 +25,10 @@
 -(void)setLevel:(int)level;
 -(int)getLevel;
 -(void)setGameUserId:(NSString*)gameUserId;
+-(void)setNickName:(NSString*)nikeName;
+-(void)setPuserName:(NSString *)puserName;
+-(NSString*)getPuserName;
+-(NSString*)getNickName;
 -(void)addLogWithString:(NSString*)string;
 -(void)addLogWithoutBtn:(NSString*)string;
 -(NSString*)getSdkVersion;

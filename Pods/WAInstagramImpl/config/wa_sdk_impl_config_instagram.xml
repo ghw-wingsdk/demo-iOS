@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <version val="WAInstagram3.6.4"/>
+    <version val="WAInstagram3.6.7"/>
     <comps>
         <!-- 公共模块 -->
         <comp module="CORE" plaf="INSTAGRAM" mandatory="YES" value="WAInstagramCore" desc="公共模块"/>

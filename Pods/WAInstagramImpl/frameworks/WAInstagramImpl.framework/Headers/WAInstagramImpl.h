@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char WAInstagramImplVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WAInstagramImpl/PublicHeader.h>
 
-//time:2017/5/12 14:32 ver:3.6.4
+//time:2017/04/17 09:27 ver:3.6.7
