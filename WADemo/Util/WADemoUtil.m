@@ -35,6 +35,9 @@
     else
         result = window.rootViewController;
     
+    if ([result isKindOfClass:[UINavigationController class]])
+        result = ((UINavigationController *)result).topViewController;
+    
     return result;
 }
 

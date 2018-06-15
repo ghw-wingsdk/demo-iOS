@@ -1,4 +1,0 @@
-## WAWebPayImpl
-
-WAWebPayImpl.framework
-

@@ -1,1 +1,0 @@
-../../../../WAFbImpl/frameworks/FBSDKShareKit.framework/Headers/FBSDKSharePhotoContent.h

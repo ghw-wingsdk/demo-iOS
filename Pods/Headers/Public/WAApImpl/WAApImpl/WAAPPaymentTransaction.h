@@ -1,1 +1,0 @@
-../../../../WAApImpl/frameworks/WAApImpl.framework/Headers/WAAPPaymentTransaction.h

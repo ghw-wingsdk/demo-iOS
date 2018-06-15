@@ -1,4 +1,0 @@
-## WATwitterImpl
-
-Twitter
-

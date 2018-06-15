@@ -23,8 +23,9 @@
 #import "WADemoGiftView.h"
 #import "WADemoAdView.h"
 #import <Toast/Toast.h>
-//#import <WASdkImpl/WASdkLoginHandler.h>
-@interface WADemoMainUI () <WAPaymentDelegate, UIAlertViewDelegate>
+#import "WADemoCscViewController.h"
+
+@interface WADemoMainUI () <WAPaymentDelegate>
 
 @property (nonatomic, strong) WADemoLoginUI* loginUI;
 @property (nonatomic, strong) WADemoAccountManagement* acctMgmt;
@@ -50,7 +51,7 @@
 }
 -(void)initBtnAndLayout{
     NSMutableArray* btns = [NSMutableArray array];
-//    GHWButtonSwitch* btn1 = [[GHWButtonSwitch alloc]init];
+//    WADemoButtonSwitch* btn1 = [[WADemoButtonSwitch alloc]init];
 //    [btn1 setTitle:@"启用LOGCAT" forState:UIControlStateNormal];
 //    [btn1 addTarget:self action:@selector(logCat:) forControlEvents:UIControlEventTouchUpInside];
 //    [btns addObject:btn1];
@@ -99,11 +100,18 @@
     [btn13 addTarget:self action:@selector(ad) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn13];
     WADemoButtonMain* btn14 = [[WADemoButtonMain alloc]init];
-    btn14.hidden = YES;
+    [btn14 setTitle:@"客服系统" forState:UIControlStateNormal];
+    [btn14 addTarget:self action:@selector(csc) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn14];
+//    WADemoButtonMain* btn15 = [[WADemoButtonMain alloc]init];
+//    btn15.hidden = YES;
+//    [btns addObject:btn15];
+    
     WADemoButtonMain* btn10 = [[WADemoButtonMain alloc]init];
     [btn10 setTitle:@"闪退测试" forState:UIControlStateNormal];
     [btn10 addTarget:self action:@selector(crash) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn10];
+    
     NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@0,@1]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
@@ -231,11 +239,12 @@
 
 - (void)payProduct
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"购买商品" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
-    UITextField *txtName = [alert textFieldAtIndex:0];
-    txtName.placeholder = @"请输入商品ID";
-    [alert show];
+    [self alertViewWithTitle:@"购买商品"
+                     message:nil
+                 placeholder:@"请输入商品ID"
+                    callBack:^(NSString *text){
+                        [WAPayProxy payWithProductId:text extInfo:@"" delegate:self];
+                    }];
 }
 
 - (void)ad
@@ -245,6 +254,18 @@
     self.adView.hasBackBtn = YES;
     [vc.view addSubview:self.adView];
     [self.adView moveIn:nil];
+}
+
+- (void)csc
+{
+//    if (! self.cscVC)
+//        _cscVC = [[WADemoCscViewController alloc] init];
+//
+//    [self addSubview:self.cscVC.view];
+//    [self.cscVC moveIn:nil];
+    
+    WADemoCscViewController *cscVC = [[WADemoCscViewController alloc] init];
+    [[WADemoUtil getCurrentVC].navigationController pushViewController:cscVC animated:YES];
 }
 
 -(void)checkUpdate{
@@ -286,13 +307,22 @@
     }
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)alertViewWithTitle:(NSString *)title message:(NSString *)message placeholder:(NSString *)placeholder callBack:(void (^ __nullable)(NSString *text))callBack
 {
-    if (buttonIndex == 1)
-    {
-        NSString *productId = [alertView textFieldAtIndex:0].text;
-        [WAPayProxy payWithProductId:productId extInfo:@"" delegate:self];
-    }
+    UIAlertController *alertConrl = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    [alertConrl addTextFieldWithConfigurationHandler:^(UITextField *textField){
+        textField.placeholder = placeholder;
+    }];
+    [alertConrl addAction:[UIAlertAction actionWithTitle:@"确定"
+                                                   style:UIAlertActionStyleDefault
+                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                     if (callBack)
+                                                         callBack(alertConrl.textFields.firstObject.text);
+                                                 }]];
+    [alertConrl addAction:[UIAlertAction actionWithTitle:@"取消"
+                                                   style:UIAlertActionStyleCancel
+                                                 handler:nil]];
+    [[WADemoUtil getCurrentVC] presentViewController:alertConrl animated:true completion:nil];
 }
 
 - (void)deviceOrientationDidChange

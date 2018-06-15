@@ -1,4 +1,0 @@
-## WAInstagramImpl
-
-Instagram
-

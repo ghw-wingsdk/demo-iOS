@@ -1,4 +1,0 @@
-## WACbImpl
-
-WACbImpl.framework
-

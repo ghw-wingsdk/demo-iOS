@@ -1,1 +1,0 @@
-../../../../WASdkIntf/frameworks/WASdkIntf.framework/Headers/WAClassGenerator.h

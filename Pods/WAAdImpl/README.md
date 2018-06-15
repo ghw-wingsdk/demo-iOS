@@ -1,4 +1,0 @@
-## WAAdImpl
-
-WAAdImpl.framework
-

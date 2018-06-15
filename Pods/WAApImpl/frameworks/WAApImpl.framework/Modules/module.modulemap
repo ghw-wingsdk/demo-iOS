@@ -1,6 +1,0 @@
-framework module WAApImpl {
-  umbrella header "WAApImpl.h"
-
-  export *
-  module * { export * }
-}

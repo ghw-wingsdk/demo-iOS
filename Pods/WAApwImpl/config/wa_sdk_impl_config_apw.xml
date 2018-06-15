@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<config>
-	<version val="AP3.6.7"/>
-    <comps>
-        <!-- 应用墙模块 -->
-        <comp module="APW" plaf="APW" mandatory="NO" value="WAApw" desc="应用墙"/>
-    </comps>
-</config>

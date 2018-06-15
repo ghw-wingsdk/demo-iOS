@@ -1,6 +1,0 @@
-framework module WATwitterImpl {
-  umbrella header "WATwitterImpl.h"
-
-  export *
-  module * { export * }
-}

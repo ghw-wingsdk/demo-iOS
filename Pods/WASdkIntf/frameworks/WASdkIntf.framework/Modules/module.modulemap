@@ -1,6 +1,0 @@
-framework module WASdkIntf {
-  umbrella header "WASdkIntf.h"
-
-  export *
-  module * { export * }
-}

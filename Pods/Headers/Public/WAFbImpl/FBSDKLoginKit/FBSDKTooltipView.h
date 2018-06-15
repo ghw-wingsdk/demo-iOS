@@ -1,1 +1,0 @@
-../../../../WAFbImpl/frameworks/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h

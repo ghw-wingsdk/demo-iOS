@@ -1,1 +1,0 @@
-../../../../WACbImpl/frameworks/Chartboost.framework/Versions/A/Headers/Chartboost.h

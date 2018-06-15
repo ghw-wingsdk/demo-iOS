@@ -1,4 +1,0 @@
-## WAVkImpl
-
-WAVkImpl.framework
-

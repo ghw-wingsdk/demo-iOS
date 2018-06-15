@@ -1,1 +1,0 @@
-../../../../WAInstagramImpl/frameworks/WAInstagramImpl.framework/Headers/WAInstagramImpl.h

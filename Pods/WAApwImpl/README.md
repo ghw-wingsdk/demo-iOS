@@ -1,4 +1,0 @@
-## WAApwImpl
-
-WAApwImpl.framework
-

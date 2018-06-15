@@ -1,4 +1,0 @@
-## WAAfImpl
-
-WAAfImpl.framework
-

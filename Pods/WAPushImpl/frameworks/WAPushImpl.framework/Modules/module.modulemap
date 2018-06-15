@@ -1,6 +1,0 @@
-framework module WAPushImpl {
-  umbrella header "WAPushImpl.h"
-
-  export *
-  module * { export * }
-}

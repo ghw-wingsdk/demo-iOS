@@ -1,1 +1,0 @@
-../../../../WAFbImpl/frameworks/FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h

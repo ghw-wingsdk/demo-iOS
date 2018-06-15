@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		36356B171F594DB300B767CD /* WADemoAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36356B161F594DB300B767CD /* WADemoAdView.m */; };
+		363EF9AD20D0FABD000797C1 /* WADemoCscViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363EF9AC20D0FABD000797C1 /* WADemoCscViewController.m */; };
 		36F6FBB31CD3092800EB0DBC /* WADemoPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F6FBB21CD3092800EB0DBC /* WADemoPayView.m */; };
 		5F74A0D4AD12DE42C44DF27C /* libPods-WADemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEB9AC630E49E10F3A98DE9 /* libPods-WADemo.a */; };
 		7FA55E781D332BC400341D7A /* WADemoInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA55E771D332BC400341D7A /* WADemoInvite.m */; };
@@ -74,6 +75,9 @@
 /* Begin PBXFileReference section */
 		36356B151F594DB300B767CD /* WADemoAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAdView.h; sourceTree = "<group>"; };
 		36356B161F594DB300B767CD /* WADemoAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAdView.m; sourceTree = "<group>"; };
+		363EF9AB20D0FABD000797C1 /* WADemoCscViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoCscViewController.h; sourceTree = "<group>"; };
+		363EF9AC20D0FABD000797C1 /* WADemoCscViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoCscViewController.m; sourceTree = "<group>"; };
+		363EF9BF20D10163000797C1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		36EF881E1CE2BF5700E7DF11 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		36F6FBB11CD3092800EB0DBC /* WADemoPayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoPayView.h; sourceTree = "<group>"; };
 		36F6FBB21CD3092800EB0DBC /* WADemoPayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoPayView.m; sourceTree = "<group>"; };
@@ -212,6 +216,15 @@
 			path = Ad;
 			sourceTree = "<group>";
 		};
+		363EF9AA20D0FABD000797C1 /* Csc */ = {
+			isa = PBXGroup;
+			children = (
+				363EF9AB20D0FABD000797C1 /* WADemoCscViewController.h */,
+				363EF9AC20D0FABD000797C1 /* WADemoCscViewController.m */,
+			);
+			path = Csc;
+			sourceTree = "<group>";
+		};
 		36F6FBB01CD3092800EB0DBC /* Pay */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +257,7 @@
 		7FC4E2B71C8EEE7C0075FC7D /* WADemo */ = {
 			isa = PBXGroup;
 			children = (
+				363EF9AA20D0FABD000797C1 /* Csc */,
 				36356B141F594DB300B767CD /* Ad */,
 				36F6FBB01CD3092800EB0DBC /* Pay */,
 				7FC4E2DD1C8EEF3F0075FC7D /* AccountManagement  */,
@@ -475,6 +489,7 @@
 		8255698A55C81C3C9B8D33D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				363EF9BF20D10163000797C1 /* libsqlite3.tbd */,
 				7CEB9AC630E49E10F3A98DE9 /* libPods-WADemo.a */,
 			);
 			name = Frameworks;
@@ -540,7 +555,7 @@
 				TargetAttributes = {
 					7FC4E2B41C8EEE7C0075FC7D = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = BVZ75RDYN8;
+						DevelopmentTeam = Y8Z2D47ET4;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 0;
@@ -609,6 +624,20 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh",
 				"${PODS_ROOT}/WAAdImpl/config/wa_sdk_impl_config_ad.xml",
 				"${PODS_ROOT}/WAAfImpl/config/wa_sdk_impl_config_appsflyer.xml",
+				"${PODS_ROOT}/WAAiHelpImpl/config/wa_sdk_impl_config_aihelp.xml",
+				"${PODS_ROOT}/WAAiHelpImpl/res/ElvaChatServiceSDK.bundle",
+				"${PODS_ROOT}/WAAiHelpImpl/res/MessageViewController.xib",
+				"${PODS_ROOT}/WAAiHelpImpl/res/ShowModuleViewController.xib",
+				"${PODS_ROOT}/WAAiHelpImpl/res/ShowWebViewController.xib",
+				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/ar.lproj/Localizable.strings",
+				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/en.lproj/Localizable.strings",
+				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/es.lproj/Localizable.strings",
+				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/ja.lproj/Localizable.strings",
+				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/ko.lproj/Localizable.strings",
+				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/ru.lproj/Localizable.strings",
+				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/th.lproj/Localizable.strings",
+				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/zh-Hans.lproj/Localizable.strings",
+				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/zh-Hant.lproj/Localizable.strings",
 				"${PODS_ROOT}/WAApImpl/config/wa_sdk_impl_config_apple.xml",
 				"${PODS_ROOT}/WAApwImpl/config/wa_sdk_impl_config_apw.xml",
 				"${PODS_ROOT}/WACbImpl/config/wa_sdk_impl_config_chartboost.xml",
@@ -636,6 +665,12 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_ad.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_appsflyer.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_aihelp.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ElvaChatServiceSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MessageViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShowModuleViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShowWebViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Localizable.strings",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apple.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apw.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_chartboost.xml",
@@ -690,6 +725,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FC4E33F1C8EEF3F0075FC7D /* WADemoPostEventTextView.m in Sources */,
+				363EF9AD20D0FABD000797C1 /* WADemoCscViewController.m in Sources */,
 				7FA55E8E1D338EC300341D7A /* WADemoGroups.m in Sources */,
 				7FC4E35A1C8EEF3F0075FC7D /* WADemoNaviView.m in Sources */,
 				7FC4E3481C8EEF3F0075FC7D /* WADemoFriendInGameTV.m in Sources */,
@@ -883,12 +919,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BVZ75RDYN8;
+				DEVELOPMENT_TEAM = Y8Z2D47ET4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghw.sdk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -901,13 +937,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BVZ75RDYN8;
+				DEVELOPMENT_TEAM = Y8Z2D47ET4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ghw.sdk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -1,4 +1,0 @@
-## WAFbImpl
-
-WAFbImpl.framework
-

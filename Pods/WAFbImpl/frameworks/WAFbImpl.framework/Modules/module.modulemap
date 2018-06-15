@@ -1,6 +1,0 @@
-framework module WAFbImpl {
-  umbrella header "WAFbImpl.h"
-
-  export *
-  module * { export * }
-}
