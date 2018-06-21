@@ -5,11 +5,11 @@
 	<key>AiHelp</key>
 	<dict>
 		<key>appId</key>
-		<string>GameHollywoodcompany_pf_145e1c5199034f32a996d93fecd297ea</string>
+		<string>GameHollywoodcompany_platform_852a6a8d-5633-4f22-bff6-d12ec54b5859</string>
 		<key>appSecret</key>
-		<string>GAMEHOLLYWOODCOMPANY_app_b35e57c1ff2f4efa95231e3692b645d4</string>
+		<string>GameHollywoodcompany_app_bd0fce60951445c780adff91fe0d456b</string>
 		<key>domain</key>
-		<string>GameHollywoodcompany.CS30.NET</string>
+		<string>GameHollywoodcompany@aihelp.net</string>
 	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
