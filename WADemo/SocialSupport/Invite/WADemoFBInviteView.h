@@ -8,7 +8,6 @@
 
 #import "WADemoNaviView.h"
 #import <WASdkIntf/WASdkIntf.h>
-@interface WADemoFBInviteView : WADemoNaviView<WAGameRequestDialogDelegate>
+@interface WADemoFBInviteView : WADemoNaviView<WAAppInviteDialogDelegate,WAGameRequestDialogDelegate>
 
 @end
-

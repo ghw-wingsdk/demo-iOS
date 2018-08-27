@@ -120,7 +120,7 @@
         [customData setObject:@"1.0.0" forKey:@"VersionCode"];
         
         NSMutableDictionary *config = [NSMutableDictionary dictionary];
-        [config setObject:customData forKey:@"WINGSDK-custom-metadata"];
+        [config setObject:customData forKey:@"cp-custom-metadata"];
         
         [WACscProxy showElva:@"1" config:config];
     }
@@ -131,7 +131,7 @@
         [customData setObject:@"1.0.0" forKey:@"VersionCode"];
         
         NSMutableDictionary *config = [NSMutableDictionary dictionary];
-        [config setObject:customData forKey:@"WINGSDK-custom-metadata"];
+        [config setObject:customData forKey:@"cp-custom-metadata"];
         
         [WACscProxy showElvaOP:@"1" config:config];
     }
@@ -142,7 +142,7 @@
         [customData setObject:@"1.0.0" forKey:@"VersionCode"];
         
         NSMutableDictionary *config = [NSMutableDictionary dictionary];
-        [config setObject:customData forKey:@"WINGSDK-custom-metadata"];
+        [config setObject:customData forKey:@"cp-custom-metadata"];
         
         [WACscProxy showFAQs:config];
     }
@@ -157,7 +157,7 @@
                             [customData setObject:@"1.0.0" forKey:@"VersionCode"];
                             
                             NSMutableDictionary *config = [NSMutableDictionary dictionary];
-                            [config setObject:customData forKey:@"WINGSDK-custom-metadata"];
+                            [config setObject:customData forKey:@"cp-custom-metadata"];
                             
                             [WACscProxy showFAQSection:text config:config];
                         }];
@@ -169,7 +169,7 @@
         [customData setObject:@"1.0.0" forKey:@"VersionCode"];
         
         NSMutableDictionary *config = [NSMutableDictionary dictionary];
-        [config setObject:customData forKey:@"WINGSDK-custom-metadata"];
+        [config setObject:customData forKey:@"cp-custom-metadata"];
         
         [self alertViewWithTitle:@"展示单条FAQ"
                          message:nil
@@ -185,7 +185,7 @@
         [customData setObject:@"1.0.0" forKey:@"VersionCode"];
         
         NSMutableDictionary *config = [NSMutableDictionary dictionary];
-        [config setObject:customData forKey:@"WINGSDK-custom-metadata"];
+        [config setObject:customData forKey:@"cp-custom-metadata"];
         
         [WACscProxy showConversation:config];
     }

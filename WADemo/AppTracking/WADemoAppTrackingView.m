@@ -30,23 +30,23 @@
     [btn2 setTitle:@"login" forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn2];
-    WADemoButtonMain* btn3 = [[WADemoButtonMain alloc]init];
-    [btn3 setTitle:@"initiatedPayment" forState:UIControlStateNormal];
-    [btn3 addTarget:self action:@selector(initiatedPayment) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn3];
-    WADemoButtonMain* btn23 = [[WADemoButtonMain alloc]init];
-    [btn23 setTitle:@"payment" forState:UIControlStateNormal];
-    [btn23 addTarget:self action:@selector(payment) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn23];
-    WADemoButtonMain* btn4 = [[WADemoButtonMain alloc]init];
-    [btn4 setTitle:@"initiatedPurchase" forState:UIControlStateNormal];
-    [btn4 addTarget:self action:@selector(initiatedPurchase) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn4];
-    
-    WADemoButtonMain* btn24 = [[WADemoButtonMain alloc]init];
-    [btn24 setTitle:@"purchase" forState:UIControlStateNormal];
-    [btn24 addTarget:self action:@selector(purchase) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn24];
+//    WADemoButtonMain* btn3 = [[WADemoButtonMain alloc]init];
+//    [btn3 setTitle:@"initiatedPayment" forState:UIControlStateNormal];
+//    [btn3 addTarget:self action:@selector(initiatedPayment) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn3];
+//    WADemoButtonMain* btn23 = [[WADemoButtonMain alloc]init];
+//    [btn23 setTitle:@"payment" forState:UIControlStateNormal];
+//    [btn23 addTarget:self action:@selector(payment) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn23];
+//    WADemoButtonMain* btn4 = [[WADemoButtonMain alloc]init];
+//    [btn4 setTitle:@"initiatedPurchase" forState:UIControlStateNormal];
+//    [btn4 addTarget:self action:@selector(initiatedPurchase) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn4];
+//
+//    WADemoButtonMain* btn24 = [[WADemoButtonMain alloc]init];
+//    [btn24 setTitle:@"purchase" forState:UIControlStateNormal];
+//    [btn24 addTarget:self action:@selector(purchase) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn24];
     
     WADemoButtonMain* btn5 = [[WADemoButtonMain alloc]init];
     [btn5 setTitle:@"levelAchieve" forState:UIControlStateNormal];
@@ -140,31 +140,31 @@
 
 - (void)login {
 
-//    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventLogin];
+    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventLogin];
+    [self addSubview:view];
+//    [WATrackProxy trackWithEventName:WAEventLogin valueToSum:0 params:nil];
+}
+
+//- (void)initiatedPayment {
+//    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventInitiatedPayment];
 //    [self addSubview:view];
-    [WATrackProxy trackWithEventName:WAEventLogin valueToSum:8.11111 params:nil];
-}
-
-- (void)initiatedPayment {
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventInitiatedPayment];
-    [self addSubview:view];
-}
-
-- (void)payment {
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventPayment];
-    [self addSubview:view];
-}
-- (void)initiatedPurchase {
-    
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventInitiatedPurchase];
-    [self addSubview:view];
-}
-
-- (void)purchase {
-    
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventPurchase];
-    [self addSubview:view];
-}
+//}
+//
+//- (void)payment {
+//    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventPayment];
+//    [self addSubview:view];
+//}
+//- (void)initiatedPurchase {
+//
+//    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventInitiatedPurchase];
+//    [self addSubview:view];
+//}
+//
+//- (void)purchase {
+//
+//    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventPurchase];
+//    [self addSubview:view];
+//}
 
 - (void)levelAchieve {
     WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventLevelAchieved];

@@ -44,6 +44,7 @@
     NSString* objectType = @"com_ghw_sdk:gift";
     [WASocialProxy queryFBGraphObjectsWithObjectType:objectType completeBlock:^(NSArray<WAFBObject *> *objects, NSError *error) {
         if (!error) {
+            NSLog(@"===%@", self.scrollView);
             WADemoGiftList* giftList = [[WADemoGiftList alloc]initWithFrame:self.scrollView.bounds];
             giftList.gifts = objects;
             [self.scrollView addSubview:giftList];

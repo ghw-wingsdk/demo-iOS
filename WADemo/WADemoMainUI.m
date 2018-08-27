@@ -24,7 +24,7 @@
 #import "WADemoAdView.h"
 #import <Toast/Toast.h>
 #import "WADemoCscViewController.h"
-
+//#import <WASdkImpl/WASdkLoginHandler.h>
 @interface WADemoMainUI () <WAPaymentDelegate>
 
 @property (nonatomic, strong) WADemoLoginUI* loginUI;
@@ -37,6 +37,7 @@
 @property (nonatomic, strong) WADemoPayView* payView;
 @property (nonatomic, strong) WADemoHotUpdateView* hotUpdate;
 @property (nonatomic, strong) WADemoAdView* adView;
+//@property (nonatomic, strong) WADemoCscViewController *cscVC;
 
 @end
 
@@ -103,9 +104,10 @@
     [btn14 setTitle:@"客服系统" forState:UIControlStateNormal];
     [btn14 addTarget:self action:@selector(csc) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn14];
-//    WADemoButtonMain* btn15 = [[WADemoButtonMain alloc]init];
-//    btn15.hidden = YES;
-//    [btns addObject:btn15];
+    WADemoButtonMain* btn15 = [[WADemoButtonMain alloc]init];
+    [btn15 setTitle:@"隐私政策" forState:UIControlStateNormal];
+    [btn15 addTarget:self action:@selector(privacy) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn15];
     
     WADemoButtonMain* btn10 = [[WADemoButtonMain alloc]init];
     [btn10 setTitle:@"闪退测试" forState:UIControlStateNormal];
@@ -266,6 +268,13 @@
     
     WADemoCscViewController *cscVC = [[WADemoCscViewController alloc] init];
     [[WADemoUtil getCurrentVC].navigationController pushViewController:cscVC animated:YES];
+}
+
+- (void)privacy
+{
+    [WACoreProxy showPrivacyUI:^(){
+        [self makeToast:@"已关闭隐私政策"];
+    }];
 }
 
 -(void)checkUpdate{

@@ -24,7 +24,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.6.8.1</string>
+	<string>3.7.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -39,12 +39,9 @@
 				<string>fb1811388679079227</string>
 				<string>ghwsdk</string>
 				<string>vk5527303</string>
-				<string>myapp://wasdk</string>
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>twitterkit-SPRwO9pH5p9bJCAbUHaiV8oQY</string>
@@ -60,11 +57,11 @@
 	<key>Instagram</key>
 	<dict>
 		<key>clientId</key>
-		<string>ccfca0cf46714799819e865e6b499bb5</string>
+		<string>bd0a37a364ab408fb319281ec53c5a7f</string>
 		<key>clientSecret</key>
-		<string>13e7578a86904cc79714b75d22d86192</string>
+		<string>eb4bf3c2b42b42579ea948913d947eb5</string>
 		<key>redirectUri</key>
-		<string>http://blog.wing-analytics.com</string>
+		<string>http://blog.wing-analytics.com/</string>
 	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
@@ -120,6 +117,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>需要使用相机</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>需要添加图片到相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>需要使用相册</string>
 	<key>Twitter</key>
@@ -144,8 +143,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
