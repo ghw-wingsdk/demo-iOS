@@ -108,13 +108,16 @@
     [btn15 setTitle:@"隐私政策" forState:UIControlStateNormal];
     [btn15 addTarget:self action:@selector(privacy) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn15];
+    WADemoButtonMain* btn16 = [[WADemoButtonMain alloc]init];
+    btn16.hidden = YES;
+    [btns addObject:btn16];
     
     WADemoButtonMain* btn10 = [[WADemoButtonMain alloc]init];
     [btn10 setTitle:@"闪退测试" forState:UIControlStateNormal];
     [btn10 addTarget:self action:@selector(crash) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn10];
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@0,@1]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@1]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     CFShow((__bridge CFTypeRef)(infoDictionary));
@@ -272,6 +275,11 @@
 
 - (void)privacy
 {
+		if (![WACoreProxy getPrivacyUrl] || [@"" isEqualToString:[WACoreProxy getPrivacyUrl]]) {
+        [self makeToast:@"没有配置隐私政策"];
+        return;
+    }
+    
     [WACoreProxy showPrivacyUI:^(){
         [self makeToast:@"已关闭隐私政策"];
     }];
