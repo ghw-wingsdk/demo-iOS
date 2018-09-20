@@ -35,7 +35,7 @@ target "WADemo" do
 pod 'WASdkIntf’,'3.7.0'
 pod 'WASdkImpl', '3.7.0'
 pod 'WAApwImpl', '3.7.0'
-pod 'WAApImpl', '3.7.0'
+pod 'WAApImpl', '3.7.0.1'
 pod 'WAAfImpl', '3.7.0'
 pod 'WACbImpl', '3.7.0'
 pod 'WAFbImpl', '3.7.0'
