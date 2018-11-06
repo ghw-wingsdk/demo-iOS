@@ -32,10 +32,10 @@ source 'http://repo.wingsdk.cn:8082/r/WAAdImpl.git'
 source 'http://repo.wingsdk.cn:8082/r/WAAiHelpImpl.git'
 
 target "WADemo" do
-pod 'WASdkIntf’,'3.7.0'
-pod 'WASdkImpl', '3.7.0'
+pod 'WASdkIntf’,'3.7.1'
+pod 'WASdkImpl', '3.7.1'
 pod 'WAApwImpl', '3.7.0'
-pod 'WAApImpl', '3.7.0.1'
+pod 'WAApImpl', '3.7.1'
 pod 'WAAfImpl', '3.7.0'
 pod 'WACbImpl', '3.7.0'
 pod 'WAFbImpl', '3.7.0'
