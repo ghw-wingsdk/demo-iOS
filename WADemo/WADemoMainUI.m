@@ -120,6 +120,7 @@
     NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@1]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    CFShow((__bridge CFTypeRef)(infoDictionary));
     // app版本
     NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
     
@@ -274,10 +275,11 @@
 
 - (void)privacy
 {
-    if (![WACoreProxy getPrivacyUrl] || [@"" isEqualToString:[WACoreProxy getPrivacyUrl]]) {
+		if (![WACoreProxy getPrivacyUrl] || [@"" isEqualToString:[WACoreProxy getPrivacyUrl]]) {
         [self makeToast:@"没有配置隐私政策"];
         return;
     }
+    
     [WACoreProxy showPrivacyUI:^(){
         [self makeToast:@"已关闭隐私政策"];
     }];
