@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		36356B171F594DB300B767CD /* WADemoAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36356B161F594DB300B767CD /* WADemoAdView.m */; };
 		363EF9AD20D0FABD000797C1 /* WADemoCscViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363EF9AC20D0FABD000797C1 /* WADemoCscViewController.m */; };
+		368BFAF8228ADEAB007CF462 /* WADemoUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368BFAF7228ADEAB007CF462 /* WADemoUserCenterViewController.m */; };
 		36F6FBB31CD3092800EB0DBC /* WADemoPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F6FBB21CD3092800EB0DBC /* WADemoPayView.m */; };
 		5F74A0D4AD12DE42C44DF27C /* libPods-WADemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEB9AC630E49E10F3A98DE9 /* libPods-WADemo.a */; };
 		7FA55E781D332BC400341D7A /* WADemoInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA55E771D332BC400341D7A /* WADemoInvite.m */; };
@@ -78,8 +79,8 @@
 		363EF9AB20D0FABD000797C1 /* WADemoCscViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoCscViewController.h; sourceTree = "<group>"; };
 		363EF9AC20D0FABD000797C1 /* WADemoCscViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoCscViewController.m; sourceTree = "<group>"; };
 		363EF9BF20D10163000797C1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		368BFAEE228AD9C5007CF462 /* WADemoUserCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WADemoUserCenterViewController.h; sourceTree = "<group>"; };
-		368BFAEF228AD9C5007CF462 /* WADemoUserCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WADemoUserCenterViewController.m; sourceTree = "<group>"; };
+		368BFAF6228ADEAB007CF462 /* WADemoUserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoUserCenterViewController.h; sourceTree = "<group>"; };
+		368BFAF7228ADEAB007CF462 /* WADemoUserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoUserCenterViewController.m; sourceTree = "<group>"; };
 		36EF881E1CE2BF5700E7DF11 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		36F6FBB11CD3092800EB0DBC /* WADemoPayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoPayView.h; sourceTree = "<group>"; };
 		36F6FBB21CD3092800EB0DBC /* WADemoPayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoPayView.m; sourceTree = "<group>"; };
@@ -227,15 +228,14 @@
 			path = Csc;
 			sourceTree = "<group>";
 		};
-		368BFAF0228AD9C5007CF462 /* UserCenter */ = {
+		368BFAF5228ADEAB007CF462 /* UserCenter */ = {
 			isa = PBXGroup;
 			children = (
-				368BFAEE228AD9C5007CF462 /* WADemoUserCenterViewController.h */,
-				368BFAEF228AD9C5007CF462 /* WADemoUserCenterViewController.m */,
+				368BFAF6228ADEAB007CF462 /* WADemoUserCenterViewController.h */,
+				368BFAF7228ADEAB007CF462 /* WADemoUserCenterViewController.m */,
 			);
-			name = UserCenter;
-			path = "/Users/hank/hank/gits/demo-iOS/WADemo/UserCenter";
-			sourceTree = "<absolute>";
+			path = UserCenter;
+			sourceTree = "<group>";
 		};
 		36F6FBB01CD3092800EB0DBC /* Pay */ = {
 			isa = PBXGroup;
@@ -269,7 +269,7 @@
 		7FC4E2B71C8EEE7C0075FC7D /* WADemo */ = {
 			isa = PBXGroup;
 			children = (
-				368BFAF0228AD9C5007CF462 /* UserCenter */,
+				368BFAF5228ADEAB007CF462 /* UserCenter */,
 				363EF9AA20D0FABD000797C1 /* Csc */,
 				36356B141F594DB300B767CD /* Ad */,
 				36F6FBB01CD3092800EB0DBC /* Pay */,
@@ -767,6 +767,7 @@
 				36F6FBB31CD3092800EB0DBC /* WADemoPayView.m in Sources */,
 				7FC4E3581C8EEF3F0075FC7D /* WADemoListTableView.m in Sources */,
 				7FC4E35B1C8EEF3F0075FC7D /* WADemoScrollView.m in Sources */,
+				368BFAF8228ADEAB007CF462 /* WADemoUserCenterViewController.m in Sources */,
 				7FC4E33E1C8EEF3F0075FC7D /* WADemoEventTableView.m in Sources */,
 				7FC4E35F1C8EEF3F0075FC7D /* WADemoViewController.m in Sources */,
 				7FC4E3591C8EEF3F0075FC7D /* WADemoMaskLayer.m in Sources */,
