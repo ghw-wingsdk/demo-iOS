@@ -24,6 +24,7 @@
 #import "WADemoAdView.h"
 #import <Toast/Toast.h>
 #import "WADemoCscViewController.h"
+#import "WADemoUserCenterViewController.h"
 //#import <WASdkImpl/WASdkLoginHandler.h>
 @interface WADemoMainUI () <WAPaymentDelegate>
 
@@ -109,7 +110,8 @@
     [btn15 addTarget:self action:@selector(privacy) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn15];
     WADemoButtonMain* btn16 = [[WADemoButtonMain alloc]init];
-    btn16.hidden = YES;
+    [btn16 setTitle:@"用户中心" forState:UIControlStateNormal];
+    [btn16 addTarget:self action:@selector(userCenter) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn16];
     
     WADemoButtonMain* btn10 = [[WADemoButtonMain alloc]init];
@@ -281,6 +283,12 @@
     [WACoreProxy showPrivacyUI:^(){
         [self makeToast:@"已关闭隐私政策"];
     }];
+}
+
+- (void)userCenter
+{
+    WADemoUserCenterViewController *userCenterVC = [[WADemoUserCenterViewController alloc] init];
+    [[WADemoUtil getCurrentVC].navigationController pushViewController:userCenterVC animated:YES];
 }
 
 -(void)checkUpdate{
