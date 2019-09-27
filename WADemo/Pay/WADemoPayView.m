@@ -47,12 +47,26 @@
 
 -(void)queryInventoryDidCompleteWithResult:(NSArray<WAIapProduct *> *)Inventory{
     [WADemoMaskLayer stopAnimating];
-
-    _productList = [[WADemoProductList alloc]initWithFrame:self.scrollView.bounds];
-    self.productList.goToType = GoToTypeWA;
-    self.productList.products = Inventory;
-    self.productList.naviView = self;
-    [self.scrollView addSubview:self.productList];
+	[WAPayProxy queryChannelProduct:@"APPLE" callBackBlock:^(NSArray<WAChannelProduct *> *channelProductsArray, NSError *error) {
+		if (!error) {
+			
+			_productList = [[WADemoProductList alloc]initWithFrame:self.scrollView.bounds];
+			self.productList.goToType = GoToTypeWA;
+			self.productList.products = Inventory;
+			self.productList.channelProducts=channelProductsArray;
+			self.productList.naviView = self;
+			[self.scrollView addSubview:self.productList];
+			
+		}else{
+			
+			_productList = [[WADemoProductList alloc]initWithFrame:self.scrollView.bounds];
+				self.productList.goToType = GoToTypeWA;
+				self.productList.products = Inventory;
+				self.productList.channelProducts=channelProductsArray;
+				self.productList.naviView = self;
+				[self.scrollView addSubview:self.productList];
+		}
+	}];
 }
 
 -(void)queryInventoryDidFailWithError:(NSError*)error{

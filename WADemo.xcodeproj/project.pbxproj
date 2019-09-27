@@ -188,6 +188,7 @@
 		7FC4E37B1C8EF0310075FC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FC4E37D1C8EF03C0075FC7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FC4E37E1C8EF0490075FC7D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B20E0DD7233DAC0500B30B83 /* WADemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WADemo.entitlements; sourceTree = "<group>"; };
 		FC5F924CCC46BD534D72973E /* Pods-WADemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WADemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WADemo/Pods-WADemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -269,6 +270,7 @@
 		7FC4E2B71C8EEE7C0075FC7D /* WADemo */ = {
 			isa = PBXGroup;
 			children = (
+				B20E0DD7233DAC0500B30B83 /* WADemo.entitlements */,
 				368BFAF5228ADEAB007CF462 /* UserCenter */,
 				363EF9AA20D0FABD000797C1 /* Csc */,
 				36356B141F594DB300B767CD /* Ad */,
@@ -529,6 +531,7 @@
 				7FC4E2B21C8EEE7C0075FC7D /* Frameworks */,
 				7FC4E2B31C8EEE7C0075FC7D /* Resources */,
 				4FA04FC8FBB8ECFC5EBA5A4B /* [CP] Copy Pods Resources */,
+				36837F4DA87F359F6171CD8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -589,6 +592,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"zh-Hans",
@@ -628,13 +632,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		36837F4DA87F359F6171CD8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks.sh",
+				"${PODS_ROOT}/WATwitterImpl/frameworks/TwitterCore.framework",
+				"${PODS_ROOT}/WATwitterImpl/frameworks/TwitterKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4FA04FC8FBB8ECFC5EBA5A4B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh",
 				"${PODS_ROOT}/WAAdImpl/config/wa_sdk_impl_config_ad.xml",
 				"${PODS_ROOT}/WAAfImpl/config/wa_sdk_impl_config_appsflyer.xml",
 				"${PODS_ROOT}/WAAiHelpImpl/config/wa_sdk_impl_config_aihelp.xml",
@@ -642,15 +666,6 @@
 				"${PODS_ROOT}/WAAiHelpImpl/res/MessageViewController.xib",
 				"${PODS_ROOT}/WAAiHelpImpl/res/ShowModuleViewController.xib",
 				"${PODS_ROOT}/WAAiHelpImpl/res/ShowWebViewController.xib",
-				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/ar.lproj/Localizable.strings",
-				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/en.lproj/Localizable.strings",
-				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/es.lproj/Localizable.strings",
-				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/ja.lproj/Localizable.strings",
-				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/ko.lproj/Localizable.strings",
-				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/ru.lproj/Localizable.strings",
-				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/th.lproj/Localizable.strings",
-				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/zh-Hans.lproj/Localizable.strings",
-				"${PODS_ROOT}/WAAiHelpImpl/res/Localization/zh-Hant.lproj/Localizable.strings",
 				"${PODS_ROOT}/WAApImpl/config/wa_sdk_impl_config_apple.xml",
 				"${PODS_ROOT}/WAApwImpl/config/wa_sdk_impl_config_apw.xml",
 				"${PODS_ROOT}/WACbImpl/config/wa_sdk_impl_config_chartboost.xml",
@@ -663,14 +678,15 @@
 				"${PODS_ROOT}/WASdkImpl/localizable/base.plist",
 				"${PODS_ROOT}/WASdkImpl/localizable/en.plist",
 				"${PODS_ROOT}/WASdkImpl/localizable/es.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/id.plist",
 				"${PODS_ROOT}/WASdkImpl/localizable/pt-BR.plist",
 				"${PODS_ROOT}/WASdkImpl/localizable/ru.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/th.plist",
 				"${PODS_ROOT}/WASdkImpl/localizable/zh-Hans.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/zh-Hant.plist",
 				"${PODS_ROOT}/WASdkIntf/config/wa_sdk.plist",
 				"${PODS_ROOT}/WASdkIntf/config/wa_sdk_track_config.plist",
 				"${PODS_ROOT}/WATwitterImpl/config/wa_sdk_impl_config_ twitter.xml",
-				"${PODS_ROOT}/WATwitterImpl/frameworks/TwitterKitResources.bundle",
-				"${PODS_ROOT}/WATwitterImpl/frameworks/TwitterShareExtensionUIResources.bundle",
 				"${PODS_ROOT}/WAVkImpl/config/wa_sdk_impl_config_vk.xml",
 				"${PODS_ROOT}/WAWebPayImpl/config/wa_sdk_impl_config_webpay.xml",
 			);
@@ -683,7 +699,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MessageViewController.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShowModuleViewController.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShowWebViewController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Localizable.strings",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apple.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apw.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_chartboost.xml",
@@ -696,20 +711,21 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/base.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/es.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/id.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ru.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/th.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hant.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_track_config.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_ twitter.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_vk.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_webpay.xml",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F613B6DE872095947CBC819E /* [CP] Check Pods Manifest.lock */ = {
@@ -931,6 +947,7 @@
 			baseConfigurationReference = FC5F924CCC46BD534D72973E /* Pods-WADemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WADemo/WADemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Y8Z2D47ET4;
@@ -949,6 +966,7 @@
 			baseConfigurationReference = 643D127C502BD3AA1DAF5F78 /* Pods-WADemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WADemo/WADemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Y8Z2D47ET4;

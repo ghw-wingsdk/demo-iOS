@@ -24,7 +24,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.8.2</string>
+	<string>3.8.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -44,7 +44,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>twitterkit-SPRwO9pH5p9bJCAbUHaiV8oQY</string>
+				<string>twitterkit-FXJ0BYeSakTGtm0Bh5OO62U9X</string>
 			</array>
 		</dict>
 	</array>
@@ -124,9 +124,9 @@
 	<key>Twitter</key>
 	<dict>
 		<key>consumerKey</key>
-		<string>SPRwO9pH5p9bJCAbUHaiV8oQY</string>
+		<string>FXJ0BYeSakTGtm0Bh5OO62U9X</string>
 		<key>consumerSecret</key>
-		<string>9i6bo6KjPNl0k08kVPR29qjoaBLwbFWPZzYoBZ6jS7JuQZEPCa</string>
+		<string>Uo9Es3m8FNBLtcGjzrU3oyoBOczkqzga8sgPoOsERJ8dDWScf4</string>
 	</dict>
 	<key>UIBackgroundModes</key>
 	<array>

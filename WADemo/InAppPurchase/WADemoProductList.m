@@ -22,6 +22,7 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
         self.naviheight = [UIScreen mainScreen].bounds.size.height - frame.size.height;
         [self registerClass:[UITableViewCell class] forCellReuseIdentifier:productCellIdentifier];
         self.dataSource = self;
+		self.delegate=self;
         
     }
     return self;
@@ -33,11 +34,15 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:productCellIdentifier forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:productCellIdentifier];
-    }
-    
+	
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	
+	if (cell == nil) {
+		cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle
+									  reuseIdentifier: productCellIdentifier];
+	}
+	
+
     
     float width = 70;
     float height = cell.frame.size.height - 10;
@@ -62,14 +67,43 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
     cell.accessoryView = btnView;
     
     WAIapProduct* product = self.products[indexPath.row];
-    
     cell.textLabel.text = product.localizedTitle;
+	
+	WAChannelProduct* channelProduct= [self getChannelProduct:product.productIdentifier];
+	
+	if (channelProduct) {
+		if ([channelProduct.localeCurrencyCode length]!=0) {
+			cell.detailTextLabel.text=[NSString stringWithFormat:@"(%@)  %@",channelProduct.localeCurrencyCode,channelProduct.localFormattedPrice];
+
+		}
+		
+//		localeCurrencyCode
+
+	}
     
     return cell;
 }
 
+
+- (WAChannelProduct*)getChannelProduct:(NSString*)pid
+{
+	WAChannelProduct * channelPro=nil;
+	for (WAChannelProduct * channelProduct in self.channelProducts) {
+		if ([channelProduct.productIdentifier isEqualToString:pid]) {
+			channelPro=channelProduct;
+		}
+	}
+	
+	
+	return channelPro;
+}
+
+
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 55;
+	
+    return 70;
 }
 
 
@@ -123,3 +157,4 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
 }
 
 @end
+
