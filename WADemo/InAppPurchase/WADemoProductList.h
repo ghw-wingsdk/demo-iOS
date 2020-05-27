@@ -22,4 +22,3 @@ typedef NS_ENUM(NSInteger, GoToType) {
 
 - (void)deviceOrientationDidChange;
 @end
-

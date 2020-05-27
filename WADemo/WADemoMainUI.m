@@ -10,7 +10,6 @@
 #import "WADemoButtonMain.h"
 #import "WADemoButtonSwitch.h"
 #import "WADemoLoginUI.h"
-#import "WADemoAccountManagement.h"
 #import "WADemoUtil.h"
 #import "WADemoIapView.h"
 #import "WADemoAppTrackingView.h"
@@ -25,11 +24,11 @@
 #import <Toast/Toast.h>
 #import "WADemoCscViewController.h"
 #import "WADemoUserCenterViewController.h"
+#import "WADemoAccountManagement.h"
 //#import <WASdkImpl/WASdkLoginHandler.h>
 @interface WADemoMainUI () <WAPaymentDelegate>
 
 @property (nonatomic, strong) WADemoLoginUI* loginUI;
-@property (nonatomic, strong) WADemoAccountManagement* acctMgmt;
 @property (nonatomic, strong) WADemoIapView* productList;
 @property (nonatomic, strong) WADemoAppTrackingView* appTrackView;
 @property (nonatomic, strong) WADemoFBShareView* fbShareView;
@@ -85,10 +84,10 @@
     [btn8 setTitle:@"邀请" forState:UIControlStateNormal];
     [btn8 addTarget:self action:@selector(facebookInvite) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn8];
-    WADemoButtonMain* btn9 = [[WADemoButtonMain alloc]init];
-    [btn9 setTitle:@"礼物" forState:UIControlStateNormal];
-    [btn9 addTarget:self action:@selector(gifting) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn9];    
+//    WADemoButtonMain* btn9 = [[WADemoButtonMain alloc]init];
+//    [btn9 setTitle:@"礼物" forState:UIControlStateNormal];
+//    [btn9 addTarget:self action:@selector(gifting) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn9];
     WADemoButtonMain* btn11 = [[WADemoButtonMain alloc]init];
     [btn11 setTitle:@"检查更新" forState:UIControlStateNormal];
     [btn11 addTarget:self action:@selector(checkUpdate) forControlEvents:UIControlEventTouchUpInside];
@@ -113,13 +112,27 @@
     [btn16 setTitle:@"用户中心" forState:UIControlStateNormal];
     [btn16 addTarget:self action:@selector(userCenter) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn16];
+    WADemoButtonMain* btn17 = [[WADemoButtonMain alloc]init];
+//    [btn17 setTitle:@"用户中心" forState:UIControlStateNormal];
+//    [btn17 addTarget:self action:@selector(userCenter) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn17];
+    btn17.hidden = YES;
     
     WADemoButtonMain* btn10 = [[WADemoButtonMain alloc]init];
     [btn10 setTitle:@"闪退测试" forState:UIControlStateNormal];
     [btn10 addTarget:self action:@selector(crash) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn10];
+	
+	
+    WADemoButtonMain* btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"调起评分界面" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(oepnReview) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+	
+	
+
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@1]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app版本
@@ -165,11 +178,19 @@
 
 //账号管理
 -(void)acctManagement{
-    UIViewController* vc = [WADemoUtil getCurrentVC];
-    _acctMgmt = [[WADemoAccountManagement alloc]initWithFrame:self.bounds];
-    self.acctMgmt.hasBackBtn = YES;
-    [vc.view addSubview:self.acctMgmt];
-    [self.acctMgmt moveIn:nil];
+//    UIViewController* vc = [WADemoUtil getCurrentVC];
+//    _acctMgmt = [[WADemoAccountManagement alloc]initWithFrame:self.bounds];
+//    self.acctMgmt.hasBackBtn = YES;
+//    [vc.view addSubview:self.acctMgmt];
+//    [self.acctMgmt moveIn:nil];
+	
+	
+	WADemoAccountManagement * vc =[[WADemoAccountManagement alloc] init];
+	
+    [[WADemoUtil getCurrentVC].navigationController pushViewController:vc animated:YES];
+
+	
+	
 }
 //应用内支付
 -(void)iap{
@@ -218,11 +239,22 @@
     [self.giftView moveIn:nil];
 }
 
+//打开评分界面
+- (void)oepnReview {
+	
+	[WAUserProxy openReview];
+}
+
+
+//闪退
 - (void)crash {
     
     NSArray* array = [NSArray array];
     int i = (int)array[1];
     NSLog(@"%d",i);
+	
+	
+	
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
     
 //    NSURL * url = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8"];
@@ -232,6 +264,14 @@
 //        [[UIApplication sharedApplication] openURL:url];
 //    }
     
+//	if([SKStoreReviewController respondsToSelector:@selector(requestReview)]) {// iOS 10.3 以上支持
+//		//防止键盘遮挡
+//		[[UIApplication sharedApplication].keyWindow endEditing:YES];
+//		[SKStoreReviewController requestReview];
+//	}
+//
+	
+	
 }
 
 - (void)pay
@@ -272,6 +312,7 @@
     
     WADemoCscViewController *cscVC = [[WADemoCscViewController alloc] init];
     [[WADemoUtil getCurrentVC].navigationController pushViewController:cscVC animated:YES];
+	
 }
 
 - (void)privacy
@@ -355,9 +396,7 @@
     if (self.loginUI)
         [self.loginUI deviceOrientationDidChange];
     
-    if (self.acctMgmt)
-        [self.acctMgmt deviceOrientationDidChange];
-    
+
     if (self.productList)
         [self.productList deviceOrientationDidChange];
     
@@ -378,6 +417,10 @@
     
     if (self.hotUpdate)
         [self.hotUpdate deviceOrientationDidChange];
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 @end

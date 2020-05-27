@@ -72,7 +72,7 @@ typedef enum GHWEventSwitch{
 }
 
 -(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
+//    [self setNeedsLayout];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -160,6 +160,8 @@ typedef enum GHWEventSwitch{
     }else if(indexPath.row == 4){
         cell.textLabel.text = @"EventName";
         _defEventNameTxv = [[WADemoPostEventTextView alloc]initWithCellWidth:cellW cellHeight:_cellH];
+		_defEventNameTxv.delegate=self;
+		
         _defEventNameTxv.text = self.param.eventName;
         _defEventNameTxv.delegate = self;
         _defEventNameTxv.tag = GHWEventParamTextViewEventName;
@@ -306,7 +308,9 @@ typedef enum GHWEventSwitch{
     }
     
 }
-
+-(void)textFieldTextChange:(UITextField *)textField{
+    NSLog(@"textField1 - 输入框内容改变,当前内容为: %@",textField.text);
+}
 -(void)layoutSubviews{
     [super layoutSubviews];
 }

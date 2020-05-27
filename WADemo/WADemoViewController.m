@@ -74,4 +74,9 @@
     [self.mainUI deviceOrientationDidChange];
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+
 @end

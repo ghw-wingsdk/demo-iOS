@@ -21,20 +21,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [WACoreProxy init];
     [WACoreProxy setDebugMode:YES];
+    [WACoreProxy init];
     [WACoreProxy initAppEventTracker];
     [WAPayProxy init4Iap];
-    [WACoreProxy setServerId:@"China"];
     [WACoreProxy setLevel:10];
+	
+	
+	
     [WACoreProxy setGameUserId:@"12345"];
     [WACoreProxy setNickName:@"测试角色名称"];
-    
+    [WACoreProxy setServerId:@"China"];
+
     [WAPushProxy application:application initPushWithDelegate:self];
     
     return [WACoreProxy application:application didFinishLaunchingWithOptions:launchOptions];
     
 }
+
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {

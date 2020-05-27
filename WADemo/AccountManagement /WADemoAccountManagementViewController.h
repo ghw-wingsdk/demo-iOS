@@ -1,5 +1,5 @@
 //
-//  WADemoAccountManagement.h
+//  WADemoAccountManagementViewController.h
 //  WADemo
 //
 //  Created by LPW on 2020/5/12.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WADemoAccountManagement : UIViewController
+@interface WADemoAccountManagementViewController : UIViewController
 
 @end
 

@@ -10,4 +10,6 @@
 
 @interface WADemoPostEventTextView : UITextView
 -(instancetype)initWithCellWidth:(float)cellW cellHeight:(float)cellH;
+
+
 @end

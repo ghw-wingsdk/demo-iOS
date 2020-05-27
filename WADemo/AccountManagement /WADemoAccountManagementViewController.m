@@ -1,11 +1,12 @@
 //
-//  WADemoAccountManagement.m
+//  WADemoAccountManagementViewController.m
 //  WADemo
 //
 //  Created by LPW on 2020/5/12.
 //  Copyright © 2020 GHW. All rights reserved.
 //
 
+#import "WADemoAccountManagementViewController.h"
 #import "WADemoAccountManagement.h"
 #import "WADemoUtil.h"
 #import "WADemoMaskLayer.h"
@@ -17,14 +18,14 @@
 #import "WADemoViewController.h"
 #import "WADemoBindingAccountList.h"
 
-@interface WADemoAccountManagement ()<WAAccountBindingDelegate>
+@interface WADemoAccountManagementViewController ()<WAAccountBindingDelegate>
 @property (nonatomic, strong) UIView *viewTitle;
 @property (nonatomic, strong) WADemoAccountSwitch* acctSwitch;
 @property (nonatomic, strong) WADemoBindingAccountList* accountList;
 
 @end
 
-@implementation WADemoAccountManagement
+@implementation WADemoAccountManagementViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,7 +66,7 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     [self.view addSubview:scrollView];
     
-    NSArray *titles = @[@"绑定Facebook账号", @"绑定Apple账号",@"绑定signinwithapple", @"绑定VK账号", @"绑定Twitter账号", @"绑定Instagram账号", @"新建账户", @"切换账户", @"查询已绑定账户",@"打开SDK内置账号管理界面",@"获取当前账户信息(getAccountInfo-VK)"];
+    NSArray *titles = @[@"绑定Facebook账号", @"绑定Apple账号", @"绑定VK账号", @"绑定Twitter账号", @"绑定Instagram账号", @"新建账户", @"切换账户", @"查询已绑定账户",@"打开SDK内置账号管理界面",@"获取当前账户信息(getAccountInfo-VK)"];
     
     CGFloat left = 10, right = 10, top = 60, bottom = 40, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
     
@@ -171,12 +172,7 @@
 		[self popAcctManagementUI];
 	}else if ([titleStr isEqualToString:@"获取当前账户信息(getAccountInfo-VK)"]) {
 		[self getAccountInfo];
-	}else if ([titleStr isEqualToString:@"绑定signinwithapple"]) {
-		[self bindsigninwithapple];
 	}
-	
-	
-	
 }
 
 
@@ -191,13 +187,6 @@
     [WADemoMaskLayer startAnimating];
     [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_APPLE extInfo:nil delegate:self];
 }
-
-//绑定sign in with apple
--(void)bindsigninwithapple{
-    [WADemoMaskLayer startAnimating];
-    [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_SIGNINWITHAPPLE extInfo:nil delegate:self];
-}
-
 
 -(void)bindVK{
     [WADemoMaskLayer startAnimating];

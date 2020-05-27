@@ -8,7 +8,7 @@
 
 #import "WADemoUserCenterViewController.h"
 #import <WASdkIntf/WASdkIntf.h>
-
+#import "WADemoAlertView.h"
 @interface WADemoUserCenterViewController () <WAUserCenterNoticeDelegate, WAUserCenterNoticeUIDelegate>
 
 @property (nonatomic, strong) UIView *viewTitle;
@@ -61,7 +61,7 @@
 - (void)initScrollView
 {
     CGRect frame = self.view.bounds;
-    frame.origin.y = self.viewTitle.bounds.size.height;
+    frame.origin.y = self.viewTitle.bounds.size.height+40;
     frame.size.height -= frame.origin.y;
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
@@ -128,7 +128,11 @@
         NSLog(@"result--userName:%@",result.userName);
         NSLog(@"result--password:%@",result.password);
     } else {
-        NSLog(@"userCenterNoticeWithResult code:%ld, msg:%@",result.code, result.msg);
+        NSLog(@"userCenterNoticeWithResult code:%ld, msg:%@",(long)result.code, result.msg);
+		
+		   
+		WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"notice" message:result.msg cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+		[alert show];
     }
 }
 
@@ -140,7 +144,7 @@
 
 - (void)userCenterNoticeError:(NSError *)error
 {
-    NSLog(@"userCenterNoticeError code:%ld, msg:%@",error.code, error.localizedDescription);
+    NSLog(@"userCenterNoticeError code:%ld, msg:%@",(long)error.code, error.localizedDescription);
 }
 
 #pragma mark -- 颜色转图片

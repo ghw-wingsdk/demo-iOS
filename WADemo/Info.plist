@@ -5,11 +5,20 @@
 	<key>AiHelp</key>
 	<dict>
 		<key>appId</key>
-		<string>GameHollywoodcompany_platform_852a6a8d-5633-4f22-bff6-d12ec54b5859</string>
+		<string>gamehollywoodhk_platform_c6efc612-deab-49f6-b76d-ed9973f5d4ba</string>
 		<key>appSecret</key>
-		<string>GameHollywoodcompany_app_bd0fce60951445c780adff91fe0d456b</string>
+		<string>GAMEHOLLYWOODHK_app_6ff2af7846a245e8a56c74d2331ede73</string>
 		<key>domain</key>
-		<string>GameHollywoodcompany@aihelp.net</string>
+		<string>gamehollywoodhk@aihelp.net</string>
+	</dict>
+	<key>AiHelp-1</key>
+	<dict>
+		<key>appId</key>
+		<string>gamehollywoodhk_platform_25ef3909-adc9-4aa1-9171-0dba5bd7be75</string>
+		<key>appSecret</key>
+		<string>GAMEHOLLYWOODHK_app_19830bcb96424b0385f6026bad311f52</string>
+		<key>domain</key>
+		<string>gamehollywoodhk@aihelp.net</string>
 	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
@@ -24,7 +33,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.8.3</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -36,8 +45,8 @@
 			<string>vk5527303</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1811388679079227</string>
-				<string>ghwsdk</string>
+				<string>fb1281771621973222</string>
+				<string>com.wing.sdk</string>
 				<string>vk5527303</string>
 			</array>
 		</dict>
@@ -49,23 +58,24 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
-	<string>1811388679079227</string>
+	<string>1281771621973222</string>
 	<key>FacebookDisplayName</key>
 	<string>com.ghw.sdk</string>
 	<key>Instagram</key>
 	<dict>
 		<key>clientId</key>
-		<string>bd0a37a364ab408fb319281ec53c5a7f</string>
+		<string>9b5eddd42ee048179f414a2c038365e4</string>
 		<key>clientSecret</key>
-		<string>eb4bf3c2b42b42579ea948913d947eb5</string>
+		<string>83d4468b062a427780bda2ad568e5be0</string>
 		<key>redirectUri</key>
 		<string>http://blog.wing-analytics.com/</string>
 	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
 		<string>fbapi20130214</string>
 		<string>fbapi20130410</string>
 		<string>fbapi20130702</string>
@@ -75,9 +85,11 @@
 		<string>fbapi20140116</string>
 		<string>fbapi20150313</string>
 		<string>fbapi20150629</string>
+		<string>fbapi20160328</string>
 		<string>fbauth</string>
 		<string>fbauth2</string>
 		<string>fb-messenger-api20140430</string>
+		<string>fb-messenger-share-api</string>
 		<string>app870200932</string>
 		<string>fbshareextension</string>
 		<string>vkauthorize</string>
@@ -86,6 +98,8 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MKDirectionsApplicationSupportedModes</key>
+	<array/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -143,8 +157,9 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

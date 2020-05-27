@@ -16,6 +16,7 @@
 "wasdk_login" = "Login";
 "wasdk_login_facebook" = "Facebook";
 "wasdk_login_game_center" = "Game Center";
+"wasdk_login_signinwithapple" = "sign in with apple";
 "wasdk_confirm" = "Confirm";
 "wasdk_cancel" = "Cancel";
 "wasdk_loading" = "Loading";

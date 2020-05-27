@@ -12,6 +12,9 @@
 #import "WADemoViewController.h"
 #import "WADemoUtil.h"
 #import "WADemoMaskLayer.h"
+#import <Toast/Toast.h>
+#import "WADemoAlertView.h"
+
 @interface WADemoLoginUI()
 @property(nonatomic)BOOL cacheEnabled;
 @end
@@ -91,12 +94,22 @@
     [btn10 setTitle:btnTitle10 forState:UIControlStateNormal];
     [btn10 addTarget:self action:@selector(setCache:) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn10];
+	
+	
+    WADemoButtonMain* btn12 = [[WADemoButtonMain alloc]init];
+    [btn12 setTitle:@"sign in with apple  " forState:UIControlStateNormal];
+    [btn12 addTarget:self action:@selector(signinwithapple) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn12];
+	
+	
+	
+	
     WADemoButtonMain* btn11 = [[WADemoButtonMain alloc]init];
     [btn11 setTitle:@"登出" forState:UIControlStateNormal];
     [btn11 addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn11];
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@1,@2,@1]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@1,@2,@1,@1]];
 //
     self.title = @"登录";
     self.btnLayout = btnLayout;
@@ -152,6 +165,13 @@
     [WADemoMaskLayer startAnimating];
     [WAUserProxy loginWithPlatform:WA_PLATFORM_INSTAGRAM extInfo:nil delegate:self];
 }
+- (void)signinwithapple{
+    [WADemoMaskLayer startAnimating];
+    [WAUserProxy loginWithPlatform:WA_PLATFORM_SIGNINWITHAPPLE extInfo:nil delegate:self];
+
+	
+	
+}
 
 //修改登录流程
 - (void)changeLoginFlowType:(WADemoButtonSwitch *)btn {
@@ -197,24 +217,31 @@
 #pragma mark GHWLoginDelegate
 -(void)loginDidCompleteWithResults:(WALoginResult *)result{
     [WADemoMaskLayer stopAnimating];
-    NSLog(@"result--token:%@",result.token);
-    NSLog(@"result--userid:%@",result.userId);
-    NSLog(@"result--pToken:%@",result.pToken);
-    NSLog(@"result--pUserid:%@",result.pUserId);
-    NSLog(@"result--platform:%@",result.platform);
-    NSLog(@"result--extends:%@",result.extends);
+	
+//	[self showToastMessage:@"登录成功 "];
+
+    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"登录成功" message:[NSString stringWithFormat:@"platform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@",result.platform,result.pUserId,result.pToken,result.userId,result.token] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+    [alert show];
+	
+	
+    WALog(@"result--token:%@",result.token);
+    WALog(@"result--userid:%@",result.userId);
+    WALog(@"result--pToken:%@",result.pToken);
+    WALog(@"result--pUserid:%@",result.pUserId);
+    WALog(@"result--platform:%@",result.platform);
+    WALog(@"result--extends:%@",result.extends);
     if (result.platform == WA_PLATFORM_FACEBOOK||result.platform == WA_PLATFORM_VK) {
         
-        [WASocialProxy inviteInstallRewardPlatform:result.platform TokenString:result.pToken handler:^(NSUInteger code, NSString *msg, NSError *error) {
-            if (code == 200) {
-                
-                UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"tip" message:[NSString stringWithFormat:@"触发Facebook被邀请人安装应用事件接口成功 msg:%@",msg] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
-                [alert show];
-            }else{
-                UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"tip" message:[NSString stringWithFormat:@"触发Facebook被邀请人安装应用事件接口失败 error:%@",error] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
-                [alert show];
-            }
-        }];
+//        [WASocialProxy inviteInstallRewardPlatform:result.platform TokenString:result.pToken handler:^(NSUInteger code, NSString *msg, NSError *error) {
+//            if (code == 200) {
+//
+//                UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"tip" message:[NSString stringWithFormat:@"触发Facebook被邀请人安装应用事件接口成功 msg:%@",msg] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
+//                [alert show];
+//            }else{
+//                UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"tip" message:[NSString stringWithFormat:@"触发Facebook被邀请人安装应用事件接口失败 error:%@",error] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
+//                [alert show];
+//            }
+//        }];
     }
 }
 
@@ -237,6 +264,14 @@
     NSLog(@"result.pToken:%@",result.pToken);
     NSLog(@"result.pUserId:%@",result.pUserId);
     NSLog(@"loginDidFailWithError:%@",error);
+	
+	[self showToastMessage:error.localizedDescription];
+}
+
+- (void)showToastMessage:(NSString *)messag{
+	
+	[self makeToast:messag duration:2 position:CSToastPositionCenter];
+
 }
 
 -(void)loginDidCancel:(WALoginResult *)result{

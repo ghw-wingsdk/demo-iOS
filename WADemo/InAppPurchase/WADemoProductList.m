@@ -157,4 +157,3 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
 }
 
 @end
-

@@ -33,8 +33,13 @@
                        @"Apple" : WA_PLATFORM_APPLE,
                        @"VK" : WA_PLATFORM_VK,
                        @"Twitter" : WA_PLATFORM_TWITTER,
-                       @"Instagram" : WA_PLATFORM_INSTAGRAM};
-    NSArray *titleStrs = @[@"Facebook", @"Apple", @"VK", @"Twitter", @"Instagram"];
+                       @"Instagram" : WA_PLATFORM_INSTAGRAM,
+                       @"guest" : WA_CONSTANT_GUEST,
+                       @"wa" : WA_PLATFORM_WINGA,
+                       @"signinwithapp" : WA_PLATFORM_SIGNINWITHAPPLE,
+
+	};
+    NSArray *titleStrs = @[@"Facebook", @"Apple", @"VK", @"Twitter", @"Instagram",@"guest",@"wa",@"signinwithapp"];
     
     NSMutableArray* btns = [NSMutableArray array];
     NSMutableArray* btnLayout = [NSMutableArray array];
@@ -60,6 +65,9 @@
     [WADemoMaskLayer startAnimating];
     
     NSString* loginType = [self.loginTypeDict objectForKey:[btn titleForState:UIControlStateNormal]];
+	if (loginType==WA_CONSTANT_GUEST) {
+		loginType=WA_PLATFORM_WINGA;
+	}
     
     [WAUserProxy switchAccountWithPlatform:loginType completeBlock:^(NSError *error, WALoginResult *result) {
         if (!error) {

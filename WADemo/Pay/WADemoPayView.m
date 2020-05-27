@@ -47,6 +47,9 @@
 
 -(void)queryInventoryDidCompleteWithResult:(NSArray<WAIapProduct *> *)Inventory{
     [WADemoMaskLayer stopAnimating];
+	
+	
+	
 	[WAPayProxy queryChannelProduct:@"APPLE" callBackBlock:^(NSArray<WAChannelProduct *> *channelProductsArray, NSError *error) {
 		if (!error) {
 			
@@ -67,6 +70,8 @@
 				[self.scrollView addSubview:self.productList];
 		}
 	}];
+
+
 }
 
 -(void)queryInventoryDidFailWithError:(NSError*)error{
