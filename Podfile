@@ -15,6 +15,8 @@ workspace 'Workspace.xcworkspace'
 # source 'http://172.16.100.58:7070/r/WAInstagramImpl.git'
 # source 'http://172.16.100.58:7070/r/WAAdImpl.git'
 # source 'http://172.16.100.58:7070/r/WAAiHelpImpl.git'
+# source 'http://172.16.100.58:7070/r/WAFirebaseImpl.git'
+
 
 source 'http://repo.wingsdk.cn:8082/r/WASdkIntf.git'
 source 'http://repo.wingsdk.cn:8082/r/WASdkImpl.git'
@@ -30,21 +32,22 @@ source 'http://repo.wingsdk.cn:8082/r/WATwitterImpl.git'
 source 'http://repo.wingsdk.cn:8082/r/WAInstagramImpl.git'
 source 'http://repo.wingsdk.cn:8082/r/WAAdImpl.git'
 source 'http://repo.wingsdk.cn:8082/r/WAAiHelpImpl.git'
+source 'http://repo.wingsdk.cn:8082/r/WAFirebaseImpl.git'
 
 target "WADemo" do
+
+pod 'WASdkIntf', '3.8.5'
+pod 'WASdkImpl', '3.8.5'
+pod 'WAFirebaseImpl','3.8.5'
+
 pod 'WACbImpl', '3.8.4'
 pod 'WAAfImpl', '3.8.4'
 pod 'WAApImpl', '3.8.4'
 pod 'WAFbImpl', '3.8.4'
-pod 'WASdkImpl', '3.8.4'
 pod 'WAWebPayImpl', '3.8.4'
 pod 'WAVkImpl', '3.8.4'
-pod 'WASdkIntf', '3.8.4'
 pod 'WAPushImpl', '3.8.4'
-pod 'WATwitterImpl'
 pod 'WAInstagramImpl', '3.8.4'
 pod 'WAAiHelpImpl', '3.8.4'
-pod 'WAAdImpl', '3.8.4'
-
 
 end

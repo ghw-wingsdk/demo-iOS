@@ -61,6 +61,8 @@
 		7FC4E35E1C8EEF3F0075FC7D /* WADemoMainUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E3351C8EEF3F0075FC7D /* WADemoMainUI.m */; };
 		7FC4E35F1C8EEF3F0075FC7D /* WADemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E3371C8EEF3F0075FC7D /* WADemoViewController.m */; };
 		7FC4E37C1C8EF0310075FC7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FC4E37A1C8EF0310075FC7D /* Localizable.strings */; };
+		B282698424B2CAA600910E8D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B282698324B2CAA600910E8D /* GameKit.framework */; };
+		B286275D24F3A8290039B204 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B286275C24F3A8290039B204 /* GoogleService-Info.plist */; };
 		B2E9EFF12477728D00FF067E /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E9EFF02477728C00FF067E /* libresolv.tbd */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +192,8 @@
 		7FC4E37D1C8EF03C0075FC7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FC4E37E1C8EF0490075FC7D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B20E0DD7233DAC0500B30B83 /* WADemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WADemo.entitlements; sourceTree = "<group>"; };
+		B282698324B2CAA600910E8D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		B286275C24F3A8290039B204 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2E9EFF02477728C00FF067E /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		FC5F924CCC46BD534D72973E /* Pods-WADemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WADemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WADemo/Pods-WADemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B282698424B2CAA600910E8D /* GameKit.framework in Frameworks */,
 				B2E9EFF12477728D00FF067E /* libresolv.tbd in Frameworks */,
 				5F74A0D4AD12DE42C44DF27C /* libPods-WADemo.a in Frameworks */,
 			);
@@ -296,6 +301,7 @@
 				7FC4E2C11C8EEE7C0075FC7D /* Main.storyboard */,
 				7FC4E2C41C8EEE7C0075FC7D /* Assets.xcassets */,
 				7FC4E2C61C8EEE7C0075FC7D /* LaunchScreen.storyboard */,
+				B286275C24F3A8290039B204 /* GoogleService-Info.plist */,
 				7FC4E2C91C8EEE7C0075FC7D /* Info.plist */,
 				7FC4E2B81C8EEE7C0075FC7D /* Supporting Files */,
 			);
@@ -507,6 +513,7 @@
 		8255698A55C81C3C9B8D33D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B282698324B2CAA600910E8D /* GameKit.framework */,
 				B2E9EFF02477728C00FF067E /* libresolv.tbd */,
 				363EF9BF20D10163000797C1 /* libsqlite3.tbd */,
 				7CEB9AC630E49E10F3A98DE9 /* libPods-WADemo.a */,
@@ -534,8 +541,7 @@
 				7FC4E2B11C8EEE7C0075FC7D /* Sources */,
 				7FC4E2B21C8EEE7C0075FC7D /* Frameworks */,
 				7FC4E2B31C8EEE7C0075FC7D /* Resources */,
-				4FA04FC8FBB8ECFC5EBA5A4B /* [CP] Copy Pods Resources */,
-				1CF299E6A7D9BC26A4091862 /* [CP] Embed Pods Frameworks */,
+				FA4973F16DDAE293B6098451 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -622,6 +628,7 @@
 			files = (
 				7FC4E2C81C8EEE7C0075FC7D /* LaunchScreen.storyboard in Resources */,
 				7FC4E2C51C8EEE7C0075FC7D /* Assets.xcassets in Resources */,
+				B286275D24F3A8290039B204 /* GoogleService-Info.plist in Resources */,
 				7FC4E37C1C8EF0310075FC7D /* Localizable.strings in Resources */,
 				7FC4E2C31C8EEE7C0075FC7D /* Main.storyboard in Resources */,
 			);
@@ -637,94 +644,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1CF299E6A7D9BC26A4091862 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks.sh",
-				"${PODS_ROOT}/WATwitterImpl/frameworks/TwitterCore.framework",
-				"${PODS_ROOT}/WATwitterImpl/frameworks/TwitterKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4FA04FC8FBB8ECFC5EBA5A4B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh",
-				"${PODS_ROOT}/WAAdImpl/config/wa_sdk_impl_config_ad.xml",
-				"${PODS_ROOT}/WAAfImpl/config/wa_sdk_impl_config_appsflyer.xml",
-				"${PODS_ROOT}/WAAiHelpImpl/config/wa_sdk_impl_config_aihelp.xml",
-				"${PODS_ROOT}/WAAiHelpImpl/res/ElvaChatServiceSDK.bundle",
-				"${PODS_ROOT}/WAApImpl/config/wa_sdk_impl_config_apple.xml",
-				"${PODS_ROOT}/WACbImpl/config/wa_sdk_impl_config_chartboost.xml",
-				"${PODS_ROOT}/WAFbImpl/config/wa_sdk_impl_config_facebook.xml",
-				"${PODS_ROOT}/WAFbImpl/bundle/FacebookSDKStrings.bundle",
-				"${PODS_ROOT}/WAInstagramImpl/config/wa_sdk_impl_config_instagram.xml",
-				"${PODS_ROOT}/WAPushImpl/config/wa_sdk_impl_config_push.xml",
-				"${PODS_ROOT}/WASdkImpl/config/wa_sdk_impl_config_winga.xml",
-				"${PODS_ROOT}/WASdkImpl/bundle/WASDK-Resource.bundle",
-				"${PODS_ROOT}/WASdkImpl/localizable/base.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/en.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/es.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/id.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/pt-BR.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/ru.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/th.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/zh-Hans.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/zh-Hant.plist",
-				"${PODS_ROOT}/WASdkIntf/config/wa_sdk.plist",
-				"${PODS_ROOT}/WASdkIntf/config/wa_sdk_track_config.plist",
-				"${PODS_ROOT}/WATwitterImpl/config/wa_sdk_impl_config_ twitter.xml",
-				"${PODS_ROOT}/WAVkImpl/config/wa_sdk_impl_config_vk.xml",
-				"${PODS_ROOT}/WAWebPayImpl/config/wa_sdk_impl_config_webpay.xml",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_ad.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_appsflyer.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_aihelp.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ElvaChatServiceSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apple.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_chartboost.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_facebook.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_instagram.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_push.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_winga.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WASDK-Resource.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/base.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/es.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/id.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ru.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/th.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hant.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_track_config.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_ twitter.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_vk.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_webpay.xml",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F613B6DE872095947CBC819E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -741,6 +660,72 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA4973F16DDAE293B6098451 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh",
+				"${PODS_ROOT}/WAAfImpl/config/wa_sdk_impl_config_appsflyer.xml",
+				"${PODS_ROOT}/WAAiHelpImpl/config/wa_sdk_impl_config_aihelp.xml",
+				"${PODS_ROOT}/WAAiHelpImpl/res/ElvaChatServiceSDK.bundle",
+				"${PODS_ROOT}/WAApImpl/config/wa_sdk_impl_config_apple.xml",
+				"${PODS_ROOT}/WACbImpl/config/wa_sdk_impl_config_chartboost.xml",
+				"${PODS_ROOT}/WAFbImpl/config/wa_sdk_impl_config_facebook.xml",
+				"${PODS_ROOT}/WAFbImpl/bundle/FacebookSDKStrings.bundle",
+				"${PODS_ROOT}/WAFirebaseImpl/config/wa_sdk_impl_config_firebase.xml",
+				"${PODS_ROOT}/WAInstagramImpl/config/wa_sdk_impl_config_instagram.xml",
+				"${PODS_ROOT}/WAPushImpl/config/wa_sdk_impl_config_push.xml",
+				"${PODS_ROOT}/WASdkImpl/config/wa_sdk_impl_config_winga.xml",
+				"${PODS_ROOT}/WASdkImpl/bundle/WASDK-Resource.bundle",
+				"${PODS_ROOT}/WASdkImpl/localizable/base.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/en.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/es.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/id.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/pt-BR.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/ru.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/th.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/zh-Hans.plist",
+				"${PODS_ROOT}/WASdkImpl/localizable/zh-Hant.plist",
+				"${PODS_ROOT}/WASdkIntf/config/wa_sdk.plist",
+				"${PODS_ROOT}/WASdkIntf/config/wa_sdk_track_config.plist",
+				"${PODS_ROOT}/WAVkImpl/config/wa_sdk_impl_config_vk.xml",
+				"${PODS_ROOT}/WAWebPayImpl/config/wa_sdk_impl_config_webpay.xml",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_appsflyer.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_aihelp.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ElvaChatServiceSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apple.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_chartboost.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_facebook.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_firebase.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_instagram.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_push.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_winga.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WASDK-Resource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/base.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/es.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/id.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ru.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/th.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hant.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_track_config.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_vk.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_webpay.xml",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -955,9 +940,9 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.8.4;
+				MARKETING_VERSION = 3.8.5;
 				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -980,10 +965,10 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.8.4;
+				MARKETING_VERSION = 3.8.5;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

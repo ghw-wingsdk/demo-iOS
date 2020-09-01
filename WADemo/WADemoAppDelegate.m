@@ -28,10 +28,11 @@
     [WACoreProxy setLevel:10];
 	
 	
+
 	
-    [WACoreProxy setGameUserId:@"12345"];
-    [WACoreProxy setNickName:@"测试角色名称"];
-    [WACoreProxy setServerId:@"China"];
+    [WACoreProxy setGameUserId:@"server1-role2-59473437"];
+    [WACoreProxy setNickName:@"2server1-59473437"];
+    [WACoreProxy setServerId:@"server1"];
 
     [WAPushProxy application:application initPushWithDelegate:self];
     
