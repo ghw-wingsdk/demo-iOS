@@ -36,18 +36,18 @@ source 'http://repo.wingsdk.cn:8082/r/WAFirebaseImpl.git'
 
 target "WADemo" do
 
-pod 'WASdkIntf', '3.8.5'
-pod 'WASdkImpl', '3.8.5'
-pod 'WAFirebaseImpl','3.8.5'
+pod 'WASdkIntf'
+pod 'WASdkImpl'
+pod 'WAFirebaseImpl'
 
-pod 'WACbImpl', '3.8.4'
-pod 'WAAfImpl', '3.8.4'
-pod 'WAApImpl', '3.8.4'
-pod 'WAFbImpl', '3.8.4'
-pod 'WAWebPayImpl', '3.8.4'
-pod 'WAVkImpl', '3.8.4'
-pod 'WAPushImpl', '3.8.4'
-pod 'WAInstagramImpl', '3.8.4'
-pod 'WAAiHelpImpl', '3.8.4'
+pod 'WACbImpl'
+pod 'WAAfImpl'
+pod 'WAApImpl'
+pod 'WAFbImpl'
+pod 'WAWebPayImpl'
+pod 'WAVkImpl'
+pod 'WAPushImpl'
+pod 'WAInstagramImpl'
+pod 'WAAiHelpImpl'
 
 end
