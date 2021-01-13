@@ -1,21 +1,21 @@
 platform :ios, '9.0'
 workspace 'Workspace.xcworkspace'
 
-# source 'http://172.16.100.58:7070/r/WASdkIntf.git'
-# source 'http://172.16.100.58:7070/r/WASdkImpl.git'
-# source 'http://172.16.100.58:7070/r/WAApwImpl.git'
-# source 'http://172.16.100.58:7070/r/WAApImpl.git'
-# source 'http://172.16.100.58:7070/r/WAAfImpl.git'
-# source 'http://172.16.100.58:7070/r/WACbImpl.git'
-# source 'http://172.16.100.58:7070/r/WAFbImpl.git'
-# source 'http://172.16.100.58:7070/r/WAPushImpl.git'
-# source 'http://172.16.100.58:7070/r/WAVkImpl.git'
-# source 'http://172.16.100.58:7070/r/WAWebPayImpl.git'
-# source 'http://172.16.100.58:7070/r/WATwitterImpl.git'
-# source 'http://172.16.100.58:7070/r/WAInstagramImpl.git'
-# source 'http://172.16.100.58:7070/r/WAAdImpl.git'
-# source 'http://172.16.100.58:7070/r/WAAiHelpImpl.git'
-# source 'http://172.16.100.58:7070/r/WAFirebaseImpl.git'
+ # source 'http://172.16.100.58:7070/r/WASdkIntf.git'
+ # source 'http://172.16.100.58:7070/r/WASdkImpl.git'
+ # source 'http://172.16.100.58:7070/r/WAApwImpl.git'
+ # source 'http://172.16.100.58:7070/r/WAApImpl.git'
+ # source 'http://172.16.100.58:7070/r/WAAfImpl.git'
+ # source 'http://172.16.100.58:7070/r/WACbImpl.git'
+ # source 'http://172.16.100.58:7070/r/WAFbImpl.git'
+ # source 'http://172.16.100.58:7070/r/WAPushImpl.git'
+ # source 'http://172.16.100.58:7070/r/WAVkImpl.git'
+ # source 'http://172.16.100.58:7070/r/WAWebPayImpl.git'
+ # source 'http://172.16.100.58:7070/r/WATwitterImpl.git'
+ # source 'http://172.16.100.58:7070/r/WAInstagramImpl.git'
+ # source 'http://172.16.100.58:7070/r/WAAdImpl.git'
+ # source 'http://172.16.100.58:7070/r/WAAiHelpImpl.git'
+ # source 'http://172.16.100.58:7070/r/WAFirebaseImpl.git'
 
 
 source 'http://repo.wingsdk.cn:8082/r/WASdkIntf.git'
@@ -50,4 +50,6 @@ pod 'WAPushImpl'
 pod 'WAInstagramImpl'
 pod 'WAAiHelpImpl'
 
+
+	
 end
