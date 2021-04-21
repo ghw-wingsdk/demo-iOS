@@ -15,7 +15,9 @@ typedef enum GHWEventTableViewChannel{
     GHWEventTableViewChannelFB,
     GHWEventTableViewChannelCB,
     GHWEventTableViewChannelGHW,
-    GHWEventTableViewChannelDEF
+    GHWEventTableViewChannelDEF,
+	GHWEventTableViewChannelFIREBASE
+
 }GHWEventTableViewChannel;
 @interface WADemoEventTableView : UITableView<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
 -(instancetype)initWithFrame:(CGRect)frame channel:(GHWEventTableViewChannel)channel param:(WADemoEventData*)param;

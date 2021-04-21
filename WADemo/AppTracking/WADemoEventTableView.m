@@ -94,7 +94,9 @@ typedef enum GHWEventSwitch{
             cell.textLabel.text = @"Game Hollywood";
         }else if(_channel == GHWEventTableViewChannelDEF){
             cell.textLabel.text = @"Default";
-        }
+        }else if(_channel == GHWEventTableViewChannelFIREBASE){
+			cell.textLabel.text = @"Firebase";
+}
         
         [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
         [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:25]];
@@ -252,7 +254,9 @@ typedef enum GHWEventSwitch{
         self.eventView.ghwParam = _param;
     }else if (self.channel == GHWEventTableViewChannelDEF) {
         self.eventView.defParam = _param;
-    }
+    }else if (self.channel == GHWEventTableViewChannelFIREBASE) {
+		self.eventView.firebaseParam = _param;
+}
 }
 
 
@@ -305,7 +309,9 @@ typedef enum GHWEventSwitch{
         self.eventView.ghwParam = _param;
     }else if (self.channel == GHWEventTableViewChannelDEF) {
         self.eventView.defParam = _param;
-    }
+    }else if (self.channel == GHWEventTableViewChannelFIREBASE) {
+		self.eventView.firebaseParam = _param;
+}
     
 }
 -(void)textFieldTextChange:(UITextField *)textField{

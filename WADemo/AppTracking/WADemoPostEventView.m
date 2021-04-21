@@ -17,6 +17,8 @@
 @property(nonatomic,strong)WADemoPostEventViewBtn* fbBtn;
 @property(nonatomic,strong)WADemoPostEventViewBtn* cbBtn;
 @property(nonatomic,strong)WADemoPostEventViewBtn* ghwBtn;
+@property(nonatomic,strong)WADemoPostEventViewBtn* firebaseBtn;
+
 @property(nonatomic,strong)WADemoEventTableView* afTV;
 @property(nonatomic,strong)UIButton* closeBtn;
 @property(nonatomic,strong)UIButton* postBtn;
@@ -65,6 +67,8 @@
     self.cbParam = [WADemoEventData getEventDataWithEventName:self.eventName];
     self.ghwParam = [WADemoEventData getEventDataWithEventName:self.eventName];
     self.defParam = [WADemoEventData getEventDataWithEventName:self.eventName];
+	self.firebaseParam = [WADemoEventData getEventDataWithEventName:self.eventName];
+
 }
 
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -115,6 +119,14 @@
     [_defBtn addTarget:self action:@selector(changeChannel:) forControlEvents:UIControlEventTouchUpInside];
     [_defBtn setTitle:@"DEF" forState:UIControlStateNormal];
     [self addSubview:_defBtn];
+	
+	_firebaseBtn = [[WADemoPostEventViewBtn alloc]init];
+	_firebaseBtn.tag = 6;
+	[_firebaseBtn addTarget:self action:@selector(changeChannel:) forControlEvents:UIControlEventTouchUpInside];
+	[_firebaseBtn setTitle:@"Firebase" forState:UIControlStateNormal];
+	[self addSubview:_firebaseBtn];
+	
+	
     
     _afTV = [[WADemoEventTableView alloc]initWithFrame:CGRectZero channel:GHWEventTableViewChannelAF param:_afParam];
     _afTV.eventView = self;
@@ -138,10 +150,10 @@
 -(void)closeView{
     [self removeFromSuperview];
 }
+GHWEventTableViewChannel channel;
 
 
 -(void)changeChannel:(UIButton*)btn{
-    GHWEventTableViewChannel channel;
     WADemoEventData* param;
     if (btn.tag == 1) {
         channel = GHWEventTableViewChannelAF;
@@ -158,7 +170,10 @@
     }else if(btn.tag == 5){
         channel = GHWEventTableViewChannelDEF;
         param = _defParam;
-    }
+    }else if(btn.tag == 6){
+		channel = GHWEventTableViewChannelFIREBASE;
+		param = _defParam;
+}
     [_afTV removeFromSuperview];
     _afTV = [[WADemoEventTableView alloc]initWithFrame:CGRectZero channel:channel param:param];
     _afTV.eventView = self;
@@ -181,7 +196,7 @@
     }
     
     float btn_space = 5;
-    float btn_w = (screenW - 6*btn_space)/5;
+    float btn_w = (screenW - 6*btn_space)/6;
     float btn_h = 40;
     float btn_x = btn_space;
     float btn_y = btn_space;
@@ -199,23 +214,28 @@
     
     frame.origin.x += btn_w + btn_space;
     _defBtn.frame = frame;
+	
+	
+	frame.origin.x += btn_w + btn_space;
+	_firebaseBtn.frame = frame;
+	
     
     float aftv_space = 5;
     float aftv_x = aftv_space;
-    float aftv_y = _ghwBtn.frame.origin.y + _ghwBtn.frame.size.height + aftv_space;
+    float aftv_y = _firebaseBtn.frame.origin.y + _firebaseBtn.frame.size.height + aftv_space;
     float aftv_w = screenW - 2*aftv_space;
-    float aftv_h = 250;
+    float aftv_h = 350;
     _afTV.frame = CGRectMake(aftv_x, aftv_y, aftv_w, aftv_h);
     
     float post_space = 40;
     float post_x = aftv_x;
-    float post_y = aftv_y + aftv_h + post_space;
+    float post_y = aftv_y + aftv_h + post_space+100;
     float post_w = aftv_w;
     float post_h = 50;
     _postBtn.frame = CGRectMake(post_x, post_y, post_w, post_h);
     
     float close_space = 10;
-    float close_y = post_y + post_h + close_space;
+    float close_y = post_y + post_h + close_space+50;
     frame = _postBtn.frame;
     frame.origin.y = close_y;
     _closeBtn.frame = frame;
@@ -242,7 +262,7 @@
 //    WAIEvent* event = [[WAIEvent alloc]init];
     WAEvent* event = [[WAEvent alloc]init];
     
-    event.channelSwitcherDict = @{WA_PLATFORM_APPSFLYER:[NSNumber numberWithBool:_afParam.on],WA_PLATFORM_CHARTBOOST:[NSNumber numberWithBool:_cbParam.on],WA_PLATFORM_FACEBOOK:[NSNumber numberWithBool:_fbParam.on],WA_PLATFORM_WINGA:[NSNumber numberWithBool:_ghwParam.on]};
+    event.channelSwitcherDict = @{WA_PLATFORM_APPSFLYER:[NSNumber numberWithBool:_afParam.on],WA_PLATFORM_CHARTBOOST:[NSNumber numberWithBool:_cbParam.on],WA_PLATFORM_FACEBOOK:[NSNumber numberWithBool:_fbParam.on],WA_PLATFORM_WINGA:[NSNumber numberWithBool:_ghwParam.on],WA_PLATFORM_FIREBASE:[NSNumber numberWithBool:_firebaseParam.on]};
     
     if (_defParam.eventNameOn) {
         event.defaultEventName = self.defParam.eventName;
@@ -256,6 +276,12 @@
 //    event.defaultValue = 8.11111;
     
     
+	if (channel==GHWEventTableViewChannelAF) {
+		event.defaultEventName=_afParam.eventName;
+	}else if(channel==GHWEventTableViewChannelFB){
+		event.defaultEventName=_fbParam.eventName;
+		
+	}
     
     NSMutableDictionary* mEventNameDict = [NSMutableDictionary dictionary];
     if (_afParam.eventNameOn) {
@@ -270,6 +296,11 @@
     if (_fbParam.eventNameOn) {
         [mEventNameDict setObject:_fbParam.eventName forKey:WA_PLATFORM_FACEBOOK];
     }
+	
+	
+	if (_firebaseParam.eventNameOn) {
+		[mEventNameDict setObject:_firebaseParam.eventName forKey:WA_PLATFORM_FIREBASE];
+	}
     
     event.eventNameDict = mEventNameDict;
     NSMutableDictionary* valueDict = [NSMutableDictionary dictionary];
@@ -283,11 +314,9 @@
         [valueDict setObject:[NSDecimalNumber decimalNumberWithString:_cbParam.value] forKey:WA_PLATFORM_CHARTBOOST];
     }
     if (![_fbParam.value isEqualToString:@""]&&_fbParam.value.doubleValue!= 0) {
-//        [valueDict setObject:[NSNumber numberWithDouble:[_fbParam.value doubleValue]] forKey:WA_PLATFORM_FACEBOOK];
         [valueDict setObject:[NSDecimalNumber decimalNumberWithString:_fbParam.value] forKey:WA_PLATFORM_FACEBOOK];
     }
     if (![_ghwParam.value isEqualToString:@""]&&_ghwParam.value.doubleValue!=0) {
-//        [valueDict setObject:[NSNumber numberWithDouble:[_ghwParam.value doubleValue]] forKey:WA_PLATFORM_WINGA];
         [valueDict setObject:[NSDecimalNumber decimalNumberWithString:_ghwParam.value] forKey:WA_PLATFORM_WINGA];
     }
     //    event.valueDict = @{WA_PLATFORM_APPSFLYER:[NSNumber numberWithDouble:[_afParam.value doubleValue]],WA_PLATFORM_CHARTBOOST:[NSNumber numberWithDouble:[_cbParam.value doubleValue]],WA_PLATFORM_FACEBOOK:[NSNumber numberWithDouble:[_fbParam.value doubleValue]],WA_PLATFORM_WINGA:[NSNumber numberWithDouble:[_ghwParam.value doubleValue]]};
@@ -308,6 +337,11 @@
     if (_fbParam.paramDictOn) {
         [mParamValueDict setObject:[self dealWithParam:_fbParam] forKey:WA_PLATFORM_FACEBOOK];
     }
+	
+	if (_firebaseParam.paramDictOn) {
+		[mParamValueDict setObject:[self dealWithParam:_firebaseParam] forKey:WA_PLATFORM_FIREBASE];
+	}
+	
     
     event.paramValuesDict = mParamValueDict;
     

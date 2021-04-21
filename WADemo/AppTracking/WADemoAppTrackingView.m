@@ -43,10 +43,10 @@
 //    [btn4 addTarget:self action:@selector(initiatedPurchase) forControlEvents:UIControlEventTouchUpInside];
 //    [btns addObject:btn4];
 //
-//    WADemoButtonMain* btn24 = [[WADemoButtonMain alloc]init];
-//    [btn24 setTitle:@"purchase" forState:UIControlStateNormal];
-//    [btn24 addTarget:self action:@selector(purchase) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn24];
+    WADemoButtonMain* btn24 = [[WADemoButtonMain alloc]init];
+    [btn24 setTitle:@"purchase" forState:UIControlStateNormal];
+    [btn24 addTarget:self action:@selector(purchase) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn24];
     
     WADemoButtonMain* btn5 = [[WADemoButtonMain alloc]init];
     [btn5 setTitle:@"levelAchieve" forState:UIControlStateNormal];
@@ -160,11 +160,11 @@
 //    [self addSubview:view];
 //}
 //
-//- (void)purchase {
-//
-//    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventPurchase];
-//    [self addSubview:view];
-//}
+- (void)purchase {
+
+    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventPurchase];
+    [self addSubview:view];
+}
 
 - (void)levelAchieve {
     WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventLevelAchieved];
@@ -277,7 +277,15 @@
 }
 
 - (void)custom {
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:@"customEvent"];
+	
+	NSDate *date = [NSDate date];
+	  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	  [formatter setDateFormat:@"yyyy-MM-dd"];
+	  //获取当前时间日期展示字符串 如：2019-05-23-13:58:59
+	  NSString *eventName = [NSString stringWithFormat:@"customEvent_%@",[formatter stringFromDate:date]];
+	
+	
+    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:eventName];
     [self addSubview:view];
 }
 

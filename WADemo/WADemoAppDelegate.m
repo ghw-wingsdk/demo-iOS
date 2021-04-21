@@ -36,6 +36,37 @@
 
     [WAPushProxy application:application initPushWithDelegate:self];
     
+	
+	
+	
+	WAEvent* event = [[WAEvent alloc]init];
+		event.defaultEventName = WAEventLevelAchieved;
+		event.defaultValue = 1;
+		event.defaultParamValues = @{
+									 WAEventParameterNameScore:@100,
+									 WAEventParameterNameFighting:@1000
+									 };
+		event.eventNameDict = @{WA_PLATFORM_APPSFLYER:WAEventLevelAchieved,WA_PLATFORM_CHARTBOOST:WAEventLevelAchieved,WA_PLATFORM_FACEBOOK:@"FacebookLevelAchieved",WA_PLATFORM_WINGA:WAEventLevelAchieved,WA_PLATFORM_FIREBASE:WAEventLevelAchieved};
+	event.valueDict = @{WA_PLATFORM_APPSFLYER:@1,WA_PLATFORM_CHARTBOOST:@1,WA_PLATFORM_FACEBOOK:@2,WA_PLATFORM_WINGA:@1, WA_PLATFORM_FIREBASE:@1};
+	event.channelSwitcherDict = @{WA_PLATFORM_APPSFLYER:@NO,WA_PLATFORM_FACEBOOK:@YES,WA_PLATFORM_WINGA:@YES,WA_PLATFORM_CHARTBOOST:@YES,WA_PLATFORM_FIREBASE:@YES};
+		event.paramValuesDict =
+		@{
+		  WA_PLATFORM_APPSFLYER:@{
+				  WAEventParameterNameScore:@100,
+				  WAEventParameterNameFighting:@1000
+				  },
+
+
+		  WA_PLATFORM_FIREBASE:@{
+				  WAEventParameterNameScore:@100,
+				  WAEventParameterNameFighting:@1000
+				  }
+		  };
+		
+		[event trackEvent];
+	
+	
+	
     return [WACoreProxy application:application didFinishLaunchingWithOptions:launchOptions];
     
 }

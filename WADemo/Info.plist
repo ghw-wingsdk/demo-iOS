@@ -135,6 +135,8 @@
 	<string>需要添加图片到相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>需要使用相册</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>确认idfa数据收集</string>
 	<key>Twitter</key>
 	<dict>
 		<key>consumerKey</key>
@@ -169,7 +171,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>确认idfa数据收集</string>
 </dict>
 </plist>

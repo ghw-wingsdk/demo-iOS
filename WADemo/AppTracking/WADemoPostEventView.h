@@ -15,6 +15,9 @@
 @property(nonatomic,strong)WADemoEventData* fbParam;
 @property(nonatomic,strong)WADemoEventData* cbParam;
 @property(nonatomic,strong)WADemoEventData* ghwParam;
+@property(nonatomic,strong)WADemoEventData* firebaseParam;
+
+
 @property(nonatomic,copy)NSString* eventName;
 -(instancetype)initWithViewControllerView:(UIViewController*)viewController eventName:(NSString*)eventName;
 -(instancetype)initWithNaviHeight:(float)naviHeight eventName:(NSString*)eventName;
