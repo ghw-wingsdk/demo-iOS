@@ -311,8 +311,9 @@
 //    [self.cscVC moveIn:nil];
     
     WADemoCscViewController *cscVC = [[WADemoCscViewController alloc] init];
-    [[WADemoUtil getCurrentVC].navigationController pushViewController:cscVC animated:YES];
+//    [[WADemoUtil getCurrentVC].navigationController pushViewController:cscVC animated:YES];
 	
+	[[WADemoUtil getCurrentVC] presentViewController:cscVC animated:YES completion:nil];
 }
 
 - (void)privacy

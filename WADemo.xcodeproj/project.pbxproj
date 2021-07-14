@@ -24,9 +24,6 @@
 		7FC4E2C51C8EEE7C0075FC7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FC4E2C41C8EEE7C0075FC7D /* Assets.xcassets */; };
 		7FC4E2C81C8EEE7C0075FC7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC4E2C61C8EEE7C0075FC7D /* LaunchScreen.storyboard */; };
 		7FC4E2D31C8EEE7C0075FC7D /* WADemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E2D21C8EEE7C0075FC7D /* WADemoUITests.m */; };
-		7FC4E3381C8EEF3F0075FC7D /* WADemoAccountManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E2DF1C8EEF3F0075FC7D /* WADemoAccountManagement.m */; };
-		7FC4E3391C8EEF3F0075FC7D /* WADemoAccountSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E2E11C8EEF3F0075FC7D /* WADemoAccountSwitch.m */; };
-		7FC4E33A1C8EEF3F0075FC7D /* WADemoBindingAccountList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E2E31C8EEF3F0075FC7D /* WADemoBindingAccountList.m */; };
 		7FC4E33B1C8EEF3F0075FC7D /* WADemoAppTrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E2E61C8EEF3F0075FC7D /* WADemoAppTrackingView.m */; };
 		7FC4E33C1C8EEF3F0075FC7D /* WADemoEventData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E2E81C8EEF3F0075FC7D /* WADemoEventData.m */; };
 		7FC4E33D1C8EEF3F0075FC7D /* WADemoEventParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E2EA1C8EEF3F0075FC7D /* WADemoEventParam.m */; };
@@ -61,6 +58,10 @@
 		7FC4E35E1C8EEF3F0075FC7D /* WADemoMainUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E3351C8EEF3F0075FC7D /* WADemoMainUI.m */; };
 		7FC4E35F1C8EEF3F0075FC7D /* WADemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E3371C8EEF3F0075FC7D /* WADemoViewController.m */; };
 		7FC4E37C1C8EF0310075FC7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FC4E37A1C8EF0310075FC7D /* Localizable.strings */; };
+		B22E408D269D8A840043C30B /* WADemoAccountSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E4085269D8A830043C30B /* WADemoAccountSwitch.m */; };
+		B22E408E269D8A840043C30B /* WADemoAccountManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E4089269D8A830043C30B /* WADemoAccountManagement.m */; };
+		B22E408F269D8A840043C30B /* WADemoBindingAccountList.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E408B269D8A840043C30B /* WADemoBindingAccountList.m */; };
+		B22E4090269D8A840043C30B /* WADemoAccountManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E408C269D8A840043C30B /* WADemoAccountManagementViewController.m */; };
 		B26BCDD625AC05F900400F88 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26BCDD525AC05F900400F88 /* AppTrackingTransparency.framework */; };
 		B282698424B2CAA600910E8D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B282698324B2CAA600910E8D /* GameKit.framework */; };
 		B286275D24F3A8290039B204 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B286275C24F3A8290039B204 /* GoogleService-Info.plist */; };
@@ -118,12 +119,6 @@
 		7FC4E2CE1C8EEE7C0075FC7D /* WADemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WADemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FC4E2D21C8EEE7C0075FC7D /* WADemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WADemoUITests.m; sourceTree = "<group>"; };
 		7FC4E2D41C8EEE7C0075FC7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7FC4E2DE1C8EEF3F0075FC7D /* WADemoAccountManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAccountManagement.h; sourceTree = "<group>"; };
-		7FC4E2DF1C8EEF3F0075FC7D /* WADemoAccountManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAccountManagement.m; sourceTree = "<group>"; };
-		7FC4E2E01C8EEF3F0075FC7D /* WADemoAccountSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAccountSwitch.h; sourceTree = "<group>"; };
-		7FC4E2E11C8EEF3F0075FC7D /* WADemoAccountSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAccountSwitch.m; sourceTree = "<group>"; };
-		7FC4E2E21C8EEF3F0075FC7D /* WADemoBindingAccountList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoBindingAccountList.h; sourceTree = "<group>"; };
-		7FC4E2E31C8EEF3F0075FC7D /* WADemoBindingAccountList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoBindingAccountList.m; sourceTree = "<group>"; };
 		7FC4E2E51C8EEF3F0075FC7D /* WADemoAppTrackingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAppTrackingView.h; sourceTree = "<group>"; };
 		7FC4E2E61C8EEF3F0075FC7D /* WADemoAppTrackingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAppTrackingView.m; sourceTree = "<group>"; };
 		7FC4E2E71C8EEF3F0075FC7D /* WADemoEventData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoEventData.h; sourceTree = "<group>"; };
@@ -195,6 +190,14 @@
 		7FC4E37D1C8EF03C0075FC7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FC4E37E1C8EF0490075FC7D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B20E0DD7233DAC0500B30B83 /* WADemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WADemo.entitlements; sourceTree = "<group>"; };
+		B22E4085269D8A830043C30B /* WADemoAccountSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAccountSwitch.m; sourceTree = "<group>"; };
+		B22E4086269D8A830043C30B /* WADemoBindingAccountList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoBindingAccountList.h; sourceTree = "<group>"; };
+		B22E4087269D8A830043C30B /* WADemoAccountManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAccountManagement.h; sourceTree = "<group>"; };
+		B22E4088269D8A830043C30B /* WADemoAccountManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAccountManagementViewController.h; sourceTree = "<group>"; };
+		B22E4089269D8A830043C30B /* WADemoAccountManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAccountManagement.m; sourceTree = "<group>"; };
+		B22E408A269D8A830043C30B /* WADemoAccountSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAccountSwitch.h; sourceTree = "<group>"; };
+		B22E408B269D8A840043C30B /* WADemoBindingAccountList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoBindingAccountList.m; sourceTree = "<group>"; };
+		B22E408C269D8A840043C30B /* WADemoAccountManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAccountManagementViewController.m; sourceTree = "<group>"; };
 		B26BCDD525AC05F900400F88 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		B282698324B2CAA600910E8D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		B286275C24F3A8290039B204 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -287,12 +290,12 @@
 		7FC4E2B71C8EEE7C0075FC7D /* WADemo */ = {
 			isa = PBXGroup;
 			children = (
+				B22E4084269D8A830043C30B /* AccountManagement  */,
 				B20E0DD7233DAC0500B30B83 /* WADemo.entitlements */,
 				368BFAF5228ADEAB007CF462 /* UserCenter */,
 				363EF9AA20D0FABD000797C1 /* Csc */,
 				36356B141F594DB300B767CD /* Ad */,
 				36F6FBB01CD3092800EB0DBC /* Pay */,
-				7FC4E2DD1C8EEF3F0075FC7D /* AccountManagement  */,
 				7FC4E2E41C8EEF3F0075FC7D /* AppTracking */,
 				7FC4E2F31C8EEF3F0075FC7D /* Assets.xcassets */,
 				7FC4E2F81C8EEF3F0075FC7D /* InAppPurchase */,
@@ -333,19 +336,6 @@
 				7FC4E2D41C8EEE7C0075FC7D /* Info.plist */,
 			);
 			path = WADemoUITests;
-			sourceTree = "<group>";
-		};
-		7FC4E2DD1C8EEF3F0075FC7D /* AccountManagement  */ = {
-			isa = PBXGroup;
-			children = (
-				7FC4E2DE1C8EEF3F0075FC7D /* WADemoAccountManagement.h */,
-				7FC4E2DF1C8EEF3F0075FC7D /* WADemoAccountManagement.m */,
-				7FC4E2E01C8EEF3F0075FC7D /* WADemoAccountSwitch.h */,
-				7FC4E2E11C8EEF3F0075FC7D /* WADemoAccountSwitch.m */,
-				7FC4E2E21C8EEF3F0075FC7D /* WADemoBindingAccountList.h */,
-				7FC4E2E31C8EEF3F0075FC7D /* WADemoBindingAccountList.m */,
-			);
-			path = "AccountManagement ";
 			sourceTree = "<group>";
 		};
 		7FC4E2E41C8EEF3F0075FC7D /* AppTracking */ = {
@@ -542,6 +532,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B22E4084269D8A830043C30B /* AccountManagement  */ = {
+			isa = PBXGroup;
+			children = (
+				B22E4085269D8A830043C30B /* WADemoAccountSwitch.m */,
+				B22E4086269D8A830043C30B /* WADemoBindingAccountList.h */,
+				B22E4087269D8A830043C30B /* WADemoAccountManagement.h */,
+				B22E4088269D8A830043C30B /* WADemoAccountManagementViewController.h */,
+				B22E4089269D8A830043C30B /* WADemoAccountManagement.m */,
+				B22E408A269D8A830043C30B /* WADemoAccountSwitch.h */,
+				B22E408B269D8A840043C30B /* WADemoBindingAccountList.m */,
+				B22E408C269D8A840043C30B /* WADemoAccountManagementViewController.m */,
+			);
+			path = "AccountManagement ";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -686,11 +691,8 @@
 				"${PODS_ROOT}/WAAiHelpImpl/config/wa_sdk_impl_config_aihelp.xml",
 				"${PODS_ROOT}/WAAiHelpImpl/res/ElvaChatServiceSDK.bundle",
 				"${PODS_ROOT}/WAApImpl/config/wa_sdk_impl_config_apple.xml",
-				"${PODS_ROOT}/WACbImpl/config/wa_sdk_impl_config_chartboost.xml",
 				"${PODS_ROOT}/WAFbImpl/config/wa_sdk_impl_config_facebook.xml",
 				"${PODS_ROOT}/WAFbImpl/bundle/FacebookSDKStrings.bundle",
-				"${PODS_ROOT}/WAFirebaseImpl/config/wa_sdk_impl_config_firebase.xml",
-				"${PODS_ROOT}/WAInstagramImpl/config/wa_sdk_impl_config_instagram.xml",
 				"${PODS_ROOT}/WAPushImpl/config/wa_sdk_impl_config_push.xml",
 				"${PODS_ROOT}/WASdkImpl/config/wa_sdk_impl_config_winga.xml",
 				"${PODS_ROOT}/WASdkImpl/bundle/WASDK-Resource.bundle",
@@ -705,8 +707,6 @@
 				"${PODS_ROOT}/WASdkImpl/localizable/zh-Hant.plist",
 				"${PODS_ROOT}/WASdkIntf/config/wa_sdk.plist",
 				"${PODS_ROOT}/WASdkIntf/config/wa_sdk_track_config.plist",
-				"${PODS_ROOT}/WAVkImpl/config/wa_sdk_impl_config_vk.xml",
-				"${PODS_ROOT}/WAWebPayImpl/config/wa_sdk_impl_config_webpay.xml",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -714,11 +714,8 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_aihelp.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ElvaChatServiceSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apple.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_chartboost.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_facebook.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_firebase.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_instagram.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_push.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_winga.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WASDK-Resource.bundle",
@@ -733,8 +730,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hant.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_track_config.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_vk.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_webpay.xml",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -749,6 +744,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FC4E33F1C8EEF3F0075FC7D /* WADemoPostEventTextView.m in Sources */,
+				B22E408E269D8A840043C30B /* WADemoAccountManagement.m in Sources */,
 				363EF9AD20D0FABD000797C1 /* WADemoCscViewController.m in Sources */,
 				7FA55E8E1D338EC300341D7A /* WADemoGroups.m in Sources */,
 				7FC4E35A1C8EEF3F0075FC7D /* WADemoNaviView.m in Sources */,
@@ -762,8 +758,8 @@
 				7FAF3DBB1D3CC67000CC9A48 /* WADemoGiftView.m in Sources */,
 				7FC4E33C1C8EEF3F0075FC7D /* WADemoEventData.m in Sources */,
 				7FC4E3461C8EEF3F0075FC7D /* WADemoProductList.m in Sources */,
+				B22E408D269D8A840043C30B /* WADemoAccountSwitch.m in Sources */,
 				7FC4E3531C8EEF3F0075FC7D /* WADemoFBShareView.m in Sources */,
-				7FC4E3381C8EEF3F0075FC7D /* WADemoAccountManagement.m in Sources */,
 				7FC4E3571C8EEF3F0075FC7D /* WADemoButtonSwitch.m in Sources */,
 				7FC4E34B1C8EEF3F0075FC7D /* WADemoGiftListTVC.m in Sources */,
 				7FC4E34C1C8EEF3F0075FC7D /* WADemoGiftListView.m in Sources */,
@@ -784,12 +780,12 @@
 				7FC4E3591C8EEF3F0075FC7D /* WADemoMaskLayer.m in Sources */,
 				7FC4E33D1C8EEF3F0075FC7D /* WADemoEventParam.m in Sources */,
 				7FC4E35D1C8EEF3F0075FC7D /* WADemoAppDelegate.m in Sources */,
+				B22E408F269D8A840043C30B /* WADemoBindingAccountList.m in Sources */,
 				7FC4E3451C8EEF3F0075FC7D /* WADemoIapView.m in Sources */,
 				7FC4E3521C8EEF3F0075FC7D /* WADemoFriendListTV.m in Sources */,
 				7FC4E35E1C8EEF3F0075FC7D /* WADemoMainUI.m in Sources */,
 				7FC4E34D1C8EEF3F0075FC7D /* WADemoGiftBoxTV.m in Sources */,
-				7FC4E33A1C8EEF3F0075FC7D /* WADemoBindingAccountList.m in Sources */,
-				7FC4E3391C8EEF3F0075FC7D /* WADemoAccountSwitch.m in Sources */,
+				B22E4090269D8A840043C30B /* WADemoAccountManagementViewController.m in Sources */,
 				7FC4E3511C8EEF3F0075FC7D /* WADemoFBInviteView.m in Sources */,
 				7FC4E3411C8EEF3F0075FC7D /* WADemoPostEventViewBtn.m in Sources */,
 				7FC4E3441C8EEF3F0075FC7D /* WADemoHotUpdateView.m in Sources */,
@@ -900,7 +896,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -952,7 +948,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
@@ -979,7 +975,7 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.9.3;
+				MARKETING_VERSION = 3.9.4;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1009,7 +1005,7 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.9.3;
+				MARKETING_VERSION = 3.9.4;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;

@@ -2,16 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AiHelp</key>
+	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>appId</key>
-		<string>gamehollywoodhk_platform_c6efc612-deab-49f6-b76d-ed9973f5d4ba</string>
-		<key>appSecret</key>
-		<string>GAMEHOLLYWOODHK_app_6ff2af7846a245e8a56c74d2331ede73</string>
-		<key>domain</key>
-		<string>gamehollywoodhk@aihelp.net</string>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
 	</dict>
-	<key>AiHelp-1</key>
+	<key>AiHelp</key>
 	<dict>
 		<key>appId</key>
 		<string>gamehollywoodhk_platform_25ef3909-adc9-4aa1-9171-0dba5bd7be75</string>
@@ -19,6 +15,15 @@
 		<string>GAMEHOLLYWOODHK_app_19830bcb96424b0385f6026bad311f52</string>
 		<key>domain</key>
 		<string>gamehollywoodhk@aihelp.net</string>
+	</dict>
+	<key>AiHelp-2</key>
+	<dict>
+		<key>appId</key>
+		<string>gamehollywoodhk_platform_6d14a1b4-2f5d-4191-a355-2268f5f19310</string>
+		<key>appSecret</key>
+		<string>GAMEHOLLYWOODHK_app_ef0155e6d135405f8f4499539cad872b</string>
+		<key>domain</key>
+		<string>gamehollywoodhk.aihelp.net</string>
 	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
@@ -100,35 +105,6 @@
 	<true/>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>akamaihd.net</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-			<key>facebook.com</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-			<key>fbcdn.net</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-		</dict>
-	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>需要使用相机</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
@@ -136,7 +112,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>需要使用相册</string>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>确认idfa数据收集</string>
+	<string>访问您的设备标识符(IDFA)</string>
 	<key>Twitter</key>
 	<dict>
 		<key>consumerKey</key>
@@ -155,7 +131,6 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
-		<string>gamekit</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

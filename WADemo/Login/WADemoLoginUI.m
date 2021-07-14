@@ -220,7 +220,7 @@
 	
 //	[self showToastMessage:@"登录成功 "];
 
-    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"登录成功" message:[NSString stringWithFormat:@"platform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@",result.platform,result.pUserId,result.pToken,result.userId,result.token] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"登录成功" message:[NSString stringWithFormat:@"platform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@,是否为游客账号%d",result.platform,result.pUserId,result.pToken,result.userId,result.token,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
 	
 	
@@ -234,7 +234,7 @@
         
 //        [WASocialProxy inviteInstallRewardPlatform:result.platform TokenString:result.pToken handler:^(NSUInteger code, NSString *msg, NSError *error) {
 //            if (code == 200) {
-//
+//                
 //                UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"tip" message:[NSString stringWithFormat:@"触发Facebook被邀请人安装应用事件接口成功 msg:%@",msg] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
 //                [alert show];
 //            }else{

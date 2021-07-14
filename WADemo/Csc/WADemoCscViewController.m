@@ -27,7 +27,7 @@
 BOOL vip;
 - (void)initViews
 {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor grayColor];
     
     [self initTitleViews:@"客服系统"];
     [self initScrollView];
@@ -118,7 +118,8 @@ BOOL vip;
 {
     if (button.tag == 100)
     {
-        [self.navigationController popViewControllerAnimated:YES];
+		[self dismissViewControllerAnimated:YES completion:nil];
+//        [self.navigationController popViewControllerAnimated:YES];
 		
 
 		

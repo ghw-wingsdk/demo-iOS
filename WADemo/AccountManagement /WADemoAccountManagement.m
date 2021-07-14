@@ -350,6 +350,9 @@
 
 - (void)newAcctDidCompleteWithResult:(WALoginResult *)result {
 	
+	WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"新建成功" message:[NSString stringWithFormat:@"userId:%@\ntoken:%@\nplatform:%@\npUserId:%@\npToken:%@\nextends:%@ 是否为游客登录:%d",result.userId,result.token,result.platform,result.userId,result.pToken,result.extends,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+	[alert show];
+	
 }
 
 - (void)realNameAuthtDidCompleteWithResult:(WACertificationInfo *)certificationInfo {
@@ -357,6 +360,9 @@
 }
 
 - (void)switchAcctDidCompleteWithResult:(WALoginResult *)result {
+
+	WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"切换成功" message:[NSString stringWithFormat:@"userId:%@\ntoken:%@\nplatform:%@\npUserId:%@\npToken:%@\nextends:%@ 是否为游客登录:%d",result.userId,result.token,result.platform,result.userId,result.pToken,result.extends,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+	[alert show];
 	
 }
 
