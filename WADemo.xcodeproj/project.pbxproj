@@ -693,6 +693,7 @@
 				"${PODS_ROOT}/WAApImpl/config/wa_sdk_impl_config_apple.xml",
 				"${PODS_ROOT}/WAFbImpl/config/wa_sdk_impl_config_facebook.xml",
 				"${PODS_ROOT}/WAFbImpl/bundle/FacebookSDKStrings.bundle",
+				"${PODS_ROOT}/WAInstagramImpl/config/wa_sdk_impl_config_instagram.xml",
 				"${PODS_ROOT}/WAPushImpl/config/wa_sdk_impl_config_push.xml",
 				"${PODS_ROOT}/WASdkImpl/config/wa_sdk_impl_config_winga.xml",
 				"${PODS_ROOT}/WASdkImpl/bundle/WASDK-Resource.bundle",
@@ -707,6 +708,8 @@
 				"${PODS_ROOT}/WASdkImpl/localizable/zh-Hant.plist",
 				"${PODS_ROOT}/WASdkIntf/config/wa_sdk.plist",
 				"${PODS_ROOT}/WASdkIntf/config/wa_sdk_track_config.plist",
+				"${PODS_ROOT}/WAVkImpl/config/wa_sdk_impl_config_vk.xml",
+				"${PODS_ROOT}/WAWebPayImpl/config/wa_sdk_impl_config_webpay.xml",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -716,6 +719,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apple.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_facebook.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_instagram.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_push.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_winga.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WASDK-Resource.bundle",
@@ -730,6 +734,8 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hant.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_track_config.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_vk.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_webpay.xml",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -975,7 +981,7 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.9.4;
+				MARKETING_VERSION = 3.9.5;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1005,7 +1011,7 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.9.4;
+				MARKETING_VERSION = 3.9.5;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;
