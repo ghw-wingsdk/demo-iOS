@@ -68,6 +68,7 @@
 		B2C2DD1025A82B4F00B13A90 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C2DD0F25A82B4F00B13A90 /* libc++.tbd */; };
 		B2C2DD1425A82B5600B13A90 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C2DD1325A82B5600B13A90 /* Accelerate.framework */; };
 		B2E9EFF12477728D00FF067E /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E9EFF02477728C00FF067E /* libresolv.tbd */; };
+		B2F2507427B3B0E500317ED5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2507327B3B0E500317ED5 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,7 @@
 		B2C2DD0F25A82B4F00B13A90 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		B2C2DD1325A82B5600B13A90 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		B2E9EFF02477728C00FF067E /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		B2F2507327B3B0E500317ED5 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FC5F924CCC46BD534D72973E /* Pods-WADemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WADemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WADemo/Pods-WADemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,6 +272,7 @@
 		7FC4E2AC1C8EEE7C0075FC7D = {
 			isa = PBXGroup;
 			children = (
+				B2F2507327B3B0E500317ED5 /* File.swift */,
 				7FC4E2B71C8EEE7C0075FC7D /* WADemo */,
 				7FC4E2D11C8EEE7C0075FC7D /* WADemoUITests */,
 				7FC4E2B61C8EEE7C0075FC7D /* Products */,
@@ -599,7 +602,7 @@
 					7FC4E2B41C8EEE7C0075FC7D = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = Y8Z2D47ET4;
-						LastSwiftMigration = 1230;
+						LastSwiftMigration = 1320;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -689,10 +692,10 @@
 				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh",
 				"${PODS_ROOT}/WAAfImpl/config/wa_sdk_impl_config_appsflyer.xml",
 				"${PODS_ROOT}/WAAiHelpImpl/config/wa_sdk_impl_config_aihelp.xml",
-				"${PODS_ROOT}/WAAiHelpImpl/res/ElvaChatServiceSDK.bundle",
 				"${PODS_ROOT}/WAApImpl/config/wa_sdk_impl_config_apple.xml",
 				"${PODS_ROOT}/WAFbImpl/config/wa_sdk_impl_config_facebook.xml",
 				"${PODS_ROOT}/WAFbImpl/bundle/FacebookSDKStrings.bundle",
+				"${PODS_ROOT}/WAFirebaseImpl/config/wa_sdk_impl_config_firebase.xml",
 				"${PODS_ROOT}/WAInstagramImpl/config/wa_sdk_impl_config_instagram.xml",
 				"${PODS_ROOT}/WAPushImpl/config/wa_sdk_impl_config_push.xml",
 				"${PODS_ROOT}/WASdkImpl/config/wa_sdk_impl_config_winga.xml",
@@ -715,10 +718,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_appsflyer.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_aihelp.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ElvaChatServiceSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apple.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_facebook.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_firebase.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_instagram.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_push.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_winga.xml",
@@ -776,6 +779,7 @@
 				7FC4E3551C8EEF3F0075FC7D /* WADemoAlertView.m in Sources */,
 				7FC4E3471C8EEF3F0075FC7D /* WADemoLoginUI.m in Sources */,
 				7FC4E34E1C8EEF3F0075FC7D /* WADemoGiftRequestView.m in Sources */,
+				B2F2507427B3B0E500317ED5 /* File.swift in Sources */,
 				7FC4E35C1C8EEF3F0075FC7D /* WADemoUtil.m in Sources */,
 				36F6FBB31CD3092800EB0DBC /* WADemoPayView.m in Sources */,
 				7FC4E3581C8EEF3F0075FC7D /* WADemoListTableView.m in Sources */,
@@ -981,13 +985,12 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.9.5;
+				MARKETING_VERSION = 3.9.7;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WADemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1011,14 +1014,13 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.9.5;
+				MARKETING_VERSION = 3.9.7;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WADemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1026,6 +1028,7 @@
 		7FC4E2DB1C8EEE7C0075FC7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = WADemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamehollywood.WADemoUITests;
@@ -1038,6 +1041,7 @@
 		7FC4E2DC1C8EEE7C0075FC7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = WADemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamehollywood.WADemoUITests;

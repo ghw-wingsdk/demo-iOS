@@ -61,6 +61,8 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
 	<string>1281771621973222</string>
+	<key>FacebookClientToken</key>
+	<string>13a7b27a6824c47806b58640c9fdced2</string>
 	<key>FacebookDisplayName</key>
 	<string>com.ghw.sdk</string>
 	<key>Instagram</key>
