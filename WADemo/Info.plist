@@ -5,18 +5,9 @@
 	<key>AiHelp</key>
 	<dict>
 		<key>appId</key>
-		<string>gamehollywoodhk_platform_25ef3909-adc9-4aa1-9171-0dba5bd7be75</string>
+		<string>gamehollywoodhk_platform_c6efc612-deab-49f6-b76d-ed9973f5d4ba</string>
 		<key>appSecret</key>
-		<string>GAMEHOLLYWOODHK_app_19830bcb96424b0385f6026bad311f52</string>
-		<key>domain</key>
-		<string>gamehollywoodhk@aihelp.net</string>
-	</dict>
-	<key>AiHelp-2</key>
-	<dict>
-		<key>appId</key>
-		<string>gamehollywoodhk_platform_6d14a1b4-2f5d-4191-a355-2268f5f19310</string>
-		<key>appSecret</key>
-		<string>GAMEHOLLYWOODHK_app_ef0155e6d135405f8f4499539cad872b</string>
+		<string>GAMEHOLLYWOODHK_app_6ff2af7846a245e8a56c74d2331ede73</string>
 		<key>domain</key>
 		<string>gamehollywoodhk.aihelp.net</string>
 	</dict>
@@ -62,7 +53,7 @@
 	<key>FacebookAppID</key>
 	<string>1281771621973222</string>
 	<key>FacebookClientToken</key>
-	<string>13a7b27a6824c47806b58640c9fdced2</string>
+	<string>011b570caa40ec928f32a9c19201147e</string>
 	<key>FacebookDisplayName</key>
 	<string>com.ghw.sdk</string>
 	<key>Instagram</key>
