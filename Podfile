@@ -15,7 +15,7 @@ source 'http://172.16.100.58:7070/r/WATwitterImpl.git'
 source 'http://172.16.100.58:7070/r/WAInstagramImpl.git'
 source 'http://172.16.100.58:7070/r/WAAdImpl.git'
 source 'http://172.16.100.58:7070/r/WAAiHelpImpl.git'
- source 'http://172.16.100.58:7070/r/WAFirebaseImpl.git'
+source 'http://172.16.100.58:7070/r/WAFirebaseImpl.git'
 
 
 #  source 'http://repo.wingsdk.cn:8082/r/WASdkIntf.git'
@@ -47,6 +47,7 @@ pod 'WAWebPayImpl'
 pod 'WAVkImpl'
 pod 'WAInstagramImpl'
 pod 'WAFirebaseImpl'
+pod 'WACbImpl'
 
 	
 end

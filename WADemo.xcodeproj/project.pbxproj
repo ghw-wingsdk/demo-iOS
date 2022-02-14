@@ -694,6 +694,7 @@
 				"${PODS_ROOT}/WAAiHelpImpl/config/wa_sdk_impl_config_aihelp.xml",
 				"${PODS_ROOT}/WAAiHelpImpl/res/AIHelpSupportSDK.bundle",
 				"${PODS_ROOT}/WAApImpl/config/wa_sdk_impl_config_apple.xml",
+				"${PODS_ROOT}/WACbImpl/config/wa_sdk_impl_config_chartboost.xml",
 				"${PODS_ROOT}/WAFbImpl/config/wa_sdk_impl_config_facebook.xml",
 				"${PODS_ROOT}/WAFbImpl/bundle/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/WAFirebaseImpl/config/wa_sdk_impl_config_firebase.xml",
@@ -721,6 +722,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_aihelp.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AIHelpSupportSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apple.xml",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_chartboost.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_facebook.xml",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_firebase.xml",
@@ -987,7 +989,7 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.9.8;
+				MARKETING_VERSION = 3.9.7;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1016,7 +1018,7 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.9.8;
+				MARKETING_VERSION = 3.9.7;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;

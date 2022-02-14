@@ -77,7 +77,7 @@ BOOL vip;
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     [self.view addSubview:scrollView];
     
-    NSArray *titles = @[@"启动机器人客服界面", @"启动运营界面", @"展示全部FAQ菜单", @"展示FAQ分类", @"展示单条FAQ", @"进入人工客服界面",@"展示全部FAQ菜单(无机器人客服)",@"检测是否开启客服",@"打开vip",@"同步登陆按钮点击客服"];
+    NSArray *titles = @[@"启动机器人客服界面", @"启动运营界面", @"展示全部FAQ菜单", @"展示FAQ分类", @"展示单条FAQ", @"进入人工客服界面",@"展示全部FAQ菜单(无机器人客服)",@"检测是否开启客服",@"打开vip",@"同步登陆按钮点击客服",@"设置语言"];
     
     CGFloat left = 10, right = 10, top = 60, bottom = 40, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
     
@@ -247,9 +247,24 @@ BOOL vip;
 			[WACscProxy openAiHelp:@"zh_CN" isVip:vip];
 		}
 		
-	}
-}
+	}else if(button.tag==11){
+        
+        language_cn=!language_cn;
+        if(language_cn){
+            [WACscProxy setLanguage:@"zh_CN"];
+            [self showToastMessage:@"zh_CN"];
 
+        }else{
+            [WACscProxy setLanguage:@"en"];
+            [self showToastMessage:@"en"];
+
+
+        }
+
+        
+    }
+}
+BOOL language_cn= YES;
 
 
 - (void)showToastMessage:(NSString *)messag{
