@@ -62,13 +62,13 @@
 		B22E408E269D8A840043C30B /* WADemoAccountManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E4089269D8A830043C30B /* WADemoAccountManagement.m */; };
 		B22E408F269D8A840043C30B /* WADemoBindingAccountList.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E408B269D8A840043C30B /* WADemoBindingAccountList.m */; };
 		B22E4090269D8A840043C30B /* WADemoAccountManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E408C269D8A840043C30B /* WADemoAccountManagementViewController.m */; };
+		B248CA4E27BC8F1900C9E277 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248CA4D27BC8F1900C9E277 /* File.swift */; };
 		B26BCDD625AC05F900400F88 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26BCDD525AC05F900400F88 /* AppTrackingTransparency.framework */; };
 		B282698424B2CAA600910E8D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B282698324B2CAA600910E8D /* GameKit.framework */; };
 		B286275D24F3A8290039B204 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B286275C24F3A8290039B204 /* GoogleService-Info.plist */; };
 		B2C2DD1025A82B4F00B13A90 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C2DD0F25A82B4F00B13A90 /* libc++.tbd */; };
 		B2C2DD1425A82B5600B13A90 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C2DD1325A82B5600B13A90 /* Accelerate.framework */; };
 		B2E9EFF12477728D00FF067E /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E9EFF02477728C00FF067E /* libresolv.tbd */; };
-		B2F2507427B3B0E500317ED5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2507327B3B0E500317ED5 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,13 +199,13 @@
 		B22E408A269D8A830043C30B /* WADemoAccountSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAccountSwitch.h; sourceTree = "<group>"; };
 		B22E408B269D8A840043C30B /* WADemoBindingAccountList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoBindingAccountList.m; sourceTree = "<group>"; };
 		B22E408C269D8A840043C30B /* WADemoAccountManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAccountManagementViewController.m; sourceTree = "<group>"; };
+		B248CA4D27BC8F1900C9E277 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		B26BCDD525AC05F900400F88 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		B282698324B2CAA600910E8D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		B286275C24F3A8290039B204 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2C2DD0F25A82B4F00B13A90 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		B2C2DD1325A82B5600B13A90 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		B2E9EFF02477728C00FF067E /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
-		B2F2507327B3B0E500317ED5 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FC5F924CCC46BD534D72973E /* Pods-WADemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WADemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WADemo/Pods-WADemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -272,7 +272,6 @@
 		7FC4E2AC1C8EEE7C0075FC7D = {
 			isa = PBXGroup;
 			children = (
-				B2F2507327B3B0E500317ED5 /* File.swift */,
 				7FC4E2B71C8EEE7C0075FC7D /* WADemo */,
 				7FC4E2D11C8EEE7C0075FC7D /* WADemoUITests */,
 				7FC4E2B61C8EEE7C0075FC7D /* Products */,
@@ -319,6 +318,7 @@
 				B286275C24F3A8290039B204 /* GoogleService-Info.plist */,
 				7FC4E2C91C8EEE7C0075FC7D /* Info.plist */,
 				7FC4E2B81C8EEE7C0075FC7D /* Supporting Files */,
+				B248CA4D27BC8F1900C9E277 /* File.swift */,
 			);
 			path = WADemo;
 			sourceTree = "<group>";
@@ -596,7 +596,7 @@
 		7FC4E2AD1C8EEE7C0075FC7D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = GHW;
 				TargetAttributes = {
 					7FC4E2B41C8EEE7C0075FC7D = {
@@ -781,9 +781,9 @@
 				36356B171F594DB300B767CD /* WADemoAdView.m in Sources */,
 				7FA55E7E1D333F8800341D7A /* WADemoVKFriendList.m in Sources */,
 				7FC4E3551C8EEF3F0075FC7D /* WADemoAlertView.m in Sources */,
+				B248CA4E27BC8F1900C9E277 /* File.swift in Sources */,
 				7FC4E3471C8EEF3F0075FC7D /* WADemoLoginUI.m in Sources */,
 				7FC4E34E1C8EEF3F0075FC7D /* WADemoGiftRequestView.m in Sources */,
-				B2F2507427B3B0E500317ED5 /* File.swift in Sources */,
 				7FC4E35C1C8EEF3F0075FC7D /* WADemoUtil.m in Sources */,
 				36F6FBB31CD3092800EB0DBC /* WADemoPayView.m in Sources */,
 				7FC4E3581C8EEF3F0075FC7D /* WADemoListTableView.m in Sources */,
@@ -910,7 +910,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -962,10 +962,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -987,7 +988,7 @@
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = WADemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.9.7;
 				OTHER_CFLAGS = "";
@@ -1016,7 +1017,7 @@
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = WADemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.9.7;
 				ONLY_ACTIVE_ARCH = YES;
