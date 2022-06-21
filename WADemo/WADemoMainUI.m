@@ -130,9 +130,12 @@
     [btns addObject:btn18];
 	
 	
-
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"账号删除UI" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(openDeleteUI) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2,@2]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app版本
@@ -424,4 +427,19 @@
     return UIInterfaceOrientationMaskLandscape;
 }
 
+- (void)openDeleteUI{
+    
+    [WAUserProxy requestDeleteAccoutUI:^(NSError *error, NSUInteger status) {
+        
+        if(status==WA_ACCOUNT_DELETE_UI_SUCCESS ){
+            
+            [WAUserProxy logout];
+            [self makeToast:@"注销成功，cp需要退出sdk登录，以及cp退出登录页"];
+
+        }
+    }];
+
+    
+    
+}
 @end
