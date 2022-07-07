@@ -982,7 +982,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y8Z2D47ET4;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
@@ -990,7 +990,7 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.10.0;
+				MARKETING_VERSION = 3.10.1;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1011,7 +1011,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y8Z2D47ET4;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
@@ -1019,7 +1019,7 @@
 				INFOPLIST_FILE = WADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.10.0;
+				MARKETING_VERSION = 3.10.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;

@@ -434,6 +434,7 @@
         if(status==WA_ACCOUNT_DELETE_UI_SUCCESS ){
             
             [WAUserProxy logout];
+
             [self makeToast:@"注销成功，cp需要退出sdk登录，以及cp退出登录页"];
 
         }
