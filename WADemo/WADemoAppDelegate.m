@@ -32,9 +32,9 @@
 	
 
 //	[WACoreProxy setClientId:@"1234455222168899"];
-    [WACoreProxy setGameUserId:@"1233322223"];
-    [WACoreProxy setNickName:@"yuu09"];
-    [WACoreProxy setServerId:@"1"];
+    [WACoreProxy setGameUserId:@"server1-role1-7282489"];
+    [WACoreProxy setNickName:@"lpw"];
+    [WACoreProxy setServerId:@"server1"];
 	
 	
 

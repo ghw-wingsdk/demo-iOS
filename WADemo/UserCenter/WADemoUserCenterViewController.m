@@ -67,7 +67,7 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     [self.view addSubview:scrollView];
     
-    NSArray *titles = @[@"获取用户中心数据", @"打开用户中心界面"];
+    NSArray *titles = @[@"获取用户中心数据", @"打开用户中心界面",@"过期处理"];
     
     CGFloat left = 10, right = 10, top = 60, bottom = 40, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
     
@@ -117,6 +117,20 @@
     else if (button.tag == 2)   // 打开用户中心界面
     {
         [WAUserProxy showUserCenterNoticeUI:self];
+    }else if (button.tag == 3)   // 设置短链过期
+    {
+        
+        WALoginResult* loginResult = [WAUserProxy  getCurrentLoginResult];
+        NSString * serverid = [WACoreProxy getServerId];
+        NSString * userid = loginResult.userId;
+        NSString * key=[NSString stringWithFormat:@"%@_%@",userid,serverid];
+        
+        NSUserDefaults * setting = [NSUserDefaults standardUserDefaults];
+        [setting setObject:@"10011" forKey:(NSString*)key];
+        [setting synchronize];
+        
+        
+        
     }
 }
 
@@ -127,12 +141,19 @@
         NSLog(@"result--userCenterInfo:%@",result.userCenterInfo);
         NSLog(@"result--userName:%@",result.userName);
         NSLog(@"result--password:%@",result.password);
+        
+        NSString * alertTitle =[NSString stringWithFormat:@"uid=%@,CharacterId=%@,desc=%@",result.uid,result.characterId,result.userCenterInfo];
+        
+        WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"success" message:alertTitle cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+        [alert show];
+        
+        
     } else {
         NSLog(@"userCenterNoticeWithResult code:%ld, msg:%@",(long)result.code, result.msg);
-		
-		   
-		WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"notice" message:result.msg cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
-		[alert show];
+        
+           
+        WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"notice" message:result.msg cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+        [alert show];
     }
 }
 
@@ -175,3 +196,4 @@
 }
 
 @end
+

@@ -122,14 +122,14 @@
     [btn10 setTitle:@"闪退测试" forState:UIControlStateNormal];
     [btn10 addTarget:self action:@selector(crash) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn10];
-	
-	
+    
+    
     WADemoButtonMain* btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"调起评分界面" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(oepnReview) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
-	
-	
+    
+    
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"账号删除UI" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(openDeleteUI) forControlEvents:UIControlEventTouchUpInside];
@@ -186,14 +186,14 @@
 //    self.acctMgmt.hasBackBtn = YES;
 //    [vc.view addSubview:self.acctMgmt];
 //    [self.acctMgmt moveIn:nil];
-	
-	
-	WADemoAccountManagement * vc =[[WADemoAccountManagement alloc] init];
-	
+    
+    
+    WADemoAccountManagement * vc =[[WADemoAccountManagement alloc] init];
+    
     [[WADemoUtil getCurrentVC].navigationController pushViewController:vc animated:YES];
 
-	
-	
+    
+    
 }
 //应用内支付
 -(void)iap{
@@ -244,8 +244,8 @@
 
 //打开评分界面
 - (void)oepnReview {
-	
-	[WAUserProxy openReview];
+    
+    [WAUserProxy openReview];
 }
 
 
@@ -255,9 +255,9 @@
     NSArray* array = [NSArray array];
     int i = (int)array[1];
     NSLog(@"%d",i);
-	
-	
-	
+    
+    
+    
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
     
 //    NSURL * url = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8"];
@@ -267,14 +267,14 @@
 //        [[UIApplication sharedApplication] openURL:url];
 //    }
     
-//	if([SKStoreReviewController respondsToSelector:@selector(requestReview)]) {// iOS 10.3 以上支持
-//		//防止键盘遮挡
-//		[[UIApplication sharedApplication].keyWindow endEditing:YES];
-//		[SKStoreReviewController requestReview];
-//	}
+//    if([SKStoreReviewController respondsToSelector:@selector(requestReview)]) {// iOS 10.3 以上支持
+//        //防止键盘遮挡
+//        [[UIApplication sharedApplication].keyWindow endEditing:YES];
+//        [SKStoreReviewController requestReview];
+//    }
 //
-	
-	
+    
+    
 }
 
 - (void)pay
@@ -315,8 +315,8 @@
     
     WADemoCscViewController *cscVC = [[WADemoCscViewController alloc] init];
 //    [[WADemoUtil getCurrentVC].navigationController pushViewController:cscVC animated:YES];
-	
-	[[WADemoUtil getCurrentVC] presentViewController:cscVC animated:YES completion:nil];
+    
+    [[WADemoUtil getCurrentVC] presentViewController:cscVC animated:YES completion:nil];
 }
 
 - (void)privacy
@@ -434,7 +434,6 @@
         if(status==WA_ACCOUNT_DELETE_UI_SUCCESS ){
             
             [WAUserProxy logout];
-
             [self makeToast:@"注销成功，cp需要退出sdk登录，以及cp退出登录页"];
 
         }
@@ -444,3 +443,4 @@
     
 }
 @end
+
