@@ -217,9 +217,19 @@
 #pragma mark GHWLoginDelegate
 -(void)loginDidCompleteWithResults:(WALoginResult *)result{
     [WADemoMaskLayer stopAnimating];
-	
-//	[self showToastMessage:@"登录成功 "];
     NSString * gameuserid= [NSString stringWithFormat:@"server1-role1-%@",result.userId];
+
+    NSString * serverid = [WACoreProxy getServerId];
+    NSString * nickName = [NSString stringWithFormat:@"青铜server1-%@",result.userId];
+    if ([serverid isEqualToString:@"server2"]) {
+        gameuserid= [NSString stringWithFormat:@"server2-role2-%@",result.userId];
+        nickName = [NSString stringWithFormat:@"青铜server2-%@",result.userId];
+    }
+    
+    
+    [WACoreProxy setNickName:nickName];
+
+    
     [WACoreProxy setGameUserId:gameuserid];
     
     

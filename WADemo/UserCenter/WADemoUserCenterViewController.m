@@ -67,7 +67,7 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     [self.view addSubview:scrollView];
     
-    NSArray *titles = @[@"获取用户中心数据", @"打开用户中心界面",@"过期处理"];
+    NSArray *titles = @[@"获取用户中心数据", @"打开用户中心界面",@"切换区服"];
     
     CGFloat left = 10, right = 10, top = 60, bottom = 40, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
     
@@ -119,15 +119,35 @@
         [WAUserProxy showUserCenterNoticeUI:self];
     }else if (button.tag == 3)   // 设置短链过期
     {
-        
-        WALoginResult* loginResult = [WAUserProxy  getCurrentLoginResult];
+        WALoginResult* result = [WAUserProxy  getCurrentLoginResult];
         NSString * serverid = [WACoreProxy getServerId];
-        NSString * userid = loginResult.userId;
-        NSString * key=[NSString stringWithFormat:@"%@_%@",userid,serverid];
+        NSString * gameuserid= [NSString stringWithFormat:@"server1-role1-%@",result.userId];
+
         
-        NSUserDefaults * setting = [NSUserDefaults standardUserDefaults];
-        [setting setObject:@"10011" forKey:(NSString*)key];
-        [setting synchronize];
+        if([serverid isEqualToString:@"server2"]){
+            
+            serverid=@"server1";
+            
+        }else{
+            
+            serverid=@"server2";
+            gameuserid= [NSString stringWithFormat:@"server2-role2-%@",result.userId];
+
+        }
+        NSString * nickName = [NSString stringWithFormat:@"青铜%@-%@",serverid,result.userId];
+
+        
+        
+        [WACoreProxy setServerId:serverid];
+        [WACoreProxy setGameUserId:gameuserid];
+        [WACoreProxy setNickName:nickName];
+
+        WALog(@"gameuseid====%@",gameuserid);
+        WALog(@"nickName====%@",nickName);
+
+        WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"notice" message:gameuserid cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+        [alert show];
+        
         
         
         
@@ -139,8 +159,7 @@
 {
     if (result.code == WACodeSuccess) {
         NSLog(@"result--userCenterInfo:%@",result.userCenterInfo);
-        NSLog(@"result--userName:%@",result.userName);
-        NSLog(@"result--password:%@",result.password);
+
         
         NSString * alertTitle =[NSString stringWithFormat:@"uid=%@,CharacterId=%@,desc=%@",result.uid,result.characterId,result.userCenterInfo];
         
