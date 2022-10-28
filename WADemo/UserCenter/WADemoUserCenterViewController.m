@@ -161,7 +161,8 @@
         NSLog(@"result--userCenterInfo:%@",result.userCenterInfo);
 
         
-        NSString * alertTitle =[NSString stringWithFormat:@"uid=%@,CharacterId=%@,desc=%@",result.uid,result.characterId,result.userCenterInfo];
+        NSString * alertTitle =@"";
+//        alertTitle=[NSString stringWithFormat:@"uid=%@,CharacterId=%@,desc=%@",result.uid,result.characterId,result.userCenterInfo]
         
         WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"success" message:alertTitle cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
         [alert show];

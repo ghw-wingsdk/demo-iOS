@@ -21,26 +21,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-
-	[WACoreProxy init];
-	[WACoreProxy setDebugMode:YES];
-
-    [WACoreProxy initAppEventTracker];
-    [WAPayProxy init4Iap];
-    [WACoreProxy setLevel:10];
-	
-	
-
-//	[WACoreProxy setClientId:@"1234455222168899"];
-    [WACoreProxy setGameUserId:@"server1-role1-7282489"];
-    [WACoreProxy setNickName:@"青铜server1-7282489"];
-    [WACoreProxy setServerId:@"server1"];
-	
-	
-
-    [WAPushProxy application:application initPushWithDelegate:self];
     
-    return [WACoreProxy application:application didFinishLaunchingWithOptions:launchOptions];
+    
+    [WACoreProxy initWithCompletionHandler:^{
+        
+        [WACoreProxy setDebugMode:YES];
+
+        [WACoreProxy initAppEventTracker];
+        [WAPayProxy init4Iap];
+        [WACoreProxy setLevel:10];
+        
+        
+
+    //    [WACoreProxy setClientId:@"1234455222168899"];
+        [WACoreProxy setGameUserId:@"server1-role1-7282489"];
+        [WACoreProxy setNickName:@"青铜server1-7282489"];
+        [WACoreProxy setServerId:@"server1"];
+        
+
+        [WAPushProxy application:application initPushWithDelegate:self];
+        [WACoreProxy application:application didFinishLaunchingWithOptions:launchOptions];
+    }];
+
+    
+    return YES;
     
 }
 
