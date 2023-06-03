@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WADemoNaviView.h"
+#import <WASdkIntf/WASdkIntf.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WADemoAccountManagement : UIViewController
+@interface WADemoAccountManagement : WADemoNaviView
 
 @end
 

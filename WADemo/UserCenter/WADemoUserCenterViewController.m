@@ -17,15 +17,19 @@
 
 @implementation WADemoUserCenterViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self initViews];
+
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initViews];
+    }
+    return self;
 }
 
 - (void)initViews
 {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor whiteColor];
     
     [self initTitleViews:@"用户中心"];
     [self initScrollView];
@@ -37,9 +41,9 @@
     CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
     CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
     
-    _viewTitle = [[UIView alloc] initWithFrame:CGRectMake(0, heightStatus, self.view.bounds.size.width, 44)];
+    _viewTitle = [[UIView alloc] initWithFrame:CGRectMake(0, heightStatus, self.bounds.size.width, 44)];
     self.viewTitle.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:self.viewTitle];
+    [self addSubview:self.viewTitle];
     
     UILabel *labelTitle = [[UILabel alloc]initWithFrame:self.viewTitle.bounds];
     labelTitle.textColor = [UIColor whiteColor];
@@ -60,12 +64,12 @@
 #pragma mark -- 初始化按钮
 - (void)initScrollView
 {
-    CGRect frame = self.view.bounds;
+    CGRect frame = self.bounds;
     frame.origin.y = self.viewTitle.bounds.size.height+40;
     frame.size.height -= frame.origin.y;
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
-    [self.view addSubview:scrollView];
+    [self addSubview:scrollView];
     
     NSArray *titles = @[@"获取用户中心数据", @"打开用户中心界面",@"切换区服"];
     
@@ -108,7 +112,7 @@
 {
     if (button.tag == 100)
     {
-        [self.navigationController popViewControllerAnimated:YES];
+        [self removeView ];
     }
     else if (button.tag == 1)   //  获取用户中心数据
     {
@@ -161,8 +165,7 @@
         NSLog(@"result--userCenterInfo:%@",result.userCenterInfo);
 
         
-        NSString * alertTitle =@"";
-//        alertTitle=[NSString stringWithFormat:@"uid=%@,CharacterId=%@,desc=%@",result.uid,result.characterId,result.userCenterInfo]
+        NSString * alertTitle =[NSString stringWithFormat:@"uid=%@,shortUrl=%@,desc=%@",result.uid,result.shortUrl,result.userCenterInfo];
         
         WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"success" message:alertTitle cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
         [alert show];
@@ -203,7 +206,7 @@
 #pragma mark -- 旋转
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    for (UIView *view in self.view.subviews)
+    for (UIView *view in self.subviews)
     {
         [view removeFromSuperview];
     }
@@ -211,9 +214,7 @@
     [self initViews];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
 
 @end
+
 

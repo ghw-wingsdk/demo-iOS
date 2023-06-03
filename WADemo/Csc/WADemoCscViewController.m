@@ -35,6 +35,7 @@ BOOL vip;
     [WACscProxy setLanguage:@"zh_CN"];
 	
 //    [WACscProxy setName:@"WADemo"];
+    
 
 }
 
@@ -77,7 +78,7 @@ BOOL vip;
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     [self.view addSubview:scrollView];
     
-    NSArray *titles = @[@"启动机器人客服界面", @"启动运营界面", @"展示全部FAQ菜单", @"展示FAQ分类", @"展示单条FAQ", @"进入人工客服界面",@"展示全部FAQ菜单(无机器人客服)",@"检测是否开启客服",@"打开vip",@"同步登陆按钮点击客服",@"设置语言"];
+    NSArray *titles = @[@"是否开启了aihelp客服V2", @"打开v2客服", @"是否开启了评价界面客服", @"打开评价客服",@"切换语言"];
     
     CGFloat left = 10, right = 10, top = 60, bottom = 40, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
     
@@ -119,153 +120,84 @@ BOOL vip;
     if (button.tag == 100)
     {
 		[self dismissViewControllerAnimated:YES completion:nil];
-//        [self.navigationController popViewControllerAnimated:YES];
-		
-
-		
 		
     }
-    else if (button.tag == 1)   //  启动机器人客服界面
-    {
 
-        NSMutableDictionary *customData = [NSMutableDictionary dictionary];
-        [customData setObject:@"vip,pay1" forKey:@"WINGSDK-tags"];
-        [customData setObject:@"1.0.0" forKey:@"VersionCode"];
-        
-        NSMutableDictionary *config = [NSMutableDictionary dictionary];
-        [config setObject:customData forKey:@"cp-custom-metadata"];
-//		[WACscProxy setSDKInterfaceOrientationMask:UIInterfaceOrientationMaskLandscape];
-//		[WACscProxy setSDKInterfaceOrientationMask:UIInterfaceOrientationMaskAll];
-
-        [WACscProxy showElva:@"1" config:config];
-    }
-    else if (button.tag == 2)   // 启动运营界面
-    {
-        NSMutableDictionary *customData = [NSMutableDictionary dictionary];
-        [customData setObject:@"vip,pay1" forKey:@"WINGSDK-tags"];
-        [customData setObject:@"1.0.0" forKey:@"VersionCode"];
-        
-        NSMutableDictionary *config = [NSMutableDictionary dictionary];
-        [config setObject:customData forKey:@"cp-custom-metadata"];
-
-        [WACscProxy showElvaOP:@"1" config:config];
-    }
-    else if (button.tag == 3)   // 展示全部FAQ菜单
-    {
-        NSMutableDictionary *customData = [NSMutableDictionary dictionary];
-        [customData setObject:@"vip,pay1" forKey:@"WINGSDK-tags"];
-        [customData setObject:@"1.0.0" forKey:@"VersionCode"];
-        
-        NSMutableDictionary *config = [NSMutableDictionary dictionary];
-        [config setObject:customData forKey:@"cp-custom-metadata"];
-		[config setObject:@"1" forKey:@"showContactButtonFlag"]; //展示联系客服按钮
-		[config setObject:@"1" forKey:@"showConversationFlag"];  //可以点击到人工客服页面
-
-        [WACscProxy showFAQs:config];
-    }
-    else if (button.tag == 4)   // 展示FAQ分类
-    {
-        [self alertViewWithTitle:@"展示FAQ分类"
-                         message:nil
-                     placeholder:@"请输入sectionPublishId"
-                        callBack:^(NSString *text) {
-                            NSMutableDictionary *customData = [NSMutableDictionary dictionary];
-                            [customData setObject:@"vip,pay1" forKey:@"WINGSDK-tags"];
-                            [customData setObject:@"1.0.0" forKey:@"VersionCode"];
-                            
-                            NSMutableDictionary *config = [NSMutableDictionary dictionary];
-                            [config setObject:customData forKey:@"cp-custom-metadata"];
-                            
-                            [WACscProxy showFAQSection:text config:config];
-                        }];
-    }
-    else if (button.tag == 5)   // 展示单条FAQ
-    {
-        NSMutableDictionary *customData = [NSMutableDictionary dictionary];
-        [customData setObject:@"vip,pay1" forKey:@"WINGSDK-tags"];
-        [customData setObject:@"1.0.0" forKey:@"VersionCode"];
-        
-        NSMutableDictionary *config = [NSMutableDictionary dictionary];
-        [config setObject:customData forKey:@"cp-custom-metadata"];
-        
-        [self alertViewWithTitle:@"展示单条FAQ"
-                         message:nil
-                     placeholder:@"请输入faqId"
-                        callBack:^(NSString *text) {
-                            [WACscProxy showSingleFAQ:text config:config];
-                        }];
-    }
-    else if (button.tag == 6)   // 进入人工客服界面
-    {
-        NSMutableDictionary *customData = [NSMutableDictionary dictionary];
-        [customData setObject:@"vip,pay1" forKey:@"WINGSDK-tags"];
-        [customData setObject:@"1.0.0" forKey:@"VersionCode"];
-        
-        NSMutableDictionary *config = [NSMutableDictionary dictionary];
-        [config setObject:customData forKey:@"cp-custom-metadata"];
-        
-        [WACscProxy showConversation:config];
-	}else if(button.tag==7){ 	//展示全部FAQ菜单(无机器人客服)
+   else if(button.tag==1){ 	//检测是否开启客服
 		
-		
-        NSMutableDictionary *customData = [NSMutableDictionary dictionary];
-        [customData setObject:@"vip,pay1" forKey:@"WINGSDK-tags"];
-        [customData setObject:@"1.0.0" forKey:@"VersionCode"];
-
-        NSMutableDictionary *config = [NSMutableDictionary dictionary];
-		[config setObject:customData forKey:@"elva-custom-metadata"]; //将customData存入容器
-		[config setObject:@"1" forKey:@"showContactButtonFlag"]; //展示联系客服按钮
-		[config setObject:@"1" forKey:@"directConversation"];    //直接进入人工页面
-
-        [WACscProxy showFAQs:config];
-		
-		
-	}else if(button.tag==8){ 	//检测是否开启客服
-		
+       NSString * titlestr=@"未开启客服";
 		if([WACscProxy isOpenAiHelp]){
-			UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"开启了客服" message:@"" delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
-			[alert show];
+            titlestr=@"开启了客服";
 		}
+       
+       UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:titlestr preferredStyle:UIAlertControllerStyleAlert];
+       UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+           // 用户点击了取消按钮
+       }];
+       [alertController addAction:cancelAction];
+       [self presentViewController:alertController animated:YES completion:nil];
+       
 		
-	}else if(button.tag==9){
-		
-		vip=!vip;
-		if (vip) {
-			[button setTitle:@"关闭vip" forState:UIControlStateNormal];
-			[self showToastMessage:@"打开了vip"];
-		}else{
-			[self showToastMessage:@"关闭了vip"];
-			[button setTitle:@"打开vip" forState:UIControlStateNormal];
-
-		}
-		
-
-		
-	}else if(button.tag==10){
-		
-		if([WACscProxy isOpenAiHelp]){
-			[WACscProxy openAiHelp:@"zh_CN" isVip:vip];
-		}
-		
-	}else if(button.tag==11){
+	}else if(button.tag==2){     //检测是否开启客服
         
-        language_cn=!language_cn;
-        if(language_cn){
-            [WACscProxy setLanguage:@"zh_CN"];
-            [self showToastMessage:@"zh_CN"];
+        if([WACscProxy isOpenAiHelp]){
+            [WACscProxy openAiHelpV2];
+        }else{
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"未开启客服" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                // 用户点击了取消按钮
+            }];
+            [alertController addAction:cancelAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+        
+    }else if(button.tag==3){     //检测是否开启客服
+        
+        
+        NSString * titlestr=@"未开启游戏评分客服";
+
+        
+        if([WACscProxy isOpenGameReviewAiHelp]){
+            titlestr=@"开启了游戏评分客服";
+        }
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:titlestr preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            // 用户点击了取消按钮
+        }];
+        [alertController addAction:cancelAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+        
+    }else if(button.tag==4){     //检测是否开启客服
+        
+        if([WACscProxy isOpenGameReviewAiHelp]){
+            [WACscProxy openGameReviewAiHelp];
 
         }else{
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"未开启游戏评分客服" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                // 用户点击了取消按钮
+            }];
+            [alertController addAction:cancelAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+        
+    }else if(button.tag==5){     //切换语言
+        changeLanguage=!changeLanguage;
+        if(changeLanguage){
             [WACscProxy setLanguage:@"en"];
             [self showToastMessage:@"en"];
 
+        }else{
+            [WACscProxy setLanguage:@"zh_CN"];
+            [self showToastMessage:@"zh_CN"];
 
         }
-
-        
     }
 }
-BOOL language_cn= YES;
 
+BOOL changeLanguage= NO;
 
 - (void)showToastMessage:(NSString *)messag{
 	

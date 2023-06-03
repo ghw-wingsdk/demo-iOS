@@ -53,7 +53,7 @@
 	[WAPayProxy queryChannelProduct:@"APPLE" callBackBlock:^(NSArray<WAChannelProduct *> *channelProductsArray, NSError *error) {
 		if (!error) {
 			
-			_productList = [[WADemoProductList alloc]initWithFrame:self.scrollView.bounds];
+            self->_productList = [[WADemoProductList alloc]initWithFrame:self.scrollView.bounds];
 			self.productList.goToType = GoToTypeWA;
 			self.productList.products = Inventory;
 			self.productList.channelProducts=channelProductsArray;
@@ -62,7 +62,7 @@
 			
 		}else{
 			
-			_productList = [[WADemoProductList alloc]initWithFrame:self.scrollView.bounds];
+            self->_productList = [[WADemoProductList alloc]initWithFrame:self.scrollView.bounds];
 				self.productList.goToType = GoToTypeWA;
 				self.productList.products = Inventory;
 				self.productList.channelProducts=channelProductsArray;

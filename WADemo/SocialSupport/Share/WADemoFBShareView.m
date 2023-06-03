@@ -5,6 +5,7 @@
 //  Created by wuyx on 16/2/25.
 //  Copyright © 2016年 GHW. All rights reserved.
 //
+#import <Photos/Photos.h>
 
 #import "WADemoFBShareView.h"
 #import "WADemoButtonMain.h"
@@ -27,32 +28,19 @@
     btn1.tag = 0;
     [btn1 addTarget:self action:@selector(sharePhotoOrVideo:) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn1];
-//    WADemoButtonMain* btn2 = [[WADemoButtonMain alloc]init];
-//    [btn2 setTitle:@"PhotoApi" forState:UIControlStateNormal];
-//    btn2.tag = 1;
-//    [btn2 addTarget:self action:@selector(sharePhotoOrVideo:) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn2];
+
     WADemoButtonMain* btn3 = [[WADemoButtonMain alloc]init];
     [btn3 setTitle:@"VideoUI" forState:UIControlStateNormal];
     btn3.tag = 2;
     [btn3 addTarget:self action:@selector(sharePhotoOrVideo:) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn3];
-//    WADemoButtonMain* btn4 = [[WADemoButtonMain alloc]init];
-//    [btn4 setTitle:@"VideoApi" forState:UIControlStateNormal];
-//    btn4.tag = 3;
-//    [btn4 addTarget:self action:@selector(sharePhotoOrVideo:) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn4];
+
     WADemoButtonMain* btn5 = [[WADemoButtonMain alloc]init];
     [btn5 setTitle:@"LinkUI" forState:UIControlStateNormal];
     btn5.tag = 0;
     [btn5 addTarget:self action:@selector(shareLink:) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn5];
-//    WADemoButtonMain* btn6 = [[WADemoButtonMain alloc]init];
-//    [btn6 setTitle:@"LinkApi" forState:UIControlStateNormal];
-//    btn6.tag = 1;
-//    [btn6 addTarget:self action:@selector(shareLink:) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn6];
-    
+
     
     NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1,@1]];
     //
@@ -101,6 +89,7 @@ static UIImage* image = nil;
 static NSURL *videoURL =nil;
 static int flag = -1;//0:PhotoUI 1:PhotoApi 2:VideoUI 3:VideoApi
 - (void)sharePhotoOrVideo:(UIButton *)sender {
+    NSLog(@"....sharePhotoOrVideo..............");
     flag = (int)sender.tag;
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -118,15 +107,30 @@ static int flag = -1;//0:PhotoUI 1:PhotoApi 2:VideoUI 3:VideoApi
     }];
 }
 
+UIImage *previewImage=nil;
+
 -(void)share{
+    NSLog(@"....shareshareshare..............");
+
     if (videoURL) {
+        
+
+        
+        
+        WASharePhoto *previewPhoto = [[WASharePhoto alloc]init];
+        previewPhoto.image = previewImage;
+        previewPhoto.userGenerated = YES;
+        previewPhoto.caption = @"caption...";
+
+        
+        
         
         WAShareVideo *video = [[WAShareVideo alloc] init];
         video.videoURL = videoURL;
         
         WAShareVideoContent *content = [[WAShareVideoContent alloc] init];
-        //content.contentURL = videoURL;
-        //content.previewPhoto = previewPhoto;
+        content.contentURL = videoURL;
+        content.previewPhoto = nil;
         content.video = video;
         if (flag==2) {
             [WASocialProxy shareWithPlatform:WA_PLATFORM_FACEBOOK shareContent:content shareWithUI:YES delegate:self];
@@ -169,10 +173,19 @@ static int flag = -1;//0:PhotoUI 1:PhotoApi 2:VideoUI 3:VideoApi
         [self share];
     }
     if ([mediaType isEqualToString:@"public.movie"]) {
+        
+        NSLog(@"");
         videoURL = [info objectForKey:UIImagePickerControllerReferenceURL];
         [picker dismissViewControllerAnimated:YES completion:nil];
         [self share];
+        
+
     }
+
+    
+    
+
+   
     
 }
 

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WADemoNaviView.h"
 
-@interface WADemoUserCenterViewController : UIViewController
+@interface WADemoUserCenterViewController : WADemoNaviView
 
 @end

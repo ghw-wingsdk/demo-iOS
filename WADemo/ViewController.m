@@ -1,38 +1,37 @@
 //
 //  ViewController.m
-//  GHWSDKDemo
+//  WADemo
 //
-//  Created by wuyx on 16/2/23.
-//  Copyright © 2016年 GHW. All rights reserved.
+//  Created by lpw on 2023/5/19.
 //
 
-#import "WADemoViewController.h"
+#import "ViewController.h"
 #import "WADemoMainUI.h"
 #import "WADemoAlertView.h"
-
-@interface WADemoViewController ()
-
+@interface ViewController ()
 @property (nonatomic, strong) WADemoMainUI* mainUI;
 
 @end
 
-@implementation WADemoViewController
+@implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
+    // Do any additional setup after loading the view.
     [self initUI];
+
     
+
 }
+
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
 }
 
 -(void)initUI{
-    self.mainUI = [[WADemoMainUI alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.view addSubview:self.mainUI];   
+    self.mainUI = [[WADemoMainUI alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:self.mainUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +55,10 @@
     WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"登录失败" message:[NSString stringWithFormat:@"error:%@\nplatform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@",error.description,result.platform,result.pUserId,result.pToken,result.token,result.userId] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
 }
-
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
 #pragma mark delegate  WAAcctManagerDelegate
 -(void)newAcctDidCompleteWithResult:(WALoginResult*)result{
     
@@ -69,6 +71,7 @@
     [alert show];
 }
 
+
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [self.mainUI deviceOrientationDidChange];
@@ -77,6 +80,4 @@
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAllButUpsideDown;
 }
-
-
 @end

@@ -1,58 +1,49 @@
 //
 //  AppDelegate.m
-//  GHWSDKDemo
+//  WADemo
 //
-//  Created by wuyx on 16/2/23.
-//  Copyright © 2016年 GHW. All rights reserved.
+//  Created by lpw on 2023/5/19.
 //
 
-#import "WADemoAppDelegate.h"
+#import "AppDelegate.h"
 #import <WASdkIntf/WASdkIntf.h>
-#import "WADemoViewController.h"
-#ifdef NSFoundationVersionNumber_iOS_9_x_Max
-#import <UserNotifications/UserNotifications.h>
-#endif
-
-@interface WADemoAppDelegate () <UNUserNotificationCenterDelegate>
+#import <WACommon/WAHelper.h>
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
 
-@implementation WADemoAppDelegate
+@implementation AppDelegate
+
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+
     [WACoreProxy initWithCompletionHandler:^{
         
-        [WACoreProxy setDebugMode:YES];
-
+        NSLog(@"初始化完成====");
         [WACoreProxy initAppEventTracker];
         [WAPayProxy init4Iap];
+        [WACoreProxy setDebugMode:YES];
         [WACoreProxy setLevel:10];
         
-        
-
-    //    [WACoreProxy setClientId:@"1234455222168899"];
-        [WACoreProxy setGameUserId:@"server1-role1-7282489"];
-        [WACoreProxy setNickName:@"青铜server1-7282489"];
-        [WACoreProxy setServerId:@"server1"];
-        
-
+//        [WACoreProxy setGameUserId:@"server1-role1-7282489"];
+//        [WACoreProxy setNickName:@"青铜server1-7282489"];
+//        [WACoreProxy setServerId:@"server1"];
         [WAPushProxy application:application initPushWithDelegate:self];
+
         [WACoreProxy application:application didFinishLaunchingWithOptions:launchOptions];
+
+//        [WAHelper saveKeyChainWithObj:@(time) andKey:@"WAFinishTransactionTime"];
+        NSLog(@"==WAFinishTransactionTime==%@",[WAHelper loadObjFromKeyChainWithKey:@"WAFinishTransactionTime"]);
+        
+
+
+        
     }];
 
-    WADemoViewController * vc =[[WADemoViewController alloc] init];
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor grayColor];//设置背景颜色；
-    self.window.rootViewController=vc;
-    [ self.window makeKeyAndVisible];//设置主界面并可见；
-
-
-
-
-    
+ 
     
     return YES;
     
@@ -65,6 +56,7 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSLog(@"能够获取到token===============");
     [WACoreProxy application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -133,5 +125,8 @@
 {
     return [WACoreProxy application:application continueUserActivity:userActivity restorationHandler:restorationHandler];
 }
+
+
+
 
 @end

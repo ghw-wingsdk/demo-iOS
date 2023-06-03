@@ -25,6 +25,8 @@
 #import "WADemoCscViewController.h"
 #import "WADemoUserCenterViewController.h"
 #import "WADemoAccountManagement.h"
+#import <WACommon/WAHelper.h>
+
 //#import <WASdkImpl/WASdkLoginHandler.h>
 @interface WADemoMainUI () <WAPaymentDelegate>
 
@@ -37,6 +39,11 @@
 @property (nonatomic, strong) WADemoPayView* payView;
 @property (nonatomic, strong) WADemoHotUpdateView* hotUpdate;
 @property (nonatomic, strong) WADemoAdView* adView;
+@property (nonatomic, strong) WADemoAccountManagement* accountView;
+@property (nonatomic, strong) WADemoAccountManagement* usercenterView;
+
+
+
 //@property (nonatomic, strong) WADemoCscViewController *cscVC;
 
 @end
@@ -122,20 +129,41 @@
     [btn10 setTitle:@"闪退测试" forState:UIControlStateNormal];
     [btn10 addTarget:self action:@selector(crash) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn10];
-    
-    
+	
+	
     WADemoButtonMain* btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"调起评分界面" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(oepnReview) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
-    
-    
+	
+	
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"账号删除UI" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(openDeleteUI) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2,@2]];
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"游戏测试-钥匙串共享" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(keychainTest) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+    
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"事件测试" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(trackTest) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+    
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"游戏评分" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(openGameReview) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+    
+    
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"其他测试" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(elseTest) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+    
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app版本
@@ -144,6 +172,15 @@
     self.title = [NSString stringWithFormat:@"WADemo%@", appVersion];
     self.btnLayout = btnLayout;
     self.btns = btns;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      
+//        [WAUserProxy loginWithPlatform:WA_PLATFORM_GHG extInfo:nil delegate:self];
+       
+//        [WAUserProxy openAccountManager:self];
+
+    });
+    
 }
 
 #pragma mark Btn action
@@ -181,19 +218,14 @@
 
 //账号管理
 -(void)acctManagement{
-//    UIViewController* vc = [WADemoUtil getCurrentVC];
-//    _acctMgmt = [[WADemoAccountManagement alloc]initWithFrame:self.bounds];
-//    self.acctMgmt.hasBackBtn = YES;
-//    [vc.view addSubview:self.acctMgmt];
-//    [self.acctMgmt moveIn:nil];
-    
-    
-    WADemoAccountManagement * vc =[[WADemoAccountManagement alloc] init];
-    
-    [[WADemoUtil getCurrentVC].navigationController pushViewController:vc animated:YES];
+    UIViewController* vc = [WADemoUtil getCurrentVC];
+    _accountView = [[WADemoAccountManagement alloc]initWithFrame:self.bounds];
+    self.accountView.hasBackBtn = YES;
+    [vc.view addSubview:self.accountView];
+    [self.accountView moveIn:nil];
 
-    
-    
+	
+	
 }
 //应用内支付
 -(void)iap{
@@ -221,11 +253,7 @@
 }
 //facebook邀请
 -(void)facebookInvite{
-//    UIViewController* vc = [WADemoUtil getCurrentVC];
-//    WADemoFBInviteView* fbInviteView = [[WADemoFBInviteView alloc]init];
-//    fbInviteView.hasBackBtn = YES;
-//    [vc.view addSubview:fbInviteView];
-//    [fbInviteView moveIn];
+
     UIViewController* vc = [WADemoUtil getCurrentVC];
     _inviteView = [[WADemoInvite alloc]initWithFrame:self.bounds];
     self.inviteView.hasBackBtn = YES;
@@ -244,8 +272,8 @@
 
 //打开评分界面
 - (void)oepnReview {
-    
-    [WAUserProxy openReview];
+	
+	[WAUserProxy openReview];
 }
 
 
@@ -255,9 +283,9 @@
     NSArray* array = [NSArray array];
     int i = (int)array[1];
     NSLog(@"%d",i);
-    
-    
-    
+	
+	
+	
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
     
 //    NSURL * url = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8"];
@@ -267,14 +295,14 @@
 //        [[UIApplication sharedApplication] openURL:url];
 //    }
     
-//    if([SKStoreReviewController respondsToSelector:@selector(requestReview)]) {// iOS 10.3 以上支持
-//        //防止键盘遮挡
-//        [[UIApplication sharedApplication].keyWindow endEditing:YES];
-//        [SKStoreReviewController requestReview];
-//    }
+//	if([SKStoreReviewController respondsToSelector:@selector(requestReview)]) {// iOS 10.3 以上支持
+//		//防止键盘遮挡
+//		[[UIApplication sharedApplication].keyWindow endEditing:YES];
+//		[SKStoreReviewController requestReview];
+//	}
 //
-    
-    
+	
+	
 }
 
 - (void)pay
@@ -315,8 +343,8 @@
     
     WADemoCscViewController *cscVC = [[WADemoCscViewController alloc] init];
 //    [[WADemoUtil getCurrentVC].navigationController pushViewController:cscVC animated:YES];
-    
-    [[WADemoUtil getCurrentVC] presentViewController:cscVC animated:YES completion:nil];
+	
+	[[WADemoUtil getCurrentVC] presentViewController:cscVC animated:YES completion:nil];
 }
 
 - (void)privacy
@@ -332,8 +360,12 @@
 
 - (void)userCenter
 {
-    WADemoUserCenterViewController *userCenterVC = [[WADemoUserCenterViewController alloc] init];
-    [[WADemoUtil getCurrentVC].navigationController pushViewController:userCenterVC animated:YES];
+    UIViewController* vc = [WADemoUtil getCurrentVC];
+    _usercenterView = [[WADemoUserCenterViewController alloc]initWithFrame:self.bounds];
+    self.usercenterView.hasBackBtn = YES;
+    [vc.view addSubview:self.usercenterView];
+    [self.usercenterView moveIn:nil];
+
 }
 
 -(void)checkUpdate{
@@ -421,6 +453,8 @@
     
     if (self.hotUpdate)
         [self.hotUpdate deviceOrientationDidChange];
+    if(self.accountView)
+       [self.accountView deviceOrientationDidChange];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -430,6 +464,12 @@
 - (void)openDeleteUI{
     
     [WAUserProxy requestDeleteAccoutUI:^(NSError *error, NSUInteger status) {
+        if(error){
+            
+            [self makeToast:error.userInfo[WAErrorDeveloperMessageKey]];
+
+            return;
+        }
         
         if(status==WA_ACCOUNT_DELETE_UI_SUCCESS ){
             
@@ -438,9 +478,354 @@
 
         }
     }];
+    
+    
+}
+/**
+ 游戏测试流程
+ 1、测试cp游戏时候，先安装demo，点击此方法
+ 2、查看cp 游戏 device-展示是否为测试正常
+ */
+- (void)keychainTest{
+    
 
+//    
+//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Title" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitles:@"Option 1", @"Option 2", nil];
+//    [actionSheet showInView:self];
+//
+//
+//    
+//    return;
+    BOOL writesuccesss = [WAHelper saveKeyChainWithObj:@"572fb189425e0cc04087b6703f95da3e" andKey:@"com.gamehollywood.clientidtest" group:@"gamehollywood.wingsdk.clientid.group"];
+
+    if(writesuccesss){
+        NSString *group = [WAHelper getGroupTestSdkClientid];
+        NSLog(@"group.client=====%@",group);
+
+        if([group isEqualToString:[WAHelper getGHWTestValidationClientId]]){
+             NSLog(@"group.client=%@",group);
+            
+            [self makeToast:@"写入测试成功"];
+
+        }else{
+            [self makeToast:@"写入测试失败"];
+            
+        }
+    }
+    
+
+}
+
+- (void)tempTest{
+    
+    //#import <WACommon/WAHelper.h>
+
+    NSString *testClientid = [WAHelper getGroupTestSdkClientid];
+    WALog(@"group.client=====%@",testClientid);
+    
+    
+}
+
+- (void)openGameReview{
+    [WAUserProxy openGameReview:^(OpenGameReviewState status) {
+        switch (status) {
+            case OpenGameReviewStateError:
+                [self makeToast:@"打开游戏评价失败,请检测游戏评价开关是否开启"];
+
+                break;
+            case OpenGameReviewStateReject:
+                [self makeToast:@"游戏评价结果：不，谢谢！"];
+
+                break;
+                break;
+            case OpenGameReviewStateOpenAiHelp:
+                [self makeToast:@"游戏评价结果：我要提意见"];
+
+                break;
+                break;
+            case OpenGameReviewStateOpentReview:
+                [self makeToast:@"游戏评价结果：提交好评(无法获取用户是否点击评分以及具体的评分分数)"];
+
+                break;
+            default:
+                break;
+        }
+        
+    }];
+    
+}
+
+
+- (void)trackTest{
+    
+    {
+
+        /* ghw_user_create  创角事件
+        事件描述    : 玩家创建角色
+        事件作用    : 记录玩家创建角色的动作，后台根据该事件统计创角数
+        建议触发点  : 玩家创建角色成功后
+        调用前提    : 需要先调用setServerId、setGameUserId、setLevel接口
+        必填字段    :
+                    nickname 昵称
+                    registerTime 注册时间戳 单位为毫秒(1970以后)
+        可选字段    ：
+                    roleType、gender、vip、bindGameGold、gameGold、fighting、status 具体参考博客
+         */
+
+        NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] * 1000;
+        NSInteger time = interval;
+        NSString *timestamp = [NSString stringWithFormat:@"%zd",time];
+        
+        
+        
+        [WACoreProxy setServerId:@"serverid_001"];
+        [WACoreProxy setGameUserId:@"gameuserid_001"];
+        [WACoreProxy setLevel:1];
+
+        WAEvent* event = [[WAEvent alloc]init];
+        event.defaultEventName =WAEventUserCreate;
+        event.defaultParamValues = @{
+            /*必填*/
+            WAEventParameterNameNickName:@"昵称",         //昵称
+            WAEventParameterNameRegisterTime:timestamp,  // 时间戳 毫秒
+            
+            /*可选*/
+            WAEventParameterNameVip:@10,                 //等级
+            WAEventParameterNameRoleType:@"角色类型",     //角色类型
+            WAEventParameterNameGender:@1,               //性别
+            WAEventParameterNameStatus:@1,               //状态标识 -1锁定。 1未锁定
+            WAEventParameterNameBindGameGold:@110,       //绑定钻石
+            WAEventParameterNameGameGold:@100,           //用户钻石数
+            WAEventParameterNameFighting:@100,           //战斗力
+            
+                                         
+        };
+        
+        [event trackEvent];
+    
+    
+    
+        
+        
+    }
+    
+    {
+        /*
+        ghw_user_import  导入用户
+        事件描述    : 玩家登录游戏服
+        事件作用    : 记录玩家登录游戏服的动作，后台根据该事件统计导入数、登录数、导入留存等数据
+        建议触发点  : 玩家登录游戏服成功后
+        调用前提    : 需要先调用setServerId、setGameUserId接口
+        必填字段    :
+                    isFirstEnter  类型int  是否第一次进服 0→否 1→是； 默认为0
+         */
+        [WACoreProxy setServerId:@"serverid_001"];
+        [WACoreProxy setGameUserId:@"gameuserid_001"];
+        WAEvent* event = [[WAEvent alloc]init];
+        event.defaultEventName =WAEventUserImport;
+        event.defaultParamValues = @{
+            /*必填*/
+            WAEventParameterNameIsFirstEnter:@1,
+                                         
+        };
+        
+        [event trackEvent];
+        
+    }
+
+
+    {
+        /*
+         ghw_level_achieved  更新玩家等级
+         事件描述    : 更新玩家等级
+         事件作用    : 更新玩家等级，后台根据此字段更新玩家等级
+         建议触发点  : 玩家达到新的等级时
+         调用前提    : 需要先调用setLevel接口更新玩家等级
+         必填字段    :
+         可选字段    :
+                 score      int     账户分数
+                 fighting   int     战斗力
+        */
+        
+        [WACoreProxy setLevel:10];
+        WAEvent* event = [[WAEvent alloc]init];
+        event.defaultEventName =WAEventLevelAchieved;
+        event.defaultParamValues = @{
+            /*可选*/
+            WAEventParameterNameScore:@10,
+            WAEventParameterNameFighting:@600,
+        };
+        
+        [event trackEvent];
+        
+    }
+
+
+    {
+        /*
+        ghw_user_info_update 更新用户信息
+        事件描述    : 更新用户信息
+        事件作用    : 更新用户信
+        建议触发点  : 玩家信息更新时
+        调用前提    : 需要先调用setServerId、setGameUserId、setNickname接口
+        必填字段    :
+                nickname   String   昵称
+        可选字段    :
+                roleType      String    角色类型
+                vip           int       等级
+                status        int       状态     状态标识，-1：锁定，1：未锁定
+         */
+
+        NSString * nickName = @"昵称";
+        [WACoreProxy setServerId:@"serverid_001"];
+        [WACoreProxy setGameUserId:@"gameuserid_001"];
+        [WACoreProxy setNickName:nickName];
+
+        WAEvent* event = [[WAEvent alloc]init];
+        event.defaultEventName =WAEventLevelAchieved;
+        event.defaultParamValues = @{
+            
+            /*必填*/
+            WAEventParameterNameNickName:nickName,
+            
+            /*可选*/
+            WAEventParameterNameRoleType:@"角色类型",     //角色类型
+            WAEventParameterNameVip:@10,                 //等级
+            WAEventParameterNameStatus:@1,               //状态标识 -1锁定。 1未锁定
+
+        };
+        
+        [event trackEvent];
+        
+    }
+
+
+    {
+
+     /*
+        ghw_initiated_purchase 点击购买
+        事件描述    : 点击购买（虚拟货币）
+        事件作用    : 用于游戏内部虚拟交易统计
+        建议触发点  : 点击购买的时候调用
+        调用前提    : 无
+        必填字段    : 无
+      */
+        WAEvent* event = [[WAEvent alloc]init];
+        event.defaultEventName =WAEventInitiatedPurchase;
+        [event trackEvent];
+
+    }
+
+
+    {
+
+     /*
+        ghw_purchase 购买完成
+        事件描述    : 购买完成（虚拟货币）
+        事件作用    : 用于游戏内部虚拟交易统计
+        建议触发点  : 购买完成的时候调用
+        调用前提    : 无
+        必填字段    :
+                itemName      String    游戏内虚拟物品的名称/ID
+                itemAmount    int       交易的数量
+                price        float       交易的总价
+         */
+        WAEvent* event = [[WAEvent alloc]init];
+        event.defaultEventName =WAEventPurchase;
+        event.defaultParamValues = @{
+            
+            /*必填*/
+            WAEventParameterNameItemName:@"钻石001",  //游戏内虚拟物品的名称/ID
+            WAEventParameterNameItemAmount:@1,       //交易的数量
+            WAEventParameterNamePrice:@1.99          //交易的总价
+
+        };
+        [event trackEvent];
+
+
+    }
+
+
+
+    {
+
+     /*
+        ghw_self_tutorial_completed  完成新手任务
+        事件描述    : 完成新手任务
+        事件作用    : 统计
+        建议触发点  : 新手完成新手任务时调用
+        调用前提    : 无
+        必填字段    : 无
+    */
+        WAEvent* event = [[WAEvent alloc]init];
+        event.defaultEventName =@"tutorial_completed";
+        [event trackEvent];
+
+    }
+
+    {
+
+     /*
+        ghw_self_lv_x  关键等级
+        事件描述    : 关键等级
+        事件作用    : 统计
+        建议触发点  : 到达关键等级时
+        调用前提    : 无
+        必填字段    : 无
+    */
+        int level = 10;
+        WAEvent* event = [[WAEvent alloc]init];
+        event.defaultEventName =[NSString stringWithFormat:@"lv_%d",level];
+        [event trackEvent];
+
+    }
+
+    
+    {
+
+     /*
+      ParamCheckTest  参数检测。英文字符+数字+下划线
+
+    */
+        WAEvent* event = [[WAEvent alloc]init];
+        event.defaultEventName =@"ParamCheckTest";
+        event.defaultParamValues = @{
+                                         @"score.":@100,
+                                         @"中_22":@1000,
+                                         @"s.22":@1000
+
+                                         };
+        [event trackEvent];
+
+    }
+    
+
+
+
+}
+
+-(void)elseTest{
+    
+    NSString * defaultAmountMicro =@"99000000";
+    NSString * virtualCoinAmount =@"99000000";
+    
+    NSMutableDictionary* params = [NSMutableDictionary dictionary];
+    [WAHelper dictionary:params setObject:@"20211111" forKey:WAEventParameterNameTransactionId];
+    [WAHelper dictionary:params setObject:WAValueForPaymentTypeApple forKey:WAEventParameterNamePaymentType];
+    [WAHelper dictionary:params setObject:@"usd" forKey:WAEventParameterNameCurrencyType];
+    [WAHelper dictionary:params setObject:@"appleproductid" forKey:WAEventParameterNameIAPName];
+    [WAHelper dictionary:params setObject:@"292222" forKey:WAEventParameterNameIAPId];
+    [WAHelper dictionary:params setObject:[NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%.9f",[defaultAmountMicro doubleValue]/1000000]] forKey:WAEventParameterNameCurrencyAmount];
+    [WAHelper dictionary:params setObject:virtualCoinAmount forKey:WAEventParameterNameVirtualCoinAmount];
+    [WAHelper dictionary:params setObject:@"usd" forKey:WAEventParameterNameVirtualCurrency];
+    
+    WAEvent* event = [[WAEvent alloc] init];
+    event.defaultEventName = WAEventPayment;
+    event.defaultValue = [defaultAmountMicro doubleValue]/1000000;
+    event.defaultParamValues = params;
+    event.channelSwitcherDict = @{WA_PLATFORM_APPSFLYER:@YES,WA_PLATFORM_CHARTBOOST:@YES,WA_PLATFORM_FACEBOOK:@YES,WA_PLATFORM_WINGA:@NO};
+    [event trackEvent];
     
     
 }
 @end
-

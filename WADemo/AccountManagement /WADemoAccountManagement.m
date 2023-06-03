@@ -26,46 +26,47 @@
 
 @implementation WADemoAccountManagement
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self initViews];
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self) {
+        //添加界面旋转通知
+        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
+        
+        [self initViews];
+    }
+    return self;
 }
+
+-(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
+    [self setNeedsLayout];
+}
+
+
 
 - (void)initViews
 {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor whiteColor];
     
     [self initTitleViews:@"账号管理"];
     [self initScrollView];
 
 }
 
-#pragma mark -- 初始化按钮
-//- (void)initScrollView
-//{
-//    CGRect frame = self.view.bounds;
-//    frame.origin.y = self.viewTitle.bounds.size.height+self.viewTitle.frame.origin.y+50;
-//
-//    frame.size.height -= frame.origin.y;
-//
-//    WADemoAccountManagement *acctMgmt = [[WADemoAccountManagement alloc]initWithFrame:frame];
-//	[self.view addSubview:acctMgmt];
-//
-//}
+
 
 #pragma mark -- 初始化按钮
 - (void)initScrollView
 {
-    CGRect frame = self.view.bounds;
+    CGRect frame = self.bounds;
     frame.origin.y = self.viewTitle.bounds.size.height+self.viewTitle.frame.origin.y;
 
     frame.size.height -= frame.origin.y;
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
-    [self.view addSubview:scrollView];
+    [self addSubview:scrollView];
     
-    NSArray *titles = @[@"绑定Facebook账号", @"绑定Apple账号",@"绑定signinwithapple", @"绑定VK账号", @"绑定Twitter账号", @"绑定Instagram账号", @"新建账户", @"切换账户", @"查询已绑定账户",@"打开SDK内置账号管理界面",@"获取当前账户信息(getAccountInfo-VK)"];
+    NSArray *titles = @[@"绑定Facebook账号", @"绑定Apple账号",@"绑定signinwithapple", @"绑定VK账号", @"绑定Twitter账号", @"绑定Instagram账号", @"新建账户", @"切换账户", @"查询已绑定账户",@"打开SDK内置账号管理界面",@"获取当前账户信息(getAccountInfo-VK)",@"绑定ghg"];
     
     CGFloat left = 10, right = 10, top = 60, bottom = 40, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
     
@@ -120,9 +121,9 @@
     CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
     CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
     
-    _viewTitle = [[UIView alloc] initWithFrame:CGRectMake(0, heightStatus, self.view.bounds.size.width, 44)];
+    _viewTitle = [[UIView alloc] initWithFrame:CGRectMake(0, heightStatus, self.bounds.size.width, 44)];
     self.viewTitle.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:self.viewTitle];
+    [self addSubview:self.viewTitle];
     
     UILabel *labelTitle = [[UILabel alloc]initWithFrame:self.viewTitle.bounds];
     labelTitle.textColor = [UIColor whiteColor];
@@ -148,7 +149,7 @@
 
     if (button.tag == 100)
     {
-        [self.navigationController popViewControllerAnimated:YES];
+        [self removeView];
 	}
 	
 	if ([titleStr isEqualToString:@"绑定Facebook账号"]) {
@@ -173,14 +174,20 @@
 		[self getAccountInfo];
 	}else if ([titleStr isEqualToString:@"绑定signinwithapple"]) {
 		[self bindsigninwithapple];
-	}
+    }else if([titleStr isEqualToString:@"绑定ghg"]){
+        [self bindghg];
+
+    }
 	
 	
 	
 }
 
 
-
+-(void)bindghg{
+    [WADemoMaskLayer startAnimating];
+    [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_GHG extInfo:nil delegate:self];
+}
 //绑定facebook
 -(void)bindFB{
     [WADemoMaskLayer startAnimating];
@@ -234,7 +241,7 @@
 //切换账户
 -(void)accoutSwitch{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    self.acctSwitch = [[WADemoAccountSwitch alloc]initWithFrame:self.view.bounds];
+    self.acctSwitch = [[WADemoAccountSwitch alloc]initWithFrame:self.bounds];
     self.acctSwitch.hasBackBtn = YES;
     [vc.view addSubview:self.acctSwitch];
     [self.acctSwitch moveIn:nil];
@@ -246,9 +253,9 @@
         if (error) {
             NSLog(@"error : %@",error.description);
         }else{
-            _accountList = [[WADemoBindingAccountList alloc]initWithFrame:self.view.bounds];
+            _accountList = [[WADemoBindingAccountList alloc]initWithFrame:self.bounds];
             self.accountList.accounts = accounts;
-            [self.view addSubview:self.accountList];
+            [self addSubview:self.accountList];
         }
     }];
     
@@ -340,6 +347,8 @@
 }
 
 -(void)removeView{
+    [super removeView];
+
     [self bindRemoveObserver];
     
 }

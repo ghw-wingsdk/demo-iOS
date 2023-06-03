@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -57,12 +57,11 @@
 		7FC4E35D1C8EEF3F0075FC7D /* WADemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E3331C8EEF3F0075FC7D /* WADemoAppDelegate.m */; };
 		7FC4E35E1C8EEF3F0075FC7D /* WADemoMainUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E3351C8EEF3F0075FC7D /* WADemoMainUI.m */; };
 		7FC4E35F1C8EEF3F0075FC7D /* WADemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4E3371C8EEF3F0075FC7D /* WADemoViewController.m */; };
-		7FC4E37C1C8EF0310075FC7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FC4E37A1C8EF0310075FC7D /* Localizable.strings */; };
+		B211A4562A28A6B50041433E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B211A4552A28A6B50041433E /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B22E408D269D8A840043C30B /* WADemoAccountSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E4085269D8A830043C30B /* WADemoAccountSwitch.m */; };
 		B22E408E269D8A840043C30B /* WADemoAccountManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E4089269D8A830043C30B /* WADemoAccountManagement.m */; };
 		B22E408F269D8A840043C30B /* WADemoBindingAccountList.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E408B269D8A840043C30B /* WADemoBindingAccountList.m */; };
-		B22E4090269D8A840043C30B /* WADemoAccountManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E408C269D8A840043C30B /* WADemoAccountManagementViewController.m */; };
-		B248CA4E27BC8F1900C9E277 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248CA4D27BC8F1900C9E277 /* File.swift */; };
+		B25537972A289DBE00DC86C7 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248CA4D27BC8F1900C9E277 /* File.swift */; };
 		B26BCDD625AC05F900400F88 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26BCDD525AC05F900400F88 /* AppTrackingTransparency.framework */; };
 		B282698424B2CAA600910E8D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B282698324B2CAA600910E8D /* GameKit.framework */; };
 		B286275D24F3A8290039B204 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B286275C24F3A8290039B204 /* GoogleService-Info.plist */; };
@@ -89,14 +88,12 @@
 		363EF9BF20D10163000797C1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		368BFAF6228ADEAB007CF462 /* WADemoUserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoUserCenterViewController.h; sourceTree = "<group>"; };
 		368BFAF7228ADEAB007CF462 /* WADemoUserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoUserCenterViewController.m; sourceTree = "<group>"; };
-		36EF881E1CE2BF5700E7DF11 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		36F6FBB11CD3092800EB0DBC /* WADemoPayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoPayView.h; sourceTree = "<group>"; };
 		36F6FBB21CD3092800EB0DBC /* WADemoPayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoPayView.m; sourceTree = "<group>"; };
 		643D127C502BD3AA1DAF5F78 /* Pods-WADemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WADemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WADemo/Pods-WADemo.release.xcconfig"; sourceTree = "<group>"; };
 		7CEB9AC630E49E10F3A98DE9 /* libPods-WADemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WADemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F558AAF1CB609A3001E1A2A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		7F558AB01CB609A3001E1A2A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		7F558AB11CB609A4001E1A2A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FA55E761D332BC400341D7A /* WADemoInvite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoInvite.h; sourceTree = "<group>"; };
 		7FA55E771D332BC400341D7A /* WADemoInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoInvite.m; sourceTree = "<group>"; };
 		7FA55E791D33310E00341D7A /* WADemoVKInviteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoVKInviteView.h; sourceTree = "<group>"; };
@@ -187,18 +184,14 @@
 		7FC4E3351C8EEF3F0075FC7D /* WADemoMainUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoMainUI.m; sourceTree = "<group>"; };
 		7FC4E3361C8EEF3F0075FC7D /* WADemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoViewController.h; sourceTree = "<group>"; };
 		7FC4E3371C8EEF3F0075FC7D /* WADemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoViewController.m; sourceTree = "<group>"; };
-		7FC4E37B1C8EF0310075FC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7FC4E37D1C8EF03C0075FC7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7FC4E37E1C8EF0490075FC7D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B20E0DD7233DAC0500B30B83 /* WADemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WADemo.entitlements; sourceTree = "<group>"; };
+		B211A4552A28A6B50041433E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		B22E4085269D8A830043C30B /* WADemoAccountSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAccountSwitch.m; sourceTree = "<group>"; };
 		B22E4086269D8A830043C30B /* WADemoBindingAccountList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoBindingAccountList.h; sourceTree = "<group>"; };
 		B22E4087269D8A830043C30B /* WADemoAccountManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAccountManagement.h; sourceTree = "<group>"; };
-		B22E4088269D8A830043C30B /* WADemoAccountManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAccountManagementViewController.h; sourceTree = "<group>"; };
 		B22E4089269D8A830043C30B /* WADemoAccountManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAccountManagement.m; sourceTree = "<group>"; };
 		B22E408A269D8A830043C30B /* WADemoAccountSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoAccountSwitch.h; sourceTree = "<group>"; };
 		B22E408B269D8A840043C30B /* WADemoBindingAccountList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoBindingAccountList.m; sourceTree = "<group>"; };
-		B22E408C269D8A840043C30B /* WADemoAccountManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoAccountManagementViewController.m; sourceTree = "<group>"; };
 		B248CA4D27BC8F1900C9E277 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		B26BCDD525AC05F900400F88 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		B282698324B2CAA600910E8D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -214,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B211A4562A28A6B50041433E /* SwiftUI.framework in Frameworks */,
 				B26BCDD625AC05F900400F88 /* AppTrackingTransparency.framework in Frameworks */,
 				B2C2DD1425A82B5600B13A90 /* Accelerate.framework in Frameworks */,
 				B2C2DD1025A82B4F00B13A90 /* libc++.tbd in Frameworks */,
@@ -326,7 +320,6 @@
 		7FC4E2B81C8EEE7C0075FC7D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7FC4E37A1C8EF0310075FC7D /* Localizable.strings */,
 				7FC4E2B91C8EEE7C0075FC7D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -515,6 +508,7 @@
 		8255698A55C81C3C9B8D33D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B211A4552A28A6B50041433E /* SwiftUI.framework */,
 				B26BCDD525AC05F900400F88 /* AppTrackingTransparency.framework */,
 				B2C2DD1325A82B5600B13A90 /* Accelerate.framework */,
 				B2C2DD0F25A82B4F00B13A90 /* libc++.tbd */,
@@ -541,11 +535,9 @@
 				B22E4085269D8A830043C30B /* WADemoAccountSwitch.m */,
 				B22E4086269D8A830043C30B /* WADemoBindingAccountList.h */,
 				B22E4087269D8A830043C30B /* WADemoAccountManagement.h */,
-				B22E4088269D8A830043C30B /* WADemoAccountManagementViewController.h */,
 				B22E4089269D8A830043C30B /* WADemoAccountManagement.m */,
 				B22E408A269D8A830043C30B /* WADemoAccountSwitch.h */,
 				B22E408B269D8A840043C30B /* WADemoBindingAccountList.m */,
-				B22E408C269D8A840043C30B /* WADemoAccountManagementViewController.m */,
 			);
 			path = "AccountManagement ";
 			sourceTree = "<group>";
@@ -620,7 +612,7 @@
 				};
 			};
 			buildConfigurationList = 7FC4E2B01C8EEE7C0075FC7D /* Build configuration list for PBXProject "WADemo" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -650,7 +642,6 @@
 				7FC4E2C81C8EEE7C0075FC7D /* LaunchScreen.storyboard in Resources */,
 				7FC4E2C51C8EEE7C0075FC7D /* Assets.xcassets in Resources */,
 				B286275D24F3A8290039B204 /* GoogleService-Info.plist in Resources */,
-				7FC4E37C1C8EF0310075FC7D /* Localizable.strings in Resources */,
 				7FC4E2C31C8EEE7C0075FC7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,61 +679,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources.sh",
-				"${PODS_ROOT}/WAAfImpl/config/wa_sdk_impl_config_appsflyer.xml",
-				"${PODS_ROOT}/WAAiHelpImpl/config/wa_sdk_impl_config_aihelp.xml",
-				"${PODS_ROOT}/WAAiHelpImpl/res/AIHelpSupportSDK.bundle",
-				"${PODS_ROOT}/WAApImpl/config/wa_sdk_impl_config_apple.xml",
-				"${PODS_ROOT}/WACbImpl/config/wa_sdk_impl_config_chartboost.xml",
-				"${PODS_ROOT}/WAFbImpl/config/wa_sdk_impl_config_facebook.xml",
-				"${PODS_ROOT}/WAFbImpl/bundle/FacebookSDKStrings.bundle",
-				"${PODS_ROOT}/WAFirebaseImpl/config/wa_sdk_impl_config_firebase.xml",
-				"${PODS_ROOT}/WAInstagramImpl/config/wa_sdk_impl_config_instagram.xml",
-				"${PODS_ROOT}/WAPushImpl/config/wa_sdk_impl_config_push.xml",
-				"${PODS_ROOT}/WASdkImpl/config/wa_sdk_impl_config_winga.xml",
-				"${PODS_ROOT}/WASdkImpl/bundle/WASDK-Resource.bundle",
-				"${PODS_ROOT}/WASdkImpl/localizable/base.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/en.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/es.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/id.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/pt-BR.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/ru.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/th.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/zh-Hans.plist",
-				"${PODS_ROOT}/WASdkImpl/localizable/zh-Hant.plist",
-				"${PODS_ROOT}/WASdkIntf/config/wa_sdk.plist",
-				"${PODS_ROOT}/WASdkIntf/config/wa_sdk_track_config.plist",
-				"${PODS_ROOT}/WAVkImpl/config/wa_sdk_impl_config_vk.xml",
-				"${PODS_ROOT}/WAWebPayImpl/config/wa_sdk_impl_config_webpay.xml",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_appsflyer.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_aihelp.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AIHelpSupportSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_apple.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_chartboost.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_facebook.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_firebase.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_instagram.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_push.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_winga.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WASDK-Resource.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/base.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/es.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/id.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ru.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/th.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hant.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_track_config.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_vk.xml",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wa_sdk_impl_config_webpay.xml",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -781,7 +723,6 @@
 				36356B171F594DB300B767CD /* WADemoAdView.m in Sources */,
 				7FA55E7E1D333F8800341D7A /* WADemoVKFriendList.m in Sources */,
 				7FC4E3551C8EEF3F0075FC7D /* WADemoAlertView.m in Sources */,
-				B248CA4E27BC8F1900C9E277 /* File.swift in Sources */,
 				7FC4E3471C8EEF3F0075FC7D /* WADemoLoginUI.m in Sources */,
 				7FC4E34E1C8EEF3F0075FC7D /* WADemoGiftRequestView.m in Sources */,
 				7FC4E35C1C8EEF3F0075FC7D /* WADemoUtil.m in Sources */,
@@ -794,12 +735,12 @@
 				7FC4E3591C8EEF3F0075FC7D /* WADemoMaskLayer.m in Sources */,
 				7FC4E33D1C8EEF3F0075FC7D /* WADemoEventParam.m in Sources */,
 				7FC4E35D1C8EEF3F0075FC7D /* WADemoAppDelegate.m in Sources */,
+				B25537972A289DBE00DC86C7 /* File.swift in Sources */,
 				B22E408F269D8A840043C30B /* WADemoBindingAccountList.m in Sources */,
 				7FC4E3451C8EEF3F0075FC7D /* WADemoIapView.m in Sources */,
 				7FC4E3521C8EEF3F0075FC7D /* WADemoFriendListTV.m in Sources */,
 				7FC4E35E1C8EEF3F0075FC7D /* WADemoMainUI.m in Sources */,
 				7FC4E34D1C8EEF3F0075FC7D /* WADemoGiftBoxTV.m in Sources */,
-				B22E4090269D8A840043C30B /* WADemoAccountManagementViewController.m in Sources */,
 				7FC4E3511C8EEF3F0075FC7D /* WADemoFBInviteView.m in Sources */,
 				7FC4E3411C8EEF3F0075FC7D /* WADemoPostEventViewBtn.m in Sources */,
 				7FC4E3441C8EEF3F0075FC7D /* WADemoHotUpdateView.m in Sources */,
@@ -844,18 +785,6 @@
 				7F558AB01CB609A3001E1A2A /* fr */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		7FC4E37A1C8EF0310075FC7D /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7FC4E37B1C8EF0310075FC7D /* Base */,
-				7FC4E37D1C8EF03C0075FC7D /* en */,
-				7FC4E37E1C8EF0490075FC7D /* zh-Hans */,
-				7F558AB11CB609A4001E1A2A /* fr */,
-				36EF881E1CE2BF5700E7DF11 /* pt-BR */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -987,10 +916,21 @@
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WADemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.12.0;
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用相机";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "需要添加图片到相册";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要使用相册";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "访问您的设备标识符(IDFA)";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.15.0;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1016,10 +956,21 @@
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WADemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.12.0;
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用相机";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "需要添加图片到相册";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要使用相册";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "访问您的设备标识符(IDFA)";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.15.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wing.sdkfo;
@@ -1035,7 +986,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = WADemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamehollywood.WADemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = WADemo;
@@ -1048,7 +1003,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = WADemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamehollywood.WADemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = WADemo;

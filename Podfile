@@ -16,6 +16,7 @@ workspace 'Workspace.xcworkspace'
 # source 'http://172.16.100.58:7070/r/WAAdImpl.git'
 # source 'http://172.16.100.58:7070/r/WAAiHelpImpl.git'
 # source 'http://172.16.100.58:7070/r/WAFirebaseImpl.git'
+# source 'http://172.16.100.58:7070/r/WAWebLoginImpl.git'
 
 
  source 'http://repo.wingsdk.cn:8082/r/WASdkIntf.git'
@@ -33,6 +34,7 @@ workspace 'Workspace.xcworkspace'
  source 'http://repo.wingsdk.cn:8082/r/WAAdImpl.git'
  source 'http://repo.wingsdk.cn:8082/r/WAAiHelpImpl.git'
  source 'http://repo.wingsdk.cn:8082/r/WAFirebaseImpl.git'
+ source 'http://repo.wingsdk.cn:8082/r/WAWebLoginImpl.git'
 
 target "WADemo" do
 
@@ -48,6 +50,7 @@ pod 'WAVkImpl'
 pod 'WAInstagramImpl'
 pod 'WAFirebaseImpl'
 pod 'WACbImpl'
+pod 'WAWebLoginImpl'
 
 	
 end

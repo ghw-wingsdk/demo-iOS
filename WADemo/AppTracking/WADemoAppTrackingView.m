@@ -280,7 +280,7 @@
 	
 	NSDate *date = [NSDate date];
 	  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-	  [formatter setDateFormat:@"yyyyMMdd"];
+	  [formatter setDateFormat:@"yyyy-MM-dd"];
 	  //获取当前时间日期展示字符串 如：2019-05-23-13:58:59
 	  NSString *eventName = [NSString stringWithFormat:@"customEvent_%@",[formatter stringFromDate:date]];
 	

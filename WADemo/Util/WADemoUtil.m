@@ -14,6 +14,10 @@
     UIViewController *result = nil;
     
     UIWindow* window = (UIWindow*)[[UIApplication sharedApplication] keyWindow];
+    
+//    UIWindowScene *windowScene = (UIWindowScene *)[UIApplication sharedApplication].connectedScenes.anyObject;
+//    UIWindow *window = windowScene.windows.firstObject;
+    
     if (window.windowLevel != UIWindowLevelNormal)
     {
         NSArray *windows = [[UIApplication sharedApplication] windows];

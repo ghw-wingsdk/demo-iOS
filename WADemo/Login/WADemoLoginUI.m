@@ -101,7 +101,10 @@
     [btn12 addTarget:self action:@selector(signinwithapple) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn12];
 	
-	
+    btn12 = [[WADemoButtonMain alloc]init];
+    [btn12 setTitle:@"GHG 登录 " forState:UIControlStateNormal];
+    [btn12 addTarget:self action:@selector(ghgLogin) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn12];
 	
 	
     WADemoButtonMain* btn11 = [[WADemoButtonMain alloc]init];
@@ -109,7 +112,8 @@
     [btn11 addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn11];
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@1,@2,@1,@1]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@1,@2,@2
+                                                                 ,@1]];
 //
     self.title = @"登录";
     self.btnLayout = btnLayout;
@@ -123,6 +127,11 @@
 }
 
 #pragma btn action
+
+-(void)ghgLogin{
+    [WADemoMaskLayer startAnimating];
+    [WAUserProxy loginWithPlatform:WA_PLATFORM_GHG extInfo:nil delegate:self];
+}
 //登录
 -(void)facebookLogin{
     NSLog(@"---facebook login ---");
@@ -217,6 +226,9 @@
 #pragma mark GHWLoginDelegate
 -(void)loginDidCompleteWithResults:(WALoginResult *)result{
     [WADemoMaskLayer stopAnimating];
+	
+//	[self showToastMessage:@"登录成功 "];
+
     NSString * gameuserid= [NSString stringWithFormat:@"server1-role1-%@",result.userId];
 
     NSString * serverid = [WACoreProxy getServerId];
@@ -277,8 +289,23 @@
     NSLog(@"result.pToken:%@",result.pToken);
     NSLog(@"result.pUserId:%@",result.pUserId);
     NSLog(@"loginDidFailWithError:%@",error);
+    
+    if ([result.apply_delete_status intValue]==1) {
+        NSString * userid =result.userId;
+        NSString * deletedata= result.delete_date;
+        
+        
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"cp回掉状态" message:[NSString stringWithFormat:@"userid=%@,删除日期=%@,登录平台=%@",userid,deletedata,result.platform] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
+        [alert show];
+        
+
+
+    }else{
+        [self showToastMessage:error.localizedDescription];
+
+    }
+    
 	
-	[self showToastMessage:error.localizedDescription];
 }
 
 - (void)showToastMessage:(NSString *)messag{
@@ -290,6 +317,7 @@
 -(void)loginDidCancel:(WALoginResult *)result{
     [WADemoMaskLayer stopAnimating];
     NSLog(@"loginDidCancel--platform:%@",result.platform);
+    [self showToastMessage:[NSString stringWithFormat:@"loginDidCancel==%@",result.platform]];
 }
 
 @end

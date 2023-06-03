@@ -11,22 +11,6 @@
 		<key>domain</key>
 		<string>gamehollywoodhk.aihelp.net</string>
 	</dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -39,6 +23,7 @@
 				<string>fb1281771621973222</string>
 				<string>com.wing.sdk</string>
 				<string>vk5527303</string>
+				<string>watestlogin</string>
 			</array>
 		</dict>
 		<dict>
@@ -47,15 +32,21 @@
 				<string>twitterkit-FXJ0BYeSakTGtm0Bh5OO62U9X</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>watestlogin</string>
+			</array>
+		</dict>
 	</array>
-	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
 	<string>1281771621973222</string>
 	<key>FacebookClientToken</key>
-	<string>011b570caa40ec928f32a9c19201147e</string>
+	<string>174b2fb60d44d4c62e74d3a6891fb1b8</string>
 	<key>FacebookDisplayName</key>
-	<string>com.ghw.sdk</string>
+	<string>WINSDKdemo</string>
 	<key>Instagram</key>
 	<dict>
 		<key>clientId</key>
@@ -89,10 +80,6 @@
 		<string>twitter</string>
 		<string>twitterauth</string>
 	</array>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>MKDirectionsApplicationSupportedModes</key>
-	<array/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -167,14 +154,6 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>需要使用相机</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>需要添加图片到相册</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>需要使用相册</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>访问您的设备标识符(IDFA)</string>
 	<key>Twitter</key>
 	<dict>
 		<key>consumerKey</key>
@@ -185,28 +164,6 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
-	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>
