@@ -135,11 +135,19 @@
             //当code为200时,表示发送成功 进行相应的操作。
             if (code == 200) {
                 
-                UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"tip" message:[NSString stringWithFormat:@"发送邀请信息到SDK后台成功 msg:%@",msg] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
+ 
+                
+                WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"tip" message:[NSString stringWithFormat:@"发送邀请信息到SDK后台成功 msg:%@",msg] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
                 [alert show];
+
+                
+                
             }else{
-                UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"tip" message:[NSString stringWithFormat:@"发送邀请信息到SDK后台失败 error:%@",error] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
+
+                
+                WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"tip" message:[NSString stringWithFormat:@"发送邀请信息到SDK后台失败 error:%@",error] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
                 [alert show];
+                
             }
         }];
         
@@ -164,7 +172,9 @@
 
 
 -(void)alertWithContent:(NSString*)content andTitle:(NSString*)title{
-    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:title message:content delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
+
+    
+    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:title message:content cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
 }
 

@@ -9,7 +9,7 @@
 #import "WADemoLoginUI.h"
 #import "WADemoButtonMain.h"
 #import "WADemoButtonSwitch.h"
-#import "WADemoViewController.h"
+#import "ViewController.h"
 #import "WADemoUtil.h"
 #import "WADemoMaskLayer.h"
 #import <Toast/Toast.h>
@@ -107,13 +107,20 @@
     [btns addObject:btn12];
 	
 	
+    btn12 = [[WADemoButtonMain alloc]init];
+    [btn12 setTitle:@"wa 登录 " forState:UIControlStateNormal];
+    [btn12 addTarget:self action:@selector(waLogin) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn12];
+    
+    
+    
     WADemoButtonMain* btn11 = [[WADemoButtonMain alloc]init];
     [btn11 setTitle:@"登出" forState:UIControlStateNormal];
     [btn11 addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn11];
     
     NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@1,@2,@2
-                                                                 ,@1]];
+                                                                 ,@2]];
 //
     self.title = @"登录";
     self.btnLayout = btnLayout;
@@ -127,6 +134,19 @@
 }
 
 #pragma btn action
+- (void)waLogin{
+//    [WADemoMaskLayer startAnimating];
+    [WAUserProxy loginWithPlatform:WA_PLATFORM_WINGA extInfo:nil delegate:self];
+
+}
+
+- (void)anonymousLogin{
+    [WADemoMaskLayer startAnimating];
+    NSLog(@"---anonymousLogin login ---");
+    [WAUserProxy loginWithPlatform:WA_CONSTANT_GUEST extInfo:nil delegate:self];
+}
+
+
 
 -(void)ghgLogin{
     [WADemoMaskLayer startAnimating];
@@ -140,16 +160,11 @@
     
 }
 
-- (void)anonymousLogin{
-    [WADemoMaskLayer startAnimating];
-    NSLog(@"---anonymousLogin login ---");
-    [WAUserProxy loginWithPlatform:WA_PLATFORM_WINGA extInfo:nil delegate:self];
-}
 
 -(void)appSelfLogin{
     [WADemoMaskLayer startAnimating];
     NSString* extra = @"{\"puserId\":\"12345\",\"extInfo\":\"extInfo String\",\"accessToken\":\"o1akkfjia81FMvFSO8kxC96TgQYlhEEr\",\"appSelfLogin\":true}";
-    [WAUserProxy loginWithPlatform:WA_PLATFORM_WINGA extInfo:extra delegate:self];
+    [WAUserProxy loginWithPlatform:WA_CONSTANT_GUEST extInfo:extra delegate:self];
 }
 
 -(void)appleLogin{
@@ -201,7 +216,7 @@
 
 //弹出登录窗口
 -(void)popLoginUI{
-    WADemoViewController* curentVC = (WADemoViewController*)[WADemoUtil getCurrentVC];
+    ViewController* curentVC = (ViewController*)[WADemoUtil getCurrentVC];
     [WAUserProxy login:curentVC cacheEnabled:_cacheEnabled];
 }
 
@@ -290,20 +305,20 @@
     NSLog(@"result.pUserId:%@",result.pUserId);
     NSLog(@"loginDidFailWithError:%@",error);
     
-    if ([result.apply_delete_status intValue]==1) {
-        NSString * userid =result.userId;
-        NSString * deletedata= result.delete_date;
-        
-        
-        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"cp回掉状态" message:[NSString stringWithFormat:@"userid=%@,删除日期=%@,登录平台=%@",userid,deletedata,result.platform] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
-        [alert show];
-        
-
-
-    }else{
-        [self showToastMessage:error.localizedDescription];
-
-    }
+//    if ([result.apply_delete_status intValue]==1) {
+//        NSString * userid =result.userId;
+//        NSString * deletedata= result.delete_date;
+//        
+//        
+//        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"cp回掉状态" message:[NSString stringWithFormat:@"userid=%@,删除日期=%@,登录平台=%@",userid,deletedata,result.platform] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
+//        [alert show];
+//        
+//
+//
+//    }else{
+//        [self showToastMessage:error.localizedDescription];
+//
+//    }
     
 	
 }

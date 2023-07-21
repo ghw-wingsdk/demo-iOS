@@ -8,6 +8,11 @@
 #import "ViewController.h"
 #import "WADemoMainUI.h"
 #import "WADemoAlertView.h"
+#import<CoreTelephony/CTCarrier.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+
+
+
 @interface ViewController ()
 @property (nonatomic, strong) WADemoMainUI* mainUI;
 
@@ -21,6 +26,29 @@
     [self initUI];
 
     
+    
+    NSLocale *locale = [NSLocale currentLocale];
+    NSString *countryCode = [locale objectForKey:NSLocaleCountryCode];
+    NSString *phoneCode = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
+    NSLog(@"phoneCode==%@", phoneCode);
+    NSLog(@"countryCode==%@", countryCode);
+
+    
+//
+//    NSString *locale = [[NSLocale currentLocale] localeIdentifier];
+//    NSRange startRange = [locale rangeOfString:@"_"];
+//    NSString *result = [locale stringByReplacingCharactersInRange:NSMakeRange(0, startRange.length+1) withString:[[NSLocale preferredLanguages] objectAtIndex:0]];
+//    NSLog(@"current locale: %@", result);
+//    NSLog(@"current locale: %@", [[NSLocale preferredLanguages] objectAtIndex:0]);
+//
+//    CTTelephonyNetworkInfo *network_Info = [CTTelephonyNetworkInfo new];
+//    CTCarrier *carrier = network_Info.subscriberCellularProvider;
+//
+//    NSLog(@"country code is: %@", carrier.mobileCountryCode);
+//
+//    //will return the actual country code
+//    NSLog(@"ISO country code is: %@", carrier.isoCountryCode);
+
 
 }
 
@@ -41,8 +69,22 @@
 
 #pragma mark delegate  GHWLoginViewControllerDelegate
 -(void)loginViewDidCancel:(WALoginResult *)result{
-    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"取消登录" message:[NSString stringWithFormat:@"用户取消登录 登录平台:%@",result.platform] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
-    [alert show];
+
+    
+    UIAlertController *alertConrl = [UIAlertController
+                                     alertControllerWithTitle:@"取消登录"
+                                     message:[NSString stringWithFormat:@"用户取消登录 登录平台:%@",result.platform]
+                                     preferredStyle:UIAlertControllerStyleAlert];
+    [alertConrl addAction:[UIAlertAction actionWithTitle:@"Sure"
+                                                   style:UIAlertActionStyleDefault
+                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                 
+    }]];
+
+    
+    [self presentViewController:alertConrl animated:true completion:nil];
+    
+    
 }
 
 -(void)loginViewDidCompleteWithResult:(WALoginResult *)result{
@@ -78,6 +120,6 @@
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAllButUpsideDown;
+    return UIInterfaceOrientationMaskAll;
 }
 @end

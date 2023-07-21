@@ -23,9 +23,10 @@
     [WACoreProxy initWithCompletionHandler:^{
         
         NSLog(@"初始化完成====");
+        [WACoreProxy setDebugMode:YES];
+
         [WACoreProxy initAppEventTracker];
         [WAPayProxy init4Iap];
-        [WACoreProxy setDebugMode:YES];
         [WACoreProxy setLevel:10];
         
 //        [WACoreProxy setGameUserId:@"server1-role1-7282489"];
@@ -125,7 +126,6 @@
 {
     return [WACoreProxy application:application continueUserActivity:userActivity restorationHandler:restorationHandler];
 }
-
 
 
 

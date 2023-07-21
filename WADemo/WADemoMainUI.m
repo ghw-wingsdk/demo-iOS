@@ -26,6 +26,7 @@
 #import "WADemoUserCenterViewController.h"
 #import "WADemoAccountManagement.h"
 #import <WACommon/WAHelper.h>
+#import "WADemoClientidSetting.h"
 
 //#import <WASdkImpl/WASdkLoginHandler.h>
 @interface WADemoMainUI () <WAPaymentDelegate>
@@ -129,14 +130,14 @@
     [btn10 setTitle:@"闪退测试" forState:UIControlStateNormal];
     [btn10 addTarget:self action:@selector(crash) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn10];
-	
-	
+    
+    
     WADemoButtonMain* btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"调起评分界面" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(oepnReview) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
-	
-	
+    
+    
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"账号删除UI" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(openDeleteUI) forControlEvents:UIControlEventTouchUpInside];
@@ -159,7 +160,7 @@
     
     
     btn18 = [[WADemoButtonMain alloc]init];
-    [btn18 setTitle:@"其他测试" forState:UIControlStateNormal];
+    [btn18 setTitle:@"设置clientid" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(elseTest) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
     
@@ -173,8 +174,13 @@
     self.btnLayout = btnLayout;
     self.btns = btns;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
       
+        
+//        UIViewController* vc = [WADemoUtil getCurrentVC];
+//        [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_WINGA extInfo:nil delegate:self];
+
+//        [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_WINGA extInfo:@"" delegate:self];
 //        [WAUserProxy loginWithPlatform:WA_PLATFORM_GHG extInfo:nil delegate:self];
        
 //        [WAUserProxy openAccountManager:self];
@@ -224,8 +230,8 @@
     [vc.view addSubview:self.accountView];
     [self.accountView moveIn:nil];
 
-	
-	
+    
+    
 }
 //应用内支付
 -(void)iap{
@@ -272,8 +278,8 @@
 
 //打开评分界面
 - (void)oepnReview {
-	
-	[WAUserProxy openReview];
+    
+    [WAUserProxy openReview];
 }
 
 
@@ -283,9 +289,9 @@
     NSArray* array = [NSArray array];
     int i = (int)array[1];
     NSLog(@"%d",i);
-	
-	
-	
+    
+    
+    
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
     
 //    NSURL * url = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8"];
@@ -295,14 +301,14 @@
 //        [[UIApplication sharedApplication] openURL:url];
 //    }
     
-//	if([SKStoreReviewController respondsToSelector:@selector(requestReview)]) {// iOS 10.3 以上支持
-//		//防止键盘遮挡
-//		[[UIApplication sharedApplication].keyWindow endEditing:YES];
-//		[SKStoreReviewController requestReview];
-//	}
+//    if([SKStoreReviewController respondsToSelector:@selector(requestReview)]) {// iOS 10.3 以上支持
+//        //防止键盘遮挡
+//        [[UIApplication sharedApplication].keyWindow endEditing:YES];
+//        [SKStoreReviewController requestReview];
+//    }
 //
-	
-	
+    
+    
 }
 
 - (void)pay
@@ -343,8 +349,8 @@
     
     WADemoCscViewController *cscVC = [[WADemoCscViewController alloc] init];
 //    [[WADemoUtil getCurrentVC].navigationController pushViewController:cscVC animated:YES];
-	
-	[[WADemoUtil getCurrentVC] presentViewController:cscVC animated:YES completion:nil];
+    
+    [[WADemoUtil getCurrentVC] presentViewController:cscVC animated:YES completion:nil];
 }
 
 - (void)privacy
@@ -489,12 +495,12 @@
 - (void)keychainTest{
     
 
-//    
+//
 //    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Title" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitles:@"Option 1", @"Option 2", nil];
 //    [actionSheet showInView:self];
 //
 //
-//    
+//
 //    return;
     BOOL writesuccesss = [WAHelper saveKeyChainWithObj:@"572fb189425e0cc04087b6703f95da3e" andKey:@"com.gamehollywood.clientidtest" group:@"gamehollywood.wingsdk.clientid.group"];
 
@@ -806,26 +812,36 @@
 
 -(void)elseTest{
     
-    NSString * defaultAmountMicro =@"99000000";
-    NSString * virtualCoinAmount =@"99000000";
     
-    NSMutableDictionary* params = [NSMutableDictionary dictionary];
-    [WAHelper dictionary:params setObject:@"20211111" forKey:WAEventParameterNameTransactionId];
-    [WAHelper dictionary:params setObject:WAValueForPaymentTypeApple forKey:WAEventParameterNamePaymentType];
-    [WAHelper dictionary:params setObject:@"usd" forKey:WAEventParameterNameCurrencyType];
-    [WAHelper dictionary:params setObject:@"appleproductid" forKey:WAEventParameterNameIAPName];
-    [WAHelper dictionary:params setObject:@"292222" forKey:WAEventParameterNameIAPId];
-    [WAHelper dictionary:params setObject:[NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%.9f",[defaultAmountMicro doubleValue]/1000000]] forKey:WAEventParameterNameCurrencyAmount];
-    [WAHelper dictionary:params setObject:virtualCoinAmount forKey:WAEventParameterNameVirtualCoinAmount];
-    [WAHelper dictionary:params setObject:@"usd" forKey:WAEventParameterNameVirtualCurrency];
+    UIViewController* vc = [WADemoUtil getCurrentVC];
+    WADemoClientidSetting * clientidview = [[WADemoClientidSetting alloc]initWithFrame:self.bounds];
+    clientidview.hasBackBtn = YES;
+    [vc.view addSubview:clientidview];
+    [clientidview moveIn:nil];
     
-    WAEvent* event = [[WAEvent alloc] init];
-    event.defaultEventName = WAEventPayment;
-    event.defaultValue = [defaultAmountMicro doubleValue]/1000000;
-    event.defaultParamValues = params;
-    event.channelSwitcherDict = @{WA_PLATFORM_APPSFLYER:@YES,WA_PLATFORM_CHARTBOOST:@YES,WA_PLATFORM_FACEBOOK:@YES,WA_PLATFORM_WINGA:@NO};
-    [event trackEvent];
+    
+    
+//    NSString * defaultAmountMicro =@"99000000";
+//    NSString * virtualCoinAmount =@"99000000";
+//
+//    NSMutableDictionary* params = [NSMutableDictionary dictionary];
+//    [WAHelper dictionary:params setObject:@"20211111" forKey:WAEventParameterNameTransactionId];
+//    [WAHelper dictionary:params setObject:WAValueForPaymentTypeApple forKey:WAEventParameterNamePaymentType];
+//    [WAHelper dictionary:params setObject:@"usd" forKey:WAEventParameterNameCurrencyType];
+//    [WAHelper dictionary:params setObject:@"appleproductid" forKey:WAEventParameterNameIAPName];
+//    [WAHelper dictionary:params setObject:@"292222" forKey:WAEventParameterNameIAPId];
+//    [WAHelper dictionary:params setObject:[NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%.9f",[defaultAmountMicro doubleValue]/1000000]] forKey:WAEventParameterNameCurrencyAmount];
+//    [WAHelper dictionary:params setObject:virtualCoinAmount forKey:WAEventParameterNameVirtualCoinAmount];
+//    [WAHelper dictionary:params setObject:@"usd" forKey:WAEventParameterNameVirtualCurrency];
+//
+//    WAEvent* event = [[WAEvent alloc] init];
+//    event.defaultEventName = WAEventPayment;
+//    event.defaultValue = [defaultAmountMicro doubleValue]/1000000;
+//    event.defaultParamValues = params;
+//    event.channelSwitcherDict = @{WA_PLATFORM_APPSFLYER:@YES,WA_PLATFORM_CHARTBOOST:@YES,WA_PLATFORM_FACEBOOK:@YES,WA_PLATFORM_WINGA:@NO};
+//    [event trackEvent];
     
     
 }
 @end
+

@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "group:/Users/hank/hank/gits/demo-iOS/WADemo/UserCenter"
-      name = "UserCenter">
-      <FileRef
-         location = "group:WADemoUserCenterViewController.h">
-      </FileRef>
-      <FileRef
-         location = "group:WADemoUserCenterViewController.m">
-      </FileRef>
-   </Group>
    <FileRef
       location = "self:">
    </FileRef>

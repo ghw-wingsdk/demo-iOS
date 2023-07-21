@@ -50,7 +50,7 @@ pod 'WAVkImpl'
 pod 'WAInstagramImpl'
 pod 'WAFirebaseImpl'
 pod 'WACbImpl'
-pod 'WAWebLoginImpl'
+ pod 'WAWebLoginImpl'
 
 	
 end

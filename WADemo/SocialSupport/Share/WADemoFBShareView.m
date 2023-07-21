@@ -10,6 +10,7 @@
 #import "WADemoFBShareView.h"
 #import "WADemoButtonMain.h"
 #import "WADemoUtil.h"
+#import "WADemoAlertView.h"
 @implementation WADemoFBShareView
 
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -52,22 +53,26 @@
 
 -(void)sharer:(NSObject<WASharing>*)sharer platform:(NSString *const)platform didCompleteWithResults:(NSDictionary *)results{
     NSLog(@"didCompleteWithResults:%@",results);
-    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"分享成功" message:[NSString stringWithFormat:@"platform:%@ result:%@",platform,results] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
+    
+    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"分享成功" message:[NSString stringWithFormat:@"platform:%@ result:%@",platform,results] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
+    
+    
 }
 
 -(void)sharer:(NSObject<WASharing> *)sharer platform:(NSString *const)platform didFailWithError:(NSError *)error{
     NSLog(@"didFailWithError:%@",error);
     
-    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"分享失败" message:[NSString stringWithFormat:@"platform:%@ error:%@",platform,error.description] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
+    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"分享失败" message:[NSString stringWithFormat:@"platform:%@ error:%@",platform,error.description] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
+    
 }
 
 -(void)sharerDidCancel:(NSObject<WASharing> *)sharer platform:(NSString *const)platform{
     NSLog(@"sharerDidCancel");
-    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"分享取消" message:[NSString stringWithFormat:@"platform:%@",platform] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
+
+    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"分享取消" message:[NSString stringWithFormat:@"platform:%@",platform] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
-    
 }
 
 

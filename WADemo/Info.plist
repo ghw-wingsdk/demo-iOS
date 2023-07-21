@@ -11,6 +11,25 @@
 		<key>domain</key>
 		<string>gamehollywoodhk.aihelp.net</string>
 	</dict>
+	<key>Application Scene Manifest1</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -30,14 +49,6 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>twitterkit-FXJ0BYeSakTGtm0Bh5OO62U9X</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>watestlogin</string>
 			</array>
 		</dict>
 	</array>

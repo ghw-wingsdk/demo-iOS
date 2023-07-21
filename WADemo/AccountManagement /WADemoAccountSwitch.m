@@ -65,9 +65,7 @@
     [WADemoMaskLayer startAnimating];
     
     NSString* loginType = [self.loginTypeDict objectForKey:[btn titleForState:UIControlStateNormal]];
-	if (loginType==WA_CONSTANT_GUEST) {
-		loginType=WA_PLATFORM_WINGA;
-	}
+
     
     [WAUserProxy switchAccountWithPlatform:loginType completeBlock:^(NSError *error, WALoginResult *result) {
         if (!error) {

@@ -14,10 +14,10 @@
 #import "WADemoUtil.h"
 #import "WADemoAccountSwitch.h"
 #import "WADemoMaskLayer.h"
-#import "WADemoViewController.h"
+#import "ViewController.h"
 #import "WADemoBindingAccountList.h"
 
-@interface WADemoAccountManagement ()<WAAccountBindingDelegate>
+@interface WADemoAccountManagement ()<WAAccountBindingDelegate,WAAcctManagerDelegate>
 @property (nonatomic, strong) UIView *viewTitle;
 @property (nonatomic, strong) WADemoAccountSwitch* acctSwitch;
 @property (nonatomic, strong) WADemoBindingAccountList* accountList;
@@ -66,7 +66,7 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     [self addSubview:scrollView];
     
-    NSArray *titles = @[@"绑定Facebook账号", @"绑定Apple账号",@"绑定signinwithapple", @"绑定VK账号", @"绑定Twitter账号", @"绑定Instagram账号", @"新建账户", @"切换账户", @"查询已绑定账户",@"打开SDK内置账号管理界面",@"获取当前账户信息(getAccountInfo-VK)",@"绑定ghg"];
+    NSArray *titles = @[@"绑定Facebook账号", @"绑定Apple账号",@"绑定signinwithapple", @"绑定VK账号", @"绑定Twitter账号", @"绑定Instagram账号", @"新建账户", @"切换账户", @"查询已绑定账户",@"打开SDK内置账号管理界面",@"获取当前账户信息(getAccountInfo-VK)",@"绑定ghg",@"绑定WA"];
     
     CGFloat left = 10, right = 10, top = 60, bottom = 40, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
     
@@ -177,13 +177,19 @@
     }else if([titleStr isEqualToString:@"绑定ghg"]){
         [self bindghg];
 
+    }else if([titleStr isEqualToString:@"绑定WA"]){
+        [self bindWA];
+
     }
 	
 	
 	
 }
 
-
+-(void)bindWA{
+    [WADemoMaskLayer startAnimating];
+    [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_WINGA extInfo:nil delegate:self];
+}
 -(void)bindghg{
     [WADemoMaskLayer startAnimating];
     [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_GHG extInfo:nil delegate:self];
@@ -263,10 +269,22 @@
 
 //打开SDK内置账号管理界面
 -(void)popAcctManagementUI{
-    WADemoViewController* vc = (WADemoViewController*)[WADemoUtil getCurrentVC];
-    [WAUserProxy openAccountManager:vc];
-}
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uiBindDidSucceed:) name:WABindDidSucceedNotification object:nil];
 
+    [WAUserProxy openAccountManager:self];
+}
+-(void)uiBindDidSucceed:(NSNotification*)info{
+    NSDictionary * objdic =info.object;
+    WABindingResult * bindResult = info.object;
+    if(bindResult&&[bindResult.platform isEqualToString:WA_PLATFORM_GHG]){
+        NSLog(@"UI绑定界面，绑定ghg成功");
+    }
+
+    NSLog(@"===%@",objdic);
+    
+    
+}
 -(void)getAccountInfo{
     WAAppUser* appUser = [WAUserProxy getAccountInfoWithPlatform:WA_PLATFORM_VK];
     NSString* msg;
@@ -287,7 +305,11 @@
  */
 -(void)bindingDidCompleteWithResult:(WABindingResult*)result{
     [WADemoMaskLayer stopAnimating];
-    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"绑定成功" message:[NSString stringWithFormat:@"绑定%@成功\n,userId:%@\ntoken:%@\n",result.platform,result.userId,result.accessToken] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+    
+    NSString * message =[NSString stringWithFormat:@"绑定%@成功\n,userId:%@\ntoken:%@\n mobile:%@\n email:%@\n ",result.platform,result.userId,result.accessToken,result.mobile,result.email];
+    
+    
+    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"绑定成功" message:message cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
     
     if ([result.platform isEqualToString:WA_PLATFORM_FACEBOOK]||[result.platform isEqualToString:WA_PLATFORM_VK]) {
@@ -355,6 +377,9 @@
 
 - (void)bindAccountDidCompleteWithResult:(WABindingResult *)bindResult {
 	
+    if(bindResult&&[bindResult.platform isEqualToString:WA_PLATFORM_GHG]){
+        NSLog(@"UI绑定ghg成功回调");
+    }
 }
 
 - (void)newAcctDidCompleteWithResult:(WALoginResult *)result {
