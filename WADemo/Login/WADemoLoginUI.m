@@ -164,7 +164,7 @@
 -(void)appSelfLogin{
     [WADemoMaskLayer startAnimating];
     NSString* extra = @"{\"puserId\":\"12345\",\"extInfo\":\"extInfo String\",\"accessToken\":\"o1akkfjia81FMvFSO8kxC96TgQYlhEEr\",\"appSelfLogin\":true}";
-    [WAUserProxy loginWithPlatform:WA_CONSTANT_GUEST extInfo:extra delegate:self];
+    [WAUserProxy loginWithPlatform:WA_PLATFORM_APPSELFLOGIN extInfo:extInfo delegate:self]
 }
 
 -(void)appleLogin{

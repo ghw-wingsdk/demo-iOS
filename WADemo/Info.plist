@@ -11,6 +11,10 @@
 		<key>domain</key>
 		<string>gamehollywoodhk.aihelp.net</string>
 	</dict>
+	<key>CFBundleExecutable</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
 	<key>Application Scene Manifest1</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
