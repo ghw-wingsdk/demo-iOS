@@ -566,6 +566,7 @@
 				B27ED3312A17196E00DB1772 /* Frameworks */,
 				B27ED3322A17196E00DB1772 /* Resources */,
 				A40C0206E37611F5ABC3C1B4 /* [CP] Copy Pods Resources */,
+				4241F5E8355D133C85C7080E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -628,6 +629,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4241F5E8355D133C85C7080E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A40C0206E37611F5ABC3C1B4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -924,7 +942,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.17.0;
+				MARKETING_VERSION = 3.18.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -962,8 +980,6 @@
 					"\"FirebaseCore\"",
 					"-framework",
 					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseAnalyticsSwift\"",
 					"-framework",
 					"\"FirebaseInstallations\"",
 					"-framework",
@@ -1073,7 +1089,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.17.0;
+				MARKETING_VERSION = 3.18.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1111,8 +1127,6 @@
 					"\"FirebaseCore\"",
 					"-framework",
 					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseAnalyticsSwift\"",
 					"-framework",
 					"\"FirebaseInstallations\"",
 					"-framework",

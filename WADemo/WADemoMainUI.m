@@ -164,6 +164,13 @@
     [btn18 addTarget:self action:@selector(elseTest) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
     
+    
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"打开cmp偏好设置" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(showCMPreferences) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+    
+    
     NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
@@ -843,5 +850,12 @@
     
     
 }
+- (void)showCMPreferences{
+    
+    [WAUserProxy showConsentPreferences];
+
+}
 @end
+
+
 

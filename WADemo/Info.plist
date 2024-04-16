@@ -11,10 +11,6 @@
 		<key>domain</key>
 		<string>gamehollywoodhk.aihelp.net</string>
 	</dict>
-	<key>CFBundleExecutable</key>
-	<string></string>
-	<key>CFBundleIdentifier</key>
-	<string></string>
 	<key>Application Scene Manifest1</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -56,12 +52,24 @@
 			</array>
 		</dict>
 	</array>
+	<key>ConsentNoticeId</key>
+	<string>MCheVkM3</string>
 	<key>FacebookAppID</key>
 	<string>1281771621973222</string>
+	<key>FacebookAutoLogAppEventsEnabled</key>
+	<false/>
 	<key>FacebookClientToken</key>
 	<string>174b2fb60d44d4c62e74d3a6891fb1b8</string>
 	<key>FacebookDisplayName</key>
 	<string>WINSDKdemo</string>
+	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS</key>
+	<false/>
+	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS - 2</key>
+	<false/>
+	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_STORAGE</key>
+	<false/>
+	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_USER_DATA</key>
+	<false/>
 	<key>Instagram</key>
 	<dict>
 		<key>clientId</key>
