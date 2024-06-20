@@ -10,8 +10,7 @@
 #import "WADemoAlertView.h"
 #import<CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
-
-
+#import "WADemoUtil.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) WADemoMainUI* mainUI;
@@ -20,12 +19,18 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initUI];
+    WALog(@"viewDidLoad=%@",[NSThread currentThread]);
 
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [WAAdMobProxy showAppOpenAdWithViewController:self withDelegate:nil];
+
+    });
+
     
     NSLocale *locale = [NSLocale currentLocale];
     NSString *countryCode = [locale objectForKey:NSLocaleCountryCode];
@@ -58,7 +63,16 @@
 }
 
 -(void)initUI{
-    self.mainUI = [[WADemoMainUI alloc]initWithFrame:self.view.bounds];
+    
+    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, 60);
+    UIView * bannerView =[[UIView alloc] initWithFrame:rect];
+    bannerView.backgroundColor =[UIColor whiteColor];
+    [self.view addSubview:bannerView];
+       
+    [WAAdMobProxy bindBannerAdWithViewController:self containerView:bannerView];
+
+
+    self.mainUI = [[WADemoMainUI alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(rect)-10, self.view.frame.size.width, self.view.frame.size.height-rect.size.height)];
     [self.view addSubview:self.mainUI];
 }
 
@@ -97,6 +111,7 @@
     WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"登录失败" message:[NSString stringWithFormat:@"error:%@\nplatform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@",error.description,result.platform,result.pUserId,result.pToken,result.token,result.userId] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
 }
+
 - (BOOL)shouldAutorotate
 {
     return YES;
@@ -123,3 +138,5 @@
     return UIInterfaceOrientationMaskAll;
 }
 @end
+
+

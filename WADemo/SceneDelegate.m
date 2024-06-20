@@ -7,6 +7,7 @@
 
 #import "SceneDelegate.h"
 #import <WASdkIntf/WASdkIntf.h>
+#import "WADemoUtil.h"
 
 @interface SceneDelegate ()
 
@@ -41,6 +42,7 @@
     NSLog(@"%s, %s, ", __FILE__, __FUNCTION__);
 
     [WACoreProxy sceneDidBecomeActive:scene];
+    [WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
 
 }
 
@@ -84,3 +86,4 @@
 
 }
 @end
+

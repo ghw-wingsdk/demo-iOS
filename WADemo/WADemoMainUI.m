@@ -27,6 +27,7 @@
 #import "WADemoAccountManagement.h"
 #import <WACommon/WAHelper.h>
 #import "WADemoClientidSetting.h"
+#import "WADemoAdMobView.h"
 
 //#import <WASdkImpl/WASdkLoginHandler.h>
 @interface WADemoMainUI () <WAPaymentDelegate>
@@ -42,7 +43,7 @@
 @property (nonatomic, strong) WADemoAdView* adView;
 @property (nonatomic, strong) WADemoAccountManagement* accountView;
 @property (nonatomic, strong) WADemoAccountManagement* usercenterView;
-
+@property (nonatomic, strong) WADemoAdMobView* adMobView;
 
 
 //@property (nonatomic, strong) WADemoCscViewController *cscVC;
@@ -167,11 +168,18 @@
     
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"打开cmp偏好设置" forState:UIControlStateNormal];
-    [btn18 addTarget:self action:@selector(showCMPreferences) forControlEvents:UIControlEventTouchUpInside];
+    [btn18 addTarget:self action:@selector(showConsentPreferences) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
     
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2]];
+    
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"AdMob" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(showAdmob) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+    
+    
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2,@2]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app版本
@@ -186,11 +194,10 @@
         
 //        UIViewController* vc = [WADemoUtil getCurrentVC];
 //        [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_WINGA extInfo:nil delegate:self];
-
 //        [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_WINGA extInfo:@"" delegate:self];
 //        [WAUserProxy loginWithPlatform:WA_PLATFORM_GHG extInfo:nil delegate:self];
-       
 //        [WAUserProxy openAccountManager:self];
+
 
     });
     
@@ -850,12 +857,27 @@
     
     
 }
-- (void)showCMPreferences{
+- (void)showConsentPreferences{
     
     [WAUserProxy showConsentPreferences];
 
 }
-@end
+- (void)showAdmob{
+    
+    UIViewController* vc = [WADemoUtil getCurrentVC];
+    _adMobView = [[WADemoAdMobView alloc]initWithFrame:self.bounds];
+    self.adMobView.hasBackBtn = YES;
+    [vc.view addSubview:self.adMobView];
+    [self.adMobView moveIn:nil];
+    
+//    WAAdMobViewController * adMobViewController =[[WAAdMobViewController alloc] init];
+//    [[WADemoUtil getCurrentVC] presentViewController:adMobViewController animated:YES completion:^{
+//
+//    }];
+    
+}
 
+
+@end
 
 

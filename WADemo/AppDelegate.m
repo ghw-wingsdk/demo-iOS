@@ -8,8 +8,10 @@
 #import "AppDelegate.h"
 #import <WASdkIntf/WASdkIntf.h>
 #import <WACommon/WAHelper.h>
-@interface AppDelegate ()<UNUserNotificationCenterDelegate>
+#import "WADemoUtil.h"
+#import "SplashViewController.h"
 
+@interface AppDelegate ()<UNUserNotificationCenterDelegate,GADFullScreenContentDelegate>
 @end
 
 @implementation AppDelegate
@@ -19,32 +21,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIViewController *initialViewController;
 
+    [WAAdMobProxy setTestMode:YES];
+    [WACoreProxy setDebugMode:YES];
     [WACoreProxy initWithCompletionHandler:^{
-        
-        NSLog(@"初始化完成====");
-        [WACoreProxy setDebugMode:YES];
-
         [WACoreProxy initAppEventTracker];
         [WAPayProxy init4Iap];
         [WACoreProxy setLevel:10];
-        
-//        [WACoreProxy setGameUserId:@"server1-role1-7282489"];
-//        [WACoreProxy setNickName:@"青铜server1-7282489"];
-//        [WACoreProxy setServerId:@"server1"];
+        NSLog(@"初始化完成====");
+
+        [WACoreProxy setGameUserId:@"server1-role1-7282489"];
+        [WACoreProxy setNickName:@"青铜server1-7282489"];
+        [WACoreProxy setServerId:@"server1"];
         [WAPushProxy application:application initPushWithDelegate:self];
 
         [WACoreProxy application:application didFinishLaunchingWithOptions:launchOptions];
-
-//        [WAHelper saveKeyChainWithObj:@(time) andKey:@"WAFinishTransactionTime"];
         NSLog(@"==WAFinishTransactionTime==%@",[WAHelper loadObjFromKeyChainWithKey:@"WAFinishTransactionTime"]);
-        
 
-
-        
     }];
+    
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"openAdStatus"]) {
+        initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SplashScreenViewController"];
+    } else {
+        initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
+    }
+    
+    // 设置初始视图控制器
+    self.window.rootViewController = initialViewController;
+    [self.window makeKeyAndVisible];
 
- 
     
     return YES;
     
@@ -105,7 +113,11 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    NSLog(@"applicationDidBecomeActive===");
     [WACoreProxy applicationDidBecomeActive:application];
+    
+    [WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -127,6 +139,39 @@
     return [WACoreProxy application:application continueUserActivity:userActivity restorationHandler:restorationHandler];
 }
 
+/// Tells the delegate that an impression has been recorded for the ad.
+- (void)adDidRecordImpression:(nonnull id<GADFullScreenPresentingAd>)ad {
+    WALog(@"adDidRecordImpression");
+}
+
+/// Tells the delegate that a click has been recorded for the ad.
+- (void)adDidRecordClick:(nonnull id<GADFullScreenPresentingAd>)ad {
+    WALog(@"adDidRecordClick");
+}
+
+/// Tells the delegate that the ad failed to present full screen content.
+- (void)ad:(nonnull id<GADFullScreenPresentingAd>)ad didFailToPresentFullScreenContentWithError:(nonnull NSError *)error {
+    WALog(@"didFailToPresentFullScreenContentWithError");
+    
+    
+}
+
+/// Tells the delegate that the ad will present full screen content.
+- (void)adWillPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+    WALog(@"adWillPresentFullScreenContent");
+}
+
+/// Tells the delegate that the ad will dismiss full screen content.
+- (void)adWillDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+    WALog(@"adWillDismissFullScreenContent");
+}
+
+/// Tells the delegate that the ad dismissed full screen content.
+- (void)adDidDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+    WALog(@"adDidDismissFullScreenContent");
+
+}
 
 
 @end
+

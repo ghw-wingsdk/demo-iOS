@@ -76,6 +76,8 @@
 		B27ED4F92A172EA200DB1772 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27ED4F82A172EA200DB1772 /* CoreFoundation.framework */; };
 		B27ED5012A1730AB00DB1772 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27ED5002A1730AB00DB1772 /* Accelerate.framework */; };
 		B294C2162A68C59400B1CB1B /* WADemoClientidSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = B294C2142A68C59400B1CB1B /* WADemoClientidSetting.m */; };
+		B296DD222C2417A500DF909D /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B296DD212C2417A500DF909D /* SplashViewController.m */; };
+		B296DD262C2418F800DF909D /* WADemoAdMobView.m in Sources */ = {isa = PBXBuildFile; fileRef = B296DD252C2418F800DF909D /* WADemoAdMobView.m */; };
 		B5E416FE43BF3C38AD8A3C9D /* libPods-WADemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E5A5D4C917409A7144A6F9 /* libPods-WADemo.a */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +206,10 @@
 		B294C1FB2A64EE3F00B1CB1B /* WADemoRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WADemoRelease.entitlements; sourceTree = "<group>"; };
 		B294C2142A68C59400B1CB1B /* WADemoClientidSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoClientidSetting.m; sourceTree = "<group>"; };
 		B294C2152A68C59400B1CB1B /* WADemoClientidSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoClientidSetting.h; sourceTree = "<group>"; };
+		B296DD202C2417A500DF909D /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		B296DD212C2417A500DF909D /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		B296DD242C2418F800DF909D /* WADemoAdMobView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WADemoAdMobView.h; sourceTree = "<group>"; };
+		B296DD252C2418F800DF909D /* WADemoAdMobView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WADemoAdMobView.m; sourceTree = "<group>"; };
 		B2F633A52A1AFA5400559C40 /* WADemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WADemo.entitlements; sourceTree = "<group>"; };
 		E1E5A5D4C917409A7144A6F9 /* libPods-WADemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WADemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -262,6 +268,7 @@
 		B27ED3362A17196E00DB1772 /* WADemo */ = {
 			isa = PBXGroup;
 			children = (
+				B296DD232C2418E000DF909D /* AdMob */,
 				B294C2132A68C59400B1CB1B /* clientidsetting */,
 				B294C1FB2A64EE3F00B1CB1B /* WADemoRelease.entitlements */,
 				B2F633A52A1AFA5400559C40 /* WADemo.entitlements */,
@@ -293,6 +300,8 @@
 				B27ED3452A17196F00DB1772 /* LaunchScreen.storyboard */,
 				B27ED3482A17196F00DB1772 /* Info.plist */,
 				B27ED3492A17196F00DB1772 /* main.m */,
+				B296DD202C2417A500DF909D /* SplashViewController.h */,
+				B296DD212C2417A500DF909D /* SplashViewController.m */,
 			);
 			path = WADemo;
 			sourceTree = "<group>";
@@ -554,6 +563,15 @@
 			path = clientidsetting;
 			sourceTree = "<group>";
 		};
+		B296DD232C2418E000DF909D /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				B296DD242C2418F800DF909D /* WADemoAdMobView.h */,
+				B296DD252C2418F800DF909D /* WADemoAdMobView.m */,
+			);
+			path = AdMob;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -695,6 +713,7 @@
 				B27ED4D32A1720CA00DB1772 /* WADemoGiftBoxTV.m in Sources */,
 				B27ED4DD2A1720CA00DB1772 /* WADemoMainUI.m in Sources */,
 				B27ED4BB2A1720CA00DB1772 /* WADemoPostEventViewBtn.m in Sources */,
+				B296DD222C2417A500DF909D /* SplashViewController.m in Sources */,
 				B27ED4D02A1720CA00DB1772 /* WADemoFriendInGameTV.m in Sources */,
 				B27ED4C02A1720CA00DB1772 /* WADemoAccountSwitch.m in Sources */,
 				B27ED4CC2A1720CA00DB1772 /* WADemoFriendListForSendingAsking.m in Sources */,
@@ -727,6 +746,7 @@
 				B27ED4BF2A1720CA00DB1772 /* WADemoUserCenterViewController.m in Sources */,
 				B27ED4D52A1720CA00DB1772 /* WADemoFriendListTV.m in Sources */,
 				B27ED4D22A1720CA00DB1772 /* WADemoGiftRequestView.m in Sources */,
+				B296DD262C2418F800DF909D /* WADemoAdMobView.m in Sources */,
 				B27ED4B92A1720CA00DB1772 /* WADemoEventTableView.m in Sources */,
 				B27ED4D72A1720CA00DB1772 /* WADemoInvite.m in Sources */,
 				B27ED4DE2A1720CA00DB1772 /* WADemoAdView.m in Sources */,
