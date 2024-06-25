@@ -23,9 +23,12 @@
     // Override point for customization after application launch.
     
     UIViewController *initialViewController;
-
-    [WAAdMobProxy setTestMode:YES];
     [WACoreProxy setDebugMode:YES];
+    BOOL isTest =YES;
+    if (isTest) {
+        [WAAdMobProxy setTestMode:YES]; // 开发调试模式才能使用。发布到appstore时，需要注销
+    }
+    
     [WACoreProxy initWithCompletionHandler:^{
         [WACoreProxy initAppEventTracker];
         [WAPayProxy init4Iap];
@@ -36,15 +39,17 @@
         [WACoreProxy setNickName:@"青铜server1-7282489"];
         [WACoreProxy setServerId:@"server1"];
         [WAPushProxy application:application initPushWithDelegate:self];
-
         [WACoreProxy application:application didFinishLaunchingWithOptions:launchOptions];
-        NSLog(@"==WAFinishTransactionTime==%@",[WAHelper loadObjFromKeyChainWithKey:@"WAFinishTransactionTime"]);
 
     }];
     
     
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"openAdStatus"]) {
+    BOOL openAdStatus =[[NSUserDefaults standardUserDefaults] boolForKey:@"openAdStatus"];
+    // 开屏页,首次安装不要直接弹出开屏页（首次安装，会弹网络权限、通知权限、相册权限、ump权限，操作过多，开屏页大概率失败）
+    // 建议用户安装后，第二次打开时
+    if (openAdStatus) {
         initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SplashScreenViewController"];
+    //主页
     } else {
         initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
     }
@@ -116,7 +121,7 @@
     NSLog(@"applicationDidBecomeActive===");
     [WACoreProxy applicationDidBecomeActive:application];
     
-    [WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
+    [WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:nil];
 
 }
 

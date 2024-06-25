@@ -8,7 +8,9 @@
 #import "SplashViewController.h"
 #import "AppDelegate.h"
 #import "WADemoUtil.h"
-@interface SplashViewController ()
+#import <WACommon/WACommon.h>
+
+@interface SplashViewController ()<GADFullScreenContentDelegate>
 
 @end
 
@@ -28,10 +30,65 @@ static const NSInteger CounterTime = 5;
 //    self.splashScreenLabel.textAlignment = NSTextAlignmentCenter;
 //    [self.view addSubview:self.splashScreenLabel];
     
+    // 监听ump 同意结果
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(handleAdmobUMPStatusNotification:)
+//                                                 name:WASDK_ADMOB_UMP_STATUS_NOTIFICATION
+//                                               object:nil];
+    
     [self startTimer];
     
 }
-- (void)startMainScreen {
+
+
+
+BOOL umpStatus = NO;
+- (void)handleAdmobUMPStatusNotification:(NSNotification *)notification {
+    NSDictionary *admobUMPResultDic = notification.userInfo;
+    NSString *status = admobUMPResultDic[@"status"];
+    NSError * error =admobUMPResultDic[@"error"];
+    NSLog(@"handleAdmobUMPStatusNotification Status: %@", status);
+    umpStatus= [status intValue];
+
+    if (!umpStatus) {
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"admob sdk初始化失败"
+                                                                                  message:error.localizedDescription
+                                                                           preferredStyle:UIAlertControllerStyleAlert];
+         
+         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"进入游戏"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+             
+             
+             umpStatus =YES;
+                                                              NSLog(@"OK button tapped");
+
+             
+                                                       
+         }];
+         
+         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"退出"
+                                                                style:UIAlertActionStyleCancel
+                                                              handler:^(UIAlertAction *action) {
+                                                                  NSLog(@"Cancel button tapped");
+             exit(0);
+                                                              }];
+         
+         [alertController addAction:okAction];
+         [alertController addAction:cancelAction];
+         
+         [self presentViewController:alertController animated:YES completion:nil];    }
+}
+
+
+- (void)startShowAd {
+
+    [WAAdMobProxy showAppOpenAdWithViewController:self withDelegate:self];
+    
+}
+
+- (void)enterMainPage{
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *navigationController = (UIViewController *)[mainStoryBoard
         instantiateViewControllerWithIdentifier:@"ViewController"];
@@ -39,10 +96,6 @@ static const NSInteger CounterTime = 5;
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     UIWindow *window = appDelegate.window;
     window.rootViewController=navigationController;
-    
-
-
-
     
 }
 - (void)startTimer {
@@ -63,8 +116,9 @@ static const NSInteger CounterTime = 5;
                                    (long)_secondsRemaining];
     return;
   }else{
-      [self startMainScreen];
       
+      [self startShowAd];
+
   }
 
   self.splashScreenLabel.text = @"Done.";
@@ -72,6 +126,34 @@ static const NSInteger CounterTime = 5;
   _countdownTimer = nil;
 
 }
+
+- (void)adDidRecordImpression:(nonnull id<GADFullScreenPresentingAd>)ad{}
+
+/// Tells the delegate that a click has been recorded for the ad.
+- (void)adDidRecordClick:(nonnull id<GADFullScreenPresentingAd>)ad{}
+
+/// Tells the delegate that the ad failed to present full screen content.
+- (void)ad:(nonnull id<GADFullScreenPresentingAd>)ad
+didFailToPresentFullScreenContentWithError:(nonnull NSError *)error{
+    
+    NSLog(@"开屏页=====didFailToPresentFullScreenContentWithError.");
+
+    [self enterMainPage];
+
+}
+
+/// Tells the delegate that the ad will present full screen content.
+- (void)adWillPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad{}
+
+/// Tells the delegate that the ad will dismiss full screen content.
+- (void)adWillDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad{}
+
+/// Tells the delegate that the ad dismissed full screen content.
+- (void)adDidDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad{
+    
+    [self enterMainPage];
+}
+
 /*
 #pragma mark - Navigation
 

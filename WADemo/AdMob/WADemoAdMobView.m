@@ -156,7 +156,9 @@
         
     } else if ([buttonTitle isEqualToString:@"显示插页广告"]) {
         // 展示插页广告逻辑
-        [WAAdMobProxy showInterstitialAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
+        if([WAAdMobProxy checkInterstitialAdReady]){
+            [WAAdMobProxy showInterstitialAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
+        }
         
     }  else  if ([buttonTitle isEqualToString:@"检查开屏广告"]) {
         // 检测开屏广告逻辑
@@ -165,7 +167,11 @@
         
         
     } else if ([buttonTitle isEqualToString:@"显示开屏广告"]) {
-        [WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
+        
+        if([WAAdMobProxy checkAppOpenAdReady]){
+            [WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
+        }
+        
         
     } else if ([buttonTitle isEqualToString:@"显示激励广告"]) {
         
@@ -195,6 +201,12 @@
         if([WAAdMobProxy checkUmpOptions]){
             
             [WAAdMobProxy showUmpOptionsWithViewController:[WADemoUtil getCurrentVC] consentGatheringComplete:^(NSError * _Nullable error) {
+                if(error){
+                    
+                }else {
+                    NSLog(@"consentGatheringComplete");
+                    
+                }
             }];
         }
 
@@ -248,7 +260,16 @@
 - (void)ad:(nonnull id<GADFullScreenPresentingAd>)ad didFailToPresentFullScreenContentWithError:(nonnull NSError *)error {
     WALog(@"didFailToPresentFullScreenContentWithError");
     
-    [self makeToast:[NSString stringWithFormat:@"激励广告加载是失败:%@",error.localizedDescription]];
+    if ([ad isKindOfClass:[GADRewardedAd class]]) {
+        [self makeToast:[NSString stringWithFormat:@"激励广告加载失败:%@",error.description]];
+    }else if([ad isKindOfClass:[GADInterstitialAd class]]){
+        [self makeToast:[NSString stringWithFormat:@"插页广告加载失败:%@",error.description]];
+    }else if([ad isKindOfClass:[GADAppOpenAd class]]){
+        [self makeToast:[NSString stringWithFormat:@"开屏广告加载失败:%@",error.description]];
+
+    }
+    
+    
     
 }
 
@@ -267,7 +288,10 @@
     WALog(@"adDidDismissFullScreenContent");
     if ([ad isKindOfClass:[GADRewardedAd class]]) {
         [self makeToast:@"激励广告隐藏"];
-
+    }else if([ad isKindOfClass:[GADInterstitialAd class]]){
+        [self makeToast:@"插页广告隐藏"];
+    }else if([ad isKindOfClass:[GADAppOpenAd class]]){
+        [self makeToast:@"开屏广告隐藏"];
     }
 }
 
