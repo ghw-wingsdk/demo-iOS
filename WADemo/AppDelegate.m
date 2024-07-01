@@ -24,11 +24,8 @@
     
     UIViewController *initialViewController;
     [WACoreProxy setDebugMode:YES];
-    BOOL isTest =YES;
-    if (isTest) {
-        [WAAdMobProxy setTestMode:YES]; // 开发调试模式才能使用。发布到appstore时，需要注销
-    }
-    
+    [WAAdMobProxy setTestMode:YES]; // 开发调试模式才能使用。发布到appstore时，需要注销
+//    
     [WACoreProxy initWithCompletionHandler:^{
         [WACoreProxy initAppEventTracker];
         [WAPayProxy init4Iap];
