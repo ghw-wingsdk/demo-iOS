@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AdmobUseUMP</key>
+	<true/>
 	<key>AiHelp</key>
 	<dict>
 		<key>appId</key>
@@ -62,6 +64,8 @@
 	<string>174b2fb60d44d4c62e74d3a6891fb1b8</string>
 	<key>FacebookDisplayName</key>
 	<string>WINSDKdemo</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3512615046087076~6300575964</string>
 	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS</key>
 	<false/>
 	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS - 2</key>
@@ -177,19 +181,6 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>Twitter</key>
-	<dict>
-		<key>consumerKey</key>
-		<string>FXJ0BYeSakTGtm0Bh5OO62U9X</string>
-		<key>consumerSecret</key>
-		<string>Uo9Es3m8FNBLtcGjzrU3oyoBOczkqzga8sgPoOsERJ8dDWScf4</string>
-	</dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
-	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3512615046087076~6300575964</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -389,7 +380,16 @@
 			<string>3qcr597p9d.skadnetwork</string>
 		</dict>
 	</array>
-	<key>AdmobUseUMP</key>
-	<true/>
+	<key>Twitter</key>
+	<dict>
+		<key>consumerKey</key>
+		<string>FXJ0BYeSakTGtm0Bh5OO62U9X</string>
+		<key>consumerSecret</key>
+		<string>Uo9Es3m8FNBLtcGjzrU3oyoBOczkqzga8sgPoOsERJ8dDWScf4</string>
+	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 </dict>
 </plist>
