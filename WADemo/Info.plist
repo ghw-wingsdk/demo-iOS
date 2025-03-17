@@ -55,7 +55,9 @@
 		</dict>
 	</array>
 	<key>ConsentNoticeId</key>
-	<string>MCheVkM3</string>
+	<string>3gFPBy7K</string>
+	<key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
+	<false/>
 	<key>FacebookAppID</key>
 	<string>1281771621973222</string>
 	<key>FacebookAutoLogAppEventsEnabled</key>
@@ -68,21 +70,12 @@
 	<string>ca-app-pub-3512615046087076~6300575964</string>
 	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS</key>
 	<false/>
-	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS - 2</key>
-	<false/>
 	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_STORAGE</key>
 	<false/>
 	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_USER_DATA</key>
 	<false/>
-	<key>Instagram</key>
-	<dict>
-		<key>clientId</key>
-		<string>9b5eddd42ee048179f414a2c038365e4</string>
-		<key>clientSecret</key>
-		<string>83d4468b062a427780bda2ad568e5be0</string>
-		<key>redirectUri</key>
-		<string>http://blog.wing-analytics.com/</string>
-	</dict>
+	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_ANALYTICS_STORAGE</key>
+	<false/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -181,6 +174,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
+	<true/>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -387,9 +382,5 @@
 		<key>consumerSecret</key>
 		<string>Uo9Es3m8FNBLtcGjzrU3oyoBOczkqzga8sgPoOsERJ8dDWScf4</string>
 	</dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
 </dict>
 </plist>

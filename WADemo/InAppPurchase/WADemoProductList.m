@@ -153,6 +153,8 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
 -(void)paymentDidFailWithError:(NSError*)error andPlatform:(NSString*)platform{
     if (error) {
         NSLog(@"paymentDidFailWithError:%@",error.description);
+        [self.naviView makeToast:error.description];
+
     }
 }
 

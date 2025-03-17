@@ -255,9 +255,11 @@
     
     
     [WACoreProxy setNickName:nickName];
-
-    
     [WACoreProxy setGameUserId:gameuserid];
+    
+
+    [WACoreProxy setServerId:@"server1"];
+    
     
     
     WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"登录成功" message:[NSString stringWithFormat:@"platform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@,是否为游客账号%d",result.platform,result.pUserId,result.pToken,result.userId,result.token,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];

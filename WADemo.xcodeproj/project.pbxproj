@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B221FB822D7FC7D0001EC99A /* wa_sdk_track_config.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2D6755C2D71B47D00E0F4BE /* wa_sdk_track_config.plist */; };
+		B221FB832D7FC7D0001EC99A /* wa_sdk.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2D6755B2D71B47D00E0F4BE /* wa_sdk.plist */; };
+		B23272D72D798FED00051526 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23272D62D798FED00051526 /* PhotosUI.framework */; };
 		B241F6CA2A402BBD00B6D95A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B241F6C92A402BBD00B6D95A /* SceneDelegate.m */; };
 		B243A46C2A287E6E00F404C1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B243A46B2A287E6E00F404C1 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B26B633A2A6A1A29007C46DB /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B63392A6A1A29007C46DB /* File.swift */; };
@@ -84,6 +87,7 @@
 /* Begin PBXFileReference section */
 		1E2B408E4DC0DA5D7643C8A0 /* Pods-WADemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WADemo.release.xcconfig"; path = "Target Support Files/Pods-WADemo/Pods-WADemo.release.xcconfig"; sourceTree = "<group>"; };
 		723716328195ABEA5C6C81B4 /* Pods-WADemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WADemo.debug.xcconfig"; path = "Target Support Files/Pods-WADemo/Pods-WADemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B23272D62D798FED00051526 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		B241F6C82A402BBD00B6D95A /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		B241F6C92A402BBD00B6D95A /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		B243A46B2A287E6E00F404C1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -210,6 +214,8 @@
 		B296DD212C2417A500DF909D /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		B296DD242C2418F800DF909D /* WADemoAdMobView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WADemoAdMobView.h; sourceTree = "<group>"; };
 		B296DD252C2418F800DF909D /* WADemoAdMobView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WADemoAdMobView.m; sourceTree = "<group>"; };
+		B2D6755B2D71B47D00E0F4BE /* wa_sdk.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = wa_sdk.plist; sourceTree = "<group>"; };
+		B2D6755C2D71B47D00E0F4BE /* wa_sdk_track_config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = wa_sdk_track_config.plist; sourceTree = "<group>"; };
 		B2F633A52A1AFA5400559C40 /* WADemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WADemo.entitlements; sourceTree = "<group>"; };
 		E1E5A5D4C917409A7144A6F9 /* libPods-WADemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WADemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -219,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B23272D72D798FED00051526 /* PhotosUI.framework in Frameworks */,
 				B243A46C2A287E6E00F404C1 /* SwiftUI.framework in Frameworks */,
 				B27ED5012A1730AB00DB1772 /* Accelerate.framework in Frameworks */,
 				B27ED4F92A172EA200DB1772 /* CoreFoundation.framework in Frameworks */,
@@ -298,6 +305,8 @@
 				B27ED3402A17196E00DB1772 /* Main.storyboard */,
 				B27ED3432A17196F00DB1772 /* Assets.xcassets */,
 				B27ED3452A17196F00DB1772 /* LaunchScreen.storyboard */,
+				B2D6755B2D71B47D00E0F4BE /* wa_sdk.plist */,
+				B2D6755C2D71B47D00E0F4BE /* wa_sdk_track_config.plist */,
 				B27ED3482A17196F00DB1772 /* Info.plist */,
 				B27ED3492A17196F00DB1772 /* main.m */,
 				B296DD202C2417A500DF909D /* SplashViewController.h */,
@@ -539,6 +548,7 @@
 		B27ED4E92A172DC000DB1772 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B23272D62D798FED00051526 /* PhotosUI.framework */,
 				B243A46B2A287E6E00F404C1 /* SwiftUI.framework */,
 				B27ED5002A1730AB00DB1772 /* Accelerate.framework */,
 				B27ED4F82A172EA200DB1772 /* CoreFoundation.framework */,
@@ -636,6 +646,8 @@
 				B27ED4E12A1720CA00DB1772 /* Main.storyboard in Resources */,
 				B27ED4BE2A1720CA00DB1772 /* Assets.xcassets in Resources */,
 				B27ED4E02A1720CA00DB1772 /* LaunchScreen.storyboard in Resources */,
+				B221FB822D7FC7D0001EC99A /* wa_sdk_track_config.plist in Resources */,
+				B221FB832D7FC7D0001EC99A /* wa_sdk.plist in Resources */,
 				B27ED4B62A1720CA00DB1772 /* GoogleService-Info.plist in Resources */,
 				B27ED4CA2A1720CA00DB1772 /* Gift.zip in Resources */,
 				B27ED3472A17196F00DB1772 /* LaunchScreen.storyboard in Resources */,
@@ -923,7 +935,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WADemo/WADemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = Y8Z2D47ET4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -949,9 +961,8 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WADemo/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用相机";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "需要添加图片到相册";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要使用相册";
+				INFOPLIST_KEY_CFBundleDisplayName = WingSDKDemo;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Would Like to Access Your Photos";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your info will be used for personalized ads.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -962,7 +973,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.3.0;
+				MARKETING_VERSION = 4.4.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -976,8 +987,6 @@
 					"\"AdSupport\"",
 					"-framework",
 					"\"AppsFlyerLib\"",
-					"-framework",
-					"\"Chartboost\"",
 					"-framework",
 					"\"FBAEMKit\"",
 					"-framework",
@@ -1013,15 +1022,11 @@
 					"-framework",
 					"\"Toast\"",
 					"-framework",
-					"\"VKSdkFramework\"",
-					"-framework",
 					"\"WAAIhelpImpl\"",
 					"-framework",
 					"\"WAAfImpl\"",
 					"-framework",
 					"\"WAApImpl\"",
-					"-framework",
-					"\"WACbImpl\"",
 					"-framework",
 					"\"WACommon\"",
 					"-framework",
@@ -1029,19 +1034,11 @@
 					"-framework",
 					"\"WAFirebaseImpl\"",
 					"-framework",
-					"\"WAInstagramImpl\"",
-					"-framework",
 					"\"WAPushImpl\"",
 					"-framework",
 					"\"WASdkImpl\"",
 					"-framework",
 					"\"WASdkIntf\"",
-					"-framework",
-					"\"WAVkImpl\"",
-					"-framework",
-					"\"WAWebLoginImpl\"",
-					"-framework",
-					"\"WAWebPayImpl\"",
 					"-framework",
 					"\"WebKit\"",
 					"-framework",
@@ -1070,7 +1067,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WADemo/WADemoRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = Y8Z2D47ET4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1096,9 +1093,8 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WADemo/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用相机";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "需要添加图片到相册";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要使用相册";
+				INFOPLIST_KEY_CFBundleDisplayName = WingSDKDemo;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Would Like to Access Your Photos";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your info will be used for personalized ads.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1109,7 +1105,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.3.0;
+				MARKETING_VERSION = 4.4.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1123,8 +1119,6 @@
 					"\"AdSupport\"",
 					"-framework",
 					"\"AppsFlyerLib\"",
-					"-framework",
-					"\"Chartboost\"",
 					"-framework",
 					"\"FBAEMKit\"",
 					"-framework",
@@ -1160,15 +1154,11 @@
 					"-framework",
 					"\"Toast\"",
 					"-framework",
-					"\"VKSdkFramework\"",
-					"-framework",
 					"\"WAAIhelpImpl\"",
 					"-framework",
 					"\"WAAfImpl\"",
 					"-framework",
 					"\"WAApImpl\"",
-					"-framework",
-					"\"WACbImpl\"",
 					"-framework",
 					"\"WACommon\"",
 					"-framework",
@@ -1176,19 +1166,11 @@
 					"-framework",
 					"\"WAFirebaseImpl\"",
 					"-framework",
-					"\"WAInstagramImpl\"",
-					"-framework",
 					"\"WAPushImpl\"",
 					"-framework",
 					"\"WASdkImpl\"",
 					"-framework",
 					"\"WASdkIntf\"",
-					"-framework",
-					"\"WAVkImpl\"",
-					"-framework",
-					"\"WAWebLoginImpl\"",
-					"-framework",
-					"\"WAWebPayImpl\"",
 					"-framework",
 					"\"WebKit\"",
 					"-framework",

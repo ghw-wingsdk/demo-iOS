@@ -11,7 +11,7 @@
 #import "WADemoUtil.h"
 #import "SplashViewController.h"
 
-@interface AppDelegate ()<UNUserNotificationCenterDelegate,GADFullScreenContentDelegate>
+@interface AppDelegate ()<UNUserNotificationCenterDelegate,WAInventoryDelegate>//GADFullScreenContentDelegate admob广告delegate
 @end
 
 @implementation AppDelegate
@@ -24,35 +24,41 @@
     
     UIViewController *initialViewController;
     [WACoreProxy setDebugMode:YES];
-    [WAAdMobProxy setTestMode:YES]; // 开发调试模式才能使用。发布到appstore时，需要注销
-//    
+    [WAAdMobProxy setTestMode:YES]; // admmob模块，开发调试模式才能使用。发布到appstore时，需要注销
+    
     [WACoreProxy initWithCompletionHandler:^{
         [WACoreProxy initAppEventTracker];
         [WAPayProxy init4Iap];
+//        4.4.0sdk内部已自动查询
+//        [WAPayProxy queryInventoryWithDelegate:self];// 提前查询商品列表
+
+        
         [WACoreProxy setLevel:10];
         NSLog(@"初始化完成====");
 
-        [WACoreProxy setGameUserId:@"server1-role1-7282489"];
-        [WACoreProxy setNickName:@"青铜server1-7282489"];
-        [WACoreProxy setServerId:@"server1"];
+
         [WAPushProxy application:application initPushWithDelegate:self];
         [WACoreProxy application:application didFinishLaunchingWithOptions:launchOptions];
 
     }];
     
-    
-    BOOL openAdStatus =[[NSUserDefaults standardUserDefaults] boolForKey:@"openAdStatus"];
-    // 开屏页,首次安装不要直接弹出开屏页（首次安装，会弹网络权限、通知权限、相册权限、ump权限，操作过多，开屏页大概率失败）
-    // 建议用户安装后，第二次打开时
-    if (openAdStatus) {
-        initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SplashScreenViewController"];
-    //主页
-    } else {
-        initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
+    BOOL openAdmob = NO;
+    if (openAdmob) {
+        BOOL openAdStatus =[[NSUserDefaults standardUserDefaults] boolForKey:@"openAdStatus"];
+        // 开屏,首次安装不要直接弹出开屏页（首次安装，会弹网络权限、通知权限、相册权限、ump权限，操作过多，开屏页大概率失败）
+        // 建议用户安装后，第二次打开时
+        if (openAdStatus) {
+            initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SplashScreenViewController"];
+        //主页
+        } else {
+            initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
+        }
+        
+        // 设置初始视图控制器
+        self.window.rootViewController = initialViewController;
     }
     
-    // 设置初始视图控制器
-    self.window.rootViewController = initialViewController;
+
     [self.window makeKeyAndVisible];
 
     
@@ -61,10 +67,7 @@
 }
 
 
-//- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
-//{
-//    [WACoreProxy application:application didRegisterUserNotificationSettings:notificationSettings];
-//}
+
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"能够获取到token===============");
@@ -94,7 +97,7 @@
 }
 
 // 通知的点击事件
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
     [WACoreProxy userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
 }
 
@@ -119,28 +122,37 @@
     NSLog(@"applicationDidBecomeActive===");
     [WACoreProxy applicationDidBecomeActive:application];
     
-    [WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:nil];
+    // Admob 开屏广告 
+    //[WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:nil];
 
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-//
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-//    
-//    return [WACoreProxy application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
-//}
+
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
     return [WACoreProxy application:app openURL:url options:options];
 }
-
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
 {
     return [WACoreProxy application:application continueUserActivity:userActivity restorationHandler:restorationHandler];
 }
+
+#pragma mark 查询商品回调
+
+- (void)queryInventoryDidCompleteWithResult:(NSArray<WAIapProduct *> *)Inventory {
+    
+}
+
+- (void)queryInventoryDidFailWithError:(NSError *)error {
+    
+}
+
+
+#pragma mark admob 模块，不接入adbmob 可不考虑
 
 /// Tells the delegate that an impression has been recorded for the ad.
 - (void)adDidRecordImpression:(nonnull id<GADFullScreenPresentingAd>)ad {

@@ -22,181 +22,126 @@
 
 -(void)initBtnAndLayout{
     NSMutableArray* btns = [NSMutableArray array];
-//    WADemoButtonMain* btn1 = [[WADemoButtonMain alloc]init];
-//    [btn1 setTitle:@"register" forState:UIControlStateNormal];
-//    [btn1 addTarget:self action:@selector(register_) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn1];
+
+    
+    
+    WADemoButtonMain* btn = [[WADemoButtonMain alloc]init];
+    [btn setTitle:@"进服" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(userImport) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn];
+    
+    
+    WADemoButtonMain* btn17 = [[WADemoButtonMain alloc]init];
+    [btn17 setTitle:@"创角" forState:UIControlStateNormal];
+    [btn17 addTarget:self action:@selector(userCreate) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn17];
+    
+    
+    
     WADemoButtonMain* btn2 = [[WADemoButtonMain alloc]init];
-    [btn2 setTitle:@"login" forState:UIControlStateNormal];
-    [btn2 addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+    [btn2 setTitle:@"点击购买" forState:UIControlStateNormal];
+    [btn2 addTarget:self action:@selector(initiatedPurchase) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn2];
-//    WADemoButtonMain* btn3 = [[WADemoButtonMain alloc]init];
-//    [btn3 setTitle:@"initiatedPayment" forState:UIControlStateNormal];
-//    [btn3 addTarget:self action:@selector(initiatedPayment) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn3];
-//    WADemoButtonMain* btn23 = [[WADemoButtonMain alloc]init];
-//    [btn23 setTitle:@"payment" forState:UIControlStateNormal];
-//    [btn23 addTarget:self action:@selector(payment) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn23];
-//    WADemoButtonMain* btn4 = [[WADemoButtonMain alloc]init];
-//    [btn4 setTitle:@"initiatedPurchase" forState:UIControlStateNormal];
-//    [btn4 addTarget:self action:@selector(initiatedPurchase) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn4];
-//
+
     WADemoButtonMain* btn24 = [[WADemoButtonMain alloc]init];
-    [btn24 setTitle:@"purchase" forState:UIControlStateNormal];
+    [btn24 setTitle:@"购买完成" forState:UIControlStateNormal];
     [btn24 addTarget:self action:@selector(purchase) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn24];
     
     WADemoButtonMain* btn5 = [[WADemoButtonMain alloc]init];
-    [btn5 setTitle:@"levelAchieve" forState:UIControlStateNormal];
+    [btn5 setTitle:@"等级事件" forState:UIControlStateNormal];
     [btn5 addTarget:self action:@selector(levelAchieve) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn5];
-//    WADemoButtonMain* btn6 = [[WADemoButtonMain alloc]init];
-//    [btn6 setTitle:@"addToCart" forState:UIControlStateNormal];
-//    [btn6 addTarget:self action:@selector(addToCart) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn6];
-//    WADemoButtonMain* btn7 = [[WADemoButtonMain alloc]init];
-//    [btn7 setTitle:@"addToWishlist" forState:UIControlStateNormal];
-//    [btn7 addTarget:self action:@selector(addToWishlist) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn7];
-//    WADemoButtonMain* btn8 = [[WADemoButtonMain alloc]init];
-//    [btn8 setTitle:@"search" forState:UIControlStateNormal];
-//    [btn8 addTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn8];
-//    WADemoButtonMain* btn9 = [[WADemoButtonMain alloc]init];
-//    [btn9 setTitle:@"spentCredits" forState:UIControlStateNormal];
-//    [btn9 addTarget:self action:@selector(spentCredits) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn9];
-//    WADemoButtonMain* btn10 = [[WADemoButtonMain alloc]init];
-//    [btn10 setTitle:@"achievementUnlocked" forState:UIControlStateNormal];
-//    [btn10 addTarget:self action:@selector(achievementUnlocked) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn10];
-//    WADemoButtonMain* btn11 = [[WADemoButtonMain alloc]init];
-//    [btn11 setTitle:@"contentView" forState:UIControlStateNormal];
-//    [btn11 addTarget:self action:@selector(contentView) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn11];
-//    WADemoButtonMain* btn12 = [[WADemoButtonMain alloc]init];
-//    [btn12 setTitle:@"share" forState:UIControlStateNormal];
-//    [btn12 addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn12];
-//    WADemoButtonMain* btn13 = [[WADemoButtonMain alloc]init];
-//    [btn13 setTitle:@"invite" forState:UIControlStateNormal];
-//    [btn13 addTarget:self action:@selector(invite) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn13];
-//    WADemoButtonMain* btn14 = [[WADemoButtonMain alloc]init];
-//    [btn14 setTitle:@"reEngage" forState:UIControlStateNormal];
-//    [btn14 addTarget:self action:@selector(reEngage) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn14];
-//    WADemoButtonMain* btn15 = [[WADemoButtonMain alloc]init];
-//    [btn15 setTitle:@"update" forState:UIControlStateNormal];
-//    [btn15 addTarget:self action:@selector(update) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn15];
-//    WADemoButtonMain* btn16 = [[WADemoButtonMain alloc]init];
-//    [btn16 setTitle:@"openedFromPushNotification" forState:UIControlStateNormal];
-//    [btn16 addTarget:self action:@selector(openedFromPushNotification) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn16];
-    WADemoButtonMain* btn17 = [[WADemoButtonMain alloc]init];
-    [btn17 setTitle:@"userCreate" forState:UIControlStateNormal];
-    [btn17 addTarget:self action:@selector(userCreate) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn17];
+
+
     WADemoButtonMain* btn18 = [[WADemoButtonMain alloc]init];
-    [btn18 setTitle:@"userInfoUpdate" forState:UIControlStateNormal];
+    [btn18 setTitle:@"更新用户信息" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(userInfoUpdate) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
     
     WADemoButtonMain* btn19 = [[WADemoButtonMain alloc]init];
-    [btn19 setTitle:@"taskUpdate" forState:UIControlStateNormal];
-    [btn19 addTarget:self action:@selector(taskUpdate) forControlEvents:UIControlEventTouchUpInside];
+    [btn19 setTitle:@"关键等级" forState:UIControlStateNormal];
+    [btn19 addTarget:self action:@selector(self_lv) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn19];
     
     WADemoButtonMain* btn20 = [[WADemoButtonMain alloc]init];
-    [btn20 setTitle:@"goldUpdate" forState:UIControlStateNormal];
-    [btn20 addTarget:self action:@selector(goldUpdate) forControlEvents:UIControlEventTouchUpInside];
+    [btn20 setTitle:@"完成新手任务" forState:UIControlStateNormal];
+    [btn20 addTarget:self action:@selector(tutorialCompleted) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn20];
-    
-    WADemoButtonMain* btn21 = [[WADemoButtonMain alloc]init];
-    [btn21 setTitle:@"userImport" forState:UIControlStateNormal];
-    [btn21 addTarget:self action:@selector(userImport) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn21];
+
     WADemoButtonMain* btn22 = [[WADemoButtonMain alloc]init];
     [btn22 setTitle:@"custom" forState:UIControlStateNormal];
     [btn22 addTarget:self action:@selector(custom) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn22];
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@1]];
     self.title = @"数据收集";
     self.btnLayout = btnLayout;
     self.btns = btns;
 }
 
 
+- (void)tutorialCompleted{
+    WATutorialCompletedEvent *event =[[WATutorialCompletedEvent alloc] init];
+    [event trackEvent];
 
-- (void)register_ {
-    
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventCompleteRegistration];
-    [self addSubview:view];
     
 }
+//关键等级时调用
+- (void)self_lv{
+    int level = 20;
+    WALvXEvent * event =[[WALvXEvent alloc] initWithLevel:level];
+    [event trackEvent];
 
-- (void)login {
+    
+}
+- (void)initiatedPurchase {
 
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventLogin];
-    [self addSubview:view];
-//    [WATrackProxy trackWithEventName:WAEventLogin valueToSum:0 params:nil];
+    // sdk4.6.0 新增
+    WAInitiatedPurchaseEvent * purchseEvent =[[WAInitiatedPurchaseEvent alloc] init];
+    [purchseEvent trackEvent];
+
+    
+    
+    
+    /*
+    WAEvent* event = [[WAEvent alloc]init];
+    event.defaultEventName =WAEventInitiatedPurchase;
+    [event trackEvent];
+    */
+    
+    
+
 }
 
-//- (void)initiatedPayment {
-//    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventInitiatedPayment];
-//    [self addSubview:view];
-//}
-//
-//- (void)payment {
-//    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventPayment];
-//    [self addSubview:view];
-//}
-//- (void)initiatedPurchase {
-//
-//    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventInitiatedPurchase];
-//    [self addSubview:view];
-//}
-//
 - (void)purchase {
 
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventPurchase];
-    [self addSubview:view];
+    WAPurchaseEvent * event =[[WAPurchaseEvent alloc] initWithItemName:@"钻石001" itemAmount:1 price:1.99];
+    [event trackEvent];
+
+
 }
 
 - (void)levelAchieve {
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventLevelAchieved];
-    [self addSubview:view];
     
-}
-- (void)addToCart {
+    int currentLevel = 4;
     
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventAddToCart];
-    [self addSubview:view];
+    
+    NSDictionary*optionalParameterDic = @{
+          /*可选*/
+          WAEventParameterNameScore:@10,
+          WAEventParameterNameFighting:@600,
+      };
+    
+    
+    WALevelAchievedEvent * event =[[WALevelAchievedEvent alloc] initWithCurrentLevel:currentLevel optionalParameter:optionalParameterDic];
+    [event trackEvent];
+
 }
 
-- (void)addToWishlist {
-    
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventAddToWishlist];
-    [self addSubview:view];
-}
-- (void)search {
-    
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventSearch];
-    [self addSubview:view];
-}
-- (void)spentCredits {
-    
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventSpentCredits];
-    [self addSubview:view];
-}
-- (void)achievementUnlocked {
-    
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventAchievementUnlocked];
-    [self addSubview:view];
-}
+
+
+
+
 - (void)contentView {
     
     WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventContentView];
@@ -234,29 +179,50 @@
 
 - (void)userCreate {
     
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventUserCreate];
-    [self addSubview:view];
+    NSString * serverId= @"1110";
+    NSString * gameUserId= @"1199110";
+    NSString * nickname= @"昵称";
+
+    
+    NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] * 1000;
+    long longInterval = (long)interval;
+    
+    
+    
+    NSDictionary *optionalParameterDic = @{
+            /*可选*/
+            WAEventParameterNameVip:@10,                 //等级
+            WAEventParameterNameRoleType:@"角色类型",     //角色类型
+            WAEventParameterNameGender:@1,               //性别
+            WAEventParameterNameStatus:@1,               //状态标识 -1锁定。 1未锁定
+            WAEventParameterNameBindGameGold:@110,       //绑定钻石
+            WAEventParameterNameGameGold:@100,           //用户钻石数
+            WAEventParameterNameFighting:@100,           //战斗力
+
+
+        };
+    
+    
+    WAUserCreateEvent * event =[[WAUserCreateEvent alloc] initWithServerId:serverId gameUserId:gameUserId nickname:nickname registerTime:longInterval optionalParameter:optionalParameterDic];
+    [event trackEvent];
+    
 }
-//- (void)userInfoInit {
-//
-//    NSDictionary *params = @{
-//                             WAEventParameterNameNickName:@"nickName",
-//                             WAEventParameterNameVip:@10,
-//                             WAEventParameterNameStatus:@1,
-//                             WAEventParameterNameBindGameGold:@100,
-//                             WAEventParameterNameGameGold:@1000,
-//                             WAEventParameterNameLevel:@15,
-//                             WAEventParameterNameFighting:@1000,
-//                             WAEventParameterNameRoleType:@"roleType"
-//                             };
-//    [WATrackProxy trackWithEventName:WAEventUserInfoInit valueToSum:0 params:params];
-//
-//}
+
 
 - (void)userInfoUpdate {
-    
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventUserInfoUpdate];
-    [self addSubview:view];
+    NSString * nickname= @"昵称";
+
+    NSDictionary *optionalParameterDic = @{
+
+        /*可选*/
+        WAEventParameterNameRoleType:@"角色类型",     //角色类型
+        WAEventParameterNameVip:@10,                 //等级
+        WAEventParameterNameStatus:@1,               //状态标识 -1锁定。 1未锁定
+
+        };
+    WAUserInfoUpdateEvent* event =[[WAUserInfoUpdateEvent alloc] initWithNickname:nickname optionalParameter:optionalParameterDic];
+    [event trackEvent];
+
 }
 
 - (void)taskUpdate {
@@ -271,22 +237,23 @@
     [self addSubview:view];
 }
 - (void)userImport {
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:WAEventUserImport];
-    [self addSubview:view];
+    NSString * serverId= @"1110";
+    NSString * gameUserId= @"1199110";
+    NSString * nickname= @"昵称";
+    int level =3;
+    BOOL isFristEnter =YES;//是否第一次进服
+
+    WAUserImportEvent * event =[[WAUserImportEvent alloc] initWithServerId:serverId gameUserId:gameUserId nickname:nickname level:level isFirstEnter:isFristEnter];
+    [event trackEvent];
 
 }
 
 - (void)custom {
-	
-	NSDate *date = [NSDate date];
-	  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-	  [formatter setDateFormat:@"yyyy-MM-dd"];
-	  //获取当前时间日期展示字符串 如：2019-05-23-13:58:59
-	  NSString *eventName = [NSString stringWithFormat:@"customEvent_%@",[formatter stringFromDate:date]];
-	
-	
-    WADemoPostEventView* view = [[WADemoPostEventView alloc]initWithNaviHeight:self.naviHeight eventName:eventName];
-    [self addSubview:view];
+    
+    WAEvent* event = [[WAEvent alloc]init];
+    event.defaultEventName =@"custom_event_name";
+    event.defaultValue = 1;
+    [event trackEvent];
 }
 
 - (void)deviceOrientationDidChange
@@ -300,3 +267,4 @@
 }
 
 @end
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WaSdkServerUrl</key>
+	<string>https://api.wingsdk.com/sdkapi/</string>
+	<key>appKey</key>
+	<string>abc</string>
+	<key>appId</key>
+	<string>testLogin</string>
+	<key>os</key>
+	<string>ios</string>
+	<key>channel</key>
+	<string>APPLE</string>
+</dict>
+</plist>

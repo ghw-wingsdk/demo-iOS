@@ -33,7 +33,7 @@ BOOL vip;
     [self initScrollView];
     
     [WACscProxy setLanguage:@"zh_CN"];
-	
+    
 //    [WACscProxy setName:@"WADemo"];
     
 
@@ -44,8 +44,8 @@ BOOL vip;
 {
     CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
     CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
-	
-	
+    
+    
     
     _viewTitle = [[UIView alloc] initWithFrame:CGRectMake(0, heightStatus, self.view.bounds.size.width, 44)];
     self.viewTitle.backgroundColor = [UIColor grayColor];
@@ -78,7 +78,7 @@ BOOL vip;
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     [self.view addSubview:scrollView];
     
-    NSArray *titles = @[@"是否开启了aihelp客服V2", @"打开v2客服", @"是否开启了评价界面客服", @"打开评价客服",@"切换语言"];
+    NSArray *titles = @[@"是否开启了aihelp客服V2", @"打开v2客服", @"是否开启了评价界面客服", @"打开评价客服",@"切换语言",@"查询未读消息"];
     
     CGFloat left = 10, right = 10, top = 60, bottom = 40, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
     
@@ -119,16 +119,16 @@ BOOL vip;
 {
     if (button.tag == 100)
     {
-		[self dismissViewControllerAnimated:YES completion:nil];
-		
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
     }
 
-   else if(button.tag==1){ 	//检测是否开启客服
-		
+   else if(button.tag==1){     //检测是否开启客服
+        
        NSString * titlestr=@"未开启客服";
-		if([WACscProxy isOpenAiHelp]){
+        if([WACscProxy isOpenAiHelp]){
             titlestr=@"开启了客服";
-		}
+        }
        
        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:titlestr preferredStyle:UIAlertControllerStyleAlert];
        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -137,8 +137,8 @@ BOOL vip;
        [alertController addAction:cancelAction];
        [self presentViewController:alertController animated:YES completion:nil];
        
-		
-	}else if(button.tag==2){     //检测是否开启客服
+        
+    }else if(button.tag==2){     //检测是否开启客服
         
         if([WACscProxy isOpenAiHelp]){
             [WACscProxy openAiHelpV2];
@@ -194,14 +194,19 @@ BOOL vip;
             [self showToastMessage:@"zh_CN"];
 
         }
+    }else if(button.tag==6){     //查询未读消息
+        [WACscProxy getUnreadMessageCount:^(int messageCount, NSError * _Nullable error) {
+            [self showToastMessage:[NSString stringWithFormat:@"查询未读消息:%d",messageCount]];
+
+        }];
     }
 }
 
 BOOL changeLanguage= NO;
 
 - (void)showToastMessage:(NSString *)messag{
-	
-	[self.view makeToast:messag duration:2 position:CSToastPositionCenter];
+    
+    [self.view makeToast:messag duration:2 position:CSToastPositionCenter];
 
 }
 
@@ -252,4 +257,5 @@ BOOL changeLanguage= NO;
 }
 
 @end
+
 
