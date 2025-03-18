@@ -8,6 +8,8 @@
 	<array>
 		<string>Default</string>
 	</array>
+	<key>com.apple.developer.game-center</key>
+	<true/>
 	<key>keychain-access-groups</key>
 	<array>
 		<string>$(AppIdentifierPrefix)gamehollywood.wingsdk.clientid.group</string>

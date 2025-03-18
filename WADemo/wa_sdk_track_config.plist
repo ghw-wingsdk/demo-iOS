@@ -11,8 +11,6 @@
 	<dict>
 		<key>ChannelId</key>
 		<string>AppleStore</string>
-		<key>URL-pre</key>
-		<string>http://sdk-test2.gamehollywood.com/data_collection_qa/data/forward/</string>
 		<key>URL</key>
 		<string>https://api.wingsdk.com/data/</string>
 		<key>Enabled</key>

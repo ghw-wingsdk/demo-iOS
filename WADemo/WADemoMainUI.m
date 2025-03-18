@@ -152,7 +152,7 @@
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"事件测试" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(trackTest) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn18];
+//    [btns addObject:btn18];
     
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"游戏评分" forState:UIControlStateNormal];
@@ -163,7 +163,7 @@
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"设置clientid" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(elseTest) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn18];
+//    [btns addObject:btn18];
     
     
     btn18 = [[WADemoButtonMain alloc]init];

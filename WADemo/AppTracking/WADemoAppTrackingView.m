@@ -182,11 +182,9 @@
     NSString * serverId= @"1110";
     NSString * gameUserId= @"1199110";
     NSString * nickname= @"昵称";
-
     
     NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] * 1000;
     long longInterval = (long)interval;
-    
     
     
     NSDictionary *optionalParameterDic = @{
@@ -198,8 +196,6 @@
             WAEventParameterNameBindGameGold:@110,       //绑定钻石
             WAEventParameterNameGameGold:@100,           //用户钻石数
             WAEventParameterNameFighting:@100,           //战斗力
-
-
         };
     
     

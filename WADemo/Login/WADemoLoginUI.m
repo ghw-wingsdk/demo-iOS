@@ -253,13 +253,15 @@
         nickName = [NSString stringWithFormat:@"青铜server2-%@",result.userId];
     }
     
-    
-    [WACoreProxy setNickName:nickName];
-    [WACoreProxy setGameUserId:gameuserid];
-    
 
-    [WACoreProxy setServerId:@"server1"];
-    
+    NSString * serverId= gameuserid;
+    NSString * gameUserId= gameuserid;
+    NSString * nickname= nickName;
+    int level =3;
+    BOOL isFristEnter =YES;//是否第一次进服
+
+    WAUserImportEvent * event =[[WAUserImportEvent alloc] initWithServerId:serverId gameUserId:gameUserId nickname:nickname level:level isFirstEnter:isFristEnter];
+    [event trackEvent];
     
     
     WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"登录成功" message:[NSString stringWithFormat:@"platform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@,是否为游客账号%d",result.platform,result.pUserId,result.pToken,result.userId,result.token,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];

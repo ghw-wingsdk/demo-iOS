@@ -195,10 +195,17 @@ BOOL vip;
 
         }
     }else if(button.tag==6){     //查询未读消息
+        
+        // 建议每次进入AiHelp客服入口所在页面都调用一次，更新客服入口红点状态。
+        //比如用户每次进入游戏登录页，和每次进入游戏设置页时更新AiHelp客服红点状态
         [WACscProxy getUnreadMessageCount:^(int messageCount, NSError * _Nullable error) {
             [self showToastMessage:[NSString stringWithFormat:@"查询未读消息:%d",messageCount]];
 
         }];
+        
+        // 另外当用户点击AiHelp打开客服时，需要移除红点
+
+        
     }
 }
 
