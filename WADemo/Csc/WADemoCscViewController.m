@@ -33,7 +33,7 @@ BOOL vip;
     [self initScrollView];
     
     [WACscProxy setLanguage:@"zh_CN"];
-    
+	
 //    [WACscProxy setName:@"WADemo"];
     
 
@@ -44,8 +44,8 @@ BOOL vip;
 {
     CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
     CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
-    
-    
+	
+	
     
     _viewTitle = [[UIView alloc] initWithFrame:CGRectMake(0, heightStatus, self.view.bounds.size.width, 44)];
     self.viewTitle.backgroundColor = [UIColor grayColor];
@@ -119,16 +119,16 @@ BOOL vip;
 {
     if (button.tag == 100)
     {
-        [self dismissViewControllerAnimated:YES completion:nil];
-        
+		[self dismissViewControllerAnimated:YES completion:nil];
+		
     }
 
-   else if(button.tag==1){     //检测是否开启客服
-        
+   else if(button.tag==1){ 	//检测是否开启客服
+		
        NSString * titlestr=@"未开启客服";
-        if([WACscProxy isOpenAiHelp]){
+		if([WACscProxy isOpenAiHelp]){
             titlestr=@"开启了客服";
-        }
+		}
        
        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:titlestr preferredStyle:UIAlertControllerStyleAlert];
        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -137,8 +137,8 @@ BOOL vip;
        [alertController addAction:cancelAction];
        [self presentViewController:alertController animated:YES completion:nil];
        
-        
-    }else if(button.tag==2){     //检测是否开启客服
+		
+	}else if(button.tag==2){     //检测是否开启客服
         
         if([WACscProxy isOpenAiHelp]){
             [WACscProxy openAiHelpV2];
@@ -195,25 +195,20 @@ BOOL vip;
 
         }
     }else if(button.tag==6){     //查询未读消息
-        
-        // 建议每次进入AiHelp客服入口所在页面都调用一次，更新客服入口红点状态。
-        //比如用户每次进入游戏登录页，和每次进入游戏设置页时更新AiHelp客服红点状态
         [WACscProxy getUnreadMessageCount:^(int messageCount, NSError * _Nullable error) {
+            NSLog(@"查询未读消息:%d",messageCount);
+            
             [self showToastMessage:[NSString stringWithFormat:@"查询未读消息:%d",messageCount]];
 
         }];
-        
-        // 另外当用户点击AiHelp打开客服时，需要移除红点
-
-        
     }
 }
 
 BOOL changeLanguage= NO;
 
 - (void)showToastMessage:(NSString *)messag{
-    
-    [self.view makeToast:messag duration:2 position:CSToastPositionCenter];
+	
+	[self.view makeToast:messag duration:2 position:CSToastPositionCenter];
 
 }
 
@@ -264,5 +259,4 @@ BOOL changeLanguage= NO;
 }
 
 @end
-
 

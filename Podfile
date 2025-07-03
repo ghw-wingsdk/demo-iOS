@@ -3,17 +3,19 @@ workspace 'WADemo.xcworkspace'
 
 
 
-    source 'http://repo.wingsdk.cn:8082/r/WASdkIntf.git'
-    source 'http://repo.wingsdk.cn:8082/r/WASdkImpl.git'
-    source 'http://repo.wingsdk.cn:8082/r/WAApImpl.git'
-    source 'http://repo.wingsdk.cn:8082/r/WAAfImpl.git'
-    source 'http://repo.wingsdk.cn:8082/r/WAFbImpl.git'
-    source 'http://repo.wingsdk.cn:8082/r/WAPushImpl.git'
-    source 'http://repo.wingsdk.cn:8082/r/WAAiHelpImpl.git'
-    source 'http://repo.wingsdk.cn:8082/r/WAFirebaseImpl.git'
-    source 'http://repo.wingsdk.cn:8082/r/WAGhglImpl.git'
-    source 'http://repo.wingsdk.cn:8082/r/WAGhgpImpl.git'
-    source 'http://repo.wingsdk.cn:8082/r/WAAdmobImpl.git'
+     source 'http://repo.wingsdk.cn:8082/r/WASdkIntf.git'
+     source 'http://repo.wingsdk.cn:8082/r/WASdkImpl.git'
+     source 'http://repo.wingsdk.cn:8082/r/WAApImpl.git'
+     source 'http://repo.wingsdk.cn:8082/r/WAAfImpl.git'
+     source 'http://repo.wingsdk.cn:8082/r/WAFbImpl.git'
+     source 'http://repo.wingsdk.cn:8082/r/WAPushImpl.git'
+     source 'http://repo.wingsdk.cn:8082/r/WAAiHelpImpl.git'
+     source 'http://repo.wingsdk.cn:8082/r/WAFirebaseImpl.git'
+     source 'http://repo.wingsdk.cn:8082/r/WAGhglImpl.git'
+     source 'http://repo.wingsdk.cn:8082/r/WAGhgpImpl.git'
+     source 'http://repo.wingsdk.cn:8082/r/WAAdmobImpl.git'
+              
+
 
 
 
@@ -27,9 +29,9 @@ pod 'WASdkIntf'
 pod 'WAPushImpl'
 pod 'WAAiHelpImpl'
 pod 'WAFirebaseImpl'
+pod 'WAAdmobImpl'
 
-pod 'WAAdmobImpl' # admob模块，有需求才接
-# pod 'WAGhglImpl' # appstore 不建议接入
-# pod 'WAGhgpImpl' # appstore 不建议接入
+pod 'WAGhglImpl' # appstore 不建议接入
+pod 'WAGhgpImpl' # appstore 不建议接入
     
 end

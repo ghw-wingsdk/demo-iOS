@@ -50,6 +50,11 @@
 }
 
 -(UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
+    
+    if (size.width <= 0 || size.height <= 0) {
+        NSLog(@"Error: Invalid image size: (%f, %f)", size.width, size.height);
+        return nil;
+    }
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();

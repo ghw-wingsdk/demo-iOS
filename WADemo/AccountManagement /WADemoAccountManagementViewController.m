@@ -1,11 +1,12 @@
 //
-//  WADemoAccountManagement.m
+//  WADemoAccountManagementViewController.m
 //  WADemo
 //
 //  Created by LPW on 2020/5/12.
 //  Copyright © 2020 GHW. All rights reserved.
 //
 
+#import "WADemoAccountManagementViewController.h"
 #import "WADemoAccountManagement.h"
 #import "WADemoUtil.h"
 #import "WADemoMaskLayer.h"
@@ -14,61 +15,58 @@
 #import "WADemoUtil.h"
 #import "WADemoAccountSwitch.h"
 #import "WADemoMaskLayer.h"
-#import "ViewController.h"
+#import "WADemoViewController.h"
 #import "WADemoBindingAccountList.h"
 
-@interface WADemoAccountManagement ()<WAAccountBindingDelegate,WAAcctManagerDelegate>
+@interface WADemoAccountManagementViewController ()<WAAccountBindingDelegate>
 @property (nonatomic, strong) UIView *viewTitle;
 @property (nonatomic, strong) WADemoAccountSwitch* acctSwitch;
 @property (nonatomic, strong) WADemoBindingAccountList* accountList;
 
 @end
 
-@implementation WADemoAccountManagement
+@implementation WADemoAccountManagementViewController
 
-
--(instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    if (self) {
-        //添加界面旋转通知
-        [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
-        
-        [self initViews];
-    }
-    return self;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self initViews];
 }
-
--(void)handleDeviceOrientationDidChange:(NSNotification*)noti{
-    [self setNeedsLayout];
-}
-
-
 
 - (void)initViews
 {
-    self.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     [self initTitleViews:@"账号管理"];
     [self initScrollView];
 
 }
 
-
+#pragma mark -- 初始化按钮
+//- (void)initScrollView
+//{
+//    CGRect frame = self.view.bounds;
+//    frame.origin.y = self.viewTitle.bounds.size.height+self.viewTitle.frame.origin.y+50;
+//
+//    frame.size.height -= frame.origin.y;
+//
+//    WADemoAccountManagement *acctMgmt = [[WADemoAccountManagement alloc]initWithFrame:frame];
+//	[self.view addSubview:acctMgmt];
+//
+//}
 
 #pragma mark -- 初始化按钮
 - (void)initScrollView
 {
-    CGRect frame = self.bounds;
+    CGRect frame = self.view.bounds;
     frame.origin.y = self.viewTitle.bounds.size.height+self.viewTitle.frame.origin.y;
 
-    frame.size.height += frame.origin.y;
+    frame.size.height -= frame.origin.y;
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
-    scrollView.backgroundColor =[UIColor whiteColor];
-
-    [self addSubview:scrollView];
+    [self.view addSubview:scrollView];
     
-    NSArray *titles = @[@"绑定Facebook账号", @"绑定Apple账号",@"绑定signinwithapple", @"绑定VK账号", @"绑定Twitter账号", @"绑定Instagram账号", @"新建账户", @"切换账户", @"查询已绑定账户",@"打开SDK内置账号管理界面",@"获取当前账户信息(getAccountInfo-VK)",@"绑定ghg",@"绑定WA"];
+    NSArray *titles = @[@"绑定Facebook账号", @"绑定Apple账号", @"绑定VK账号", @"绑定Twitter账号", @"绑定Instagram账号", @"新建账户", @"切换账户", @"查询已绑定账户",@"打开SDK内置账号管理界面",@"获取当前账户信息(getAccountInfo-VK)"];
     
     CGFloat left = 10, right = 10, top = 60, bottom = 40, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
     
@@ -123,9 +121,9 @@
     CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
     CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
     
-    _viewTitle = [[UIView alloc] initWithFrame:CGRectMake(0, heightStatus, self.bounds.size.width, 44)];
+    _viewTitle = [[UIView alloc] initWithFrame:CGRectMake(0, heightStatus, self.view.bounds.size.width, 44)];
     self.viewTitle.backgroundColor = [UIColor grayColor];
-    [self addSubview:self.viewTitle];
+    [self.view addSubview:self.viewTitle];
     
     UILabel *labelTitle = [[UILabel alloc]initWithFrame:self.viewTitle.bounds];
     labelTitle.textColor = [UIColor whiteColor];
@@ -151,7 +149,7 @@
 
     if (button.tag == 100)
     {
-        [self removeView];
+        [self.navigationController popViewControllerAnimated:YES];
 	}
 	
 	if ([titleStr isEqualToString:@"绑定Facebook账号"]) {
@@ -174,28 +172,11 @@
 		[self popAcctManagementUI];
 	}else if ([titleStr isEqualToString:@"获取当前账户信息(getAccountInfo-VK)"]) {
 		[self getAccountInfo];
-	}else if ([titleStr isEqualToString:@"绑定signinwithapple"]) {
-		[self bindsigninwithapple];
-    }else if([titleStr isEqualToString:@"绑定ghg"]){
-        [self bindghg];
-
-    }else if([titleStr isEqualToString:@"绑定WA"]){
-        [self bindWA];
-
-    }
-	
-	
-	
+	}
 }
 
--(void)bindWA{
-    [WADemoMaskLayer startAnimating];
-    [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_WINGA extInfo:nil delegate:self];
-}
--(void)bindghg{
-    [WADemoMaskLayer startAnimating];
-    [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_GHG extInfo:nil delegate:self];
-}
+
+
 //绑定facebook
 -(void)bindFB{
     [WADemoMaskLayer startAnimating];
@@ -206,13 +187,6 @@
     [WADemoMaskLayer startAnimating];
     [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_APPLE extInfo:nil delegate:self];
 }
-
-//绑定sign in with apple
--(void)bindsigninwithapple{
-    [WADemoMaskLayer startAnimating];
-    [WAUserProxy bindingAccountWithPlatform:WA_PLATFORM_SIGNINWITHAPPLE extInfo:nil delegate:self];
-}
-
 
 -(void)bindVK{
     [WADemoMaskLayer startAnimating];
@@ -249,7 +223,7 @@
 //切换账户
 -(void)accoutSwitch{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    self.acctSwitch = [[WADemoAccountSwitch alloc]initWithFrame:self.bounds];
+    self.acctSwitch = [[WADemoAccountSwitch alloc]initWithFrame:self.view.bounds];
     self.acctSwitch.hasBackBtn = YES;
     [vc.view addSubview:self.acctSwitch];
     [self.acctSwitch moveIn:nil];
@@ -261,9 +235,9 @@
         if (error) {
             NSLog(@"error : %@",error.description);
         }else{
-            _accountList = [[WADemoBindingAccountList alloc]initWithFrame:self.bounds];
+            _accountList = [[WADemoBindingAccountList alloc]initWithFrame:self.view.bounds];
             self.accountList.accounts = accounts;
-            [self addSubview:self.accountList];
+            [self.view addSubview:self.accountList];
         }
     }];
     
@@ -271,30 +245,10 @@
 
 //打开SDK内置账号管理界面
 -(void)popAcctManagementUI{
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uiBindDidSucceed:) name:WABindDidSucceedNotification object:nil];
-    [WAUserProxy openAccountManager:self];
+    WADemoViewController* vc = (WADemoViewController*)[WADemoUtil getCurrentVC];
+    [WAUserProxy openAccountManager:vc];
 }
--(void)uiBindDidSucceed:(NSNotification*)info{
-    NSDictionary * objdic =info.object;
-    WABindingResult * bindResult = info.object;
-    
-    
-    if(bindResult&&[bindResult.platform isEqualToString:WA_PLATFORM_WINGA]){
-        NSLog(@"UI绑定界面，绑定ghg成功");
-        WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"获取账号信息" message:@"UI绑定wa成功" cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
-        [alert show];
-        
-    }
 
-    NSLog(@"=uiBindDidSucceed==%@",objdic);
-    
-    
-    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"UI绑定界面绑定回调" message:[NSString stringWithFormat:@"platform:%@\npUserId:%@\npToken:%@\email:%@\mobile:%@",bindResult.platform,bindResult.userId,bindResult.accessToken,bindResult.email,bindResult.mobile] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
-
-    [alert show];
-    
-}
 -(void)getAccountInfo{
     WAAppUser* appUser = [WAUserProxy getAccountInfoWithPlatform:WA_PLATFORM_VK];
     NSString* msg;
@@ -315,11 +269,7 @@
  */
 -(void)bindingDidCompleteWithResult:(WABindingResult*)result{
     [WADemoMaskLayer stopAnimating];
-    
-    NSString * message =[NSString stringWithFormat:@"绑定%@成功\n,userId:%@\ntoken:%@\n mobile:%@\n email:%@\n ",result.platform,result.userId,result.accessToken,result.mobile,result.email];
-    
-    
-    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"绑定成功" message:message cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"绑定成功" message:[NSString stringWithFormat:@"绑定%@成功\n,userId:%@\ntoken:%@\n",result.platform,result.userId,result.accessToken] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
     
     if ([result.platform isEqualToString:WA_PLATFORM_FACEBOOK]||[result.platform isEqualToString:WA_PLATFORM_VK]) {
@@ -337,7 +287,20 @@
     
 }
 
-
+//-(void)bindingDidCompleteWithResult:(WABindingResult*)result{
+//
+//    if ([result.platform isEqualToString:WA_PLATFORM_FACEBOOK]||[result.platform isEqualToString:WA_PLATFORM_VK]) {
+//        [WASocialProxy inviteInstallRewardPlatform:result.platform TokenString:result.accessToken handler:^(NSUInteger code, NSString *msg, NSError *error) {
+//            if (code == 200) {
+//                //触发被邀请人安装应用事件接口成功
+//            }else{
+//
+//                //触发被邀请人安装应用事件接口失败
+//            }
+//        }];
+//    }
+//
+//}
 
 /**
  *  绑定失败
@@ -366,23 +329,15 @@
 }
 
 -(void)removeView{
-    [super removeView];
-
     [self bindRemoveObserver];
     
 }
 
 - (void)bindAccountDidCompleteWithResult:(WABindingResult *)bindResult {
 	
-    if(bindResult&&[bindResult.platform isEqualToString:WA_PLATFORM_GHG]){
-        NSLog(@"UI绑定ghg成功回调");
-    }
 }
 
 - (void)newAcctDidCompleteWithResult:(WALoginResult *)result {
-	
-	WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"新建成功" message:[NSString stringWithFormat:@"userId:%@\ntoken:%@\nplatform:%@\npUserId:%@\npToken:%@\nextends:%@ 是否为游客登录:%d",result.userId,result.token,result.platform,result.userId,result.pToken,result.extends,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
-	[alert show];
 	
 }
 
@@ -391,9 +346,6 @@
 }
 
 - (void)switchAcctDidCompleteWithResult:(WALoginResult *)result {
-
-    WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"切换成功" message:[NSString stringWithFormat:@"userId:%@\ntoken:%@\nplatform:%@\npUserId:%@\npToken:%@\nextends:%@ 是否为游客登录:%d",result.userId,result.token,result.platform,result.pUserId,result.pToken,result.extends,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
-	[alert show];
 	
 }
 

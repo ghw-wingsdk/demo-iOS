@@ -30,17 +30,14 @@ static const NSInteger CounterTime = 5;
 //    self.splashScreenLabel.textAlignment = NSTextAlignmentCenter;
 //    [self.view addSubview:self.splashScreenLabel];
     
-    // 监听ump 同意结果
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(handleAdmobUMPStatusNotification:)
-//                                                 name:WASDK_ADMOB_UMP_STATUS_NOTIFICATION
-//                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleAdmobUMPStatusNotification:)
+                                                 name:WASDK_ADMOB_UMP_STATUS_NOTIFICATION
+                                               object:nil];
     
     [self startTimer];
     
 }
-
-
 
 BOOL umpStatus = NO;
 - (void)handleAdmobUMPStatusNotification:(NSNotification *)notification {
@@ -63,7 +60,13 @@ BOOL umpStatus = NO;
              
              umpStatus =YES;
                                                               NSLog(@"OK button tapped");
-
+//             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//             UIViewController *navigationController = (UIViewController *)[mainStoryBoard
+//                 instantiateViewControllerWithIdentifier:@"ViewController"];
+//
+//             AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//             UIWindow *window = appDelegate.window;
+//             window.rootViewController=navigationController;
              
                                                        
          }];
@@ -84,7 +87,31 @@ BOOL umpStatus = NO;
 
 - (void)startShowAd {
 
-    [WAAdMobProxy showAppOpenAdWithViewController:self withDelegate:self];
+    
+    // 检测admob 广告同意是否可用
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        while (!umpStatus) {
+            [NSThread sleepForTimeInterval:1]; // 每1秒检查一次
+//            NSLog(@"Waiting for umpStatus to be YES.");
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (umpStatus) {
+                
+                NSLog(@" 开屏页---umpStatus  be YES.");
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [WAAdMobProxy showAppOpenAdWithViewController:self withDelegate:self];
+                });
+                
+
+            }
+        });
+    });
+    
+    
+    
+
+
+
     
 }
 
@@ -119,6 +146,8 @@ BOOL umpStatus = NO;
       
       [self startShowAd];
 
+      
+      
   }
 
   self.splashScreenLabel.text = @"Done.";
@@ -165,4 +194,5 @@ didFailToPresentFullScreenContentWithError:(nonnull NSError *)error{
 */
 
 @end
+
 

@@ -26,7 +26,12 @@
     [self initUI];
     WALog(@"viewDidLoad=%@",[NSThread currentThread]);
 
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [WAAdMobProxy showAppOpenAdWithViewController:self withDelegate:nil];
 
+
+
+    });
 
     
     NSLocale *locale = [NSLocale currentLocale];
@@ -66,7 +71,7 @@
     bannerView.backgroundColor =[UIColor whiteColor];
     [self.view addSubview:bannerView];
        
-    [WAAdMobProxy bindBannerAdWithViewController:self containerView:bannerView];
+//    [WAAdMobProxy bindBannerAdWithViewController:self containerView:bannerView];
 
 
     self.mainUI = [[WADemoMainUI alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(rect)-10, self.view.frame.size.width, self.view.frame.size.height-rect.size.height)];
@@ -99,29 +104,6 @@
 }
 
 -(void)loginViewDidCompleteWithResult:(WALoginResult *)result{
-    
-    NSString * gameuserid= [NSString stringWithFormat:@"server1-role1-%@",result.userId];
-    NSString * serverid = [WACoreProxy getServerId];
-    NSString * nickName = [NSString stringWithFormat:@"青铜server1-%@",result.userId];
-    if ([serverid isEqualToString:@"server2"]) {
-        gameuserid= [NSString stringWithFormat:@"server2-role2-%@",result.userId];
-        nickName = [NSString stringWithFormat:@"青铜server2-%@",result.userId];
-    }
-    
-
-    NSString * serverId= gameuserid;
-    NSString * gameUserId= gameuserid;
-    NSString * nickname= nickName;
-    int level =3;
-    BOOL isFristEnter =YES;//是否第一次进服
-
-    WAUserImportEvent * event =[[WAUserImportEvent alloc] initWithServerId:serverId gameUserId:gameUserId nickname:nickname level:level isFirstEnter:isFristEnter];
-    [event trackEvent];
-
-    
-    
-    
-    
     WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"登录成功" message:[NSString stringWithFormat:@"platform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@  是否为游客账号:%d",result.platform,result.pUserId,result.pToken,result.userId,result.token,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
 }
@@ -158,5 +140,4 @@
     return UIInterfaceOrientationMaskAll;
 }
 @end
-
 

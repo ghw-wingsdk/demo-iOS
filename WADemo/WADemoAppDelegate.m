@@ -1,100 +1,63 @@
 //
 //  AppDelegate.m
-//  WADemo
+//  GHWSDKDemo
 //
-//  Created by lpw on 2023/5/19.
+//  Created by wuyx on 16/2/23.
+//  Copyright © 2016年 GHW. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "WADemoAppDelegate.h"
 #import <WASdkIntf/WASdkIntf.h>
 #import <WACommon/WAHelper.h>
-#import "WADemoUtil.h"
 
-@interface AppDelegate ()<UNUserNotificationCenterDelegate,GADFullScreenContentDelegate>
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
+
+@interface WADemoAppDelegate () <UNUserNotificationCenterDelegate>
+
 @end
 
-@implementation AppDelegate
-
-
+@implementation WADemoAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    UIViewController *initialViewController;
 
-    [WAAdMobProxy isOpenBannerAdWithCompletion:^(BOOL isOpen, NSError * _Nonnull error) {
-        
-        NSLog(@"BannerAd检测广告开关，初始化前调用====%d",isOpen);
-        
-    }];
+//	[WACoreProxy init];
     
-    [WAAdMobProxy isOpenInterstitialAdWithCompletion:^(BOOL isOpen, NSError * _Nonnull error) {
-        
-        NSLog(@"InterstitialAd检测广告开关，初始化前调用=====%d",isOpen);
-        
-    }];
-    
-    [WAAdMobProxy isOpenAppOpenAdWithCompletion:^(BOOL isOpen, NSError * _Nonnull error) {
-        
-        NSLog(@"AppOpenAd检测广告开关，初始化前调用=====%d",isOpen);
-        
-    }];
-
-                              
-    [WAAdMobProxy isOpenRewardedWithAdName:@"admob1" completion:^(BOOL isOpen, NSError * _Nonnull error) {
-        
-        NSLog(@"Rewarded-admob1-检测广告开关，初始化前调用=====%d",isOpen);
-
-    }];
-    
-    [WAAdMobProxy isOpenRewardedWithAdName:@"admob2" completion:^(BOOL isOpen, NSError * _Nonnull error) {
-        
-        NSLog(@"Rewarded-admob2-检测广告开关，初始化前调用=====%d",isOpen);
-
-    }];
-    
-//    [WAAdMobProxy setTestMode:YES];
-    [WACoreProxy setDebugMode:YES];
     [WACoreProxy initWithCompletionHandler:^{
+        
+        NSLog(@"初始化完成====");
         [WACoreProxy initAppEventTracker];
         [WAPayProxy init4Iap];
+        [WACoreProxy setDebugMode:YES];
         [WACoreProxy setLevel:10];
-        NSLog(@"初始化完成====");
-
-//        [WACoreProxy setGameUserId:@"server1-role1-7282489"];
-//        [WACoreProxy setNickName:@"青铜server1-7282489"];
-//        [WACoreProxy setServerId:@"server1"];
+        
+        [WACoreProxy setGameUserId:@"server1-role1-7282489"];
+        [WACoreProxy setNickName:@"青铜server1-7282489"];
+        [WACoreProxy setServerId:@"server1"];
         [WAPushProxy application:application initPushWithDelegate:self];
 
         [WACoreProxy application:application didFinishLaunchingWithOptions:launchOptions];
+
+//        [WAHelper saveKeyChainWithObj:@(time) andKey:@"WAFinishTransactionTime"];
+
         NSLog(@"==WAFinishTransactionTime==%@",[WAHelper loadObjFromKeyChainWithKey:@"WAFinishTransactionTime"]);
-
+        
     }];
-    
-    BOOL openAdStatus =[[NSUserDefaults standardUserDefaults] boolForKey:@"openAdStatus"];
-    openAdStatus=NO;
-    if (openAdStatus) {
-        initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SplashScreenViewController"];
-    } else {
-        initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
-    }
-    
-    // 设置初始视图控制器
-    self.window.rootViewController = initialViewController;
-    [self.window makeKeyAndVisible];
 
+ 
     
     return YES;
     
 }
 
-/*
+
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {
     [WACoreProxy application:application didRegisterUserNotificationSettings:notificationSettings];
 }
- */
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"能够获取到token===============");
@@ -104,21 +67,16 @@
     [WACoreProxy application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
-
-//#pragma mark IOS8 IOS9 Push Notification Receive
-//-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-//{
-//    [WACoreProxy application:application didReceiveLocalNotification:notification];
-//}
-
-
+#pragma mark IOS8 IOS9 Push Notification Receive
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    [WACoreProxy application:application didReceiveLocalNotification:notification];
+}
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
 {
     [WACoreProxy application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
-
-
 
 #pragma mark IOS10 Push Notification Receive
 //App处于前台接收通知时
@@ -128,7 +86,7 @@
 }
 
 // 通知的点击事件
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
     [WACoreProxy userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
 }
 
@@ -150,21 +108,17 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    NSLog(@"applicationDidBecomeActive===");
     [WACoreProxy applicationDidBecomeActive:application];
-    
-    [WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
-
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 //
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-//    
-//    return [WACoreProxy application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
-//}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    return [WACoreProxy application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+}
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
@@ -175,39 +129,5 @@
 {
     return [WACoreProxy application:application continueUserActivity:userActivity restorationHandler:restorationHandler];
 }
-
-/// Tells the delegate that an impression has been recorded for the ad.
-- (void)adDidRecordImpression:(nonnull id<GADFullScreenPresentingAd>)ad {
-    WALog(@"adDidRecordImpression");
-}
-
-/// Tells the delegate that a click has been recorded for the ad.
-- (void)adDidRecordClick:(nonnull id<GADFullScreenPresentingAd>)ad {
-    WALog(@"adDidRecordClick");
-}
-
-/// Tells the delegate that the ad failed to present full screen content.
-- (void)ad:(nonnull id<GADFullScreenPresentingAd>)ad didFailToPresentFullScreenContentWithError:(nonnull NSError *)error {
-    WALog(@"didFailToPresentFullScreenContentWithError");
-    
-    
-}
-
-/// Tells the delegate that the ad will present full screen content.
-- (void)adWillPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
-    WALog(@"adWillPresentFullScreenContent");
-}
-
-/// Tells the delegate that the ad will dismiss full screen content.
-- (void)adWillDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
-    WALog(@"adWillDismissFullScreenContent");
-}
-
-/// Tells the delegate that the ad dismissed full screen content.
-- (void)adDidDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
-    WALog(@"adDidDismissFullScreenContent");
-
-}
-
 
 @end

@@ -216,12 +216,26 @@
 
 //弹出登录窗口
 -(void)popLoginUI{
+    
     ViewController* curentVC = (ViewController*)[WADemoUtil getCurrentVC];
     [WAUserProxy login:curentVC cacheEnabled:_cacheEnabled];
+    
+
+    WAEvent* event = [[WAEvent alloc] init];
+    event.defaultEventName =  @"purchase_sev";
+    event.defaultParamValues = [[NSDictionary alloc] init];
+    event.channelSwitcherDict = @{WA_PLATFORM_APPSFLYER:@YES,WA_PLATFORM_FACEBOOK:@YES,WA_PLATFORM_WINGA:@YES,WA_PLATFORM_FIREBASE:@YES};
+    [event trackEvent];
+    
+
 }
 
 //登出
 -(void)logout{
+    
+    WATutorialCompletedEvent * event =[[WATutorialCompletedEvent alloc]init];
+    [event trackEvent];
+    
     [WAUserProxy logout];
 }
 
@@ -253,15 +267,10 @@
         nickName = [NSString stringWithFormat:@"青铜server2-%@",result.userId];
     }
     
-
-    NSString * serverId= gameuserid;
-    NSString * gameUserId= gameuserid;
-    NSString * nickname= nickName;
-    int level =3;
-    BOOL isFristEnter =YES;//是否第一次进服
-
-    WAUserImportEvent * event =[[WAUserImportEvent alloc] initWithServerId:serverId gameUserId:gameUserId nickname:nickname level:level isFirstEnter:isFristEnter];
-    [event trackEvent];
+    
+    [WACoreProxy setNickName:nickName];
+    
+//    [WACoreProxy setGameUserId:gameuserid];
     
     
     WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"登录成功" message:[NSString stringWithFormat:@"platform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@,是否为游客账号%d",result.platform,result.pUserId,result.pToken,result.userId,result.token,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
@@ -308,21 +317,23 @@
     NSLog(@"result.pToken:%@",result.pToken);
     NSLog(@"result.pUserId:%@",result.pUserId);
     NSLog(@"loginDidFailWithError:%@",error);
-    
-//    if ([result.apply_delete_status intValue]==1) {
-//        NSString * userid =result.userId;
-//        NSString * deletedata= result.delete_date;
-//        
-//        
-//        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"cp回掉状态" message:[NSString stringWithFormat:@"userid=%@,删除日期=%@,登录平台=%@",userid,deletedata,result.platform] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
-//        [alert show];
-//        
-//
-//
-//    }else{
-//        [self showToastMessage:error.localizedDescription];
-//
-//    }
+    NSLog(@"result.msg:%@",result.msg);
+    NSLog(@"result.code:%@",result.code);
+
+    if ([result.apply_delete_status intValue]==1) {
+        NSString * userid =result.userId;
+        NSString * deletedata= result.delete_date;
+        
+        
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"cp回掉状态" message:[NSString stringWithFormat:@"userid=%@,删除日期=%@,登录平台=%@",userid,deletedata,result.platform] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
+        [alert show];
+        
+
+
+    }else{
+        [self showToastMessage:error.localizedDescription];
+
+    }
     
 	
 }

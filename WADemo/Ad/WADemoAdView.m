@@ -55,6 +55,10 @@
     [btn2 addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn2];
     
+    
+
+    
+    
     NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1]];
     //
     self.title = @"广告";

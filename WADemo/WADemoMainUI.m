@@ -55,7 +55,43 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        
+        
         [self initBtnAndLayout];
+        
+
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            
+            [WAUserProxy checkConsentPreferencesWithCompletion:^(NSError *error, BOOL isShow) {
+             
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        for (UIButton *button in self.btns) {
+                            if (button.tag == 300) {
+                                NSString *title = [NSString stringWithFormat:@"Consent弹窗(%@)", isShow ? @"开启" : @"关闭"];
+                                [button setTitle:title forState:UIControlStateNormal];
+                            }
+                        }
+                    });
+             
+            }];
+            
+            
+            BOOL isOpenDeleteAccount =[WAUserProxy isOpenDeleteAccount ];
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                for (UIButton *button in self.btns) {
+                    if (button.tag == 400) {
+                        NSString *title = [NSString stringWithFormat:@"账号删除UI(%@)", isOpenDeleteAccount ? @"开启" : @"关闭"];
+                        [button setTitle:title forState:UIControlStateNormal];
+                    }
+                }
+            });
+        });
+
+        
+        
     }
     return self;
 }
@@ -142,6 +178,7 @@
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"账号删除UI" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(openDeleteUI) forControlEvents:UIControlEventTouchUpInside];
+    btn18.tag= 400;
     [btns addObject:btn18];
     
     btn18 = [[WADemoButtonMain alloc]init];
@@ -152,7 +189,7 @@
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"事件测试" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(trackTest) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn18];
+    [btns addObject:btn18];
     
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"游戏评分" forState:UIControlStateNormal];
@@ -163,13 +200,9 @@
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"设置clientid" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(elseTest) forControlEvents:UIControlEventTouchUpInside];
-//    [btns addObject:btn18];
-    
-    
-    btn18 = [[WADemoButtonMain alloc]init];
-    [btn18 setTitle:@"打开cmp偏好设置" forState:UIControlStateNormal];
-    [btn18 addTarget:self action:@selector(showConsentPreferences) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
+    
+
     
     
     
@@ -179,7 +212,17 @@
     [btns addObject:btn18];
     
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2,@2]];
+    
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"Consent弹窗" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(showConsentPreferences) forControlEvents:UIControlEventTouchUpInside];
+    btn18.tag=300;
+    [btns addObject:btn18];
+    
+    
+    
+    
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2,@2,@2]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app版本
@@ -401,26 +444,26 @@
     NSString *msg;
     if (!iapResult) {
         msg = [NSString stringWithFormat:@"%@ 购买失败!", platform];
-    }else{
-        if (iapResult.resultCode == 1) {
-            msg = [NSString stringWithFormat:@"%@ 支付成功.", platform];
-        }else if (iapResult.resultCode == 2) {
-            msg = [NSString stringWithFormat:@"%@ 支付失败.", platform];
-        }else if (iapResult.resultCode == 3) {
-            msg = [NSString stringWithFormat:@"%@ 取消.", platform];
-        }else if (iapResult.resultCode == 4) {
-            msg = [NSString stringWithFormat:@"%@ 上报失败.", platform];
-        }else if (iapResult.resultCode == 5) {
-            msg = [NSString stringWithFormat:@"%@ 商品未消耗.", platform];
-        }else if (iapResult.resultCode == 6) {
-            msg = [NSString stringWithFormat:@"%@ 创建订单失败.", platform];
-        }
     }
     NSLog(@"%@", msg);
-    [self makeToast:msg];
+    [self makeToast:[NSString stringWithFormat:@"%@ 支付成功.", platform]];
 }
 
 -(void)paymentDidFailWithError:(NSError*)error andPlatform:(NSString*)platform{
+    
+    NSString * msg=@"支付失败";
+    if (error.code == 2) {
+        msg = [NSString stringWithFormat:@"%@ 支付失败.", platform];
+    }else if (error.code == 3) {
+        msg = [NSString stringWithFormat:@"%@ 取消.", platform];
+    }else if (error.code == 4) {
+        msg = [NSString stringWithFormat:@"%@ 上报失败.", platform];
+    }else if (error.code == 5) {
+        msg = [NSString stringWithFormat:@"%@ 商品未消耗.", platform];
+    }else if (error.code == 6) {
+        msg = [NSString stringWithFormat:@"%@ 创建订单失败.", platform];
+    }
+    
     if (error) {
         NSLog(@"paymentDidFailWithError:%@",error.description);
         [self makeToast:error.description];
@@ -822,6 +865,7 @@
 
 
 
+
 }
 
 -(void)elseTest{
@@ -860,6 +904,18 @@
 - (void)showConsentPreferences{
     
     [WAUserProxy showConsentPreferences];
+    
+//    NSMutableDictionary* mParamValueDict = [NSMutableDictionary dictionary];
+//    [mParamValueDict setObject:@"0" forKey:@"status"];
+//    WAEvent* event = [[WAEvent alloc] init];
+//    
+//    event.defaultParamValues = mParamValueDict;
+//    event.defaultEventName = WAEventPrivacyClick;
+//
+//    event.channelSwitcherDict = @{WA_PLATFORM_APPSFLYER:@YES,WA_PLATFORM_CHARTBOOST:@YES,WA_PLATFORM_FACEBOOK:@YES,WA_PLATFORM_WINGA:@YES,WA_PLATFORM_FIREBASE:@YES};
+//    [event trackEvent];
+
+    
 
 }
 - (void)showAdmob{
@@ -872,12 +928,11 @@
     
 //    WAAdMobViewController * adMobViewController =[[WAAdMobViewController alloc] init];
 //    [[WADemoUtil getCurrentVC] presentViewController:adMobViewController animated:YES completion:^{
-//
+//        
 //    }];
     
 }
 
 
 @end
-
 

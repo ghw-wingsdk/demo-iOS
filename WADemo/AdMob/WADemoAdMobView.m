@@ -34,6 +34,12 @@
         [WADemoUtil addOrientationNotification:self selector:@selector(handleDeviceOrientationDidChange:) object:nil];
         
         
+        // 注册通知监听
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleUserDidEarnRewardNotification:)
+                                                     name:@"UserDidEarnRewardNotification"
+                                                   object:nil];
+        
         [self initViews];
     }
     return self;
@@ -56,6 +62,20 @@
     [WAAdMobProxy bindBannerAdWithViewController:[WADemoUtil getCurrentVC] containerView:self.bannerView];
 
     
+    _btn1 = [[WADemoButtonMain alloc]init];
+    self.btn1.tag = 1000;
+    [self.btn1 setTitle:@"横幅是否开启" forState:UIControlStateNormal];
+    [self.btn1 addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:self.btn1];
+    
+    
+    
+    _btn1 = [[WADemoButtonMain alloc]init];
+    self.btn1.tag = 1000;
+    [self.btn1 setTitle:@"插页是否开启" forState:UIControlStateNormal];
+    [self.btn1 addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:self.btn1];
+    
     
     _btn1 = [[WADemoButtonMain alloc]init];
     self.btn1.tag = 1;
@@ -69,6 +89,14 @@
     [btn2 addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn2];
     
+    
+    
+
+    btn2 = [[WADemoButtonMain alloc]init];
+    btn2.tag = 3;
+    [btn2 setTitle:@"开屏是否开启" forState:UIControlStateNormal];
+    [btn2 addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn2];
     
     btn2 = [[WADemoButtonMain alloc]init];
     btn2.tag = 3;
@@ -91,6 +119,13 @@
     self.textField.delegate=self;
     self.textField.tag = 5;
     [btns addObject:self.textField];
+    
+    
+    
+    btn2 = [[WADemoButtonMain alloc]init];
+    [btn2 setTitle:@"激励是否开启" forState:UIControlStateNormal];
+    [btn2 addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn2];
     
     
     btn2 = [[WADemoButtonMain alloc]init];
@@ -135,7 +170,7 @@
     
     
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@2,@2]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1,@3,@3,@3,@2,@2]];
     //
     self.title = @"Admob";
     self.btnLayout = btnLayout;
@@ -156,22 +191,48 @@
         
     } else if ([buttonTitle isEqualToString:@"显示插页广告"]) {
         // 展示插页广告逻辑
-        if([WAAdMobProxy checkInterstitialAdReady]){
-            [WAAdMobProxy showInterstitialAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
-        }
+        [WAAdMobProxy showInterstitialAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
         
-    }  else  if ([buttonTitle isEqualToString:@"检查开屏广告"]) {
+    }else if ([buttonTitle isEqualToString:@"横幅是否开启"]) {
+        // 横幅是否开启
+        BOOL openad=[WAAdMobProxy isOpenBannerAd];
+        
+        [self makeToast:[NSString stringWithFormat:@"横幅广告是否开启:%d",openad]];
+        
+        
+        
+    } else if ([buttonTitle isEqualToString:@"插页是否开启"]) {
+        // 插页是否开启
+        BOOL openad=[WAAdMobProxy isOpenInterstitialAd];
+        
+        [self makeToast:[NSString stringWithFormat:@"插页广告是否开启:%d",openad]];
+        
+        
+        
+    } else if ([buttonTitle isEqualToString:@"开屏是否开启"]) {
+        // 插页是否开启
+        BOOL openad=[WAAdMobProxy isOpenAppOpenAd];
+        
+        [self makeToast:[NSString stringWithFormat:@"开屏广告是否开启:%d",openad]];
+        
+        
+        
+    }  else if ([buttonTitle isEqualToString:@"激励是否开启"]) {
+        // 插页是否开启
+        BOOL openad=[WAAdMobProxy isOpenRewardedWithAdName:self.textField.text];
+        
+        [self makeToast:[NSString stringWithFormat:@"激励广告是否开启:%d",openad]];
+        
+        
+        
+    }else  if ([buttonTitle isEqualToString:@"检查开屏广告"]) {
         // 检测开屏广告逻辑
        BOOL openad= [WAAdMobProxy checkAppOpenAdReady];
       [self makeToast:[NSString stringWithFormat:@"检测开屏广告:%d",openad]];
         
         
     } else if ([buttonTitle isEqualToString:@"显示开屏广告"]) {
-        
-        if([WAAdMobProxy checkAppOpenAdReady]){
-            [WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
-        }
-        
+        [WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
         
     } else if ([buttonTitle isEqualToString:@"显示激励广告"]) {
         
@@ -201,12 +262,6 @@
         if([WAAdMobProxy checkUmpOptions]){
             
             [WAAdMobProxy showUmpOptionsWithViewController:[WADemoUtil getCurrentVC] consentGatheringComplete:^(NSError * _Nullable error) {
-                if(error){
-                    
-                }else {
-                    NSLog(@"consentGatheringComplete");
-                    
-                }
             }];
         }
 
@@ -268,9 +323,6 @@
         [self makeToast:[NSString stringWithFormat:@"开屏广告加载失败:%@",error.description]];
 
     }
-    
-    
-    
 }
 
 /// Tells the delegate that the ad will present full screen content.
@@ -288,14 +340,31 @@
     WALog(@"adDidDismissFullScreenContent");
     if ([ad isKindOfClass:[GADRewardedAd class]]) {
         [self makeToast:@"激励广告隐藏"];
-    }else if([ad isKindOfClass:[GADInterstitialAd class]]){
-        [self makeToast:@"插页广告隐藏"];
     }else if([ad isKindOfClass:[GADAppOpenAd class]]){
         [self makeToast:@"开屏广告隐藏"];
+    }else if([ad isKindOfClass:[GADInterstitialAd class]]){
+        [self makeToast:@"插页广告隐藏"];
     }
 }
 
-/// Tells the delegate that the user earned a reward.
+
+// 处理通知
+- (void)handleUserDidEarnRewardNotification:(NSNotification *)notification {
+    NSDictionary *rewardDic = notification.userInfo;
+    // 在这里处理奖励逻辑
+    NSLog(@"用户获得奖励: %@", rewardDic);
+    NSString *rewardMessage = [NSString
+                               stringWithFormat:@"type %@ , amount %@, adName %@, extInfo %@",
+                               [rewardDic objectForKey:@"type"], [rewardDic objectForKey:@"amount"],[rewardDic objectForKey:@"adName"],[rewardDic objectForKey:@"extInfo"]];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self makeToast:rewardMessage];
+
+    });
+    
+}
+
+/// 废弃
 - (void)userDidEarnReward:(nonnull NSMutableDictionary*)rewardDic{
     
     WALog(@"本地的奖励回掉已执行======%@",rewardDic);
@@ -323,4 +392,3 @@
 */
 
 @end
-

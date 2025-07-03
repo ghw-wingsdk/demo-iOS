@@ -1,0 +1,52 @@
+/* 
+  Localization.strings
+  Localization
+
+  Created by wuyx on 15/12/10.
+  Copyright © 2015年 GHW. All rights reserved.
+*/
+"wasdk_install_btn" = "Install";
+"wasdk_play_btn" = "Play";
+"wasdk_info_btn" = "INFO";
+"wasdk_app_btn" = "APP";
+"wasdk_apw_guide_words" = "Click here to popup menu";
+"wasdk_sdk_version" = "SDK Version";
+"wasdk_patch_version" = "Patch Version";
+"wasdk_has_no_patch" = "None";
+"wasdk_login" = "Login";
+"wasdk_login_facebook" = "Facebook";
+"wasdk_login_game_center" = "Game Center";
+"wasdk_login_signinwithapple" = "sign in with apple";
+"wasdk_confirm" = "Confirm";
+"wasdk_cancel" = "Cancel";
+"wasdk_loading" = "Loading";
+"wasdk_visitor" = "Visitor";
+"wasdk_bind" = "Bind";
+"wasdk_unbind" = "Unbind";
+"wasdk_bound" = "Bound";
+"wasdk_unbound" = "Unbound";
+"wasdk_create_ccount" = "Create Account";
+"wasdk_account_management" = "Account Management";
+"wasdk_change_account" = "Change Account";
+"wasdk_unbind_account" = "Unbind Account";
+"wasdk_tip_warning" = "Warning";
+"wasdk_tip_unbind_unique_third_party" = "If you unbind your unique third-party platform account, your data will be lost. Continue?";
+"wasdk_tip_can_not_unbind" = "You can’t unbind the account.";
+"wasdk_tip_create_account_lost_data" = "If you create another account but don’t bind it to a third-party account, your previous one’s data will be lost permanently. After the account binding, you can use your third-party platform’s account to log into the applications.";
+"wasdk_tip_fail_change_account" = "Failed to change your account. Please try again later.";
+"wasdk_tip_relog" = "Please relog into the application.";
+"wasdk_tip_fail_access_account_data" = "Failed to access your account data. Please try again later.";
+"wasdk_tip_bind_succ" = "Binded successfully!";
+"wasdk_tip_bind_fail" = "Failed to bind. Please try again later.";
+"wasdk_tip_bind_fail_other_user" = "This account has been bound to another user.";
+"wasdk_tip_unbind_succ" = "Unbinded successfully!";
+"wasdk_tip_unbind_fail" = "Failed to unbind. Please try again later.";
+"wasdk_tip_create_user_fail" = "Failed to create a new user. Please try again later.";
+"wasdk_drag_up_fresh" = "Click or drag up to load more";
+"wasdk_no_more_data" = "No more data";
+"wasdk_load_more" = "Loading ...";
+"wasdk_pull_down_refresh" = "Pull down to refresh";
+"wasdk_release_refresh" = "Release to refresh";
+"wasdk_purchase" = "Purchase";
+"wasdk_pay_exit_alert" = "Are you sure you want to cancel this purchase?";
+"wasdk_notice" = "Notice";

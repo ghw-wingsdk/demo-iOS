@@ -105,8 +105,8 @@
     _naviBar = [[UIView alloc]init];
     [self addSubview:_naviBar];
     _naviBar.backgroundColor = [UIColor grayColor];
+   // _naviBar.frame = CGRectMake(0, 0, self.frame.size.width, _naviHeight);
     _naviBar.frame = CGRectMake(0, heightStatus, self.frame.size.width, _naviHeight);
-    
     _titleLable = [[UILabel alloc]initWithFrame:_naviBar.bounds];
     [_naviBar addSubview:_titleLable];
     _titleLable.textColor = [UIColor whiteColor];

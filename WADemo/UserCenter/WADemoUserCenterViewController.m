@@ -9,6 +9,10 @@
 #import "WADemoUserCenterViewController.h"
 #import <WASdkIntf/WASdkIntf.h>
 #import "WADemoAlertView.h"
+#import <Toast/Toast.h>
+
+
+
 @interface WADemoUserCenterViewController () <WAUserCenterNoticeDelegate, WAUserCenterNoticeUIDelegate>
 
 @property (nonatomic, strong) UIView *viewTitle;
@@ -66,12 +70,14 @@
 {
     CGRect frame = self.bounds;
     frame.origin.y = self.viewTitle.bounds.size.height+40;
-    frame.size.height -= frame.origin.y;
+    frame.size.height += frame.origin.y;
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
+    scrollView.backgroundColor =[UIColor whiteColor];
+
     [self addSubview:scrollView];
     
-    NSArray *titles = @[@"获取用户中心数据", @"打开用户中心界面",@"切换区服"];
+    NSArray *titles = @[@"是否开启中心数据",@"获取用户中心数据", @"打开用户中心界面",@"切换区服"];
     
     CGFloat left = 10, right = 10, top = 60, bottom = 40, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
     
@@ -113,15 +119,22 @@
     if (button.tag == 100)
     {
         [self removeView ];
+    } else if (button.tag == 1)   //  获取用户中心数据
+    {
+       BOOL isOpenUserCenter= [WAUserProxy isOpenUserCenter];
+        
+        [self makeToast:[NSString stringWithFormat:@"是否开启:%d",isOpenUserCenter]];
+
+        
     }
-    else if (button.tag == 1)   //  获取用户中心数据
+    else if (button.tag == 2)   //  获取用户中心数据
     {
         [WAUserProxy getUserCenterNotice:self];
     }
-    else if (button.tag == 2)   // 打开用户中心界面
+    else if (button.tag == 3)   // 打开用户中心界面
     {
         [WAUserProxy showUserCenterNoticeUI:self];
-    }else if (button.tag == 3)   // 设置短链过期
+    }else if (button.tag == 4)   // 设置短链过期
     {
         WALoginResult* result = [WAUserProxy  getCurrentLoginResult];
         NSString * serverid = [WACoreProxy getServerId];

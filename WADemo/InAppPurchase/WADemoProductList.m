@@ -113,7 +113,22 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
 //        if (_goToType == GoToTypeApple)
 //            [WAPayProxy payWithProductId:product.productIdentifier platform:WA_PLATFORM_APPLE extInfo:nil delegate:self];
 //        if (_goToType == GoToTypeWA)
-        [WAPayProxy payWithProductId:product.productIdentifier extInfo:nil delegate:self];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyyMMddHHmmssSSS"]; // 格式：年月日时分秒毫秒
+        NSString *dateString = [formatter stringFromDate:[NSDate date]];
+
+        // 设置为 orderId
+        
+        NSMutableDictionary* extInfo = [[NSMutableDictionary alloc] init];
+        [extInfo setObject:@"1111我是透传信息11111com" forKey:@"pid"];
+        [extInfo setObject:@"2026ddddadjjdada0099ll111333" forKey:@"orderId"];
+        [extInfo setObject:dateString forKey:@"time"];
+
+        NSString * extInfoStr= [WADemoUtil toJSONStringFromDictionary:extInfo];
+        
+        NSLog(@"extInfoStr=%@",extInfoStr);
+        [WAPayProxy payWithProductId:product.productIdentifier extInfo:extInfoStr delegate:self];
     }
 }
 
@@ -131,21 +146,21 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
         if (iapResult.resultCode == 1) {
             msg = [NSString stringWithFormat:@"%@ 支付成功。",platform];
             NSLog(@"%@ 支付成功.", platform);
-        }else if (iapResult.resultCode == 2) {
-            msg = [NSString stringWithFormat:@"%@ 支付失败。",platform];
-            NSLog(@"%@ 支付失败.", platform);
-        }else if (iapResult.resultCode == 3) {
-            msg = [NSString stringWithFormat:@"%@ 支付取消。",platform];
-            NSLog(@"%@ 支付取消.", platform);
-        }else if (iapResult.resultCode == 4) {
-            msg = [NSString stringWithFormat:@"%@ 支付上报失败。",platform];
-            NSLog(@"%@ 支付上报失败.", platform);
-        }else if (iapResult.resultCode == 5) {
-            msg = [NSString stringWithFormat:@"%@ 支付商品未消耗。",platform];
-            NSLog(@"%@ 支付商品未消耗.", platform);
-        }else if (iapResult.resultCode == 6) {
-            msg = [NSString stringWithFormat:@"%@ 创建订单失败。",platform];
-            NSLog(@"%@ 创建订单失败.", platform);
+            NSLog(@"%@ iapResult.productIdentifier.", iapResult.productIdentifier);
+
+            WAEvent* event = [[WAEvent alloc]init];
+            event.defaultEventName =WAEventPurchase;
+            event.defaultParamValues = @{
+                
+                /*必填*/
+                WAEventParameterNameItemName:iapResult.productIdentifier?iapResult.productIdentifier:@"",  //游戏内虚拟物品的名称/ID
+                WAEventParameterNameItemAmount:@1,       //交易的数量
+                WAEventParameterNamePrice:iapResult.defaultAmountMicro?iapResult.defaultAmountMicro:@1      //交易的总价
+
+            };
+            [event trackEvent];
+            
+            
         }
     }
     [self.naviView makeToast:msg];
