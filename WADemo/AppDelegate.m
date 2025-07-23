@@ -20,41 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+//    [WAAdMobProxy setTestMode:YES];
+
     UIViewController *initialViewController;
 
-    [WAAdMobProxy isOpenBannerAdWithCompletion:^(BOOL isOpen, NSError * _Nonnull error) {
-        
-        NSLog(@"BannerAd检测广告开关，初始化前调用====%d",isOpen);
-        
-    }];
     
-    [WAAdMobProxy isOpenInterstitialAdWithCompletion:^(BOOL isOpen, NSError * _Nonnull error) {
-        
-        NSLog(@"InterstitialAd检测广告开关，初始化前调用=====%d",isOpen);
-        
-    }];
-    
-    [WAAdMobProxy isOpenAppOpenAdWithCompletion:^(BOOL isOpen, NSError * _Nonnull error) {
-        
-        NSLog(@"AppOpenAd检测广告开关，初始化前调用=====%d",isOpen);
-        
-    }];
-
-                              
-    [WAAdMobProxy isOpenRewardedWithAdName:@"admob1" completion:^(BOOL isOpen, NSError * _Nonnull error) {
-        
-        NSLog(@"Rewarded-admob1-检测广告开关，初始化前调用=====%d",isOpen);
-
-    }];
-    
-    [WAAdMobProxy isOpenRewardedWithAdName:@"admob2" completion:^(BOOL isOpen, NSError * _Nonnull error) {
-        
-        NSLog(@"Rewarded-admob2-检测广告开关，初始化前调用=====%d",isOpen);
-
-    }];
-    
-//    [WAAdMobProxy setTestMode:YES];
     [WACoreProxy setDebugMode:YES];
     [WACoreProxy initWithCompletionHandler:^{
         [WACoreProxy initAppEventTracker];

@@ -40,7 +40,7 @@
 
     
     self.gameUseridtextField = [[UITextField alloc] init];
-    self.gameUseridtextField.text=@"gameuserid001";
+    self.gameUseridtextField.text=@"gameuserid_001";
     self.gameUseridtextField.returnKeyType=UIReturnKeyDone;
     self.gameUseridtextField.delegate=self;
     self.gameUseridtextField.tag = 1;
@@ -197,7 +197,7 @@
 }
 - (void)initiatedPurchase {
 
-    // sdk4.5.0 新增
+    // sdk4.6.0 新增
     WAInitiatedPurchaseEvent * purchseEvent =[[WAInitiatedPurchaseEvent alloc] init];
     [purchseEvent trackEvent];
     
@@ -402,7 +402,7 @@ int level =0;
 }
 
 - (void)custom {
-    
+	
     WAEvent* event = [[WAEvent alloc]init];
     event.defaultEventName =@"custom_event_name";
     event.defaultValue = 1;
@@ -427,4 +427,3 @@ int level =0;
 }
 
 @end
-

@@ -169,8 +169,19 @@
     
     
     
+    btn2 = [[WADemoButtonMain alloc]init];
+    [btn2 setTitle:@"查看广告任务" forState:UIControlStateNormal];
+    [btn2 addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn2];
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1,@3,@3,@3,@2,@2]];
+    
+    btn2 = [[WADemoButtonMain alloc]init];
+    [btn2 setTitle:@"检查任务情况" forState:UIControlStateNormal];
+    [btn2 addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn2];
+    
+    
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1,@3,@3,@3,@2,@1,@0,@2]];
     //
     self.title = @"Admob";
     self.btnLayout = btnLayout;
@@ -281,6 +292,107 @@
         
 
 
+    }else if ([buttonTitle isEqualToString:@"查看广告任务"]) {
+        // 获取广告任务列表
+        [WAUserProxy fetchPromotionTasksWithCompletion:^(NSArray<NSDictionary *> * _Nullable tasks, NSError * _Nullable error) {
+            
+            if (error) {
+                [self makeToast:error.userInfo[WAErrorDeveloperMessageKey]];
+
+                return;
+            }
+            if (tasks) {
+                NSMutableString *showStr = [[NSMutableString alloc]init];
+
+                if ([tasks count]>0) {
+                    for (NSDictionary *dic in tasks) {
+                        // 安全获取任务名称
+                        NSString *taskName = [dic objectForKey:@"taskName"];
+                        if (!taskName || [taskName isKindOfClass:[NSNull class]]) {
+                            taskName = @"";
+                        }
+                        
+                        // 安全获取奖励状态
+                        NSString *rewardStatus = [dic objectForKey:@"rewardStatus"];
+                        if (!rewardStatus || [rewardStatus isKindOfClass:[NSNull class]]) {
+                            rewardStatus = @"";
+                        }
+                        
+                        // 安全获取任务状态
+                        NSString *taskStatus = [dic objectForKey:@"taskStatus"];
+                        if (!taskStatus || [taskStatus isKindOfClass:[NSNull class]]) {
+                            taskStatus = @"";
+                        }
+                        
+                        // 拼接任务信息（格式可根据需求调整）
+                        [showStr appendFormat:@"任务: %@\n奖励状态: %@\n任务状态: %@\n\n",
+                                      taskName, rewardStatus, taskStatus];
+                    }
+                    [self makeToast:showStr];
+                }
+     
+
+            }
+            
+            
+            NSLog(@"tasks====%@",tasks);
+            
+        }];
+
+    }else if ([buttonTitle isEqualToString:@"检查任务情况"]) {
+        
+        // 检查用户任务完成情况，实际未通知后台接口，通知成功后，再次调用任务列表，查看发放情况
+        [WAUserProxy checkPlayerTask:^(NSError * _Nullable error, BOOL success) {
+            
+            if (error) {
+                [self makeToast:error.userInfo[WAErrorDeveloperMessageKey]];
+
+                return;
+            }
+            
+            
+            [self makeToast:[NSString stringWithFormat:@"检查任务情况通知结果:%d,再次调用任务列表，查看奖励发放情况",success]];
+
+            
+            [WAUserProxy fetchPromotionTasksWithCompletion:^(NSArray<NSDictionary *> * _Nullable tasks, NSError * _Nullable error) {
+                
+                if (tasks) {
+                    NSMutableString *showStr = [[NSMutableString alloc]init];
+
+                    for (NSDictionary *dic in tasks) {
+                        // 安全获取任务名称
+                        NSString *taskName = [dic objectForKey:@"taskName"];
+                        if (!taskName || [taskName isKindOfClass:[NSNull class]]) {
+                            taskName = @"";
+                        }
+                        
+                        // 安全获取奖励状态
+                        NSString *rewardStatus = [dic objectForKey:@"rewardStatus"];
+                        if (!rewardStatus || [rewardStatus isKindOfClass:[NSNull class]]) {
+                            rewardStatus = @"";
+                        }
+                        
+                        // 安全获取任务状态
+                        NSString *taskStatus = [dic objectForKey:@"taskStatus"];
+                        if (!taskStatus || [taskStatus isKindOfClass:[NSNull class]]) {
+                            taskStatus = @"";
+                        }
+                        
+                        // 拼接任务信息（格式可根据需求调整）
+                        [showStr appendFormat:@"任务: %@\n奖励状态: %@\n任务状态: %@\n\n",
+                                      taskName, rewardStatus, taskStatus];
+                    }
+                    [self makeToast:showStr];
+
+                }
+                
+                
+                NSLog(@"tasks====%@",tasks);
+                
+            }];
+            
+            
+        }];
     }
     
     

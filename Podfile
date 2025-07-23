@@ -17,8 +17,6 @@ workspace 'WADemo.xcworkspace'
               
 
 
-
-
 target "WADemo" do
 
 pod 'WAAfImpl'
@@ -29,8 +27,7 @@ pod 'WASdkIntf'
 pod 'WAPushImpl'
 pod 'WAAiHelpImpl'
 pod 'WAFirebaseImpl'
-pod 'WAAdmobImpl'
-
+pod 'WAAdmobImpl'  # admob广告，需要才接入，一般不需要接入
 pod 'WAGhglImpl' # appstore 不建议接入
 pod 'WAGhgpImpl' # appstore 不建议接入
     

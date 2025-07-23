@@ -43,7 +43,14 @@
 			<array>
 				<string>fb1281771621973222</string>
 				<string>com.wing.sdkfo</string>
+				<string>vk5527303</string>
 				<string>watestlogin</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>twitterkit-FXJ0BYeSakTGtm0Bh5OO62U9X</string>
 			</array>
 		</dict>
 	</array>
@@ -91,6 +98,8 @@
 		<string>twitter</string>
 		<string>twitterauth</string>
 	</array>
+	<key>NSAdvertisingAttributionReportEndpoint</key>
+	<string>https://appsflyer-skadnetwork.com/</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -167,15 +176,9 @@
 	</dict>
 	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
 	<true/>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Your info will be used for personalized ads.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
 	</array>
-	<key>NSAdvertisingAttributionReportEndpoint</key>
-	<string>https://appsflyer-skadnetwork.com/</string>
-	<key>ConsentNoticeId</key>
-	<string>meD8gA9W</string>
 </dict>
 </plist>

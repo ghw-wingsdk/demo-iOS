@@ -27,7 +27,7 @@
     WALog(@"viewDidLoad=%@",[NSThread currentThread]);
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [WAAdMobProxy showAppOpenAdWithViewController:self withDelegate:nil];
+        [WAUserProxy showCustomerCenterWithCompletion:nil];
 
 
 
@@ -41,21 +41,10 @@
     NSLog(@"countryCode==%@", countryCode);
 
     
-//
-//    NSString *locale = [[NSLocale currentLocale] localeIdentifier];
-//    NSRange startRange = [locale rangeOfString:@"_"];
-//    NSString *result = [locale stringByReplacingCharactersInRange:NSMakeRange(0, startRange.length+1) withString:[[NSLocale preferredLanguages] objectAtIndex:0]];
-//    NSLog(@"current locale: %@", result);
-//    NSLog(@"current locale: %@", [[NSLocale preferredLanguages] objectAtIndex:0]);
-//
-//    CTTelephonyNetworkInfo *network_Info = [CTTelephonyNetworkInfo new];
-//    CTCarrier *carrier = network_Info.subscriberCellularProvider;
-//
-//    NSLog(@"country code is: %@", carrier.mobileCountryCode);
-//
-//    //will return the actual country code
-//    NSLog(@"ISO country code is: %@", carrier.isoCountryCode);
 
+    
+
+    
 
 }
 
