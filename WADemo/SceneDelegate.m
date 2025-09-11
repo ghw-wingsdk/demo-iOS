@@ -42,7 +42,7 @@
     NSLog(@"%s, %s, ", __FILE__, __FUNCTION__);
 
     [WACoreProxy sceneDidBecomeActive:scene];
-    [WAAdMobProxy showAppOpenAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
+//    [WAAdMobProxy showInterstitialAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
 
 }
 

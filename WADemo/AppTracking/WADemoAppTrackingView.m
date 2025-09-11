@@ -151,6 +151,13 @@
    [btn22 addTarget:self action:@selector(clearCaches) forControlEvents:UIControlEventTouchUpInside];
    [btns addObject:btn22];
     
+    
+    
+    btn22 = [[WADemoButtonMain alloc]init];
+   [btn22 setTitle:@"线程设置角色id" forState:UIControlStateNormal];
+   [btn22 addTarget:self action:@selector(threadSetGameUserid) forControlEvents:UIControlEventTouchUpInside];
+   [btns addObject:btn22];
+    
     NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@2,@2]];
     self.title = @"数据收集";
     self.btnLayout = btnLayout;
@@ -160,6 +167,20 @@
     
 }
 
+-(void)threadSetGameUserid{
+    
+    NSString *gameuserid=self.gameUseridtextField.text;
+
+    // 方式 1：使用全局并发队列（常用）
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(globalQueue, ^{
+        // 后台线程执行任务
+        NSLog(@"GCD 后台任务执行中，线程：%@", [NSThread currentThread]);
+        [WACoreProxy setGameUserId:gameuserid];
+
+    });
+
+}
 - (void)clearCaches{
     NSUserDefaults *setting = [NSUserDefaults standardUserDefaults];
 
@@ -197,7 +218,7 @@
 }
 - (void)initiatedPurchase {
 
-    // sdk4.6.0 新增
+    // sdk4. 6.0 新增
     WAInitiatedPurchaseEvent * purchseEvent =[[WAInitiatedPurchaseEvent alloc] init];
     [purchseEvent trackEvent];
     

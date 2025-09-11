@@ -11,6 +11,9 @@
 #import "WADemoButtonMain.h"
 #import "WADemoUtil.h"
 #import "WADemoAlertView.h"
+#import <Toast/Toast.h>
+
+
 @implementation WADemoFBShareView
 
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -43,13 +46,95 @@
     [btns addObject:btn5];
 
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1,@1]];
+    btn5 = [[WADemoButtonMain alloc]init];
+   [btn5 setTitle:@"获取头像" forState:UIControlStateNormal];
+   btn5.tag = 0;
+   [btn5 addTarget:self action:@selector(getPlatformAccountInfo) forControlEvents:UIControlEventTouchUpInside];
+   [btns addObject:btn5];
+    
+    
+    btn5 = [[WADemoButtonMain alloc]init];
+   [btn5 setTitle:@"系统分享" forState:UIControlStateNormal];
+   btn5.tag = 0;
+   [btn5 addTarget:self action:@selector(systemShare) forControlEvents:UIControlEventTouchUpInside];
+   [btns addObject:btn5];
+    
+    
+    btn5 = [[WADemoButtonMain alloc]init];
+   [btn5 setTitle:@"分享" forState:UIControlStateNormal];
+   btn5.tag = 0;
+   [btn5 addTarget:self action:@selector(facebookShare) forControlEvents:UIControlEventTouchUpInside];
+   [btns addObject:btn5];
+    
+    \
+    
+    
+    
+    btn5 = [[WADemoButtonMain alloc]init];
+   [btn5 setTitle:@"获取邀请好友数量" forState:UIControlStateNormal];
+   btn5.tag = 0;
+   [btn5 addTarget:self action:@selector(getShareNum) forControlEvents:UIControlEventTouchUpInside];
+   [btns addObject:btn5];
+    
+    
+    
+    
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@1,@1,@1,@2,@2]];
     //
-    self.title = @"Facebook分享";
+    self.title = @"分享&&社交";
     self.btnLayout = btnLayout;
     self.btns = btns;
 }
 //
+
+- (void)getShareNum{
+    [WASocialProxy getShareFriendsCount:^(NSError *error, int count) {
+        if (!error) {
+            WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"获取邀请好友数量接口" message:[NSString stringWithFormat:@"count:%d",count] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+            [alert show];
+        }else{
+            [self makeToast:error.description];
+
+        }
+    }];
+
+}
+- (void)systemShare{
+    [WASocialProxy shareInviteLink:0 completeBlock:^(NSError *error) {
+        if (!error) {
+            WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"分享成功" message:@"" cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+            [alert show];
+        }else{
+            [self makeToast:error.description];
+
+        }
+    }];
+}
+
+- (void)facebookShare{
+    [WASocialProxy shareInviteLink:1 completeBlock:^(NSError *error) {
+        if (!error) {
+            WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"分享成功" message:@"" cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+            [alert show];
+        }else{
+            [self makeToast:error.description];
+
+        }
+    }];
+}
+- (void)getPlatformAccountInfo{
+    
+    [WAUserProxy getPlatformAccountInfo:^(NSError * _Nullable error, WAPlatformAccountInfo * _Nullable acountInfo) {
+        
+        if (!error) {
+            WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"获取头像信息成功" message:[NSString stringWithFormat:@"platform:%@ \n ,picture:%@ \n,nickname:%@",acountInfo.platform,acountInfo.picture,acountInfo.nickname] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+            [alert show];
+        }else{
+            [self makeToast:error.description];
+
+        }
+    }];
+}
 
 -(void)sharer:(NSObject<WASharing>*)sharer platform:(NSString *const)platform didCompleteWithResults:(NSDictionary *)results{
     NSLog(@"didCompleteWithResults:%@",results);
@@ -79,10 +164,10 @@
 - (void)shareLink:(UIButton *)sender {
     
     WAShareLinkContent* content = [[WAShareLinkContent alloc]init];
-    content.contentURL = [NSURL URLWithString:@"https://developers.facebook.com"];
+    content.contentURL = [NSURL URLWithString:@"https://mply.io/oLK6dIuiJXk"];
     content.contentTitle = @"To share a link to you.";
     content.contentDescription = @"This is a link ,and it links to https://developers.facebook.com";
-    content.imageURL = [NSURL URLWithString:@"http://a5.mzstatic.com/us/r30/Purple3/v4/3a/84/63/3a8463f8-f90d-5e45-7fde-25efaee00b5b/icon175x175.jpeg"];
+//    content.imageURL = [NSURL URLWithString:@"http://a5.mzstatic.com/us/r30/Purple3/v4/3a/84/63/3a8463f8-f90d-5e45-7fde-25efaee00b5b/icon175x175.jpeg"];
     if (sender.tag ==0) {
         [WASocialProxy shareWithPlatform:WA_PLATFORM_FACEBOOK shareContent:content shareWithUI:YES delegate:self];
     }else{

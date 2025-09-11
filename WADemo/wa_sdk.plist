@@ -12,5 +12,7 @@
 	<string>ios</string>
 	<key>channel</key>
 	<string>APPLE</string>
+	<key>WaSdkServerUrl-pre</key>
+	<string>http://sdk-test1.gamehollywood.com/sdk_bkd_qa/sdkapi/</string>
 </dict>
 </plist>

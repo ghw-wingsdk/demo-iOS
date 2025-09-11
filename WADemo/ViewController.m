@@ -30,7 +30,6 @@
         [WAUserProxy showCustomerCenterWithCompletion:nil];
 
 
-
     });
 
     
@@ -93,6 +92,21 @@
 }
 
 -(void)loginViewDidCompleteWithResult:(WALoginResult *)result{
+    
+    
+    NSString * gameuserid= [NSString stringWithFormat:@"server1-role1-%@",result.userId];
+
+    NSString * serverid = [WACoreProxy getServerId];
+    NSString * nickName = [NSString stringWithFormat:@"青铜server1-%@",result.userId];
+    if ([serverid isEqualToString:@"server2"]) {
+        gameuserid= [NSString stringWithFormat:@"server2-role2-%@",result.userId];
+        nickName = [NSString stringWithFormat:@"青铜server2-%@",result.userId];
+    }
+    
+    
+//    [WACoreProxy setNickName:nickName];
+//    [WACoreProxy setGameUserId:gameuserid];
+    
     WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"登录成功" message:[NSString stringWithFormat:@"platform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@  是否为游客账号:%d",result.platform,result.pUserId,result.pToken,result.userId,result.token,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
 }

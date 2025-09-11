@@ -38,29 +38,26 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>vk5527303</string>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1281771621973222</string>
-				<string>com.wing.sdkfo</string>
-				<string>vk5527303</string>
+				<string>fb959864665060487</string>
 				<string>watestlogin</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>twitterkit-FXJ0BYeSakTGtm0Bh5OO62U9X</string>
+				<string>waolf7f9a9d18da611e5a0be000d3a906774</string>
 			</array>
 		</dict>
 	</array>
 	<key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
 	<false/>
 	<key>FacebookAppID</key>
+	<string>959864665060487</string>
+	<key>FacebookAppID-1</key>
 	<string>1281771621973222</string>
 	<key>FacebookAutoLogAppEventsEnabled</key>
 	<false/>
 	<key>FacebookClientToken</key>
+	<string>5be8966a8b29f6d31f75549048ea2e21</string>
+	<key>FacebookClientToken-1</key>
 	<string>174b2fb60d44d4c62e74d3a6891fb1b8</string>
 	<key>FacebookDisplayName</key>
 	<string>WINSDKdemo</string>
@@ -74,6 +71,15 @@
 	<false/>
 	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_ANALYTICS_STORAGE</key>
 	<false/>
+	<key>Instagram</key>
+	<dict>
+		<key>clientId</key>
+		<string>9b5eddd42ee048179f414a2c038365e4</string>
+		<key>clientSecret</key>
+		<string>83d4468b062a427780bda2ad568e5be0</string>
+		<key>redirectUri</key>
+		<string>http://blog.wing-analytics.com/</string>
+	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -97,6 +103,8 @@
 		<string>vkauthorize</string>
 		<string>twitter</string>
 		<string>twitterauth</string>
+		<string>fb-messenger</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>NSAdvertisingAttributionReportEndpoint</key>
 	<string>https://appsflyer-skadnetwork.com/</string>
@@ -176,9 +184,20 @@
 	</dict>
 	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
 	<true/>
+	<key>Twitter</key>
+	<dict>
+		<key>consumerKey</key>
+		<string>FXJ0BYeSakTGtm0Bh5OO62U9X</string>
+		<key>consumerSecret</key>
+		<string>Uo9Es3m8FNBLtcGjzrU3oyoBOczkqzga8sgPoOsERJ8dDWScf4</string>
+	</dict>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>needPuserIdPToken</key>
+	<true/>
+	<key>needShowloginUIBackButton</key>
+	<false/>
 </dict>
 </plist>

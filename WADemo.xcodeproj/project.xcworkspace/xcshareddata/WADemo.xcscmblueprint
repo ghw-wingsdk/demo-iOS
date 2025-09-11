@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "c6149e8e-e42d-11e4-a9e1-318af9c85f01++1174",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "c6149e8e-e42d-11e4-a9e1-318af9c85f01++1174" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "c6149e8e-e42d-11e4-a9e1-318af9c85f01++1174" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C5B84A25-4BFF-49CE-A939-EC57EDB53C31",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "c6149e8e-e42d-11e4-a9e1-318af9c85f01++1174" : "WASdk\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WADemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WADemo\/WADemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/172.16.100.38\/gamehollywood\/ghw_sdk",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c6149e8e-e42d-11e4-a9e1-318af9c85f01++1174"
+    }
+  ]
+}

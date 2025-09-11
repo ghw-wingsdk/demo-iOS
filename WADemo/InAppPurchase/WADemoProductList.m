@@ -114,20 +114,11 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
 //            [WAPayProxy payWithProductId:product.productIdentifier platform:WA_PLATFORM_APPLE extInfo:nil delegate:self];
 //        if (_goToType == GoToTypeWA)
         
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyyMMddHHmmssSSS"]; // 格式：年月日时分秒毫秒
-        NSString *dateString = [formatter stringFromDate:[NSDate date]];
-
-        // 设置为 orderId
-        
         NSMutableDictionary* extInfo = [[NSMutableDictionary alloc] init];
         [extInfo setObject:@"1111我是透传信息11111com" forKey:@"pid"];
-        [extInfo setObject:@"2026ddddadjjdada0099ll111333" forKey:@"orderId"];
-        [extInfo setObject:dateString forKey:@"time"];
+        [extInfo setObject:@"202222ddddadjjdada0099ll111333" forKey:@"orderId"];
 
         NSString * extInfoStr= [WADemoUtil toJSONStringFromDictionary:extInfo];
-        
-        NSLog(@"extInfoStr=%@",extInfoStr);
         [WAPayProxy payWithProductId:product.productIdentifier extInfo:extInfoStr delegate:self];
     }
 }

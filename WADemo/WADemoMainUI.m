@@ -122,7 +122,7 @@
     [btn6 addTarget:self action:@selector(appTracking) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn6];
     WADemoButtonMain* btn7 = [[WADemoButtonMain alloc]init];
-    [btn7 setTitle:@"Facebook分享" forState:UIControlStateNormal];
+    [btn7 setTitle:@"分享&&社交" forState:UIControlStateNormal];
     [btn7 addTarget:self action:@selector(facebookShare) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn7];
     WADemoButtonMain* btn8 = [[WADemoButtonMain alloc]init];
@@ -647,7 +647,6 @@
             
             [self makeToast:customerResult.error.userInfo[WAErrorDeveloperMessageKey]];
 
-
             return;
         }
         
@@ -679,7 +678,6 @@
             {
                 NSLog(@"WACustomerOperationTypeSwitchAccount===");
 
-                NSError * error =customerResult.error;
                 WALoginResult*result = customerResult.loginResult;
 
                 WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"客服中心切换成功" message:[NSString stringWithFormat:@"userId:%@\ntoken:%@\nplatform:%@\npUserId:%@\npToken:%@\nextends:%@ 是否为游客登录:%d",result.userId,result.token,result.platform,result.pUserId,result.pToken,result.extends,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
@@ -692,7 +690,6 @@
                 //帐号管理中的绑定帐号回调
             case WACustomerOperationTypeBindAccount:
             {
-                NSError * error =customerResult.error;
                 WABindingResult*result = customerResult.bindingResult;
 
                 NSString * message =[NSString stringWithFormat:@"客服中心绑定%@成功\n,userId:%@\ntoken:%@\n mobile:%@\n email:%@\n ",result.platform,result.userId,result.accessToken,result.mobile,result.email];
