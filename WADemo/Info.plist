@@ -4,15 +4,6 @@
 <dict>
 	<key>AdmobUseUMP</key>
 	<false/>
-	<key>AiHelp</key>
-	<dict>
-		<key>appId</key>
-		<string>gamehollywoodhk_platform_c6efc612-deab-49f6-b76d-ed9973f5d4ba</string>
-		<key>appSecret</key>
-		<string>GAMEHOLLYWOODHK_app_6ff2af7846a245e8a56c74d2331ede73</string>
-		<key>domain</key>
-		<string>gamehollywoodhk.aihelp.net</string>
-	</dict>
 	<key>Application Scene Manifest1</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

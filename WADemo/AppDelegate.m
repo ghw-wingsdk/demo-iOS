@@ -54,9 +54,10 @@
 
     }];
     
-    
     [WACoreProxy setDebugMode:YES];
+
     [WACoreProxy initWithCompletionHandler:^{
+
         [WACoreProxy initAppEventTracker];
         [WAPayProxy init4Iap];
         [WACoreProxy setLevel:10];
@@ -89,12 +90,8 @@
     
 }
 
-/*
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
-{
-    [WACoreProxy application:application didRegisterUserNotificationSettings:notificationSettings];
-}
- */
+
+
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"能够获取到token===============");
@@ -116,7 +113,7 @@
 
 
 
-#pragma mark IOS10 Push Notification Receive
+#pragma mark IOS10 or later Push Notification Receive
 //App处于前台接收通知时
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
     
@@ -149,25 +146,22 @@
     NSLog(@"applicationDidBecomeActive===");
     [WACoreProxy applicationDidBecomeActive:application];
     
-//    [WAAdMobProxy showInterstitialAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
+    [WAAdMobProxy showInterstitialAdWithViewController:[WADemoUtil getCurrentVC] withDelegate:self];
 
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-//
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-//    
-//    return [WACoreProxy application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
-//}
+
+
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
     return [WACoreProxy application:app openURL:url options:options];
 }
 
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
 {
     return [WACoreProxy application:application continueUserActivity:userActivity restorationHandler:restorationHandler];
 }

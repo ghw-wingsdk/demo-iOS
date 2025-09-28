@@ -272,13 +272,18 @@
 //打开SDK内置账号管理界面
 -(void)popAcctManagementUI{
     
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:WABindDidSucceedNotification
+                                                  object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uiBindDidSucceed:) name:WABindDidSucceedNotification object:nil];
     [WAUserProxy openAccountManager:self];
 }
 -(void)uiBindDidSucceed:(NSNotification*)info{
     NSDictionary * objdic =info.object;
     WABindingResult * bindResult = info.object;
-    
+    NSLog(@"UI绑定界面，绑定ghg成功");
+
     
     if(bindResult&&[bindResult.platform isEqualToString:WA_PLATFORM_WINGA]){
         NSLog(@"UI绑定界面，绑定ghg成功");

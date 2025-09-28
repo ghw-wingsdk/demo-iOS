@@ -9,10 +9,6 @@
 	</dict>
 	<key>WINGA</key>
 	<dict>
-		<key>ChannelId</key>
-		<string>AppleStore</string>
-		<key>URL</key>
-		<string>https://api.wingsdk.com/data/</string>
 		<key>Enabled</key>
 		<true/>
 	</dict>
@@ -21,7 +17,7 @@
 		<key>AppsFlyerDevKey</key>
 		<string>922wXRJwEns6Qj4MfMt4Gg</string>
 		<key>AppleAppID</key>
-		<string>113996505</string>
+		<string></string>
 		<key>Enabled</key>
 		<true/>
 	</dict>
