@@ -101,10 +101,10 @@
 //    [btn1 setTitle:@"启用LOGCAT" forState:UIControlStateNormal];
 //    [btn1 addTarget:self action:@selector(logCat:) forControlEvents:UIControlEventTouchUpInside];
 //    [btns addObject:btn1];
-    WADemoButtonSwitch* btn2 = [[WADemoButtonSwitch alloc]init];
-    [btn2 setTitle:@"启用应用墙" forState:UIControlStateNormal];
-    [btn2 addTarget:self action:@selector(appWall:) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn2];
+//    WADemoButtonSwitch* btn2 = [[WADemoButtonSwitch alloc]init];
+//    [btn2 setTitle:@"启用应用墙" forState:UIControlStateNormal];
+//    [btn2 addTarget:self action:@selector(appWall:) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn2];
     WADemoButtonMain* btn3 = [[WADemoButtonMain alloc]init];
     [btn3 setTitle:@"登录" forState:UIControlStateNormal];
     [btn3 addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
@@ -141,10 +141,10 @@
     [btn12 setTitle:@"购买商品" forState:UIControlStateNormal];
     [btn12 addTarget:self action:@selector(payProduct) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn12];
-    WADemoButtonMain* btn13 = [[WADemoButtonMain alloc]init];
-    [btn13 setTitle:@"广告" forState:UIControlStateNormal];
-    [btn13 addTarget:self action:@selector(ad) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn13];
+//    WADemoButtonMain* btn13 = [[WADemoButtonMain alloc]init];
+//    [btn13 setTitle:@"广告" forState:UIControlStateNormal];
+//    [btn13 addTarget:self action:@selector(ad) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn13];
     WADemoButtonMain* btn14 = [[WADemoButtonMain alloc]init];
     [btn14 setTitle:@"客服系统" forState:UIControlStateNormal];
     [btn14 addTarget:self action:@selector(csc) forControlEvents:UIControlEventTouchUpInside];
@@ -194,11 +194,11 @@
     [btns addObject:btn18];
     
     
-    btn18 = [[WADemoButtonMain alloc]init];
-    [btn18 setTitle:@"设置clientid" forState:UIControlStateNormal];
-    [btn18 addTarget:self action:@selector(elseTest) forControlEvents:UIControlEventTouchUpInside];
-    [btns addObject:btn18];
-    
+//    btn18 = [[WADemoButtonMain alloc]init];
+//    [btn18 setTitle:@"设置clientid" forState:UIControlStateNormal];
+//    [btn18 addTarget:self action:@selector(elseTest) forControlEvents:UIControlEventTouchUpInside];
+//    [btns addObject:btn18];
+//
 
     
     
@@ -217,9 +217,18 @@
     [btns addObject:btn18];
     
     
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"获取月卡信息" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(getPassInfo) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
     
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2,@2,@2]];
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"月卡用户指引弹框" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(showUserPassGuide) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+    
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2,@2,@2,@2]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app版本
@@ -552,6 +561,36 @@
     
 }
 
+/*游戏测试流程
+1、测试cp游戏时候，先安装demo，点击此方法
+2、查看cp 游戏 device-展示是否为测试正常
+*/
+- (void)keychainTest{
+   
+
+   BOOL writesuccesss = [WAHelper saveKeyChainWithObj:@"572fb189425e0cc04087b6703f95da3e" andKey:@"com.gamehollywood.clientidtest" group:@"gamehollywood.wingsdk.clientid.group"];
+
+   if(writesuccesss){
+       NSString *group = [WAHelper getGroupTestSdkClientid];
+
+       if([group isEqualToString:[WAHelper getGHWTestValidationClientId]]){
+            NSLog(@"group.client=%@",group);
+           
+           [self makeToast:@"写入测试成功"];
+
+       }else{
+           [self makeToast:@"写入测试失败"];
+
+           
+       }
+   }
+   
+
+}
+   
+
+
+
 - (void)openGameReview{
     [WAUserProxy openGameReview:^(OpenGameReviewState status) {
         switch (status) {
@@ -612,7 +651,7 @@
 //    NSMutableDictionary* mParamValueDict = [NSMutableDictionary dictionary];
 //    [mParamValueDict setObject:@"0" forKey:@"status"];
 //    WAEvent* event = [[WAEvent alloc] init];
-//    
+//
 //    event.defaultParamValues = mParamValueDict;
 //    event.defaultEventName = WAEventPrivacyClick;
 //
@@ -632,7 +671,7 @@
     
 //    WAAdMobViewController * adMobViewController =[[WAAdMobViewController alloc] init];
 //    [[WADemoUtil getCurrentVC] presentViewController:adMobViewController animated:YES completion:^{
-//        
+//
 //    }];
     
 }
@@ -715,6 +754,29 @@
     }];
 }
 
+- (void)getPassInfo{
+    [WAUserProxy getPassInfo:^(NSError * _Nullable error, WAPassPlatformInfo * _Nullable passPlatfromInfo) {
+        
+        if (!error) {
+            NSString * message =[NSString stringWithFormat:@"激活状态%d\n,subscribeStatus:%d\n passExpireTimestamp:%ld\n passExpireDays:%d\n",passPlatfromInfo.passStatus,passPlatfromInfo.subscribeStatus,passPlatfromInfo.passExpireTimestamp,passPlatfromInfo.passExpireDays];
+            
+            WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"获取月卡信息成功" message:message cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
+            [alert show];
+        }else{
+            
+            [self makeToast:error.userInfo[WAErrorDeveloperMessageKey]];
+
+        }
+        
+    }];
+    
+}
+- (void)showUserPassGuide{
+    [WAUserProxy showPassUserGuide:^(NSError * _Nullable error) {
+        
+    }];
+}
 
 @end
+
 

@@ -54,7 +54,6 @@
 
     }];
     
-//    [WACoreProxy setDebugMode:YES];
 
     [WACoreProxy initWithCompletionHandler:^{
 
@@ -98,6 +97,9 @@
     [WACoreProxy application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    
+    NSLog(@"能够获取到error===============%@",error);
+
     [WACoreProxy application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 

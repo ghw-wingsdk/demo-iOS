@@ -12,7 +12,7 @@
 #import <WASdkIntf/WASdkIntf.h>
 #import <Toast/Toast.h>
 #import "WADemoLoginUI.h"
-#import <GoogleMobileAds/GoogleMobileAds.h>
+//#import <GoogleMobileAds/GoogleMobileAds.h>
 
 @interface WADemoAdMobView ()<UITextFieldDelegate,GADFullScreenContentDelegate>
 @property (nonatomic, strong) UIView *bannerView;
