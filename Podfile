@@ -3,18 +3,19 @@ workspace 'WADemo.xcworkspace'
 
 
 
-     source 'http://repo.wingsdk.cn:8082/r/WASdkIntf.git'
-     source 'http://repo.wingsdk.cn:8082/r/WASdkImpl.git'
-     source 'http://repo.wingsdk.cn:8082/r/WAApImpl.git'
-     source 'http://repo.wingsdk.cn:8082/r/WAAfImpl.git'
-     source 'http://repo.wingsdk.cn:8082/r/WAFbImpl.git'
-     source 'http://repo.wingsdk.cn:8082/r/WAPushImpl.git'
-     source 'http://repo.wingsdk.cn:8082/r/WAAiHelpImpl.git'
-     source 'http://repo.wingsdk.cn:8082/r/WAFirebaseImpl.git'
-     source 'http://repo.wingsdk.cn:8082/r/WAGhglImpl.git'
-     source 'http://repo.wingsdk.cn:8082/r/WAGhgpImpl.git'
-     source 'http://repo.wingsdk.cn:8082/r/WAAdmobImpl.git'
-              
+      source 'http://repo.wingsdk.cn:8082/r/WASdkIntf.git'
+      source 'http://repo.wingsdk.cn:8082/r/WASdkImpl.git'
+      source 'http://repo.wingsdk.cn:8082/r/WAApImpl.git'
+      source 'http://repo.wingsdk.cn:8082/r/WAAfImpl.git'
+      source 'http://repo.wingsdk.cn:8082/r/WAFbImpl.git'
+      source 'http://repo.wingsdk.cn:8082/r/WAPushImpl.git'
+      source 'http://repo.wingsdk.cn:8082/r/WAAiHelpImpl.git'
+      source 'http://repo.wingsdk.cn:8082/r/WAFirebaseImpl.git'
+      source 'http://repo.wingsdk.cn:8082/r/WAGhglImpl.git'
+      source 'http://repo.wingsdk.cn:8082/r/WAGhgpImpl.git'
+      source 'http://repo.wingsdk.cn:8082/r/WAAdmobImpl.git'
+
+
 
 
 target "WADemo" do
