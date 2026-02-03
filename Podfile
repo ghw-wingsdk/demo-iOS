@@ -14,8 +14,7 @@ workspace 'WADemo.xcworkspace'
       source 'http://repo.wingsdk.cn:8082/r/WAGhglImpl.git'
       source 'http://repo.wingsdk.cn:8082/r/WAGhgpImpl.git'
       source 'http://repo.wingsdk.cn:8082/r/WAAdmobImpl.git'
-
-
+      
 
 
 target "WADemo" do
