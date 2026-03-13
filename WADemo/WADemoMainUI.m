@@ -89,14 +89,98 @@
                 }
             });
         });
-
         
+
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleLoginSuccess:)
+                                                     name:@"WALoginSuccessNotification"
+                                                   object:nil];
         
     }
     return self;
 }
+
+- (void)handleLoginSuccess:(NSNotification *)notification {
+
+
+    // 模拟登录sdk成功，然后进入后，
+    
+    // 获取当前的金额信息，在UI上展示开关或者金额
+    [self getCoinsInfo];
+    
+    // 监听变化，更新金额或者金额
+    [self listenCoins];
+}
+
+- (void)listenCoins{
+    [WAUserProxy listenCoinsChange:^(NSError * _Nullable error, WACoinsInfo * _Nullable coinsInfo) {
+        if (!error) {
+            NSLog(@"数据变动回掉,此处更新UI===%lld",coinsInfo.coinsAmount);
+            
+            [self makeToast:[NSString stringWithFormat:@"代金券变动监听回调(%@,%lld)",coinsInfo.isEnableCoins?@"开启":@"关闭", coinsInfo.coinsAmount]];
+
+            for (UIButton *button in self.btns) {
+                if (button.tag == 500) {
+                    NSString *title = [NSString stringWithFormat:@"获取coins余额(%@,%lld)",coinsInfo.isEnableCoins?@"开启":@"关闭", coinsInfo.coinsAmount];
+                    [button setTitle:title forState:UIControlStateNormal];
+                }
+                
+                
+            }
+            
+            for(UIImageView* imageView in self.btns){
+                if (imageView.tag==10000) {
+                    
+                    UILabel * label =[imageView viewWithTag:1];
+                    label.text =[NSString stringWithFormat:@"%lld", coinsInfo.coinsAmount];
+                }
+                
+            }
+            
+        }
+        
+
+    }];
+}
+- (void)addButtonClick {
+    NSLog(@"点击增加按钮");
+    [self showCoinsGuide];
+}
+
 -(void)initBtnAndLayout{
     NSMutableArray* btns = [NSMutableArray array];
+    
+    
+    UIImageView*bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 30)];
+    bgImageView.image = [UIImage imageNamed:@"coins_bg"]; // 背景图
+    bgImageView.userInteractionEnabled = YES;
+    bgImageView.tag=10000;
+    [self addSubview:bgImageView];
+    
+    UIImageView*iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 20, 20)];
+    iconImageView.image = [UIImage imageNamed:@"wa_sdk_coins_ghg"];
+    [bgImageView addSubview:iconImageView];
+    
+    UILabel*amountLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 60, 20)];
+    amountLabel.text = @"0";
+    amountLabel.tag=1;
+    amountLabel.textColor = [UIColor redColor];
+    amountLabel.font = [UIFont boldSystemFontOfSize:14];
+    [bgImageView addSubview:amountLabel];
+    
+    UIButton*addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    addButton.frame = CGRectMake(100, -10, 54, 36);
+    [addButton setBackgroundImage:[UIImage imageNamed:@"icon_add"] forState:UIControlStateNormal];
+    [addButton addTarget:self
+                       action:@selector(addButtonClick)
+             forControlEvents:UIControlEventTouchUpInside];
+    [bgImageView addSubview:addButton];
+    
+    
+    [btns addObject:bgImageView];
+
+    
 //    WADemoButtonSwitch* btn1 = [[WADemoButtonSwitch alloc]init];
 //    [btn1 setTitle:@"启用LOGCAT" forState:UIControlStateNormal];
 //    [btn1 addTarget:self action:@selector(logCat:) forControlEvents:UIControlEventTouchUpInside];
@@ -228,7 +312,20 @@
     [btn18 addTarget:self action:@selector(showUserPassGuide) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2,@2,@2,@2]];
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"代金券指引弹框" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(showCoinsGuide) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"获取coins余额" forState:UIControlStateNormal];
+    btn18.tag=500;
+
+    [btn18 addTarget:self action:@selector(getCoinsInfo) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+    
+    
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2,@2,@2,@2,@2]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app版本
@@ -250,6 +347,7 @@
 
     });
     
+
 }
 
 #pragma mark Btn action
@@ -758,11 +856,13 @@
     [WAUserProxy getPassInfo:^(NSError * _Nullable error, WAPassPlatformInfo * _Nullable passPlatfromInfo) {
         
         if (!error) {
-            NSString * message =[NSString stringWithFormat:@"激活状态%d\n,subscribeStatus:%d\n passExpireTimestamp:%ld\n passExpireDays:%d\n",passPlatfromInfo.passStatus,passPlatfromInfo.subscribeStatus,passPlatfromInfo.passExpireTimestamp,passPlatfromInfo.passExpireDays];
+            NSLog(@"月卡状态:%@",passPlatfromInfo.passStatus==1?@"已激活":@"未激活");
+            NSString * message =[NSString stringWithFormat:@"激活状态%ld\n,subscribeStatus:%d\n passExpireTimestamp:%ld\n passExpireDays:%d\n",(long)passPlatfromInfo.passStatus,passPlatfromInfo.subscribeStatus,passPlatfromInfo.passExpireTimestamp,passPlatfromInfo.passExpireDays];
             
             WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"获取月卡信息成功" message:message cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
             [alert show];
         }else{
+            NSLog(@"获取月卡信息失败=%@",error.userInfo[WAErrorDeveloperMessageKey]);
             
             [self makeToast:error.userInfo[WAErrorDeveloperMessageKey]];
 
@@ -773,10 +873,58 @@
 }
 - (void)showUserPassGuide{
     [WAUserProxy showPassUserGuide:^(NSError * _Nullable error) {
-        
+        if (!error) {
+            NSLog(@"显示成功");
+
+        }else{
+            [self makeToast:error.userInfo[WAErrorDeveloperMessageKey]];
+
+        }
+
     }];
 }
+- (void)showCoinsGuide{
+    [WAUserProxy showCoinsGuide:^(NSError * _Nullable error) {
+        if (!error) {
+            NSLog(@"显示成功");
 
+        }else{
+            [self makeToast:error.userInfo[WAErrorDeveloperMessageKey]];
+
+        }
+
+    }];
+    
+}
+- (void)getCoinsInfo{
+    [WAUserProxy getCoinsInfo:^(NSError * _Nullable error, WACoinsInfo * _Nullable coinsInfo) {
+        if (!error) {
+            NSString *title = [NSString stringWithFormat:@"获取coins余额(%@,%lld)",coinsInfo.isEnableCoins?@"开启":@"关闭", coinsInfo.coinsAmount];
+
+            for (UIButton *button in self.btns) {
+                if (button.tag == 500) {
+                    [button setTitle:title forState:UIControlStateNormal];
+                }
+            }
+            // 更新UI
+            for(UIImageView* imageView in self.btns){
+                if (imageView.tag==10000) {
+                    
+                    UILabel * label =[imageView viewWithTag:1];
+                    label.text =[NSString stringWithFormat:@"%lld", coinsInfo.coinsAmount];
+                }
+                
+            }
+            
+        }else{
+            NSLog(@"error");
+            [self makeToast:error.userInfo[WAErrorDeveloperMessageKey]];
+
+        }
+
+    }];
+    
+}
 @end
 
 
