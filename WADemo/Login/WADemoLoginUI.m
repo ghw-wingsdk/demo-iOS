@@ -94,19 +94,19 @@
     [btn10 setTitle:btnTitle10 forState:UIControlStateNormal];
     [btn10 addTarget:self action:@selector(setCache:) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn10];
-    
-    
+	
+	
     WADemoButtonMain* btn12 = [[WADemoButtonMain alloc]init];
     [btn12 setTitle:@"sign in with apple  " forState:UIControlStateNormal];
     [btn12 addTarget:self action:@selector(signinwithapple) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn12];
-    
+	
     btn12 = [[WADemoButtonMain alloc]init];
     [btn12 setTitle:@"GHG 登录 " forState:UIControlStateNormal];
     [btn12 addTarget:self action:@selector(ghgLogin) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn12];
-    
-    
+	
+	
     btn12 = [[WADemoButtonMain alloc]init];
     [btn12 setTitle:@"wa 登录 " forState:UIControlStateNormal];
     [btn12 addTarget:self action:@selector(waLogin) forControlEvents:UIControlEventTouchUpInside];
@@ -195,8 +195,8 @@
     [WADemoMaskLayer startAnimating];
     [WAUserProxy loginWithPlatform:WA_PLATFORM_SIGNINWITHAPPLE extInfo:nil delegate:self];
 
-    
-    
+	
+	
 }
 
 //修改登录流程
@@ -260,18 +260,19 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WALoginSuccessNotification"
                                                         object:nil
                                                       userInfo:result];
-//    [self showToastMessage:@"登录成功 "];
+//	[self showToastMessage:@"登录成功 "];
 
     NSString * gameuserid= [NSString stringWithFormat:@"server1-role1-%@",result.userId];
 
     NSString * serverid = [WACoreProxy getServerId];
-    NSString * nickName = [NSString stringWithFormat:@"青铜server1-%@",result.userId];
+    NSString * nickName = [NSString stringWithFormat:@" 青铜 server1-%@",result.userId];
     if ([serverid isEqualToString:@"server2"]) {
         gameuserid= [NSString stringWithFormat:@"server2-role2-%@",result.userId];
-        nickName = [NSString stringWithFormat:@"青铜server2-%@",result.userId];
+        nickName = [NSString stringWithFormat:@" 青铜 server2 -%@",result.userId];
     }
     
-    
+    nickName = @"测试 用户😊:/?&=;+!@#$()',* {\"ip\":\"1.1.1.1\",\"os\":\"iOS 18\"}";
+
     [WACoreProxy setNickName:nickName];
     [WACoreProxy setGameUserId:gameuserid];
     [WACoreProxy setServerId:@"server2"];
@@ -279,8 +280,8 @@
     
     WADemoAlertView* alert = [[WADemoAlertView alloc]initWithTitle:@"登录成功" message:[NSString stringWithFormat:@"platform:%@\npUserId:%@,pToken:%@,userId:%@,token:%@,是否为游客账号%d",result.platform,result.pUserId,result.pToken,result.userId,result.token,result.isGuestAccount] cancelButtonTitle:@"Sure" otherButtonTitles:nil block:nil];
     [alert show];
-    
-    
+	
+	
     WALog(@"result--token:%@",result.token);
     WALog(@"result--userid:%@",result.userId);
     WALog(@"result--pToken:%@",result.pToken);
@@ -291,7 +292,7 @@
         
 //        [WASocialProxy inviteInstallRewardPlatform:result.platform TokenString:result.pToken handler:^(NSUInteger code, NSString *msg, NSError *error) {
 //            if (code == 200) {
-//
+//                
 //                UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"tip" message:[NSString stringWithFormat:@"触发Facebook被邀请人安装应用事件接口成功 msg:%@",msg] delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil];
 //                [alert show];
 //            }else{
@@ -304,11 +305,11 @@
 
 //-(void)loginDidCompleteWithResults:(WALoginResult *)result{
 //    if (result.platform == WA_PLATFORM_FACEBOOK||result.platform == WA_PLATFORM_VK) {
-//
+//        
 //        [WASocialProxy inviteInstallRewardPlatform:result.platform TokenString:result.pToken handler:^(NSUInteger code, NSString *msg, NSError *error) {
 //            if (code == 200) {
 //                //触发被邀请人安装应用事件接口成功
-//
+//               
 //            }else{
 //               //触发被邀请人安装应用事件接口失败
 //            }
@@ -339,12 +340,12 @@
 
     }
     
-    
+	
 }
 
 - (void)showToastMessage:(NSString *)messag{
-    
-    [self makeToast:messag duration:2 position:CSToastPositionCenter];
+	
+	[self makeToast:messag duration:2 position:CSToastPositionCenter];
 
 }
 
@@ -355,4 +356,3 @@
 }
 
 @end
-

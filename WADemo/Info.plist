@@ -4,6 +4,20 @@
 <dict>
 	<key>AdmobUseUMP</key>
 	<false/>
+	<key>AiHelp</key>
+	<dict>
+		<key>appId</key>
+		<string>gamehollywoodhk_platform_c6efc612-deab-49f6-b76d-ed9973f5d4ba</string>
+		<key>domain</key>
+		<string>gamehollywoodhk.aihelp.net</string>
+	</dict>
+	<key>AiHelp - 2</key>
+	<dict>
+		<key>appId</key>
+		<string>f5game_platform_6d814bcac5226c31a8b405dedb198285</string>
+		<key>domain</key>
+		<string>f5game.aihelp.net</string>
+	</dict>
 	<key>Application Scene Manifest1</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -33,26 +47,20 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb959864665060487</string>
+				<string>fb946129458872908</string>
+				<string>fb1281771621973222</string>
 				<string>watestlogin</string>
 				<string>waolf7f9a9d18da611e5a0be000d3a906774</string>
 			</array>
 		</dict>
 	</array>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
-	<false/>
-	<key>FacebookAppID</key>
-	<string>959864665060487</string>
-	<key>FacebookAppID-1</key>
+	<key>FacebookAppID1</key>
 	<string>1281771621973222</string>
 	<key>FacebookAutoLogAppEventsEnabled</key>
 	<false/>
-	<key>FacebookClientToken</key>
-	<string>5be8966a8b29f6d31f75549048ea2e21</string>
-	<key>FacebookClientToken-1</key>
+	<key>FacebookClientToken1</key>
 	<string>174b2fb60d44d4c62e74d3a6891fb1b8</string>
-	<key>FacebookDisplayName</key>
+	<key>FacebookDisplayName1</key>
 	<string>WINSDKdemo</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3512615046087076~6300575964</string>
@@ -64,6 +72,8 @@
 	<false/>
 	<key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_ANALYTICS_STORAGE</key>
 	<false/>
+	<key>GameReviewNum</key>
+	<integer>5</integer>
 	<key>Instagram</key>
 	<dict>
 		<key>clientId</key>

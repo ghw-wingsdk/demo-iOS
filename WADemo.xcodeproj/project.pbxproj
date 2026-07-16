@@ -80,6 +80,7 @@
 		B27ED5012A1730AB00DB1772 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27ED5002A1730AB00DB1772 /* Accelerate.framework */; };
 		B28F15312D8276C600A1F71C /* Foundation.framework in Sources */ = {isa = PBXBuildFile; fileRef = B27ED4EA2A172DC000DB1772 /* Foundation.framework */; };
 		B28F15332D82794C00A1F71C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28F15322D82794C00A1F71C /* WebKit.framework */; };
+		B292B11530048DA10074AF38 /* wa_sdk_track_config.plist in Resources */ = {isa = PBXBuildFile; fileRef = B212D46F2E6EB24B0027C8D7 /* wa_sdk_track_config.plist */; };
 		B294C2122A6677F900B1CB1B /* WADemoClientidSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = B294C2112A6677F900B1CB1B /* WADemoClientidSetting.m */; };
 		B2B8D7BB2D70594400B650F2 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B8D7BA2D70594400B650F2 /* PhotosUI.framework */; };
 		C43CB4DC8FC68455BF451EDE /* libPods-WADemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA2AF865C6337E0BF1869AB /* libPods-WADemo.a */; };
@@ -661,6 +662,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B212D4702E6EB24B0027C8D7 /* wa_sdk.plist in Resources */,
+				B292B11530048DA10074AF38 /* wa_sdk_track_config.plist in Resources */,
 				B27ED4E12A1720CA00DB1772 /* Main.storyboard in Resources */,
 				B27ED4BE2A1720CA00DB1772 /* Assets.xcassets in Resources */,
 				B27ED4E02A1720CA00DB1772 /* LaunchScreen.storyboard in Resources */,
@@ -683,13 +685,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -704,13 +702,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -962,7 +956,7 @@
 				CODE_SIGN_ENTITLEMENTS = WADemo/WADemo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = Y8Z2D47ET4;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1005,7 +999,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.11.3;
+				MARKETING_VERSION = 4.13.1;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-std=c++14",
@@ -1038,7 +1032,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WADemo/WADemoRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = Y8Z2D47ET4;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1081,7 +1075,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.11.3;
+				MARKETING_VERSION = 4.13.1;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-std=c++14",

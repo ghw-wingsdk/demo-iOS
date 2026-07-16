@@ -45,6 +45,8 @@
     return result;
 }
 
+
+
 +(void)addOrientationNotification:(id)observer selector:(SEL)selector object:(id)object{
     NSString* model = [UIDevice currentDevice].model;
     if (![@"iPhone" isEqualToString:model]) {

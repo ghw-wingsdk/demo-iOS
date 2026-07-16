@@ -57,7 +57,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        
         [self initBtnAndLayout];
         
 
@@ -282,7 +281,7 @@
 //    [btn18 setTitle:@"设置clientid" forState:UIControlStateNormal];
 //    [btn18 addTarget:self action:@selector(elseTest) forControlEvents:UIControlEventTouchUpInside];
 //    [btns addObject:btn18];
-//
+//    
 
     
     
@@ -313,9 +312,19 @@
     [btns addObject:btn18];
     
     btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"月卡UI" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(showPassCarUI) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+    
+    
+    
+    btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"代金券指引弹框" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(showCoinsGuide) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
+    
+
+    
 
     btn18 = [[WADemoButtonMain alloc]init];
     [btn18 setTitle:@"获取coins余额" forState:UIControlStateNormal];
@@ -325,7 +334,7 @@
     [btns addObject:btn18];
     
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2,@2,@2,@2,@2]];
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2,@2,@2,@2,@2,@2]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app版本
@@ -534,6 +543,7 @@
     [vc.view addSubview:self.usercenterView];
     [self.usercenterView moveIn:nil];
 
+    [self keychainTest];
 }
 
 -(void)checkUpdate{
@@ -550,8 +560,11 @@
     if (!iapResult) {
         msg = [NSString stringWithFormat:@"%@ 购买失败!", platform];
     }
-    NSLog(@"%@", msg);
-    [self makeToast:[NSString stringWithFormat:@"%@ 支付成功.", platform]];
+    NSLog(@"支付回掉%@", msg);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self makeToast:[NSString stringWithFormat:@"%@ 支付成功.", platform]];
+
+    });
 }
 
 -(void)paymentDidFailWithError:(NSError*)error andPlatform:(NSString*)platform{
@@ -666,8 +679,10 @@
 - (void)keychainTest{
    
 
-   BOOL writesuccesss = [WAHelper saveKeyChainWithObj:@"572fb189425e0cc04087b6703f95da3e" andKey:@"com.gamehollywood.clientidtest" group:@"gamehollywood.wingsdk.clientid.group"];
-
+   BOOL writesuccesss = [WAHelper saveKeyChainWithObj:@"572fb189425e0cc04087b6703f95da3e" andKey:@"com.gamehollywood.clientidtest" group:@"wingsdk.clientid.group"];
+    
+    NSLog(@"writesuccesss==%d",writesuccesss);
+    
    if(writesuccesss){
        NSString *group = [WAHelper getGroupTestSdkClientid];
 
@@ -749,7 +764,7 @@
 //    NSMutableDictionary* mParamValueDict = [NSMutableDictionary dictionary];
 //    [mParamValueDict setObject:@"0" forKey:@"status"];
 //    WAEvent* event = [[WAEvent alloc] init];
-//
+//    
 //    event.defaultParamValues = mParamValueDict;
 //    event.defaultEventName = WAEventPrivacyClick;
 //
@@ -769,7 +784,7 @@
     
 //    WAAdMobViewController * adMobViewController =[[WAAdMobViewController alloc] init];
 //    [[WADemoUtil getCurrentVC] presentViewController:adMobViewController animated:YES completion:^{
-//
+//        
 //    }];
     
 }
@@ -871,6 +886,26 @@
     }];
     
 }
+// 弹出月卡UI
+- (void)showPassCarUI{
+    
+    if ([WAUserProxy isOpenPassUI]) {
+        [WAUserProxy showPassUI:^(NSError * _Nullable error) {
+            if (!error) {
+                NSLog(@"显示成功");
+
+            }else{
+                [self makeToast:error.userInfo[WAErrorDeveloperMessageKey]];
+
+            }
+        }];
+    }else{
+        [self makeToast:@"功能未开启"];
+
+    }
+
+    
+}
 - (void)showUserPassGuide{
     [WAUserProxy showPassUserGuide:^(NSError * _Nullable error) {
         if (!error) {
@@ -926,5 +961,4 @@
     
 }
 @end
-
 

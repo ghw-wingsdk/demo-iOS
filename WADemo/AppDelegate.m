@@ -22,6 +22,9 @@
     // Override point for customization after application launch.
 //    [WAAdMobProxy setTestMode:YES];
 
+    
+    [WACoreProxy setDebugMode:YES];
+   
     UIViewController *initialViewController;
     [WAAdMobProxy isOpenBannerAdWithCompletion:^(BOOL isOpen, NSError * _Nonnull error) {
         
@@ -54,7 +57,6 @@
 
     }];
     
-
     [WACoreProxy initWithCompletionHandler:^{
 
         [WACoreProxy initAppEventTracker];
@@ -63,7 +65,7 @@
         NSLog(@"初始化完成====");
 
 //        [WACoreProxy setGameUserId:@"server1-role1-7282489"];
-//        [WACoreProxy setNickName:@"青铜server1-7282489"];
+//        [WACoreProxy setNickName:@" 青铜server1- 7282489 "];
 //        [WACoreProxy setServerId:@"server1"];
         [WAPushProxy application:application initPushWithDelegate:self];
 

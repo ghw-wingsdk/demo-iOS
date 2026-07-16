@@ -139,22 +139,15 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
             NSLog(@"%@ 支付成功.", platform);
             NSLog(@"%@ iapResult.productIdentifier.", iapResult.productIdentifier);
 
-            WAEvent* event = [[WAEvent alloc]init];
-            event.defaultEventName =WAEventPurchase;
-            event.defaultParamValues = @{
-                
-                /*必填*/
-                WAEventParameterNameItemName:iapResult.productIdentifier?iapResult.productIdentifier:@"",  //游戏内虚拟物品的名称/ID
-                WAEventParameterNameItemAmount:@1,       //交易的数量
-                WAEventParameterNamePrice:iapResult.defaultAmountMicro?iapResult.defaultAmountMicro:@1      //交易的总价
-
-            };
-            [event trackEvent];
             
             
         }
     }
-    [self.naviView makeToast:msg];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.naviView makeToast:msg];
+
+    });
 }
 -(void)paymentDidFailWithError:(NSError*)error andPlatform:(NSString*)platform{
     if (error) {
