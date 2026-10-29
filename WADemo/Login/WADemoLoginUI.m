@@ -271,7 +271,7 @@
         nickName = [NSString stringWithFormat:@" 青铜 server2 -%@",result.userId];
     }
     
-    nickName = @"测试 用户😊:/?&=;+!@#$()',* {\"ip\":\"1.1.1.1\",\"os\":\"iOS 18\"}";
+//    nickName = @"测试 用户😊:/?&=;+!@#$()',* {\"ip\":\"1.1.1.1\",\"os\":\"iOS 18\"}";
 
     [WACoreProxy setNickName:nickName];
     [WACoreProxy setGameUserId:gameuserid];

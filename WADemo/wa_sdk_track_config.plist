@@ -20,6 +20,8 @@
 	<dict>
 		<key>AppsFlyerDevKey</key>
 		<string>922wXRJwEns6Qj4MfMt4Gg</string>
+		<key>AppleAppID</key>
+		<string>113996505</string>
 		<key>Enabled</key>
 		<true/>
 	</dict>

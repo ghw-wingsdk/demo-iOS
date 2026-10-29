@@ -118,7 +118,7 @@
 #pragma mark -- 初始化Bar
 - (void)initTitleViews:(NSString *)title
 {
-    CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
+    CGRect rectStatus = [WADemoUtil statusBarFrame];
     CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
     
     _viewTitle = [[UIView alloc] initWithFrame:CGRectMake(0, heightStatus, self.view.bounds.size.width, 44)];

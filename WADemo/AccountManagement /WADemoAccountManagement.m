@@ -21,6 +21,8 @@
 @property (nonatomic, strong) UIView *viewTitle;
 @property (nonatomic, strong) WADemoAccountSwitch* acctSwitch;
 @property (nonatomic, strong) WADemoBindingAccountList* accountList;
+@property (nonatomic, strong) UIScrollView *contentScrollView;
+@property (nonatomic, strong) NSMutableArray<UIButton *> *buttons;
 
 @end
 
@@ -63,23 +65,24 @@
 
     frame.size.height += frame.origin.y;
     
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
-    scrollView.backgroundColor =[UIColor whiteColor];
+    _contentScrollView = [[UIScrollView alloc] initWithFrame:frame];
+    _contentScrollView.backgroundColor =[UIColor whiteColor];
 
-    [self addSubview:scrollView];
+    [self addSubview:_contentScrollView];
     
     NSArray *titles = @[@"绑定Facebook账号", @"绑定Apple账号",@"绑定signinwithapple", @"绑定VK账号", @"绑定Twitter账号", @"绑定Instagram账号", @"新建账户", @"切换账户", @"查询已绑定账户",@"打开SDK内置账号管理界面",@"获取当前账户信息(getAccountInfo-VK)",@"绑定ghg",@"绑定WA"];
     
+    _buttons = [NSMutableArray arrayWithCapacity:titles.count];
+    
     CGFloat left = 10, right = 10, top = 60, bottom = 40, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
     
-    UIButton *button;
     for (NSInteger i = 0; i < titles.count; i++)
     {
-        CGFloat btn_w = (scrollView.bounds.size.width - left - right - mid_space_h) / 2.0f;
+        CGFloat btn_w = (_contentScrollView.bounds.size.width - left - right - mid_space_h) / 2.0f;
         CGFloat btn_x = left + (btn_w + mid_space_h) * (i % 2);
         CGFloat btn_y = top + (btnHeight + mid_space_v) * (i / 2);
         
-        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(btn_x, btn_y, btn_w, btnHeight);
         button.tag = i + 1;
         [button setBackgroundImage:[self imageWithColor:[UIColor lightGrayColor] size:button.frame.size] forState:UIControlStateNormal];
@@ -94,14 +97,47 @@
         
         [button setTitle:titles[i] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonEvent:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollView addSubview:button];
-        
-        CGFloat contentHeight = top + (i + 1) * (btnHeight + mid_space_v) + btnHeight + bottom;
-        if (contentHeight < scrollView.bounds.size.height) {
-            contentHeight = scrollView.bounds.size.height;
-        }
-        scrollView.contentSize = CGSizeMake(scrollView.bounds.size.width, contentHeight);
+        [_contentScrollView addSubview:button];
+        [_buttons addObject:button];
     }
+    [self updateScrollViewContentSize];
+}
+
+- (void)updateScrollViewContentSize
+{
+    CGFloat top = 60, bottom = 40, mid_space_v = 10, btnHeight = 40;
+    CGFloat contentHeight = top + _buttons.count * (btnHeight + mid_space_v) + bottom;
+    if (contentHeight < _contentScrollView.bounds.size.height) {
+        contentHeight = _contentScrollView.bounds.size.height;
+    }
+    _contentScrollView.contentSize = CGSizeMake(_contentScrollView.bounds.size.width, contentHeight);
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    // 更新 title bar 宽度
+    self.viewTitle.frame = CGRectMake(0, self.viewTitle.frame.origin.y, self.bounds.size.width, self.viewTitle.bounds.size.height);
+    
+    // 更新 scrollView 尺寸
+    CGRect svFrame = _contentScrollView.frame;
+    svFrame.size.width = self.bounds.size.width;
+    svFrame.size.height = self.bounds.size.height - svFrame.origin.y;
+    _contentScrollView.frame = svFrame;
+    
+    // 重新布局按钮（两列网格）
+    CGFloat left = 10, right = 10, top = 60, mid_space_h = 10, mid_space_v = 10, btnHeight = 40;
+    for (NSInteger i = 0; i < _buttons.count; i++)
+    {
+        CGFloat btn_w = (_contentScrollView.bounds.size.width - left - right - mid_space_h) / 2.0f;
+        CGFloat btn_x = left + (btn_w + mid_space_h) * (i % 2);
+        CGFloat btn_y = top + (btnHeight + mid_space_v) * (i / 2);
+        _buttons[i].frame = CGRectMake(btn_x, btn_y, btn_w, btnHeight);
+        // 更新背景图尺寸
+        [_buttons[i] setBackgroundImage:[self imageWithColor:[UIColor lightGrayColor] size:_buttons[i].frame.size] forState:UIControlStateNormal];
+    }
+    [self updateScrollViewContentSize];
 }
 
 
@@ -120,7 +156,7 @@
 #pragma mark -- 初始化Bar
 - (void)initTitleViews:(NSString *)title
 {
-    CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
+    CGRect rectStatus = [WADemoUtil statusBarFrame];
     CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
     
     _viewTitle = [[UIView alloc] initWithFrame:CGRectMake(0, heightStatus, self.bounds.size.width, 44)];
@@ -249,7 +285,7 @@
 //切换账户
 -(void)accoutSwitch{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    self.acctSwitch = [[WADemoAccountSwitch alloc]initWithFrame:self.bounds];
+    self.acctSwitch = [[WADemoAccountSwitch alloc]initWithFrame:vc.view.bounds];
     self.acctSwitch.hasBackBtn = YES;
     [vc.view addSubview:self.acctSwitch];
     [self.acctSwitch moveIn:nil];

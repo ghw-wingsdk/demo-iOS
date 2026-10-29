@@ -83,6 +83,7 @@
 - (void)scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity API_AVAILABLE(ios(13.0)){
     
     NSLog(@"%s, %s, ", __FILE__, __FUNCTION__);
+    [WACoreProxy scene:scene continueUserActivity:userActivity];
 
 }
 @end

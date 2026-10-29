@@ -41,15 +41,15 @@ static WADemoMaskLayer* ghwMaskLayer_;
 
 -(void)orientationDidChange
 {
-    CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    CGFloat height = [UIScreen mainScreen].bounds.size.height;
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    if (((orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown) && width > height)
-        || ((orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) && width < height))
-    {
-        width = [UIScreen mainScreen].bounds.size.height;
-        height = [UIScreen mainScreen].bounds.size.width;
+    UIWindow *window = self.window;
+    if (!window) {
+        for (UIWindowScene *scene in UIApplication.sharedApplication.connectedScenes) {
+            if (scene.windows.count > 0) { window = scene.windows.firstObject; break; }
+        }
     }
+    CGRect bounds = window.bounds;
+    CGFloat width = bounds.size.width;
+    CGFloat height = bounds.size.height;
     self.frame = CGRectMake(0, 0, width, height);
     
     _maskLayerIndicator.center = CGPointMake(width / 2, height / 2);

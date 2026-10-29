@@ -49,7 +49,7 @@
 -(void)fb{
     
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _fbInviteView = [[WADemoFBInviteView alloc]initWithFrame:self.bounds];
+    _fbInviteView = [[WADemoFBInviteView alloc]initWithFrame:vc.view.bounds];
     self.fbInviteView.hasBackBtn = YES;
     [vc.view addSubview:self.fbInviteView];
     [self.fbInviteView moveIn:nil];
@@ -57,7 +57,7 @@
 
 -(void)vk{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _vkInviteView = [[WADemoVKInviteView alloc]initWithFrame:self.bounds];
+    _vkInviteView = [[WADemoVKInviteView alloc]initWithFrame:vc.view.bounds];
     self.vkInviteView.hasBackBtn = YES;
     [vc.view addSubview:self.vkInviteView];
     [self.vkInviteView moveIn:nil];

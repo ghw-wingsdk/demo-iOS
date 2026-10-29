@@ -8,30 +8,60 @@
 
 #import "WADemoUtil.h"
 
+// Scene 生命周期下 UIApplication 的 keyWindow/statusBarFrame/statusBarOrientation 均已废弃，
+// 统一从当前前台 UIWindowScene 获取。
+static UIWindowScene *WADemoForegroundWindowScene(void) {
+    UIWindowScene *fallback = nil;
+    for (UIScene *scene in [UIApplication sharedApplication].connectedScenes) {
+        if (![scene isKindOfClass:[UIWindowScene class]]) {
+            continue;
+        }
+        UIWindowScene *windowScene = (UIWindowScene *)scene;
+        if (windowScene.activationState == UISceneActivationStateForegroundActive) {
+            return windowScene;
+        }
+        if (!fallback) {
+            fallback = windowScene;
+        }
+    }
+    return fallback;
+}
+
 @implementation WADemoUtil
+
++ (UIWindow *)currentWindow {
+    UIWindowScene *windowScene = WADemoForegroundWindowScene();
+    UIWindow *normalWindow = nil;
+    for (UIWindow *window in windowScene.windows) {
+        if (window.isKeyWindow) {
+            return window;
+        }
+        if (!normalWindow && window.windowLevel == UIWindowLevelNormal) {
+            normalWindow = window;
+        }
+    }
+    return normalWindow;
+}
+
++ (CGRect)statusBarFrame {
+    return WADemoForegroundWindowScene().statusBarManager.statusBarFrame;
+}
+
++ (UIInterfaceOrientation)interfaceOrientation {
+    return WADemoForegroundWindowScene().interfaceOrientation;
+}
 +(UIViewController *)getCurrentVC
 {
     UIViewController *result = nil;
     
-    UIWindow* window = (UIWindow*)[[UIApplication sharedApplication] keyWindow];
+    UIWindow* window = [self currentWindow];
     
 //    UIWindowScene *windowScene = (UIWindowScene *)[UIApplication sharedApplication].connectedScenes.anyObject;
 //    UIWindow *window = windowScene.windows.firstObject;
     
-    if (window.windowLevel != UIWindowLevelNormal)
-    {
-        NSArray *windows = [[UIApplication sharedApplication] windows];
-        for(UIWindow* tmpWin in windows)
-        {
-            if (tmpWin.windowLevel == UIWindowLevelNormal)
-            {
-                window = tmpWin;
-                break;
-            }
-        }
-    }
+    // currentWindow 已保证返回 key/normal 窗口，无需再遍历回退（原 [[UIApplication sharedApplication] windows] 也已废弃）
     
-    UIView *frontView = [[window subviews] objectAtIndex:0];
+    UIView *frontView = window.subviews.firstObject;
     id nextResponder = [frontView nextResponder];
     
     if ([nextResponder isKindOfClass:[UIViewController class]])

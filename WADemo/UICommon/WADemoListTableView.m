@@ -7,6 +7,7 @@
 //
 
 #import "WADemoListTableView.h"
+#import "WADemoUtil.h"
 
 @interface WADemoListTableView()
 @property(nonatomic,strong)UIView* btnView;
@@ -48,7 +49,7 @@
     self = [super init];
     if (self) {
         
-        UIViewController *rootController = [[UIApplication sharedApplication] keyWindow].rootViewController;
+        UIViewController *rootController = [WADemoUtil currentWindow].rootViewController;
         
         _heightForContentView = 250;
         _heightForHearder = 100;
@@ -86,7 +87,7 @@
 //}
 
 -(void)setTableViewFrame{
-    UIViewController *rootController = [[UIApplication sharedApplication] keyWindow].rootViewController;
+    UIViewController *rootController = [WADemoUtil currentWindow].rootViewController;
     float width = rootController.view.frame.size.width - 2*_left;
     float height = _heightForContentView + _heightForHearder + _heightForFooter;
     

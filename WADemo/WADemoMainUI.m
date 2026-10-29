@@ -12,6 +12,7 @@
 #import "WADemoLoginUI.h"
 #import "WADemoUtil.h"
 #import "WADemoIapView.h"
+#import "WADemoSubscriptionView.h"
 #import "WADemoAppTrackingView.h"
 #import "WADemoFBShareView.h"
 #import "WADemoFBInviteView.h"
@@ -35,6 +36,7 @@
 
 @property (nonatomic, strong) WADemoLoginUI* loginUI;
 @property (nonatomic, strong) WADemoIapView* productList;
+@property (nonatomic, strong) WADemoSubscriptionView* subscriptionView;
 @property (nonatomic, strong) WADemoAppTrackingView* appTrackView;
 @property (nonatomic, strong) WADemoFBShareView* fbShareView;
 @property (nonatomic, strong) WADemoInvite* inviteView;
@@ -272,7 +274,7 @@
 //    [btns addObject:btn18];
     
     btn18 = [[WADemoButtonMain alloc]init];
-    [btn18 setTitle:@"游戏评分" forState:UIControlStateNormal];
+    [btn18 setTitle:@"游戏评分V2" forState:UIControlStateNormal];
     [btn18 addTarget:self action:@selector(openGameReview) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn18];
     
@@ -334,7 +336,17 @@
     [btns addObject:btn18];
     
     
-    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2,@2,@2,@2,@2,@2]];
+    btn18 = [[WADemoButtonMain alloc]init];
+    [btn18 setTitle:@"订阅管理" forState:UIControlStateNormal];
+    [btn18 addTarget:self action:@selector(restore) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn18];
+
+    WADemoButtonMain* btn19 = [[WADemoButtonMain alloc]init];
+    [btn19 setTitle:@"社媒" forState:UIControlStateNormal];
+    [btn19 addTarget:self action:@selector(socialMedia) forControlEvents:UIControlEventTouchUpInside];
+    [btns addObject:btn19];
+
+    NSMutableArray* btnLayout = [NSMutableArray arrayWithArray:@[@1,@2,@2,@2,@2,@2,@2,@2,@0,@2,@2,@2,@2,@2,@2,@2,@2,@2,@2]];
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app版本
@@ -386,7 +398,7 @@
 //登录
 -(void)login{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _loginUI = [[WADemoLoginUI alloc]initWithFrame:self.bounds];
+    _loginUI = [[WADemoLoginUI alloc]initWithFrame:vc.view.bounds];
     self.loginUI.hasBackBtn = YES;
     [vc.view addSubview:self.loginUI];
     [self.loginUI moveIn:nil];
@@ -395,7 +407,7 @@
 //账号管理
 -(void)acctManagement{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _accountView = [[WADemoAccountManagement alloc]initWithFrame:self.bounds];
+    _accountView = [[WADemoAccountManagement alloc]initWithFrame:vc.view.bounds];
     self.accountView.hasBackBtn = YES;
     [vc.view addSubview:self.accountView];
     [self.accountView moveIn:nil];
@@ -406,7 +418,7 @@
 //应用内支付
 -(void)iap{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _productList = [[WADemoIapView alloc]initWithFrame:self.bounds];
+    _productList = [[WADemoIapView alloc]initWithFrame:vc.view.bounds];
     self.productList.hasBackBtn = YES;
     [vc.view addSubview:self.productList];
     [self.productList moveIn:nil];
@@ -414,7 +426,7 @@
 //数据收集
 -(void)appTracking{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _appTrackView = [[WADemoAppTrackingView alloc]initWithFrame:self.bounds];
+    _appTrackView = [[WADemoAppTrackingView alloc]initWithFrame:vc.view.bounds];
     self.appTrackView.hasBackBtn = YES;
     [vc.view addSubview:self.appTrackView];
     [self.appTrackView moveIn:nil];
@@ -422,7 +434,7 @@
 //facebook分享
 -(void)facebookShare{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _fbShareView = [[WADemoFBShareView alloc]initWithFrame:self.bounds];
+    _fbShareView = [[WADemoFBShareView alloc]initWithFrame:vc.view.bounds];
     self.fbShareView.hasBackBtn = YES;
     [vc.view addSubview:self.fbShareView];
     [self.fbShareView moveIn:nil];
@@ -431,7 +443,7 @@
 -(void)facebookInvite{
 
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _inviteView = [[WADemoInvite alloc]initWithFrame:self.bounds];
+    _inviteView = [[WADemoInvite alloc]initWithFrame:vc.view.bounds];
     self.inviteView.hasBackBtn = YES;
     [vc.view addSubview:self.inviteView];
     [self.inviteView moveIn:nil];
@@ -440,7 +452,7 @@
 //礼物
 -(void)gifting{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _giftView = [[WADemoGiftView alloc]initWithFrame:self.bounds];
+    _giftView = [[WADemoGiftView alloc]initWithFrame:vc.view.bounds];
     self.giftView.hasBackBtn = YES;
     [vc.view addSubview:self.giftView];
     [self.giftView moveIn:nil];
@@ -484,7 +496,8 @@
 - (void)pay
 {
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _payView = [[WADemoPayView alloc]initWithFrame:self.bounds];
+    // 主界面 mainUI 顶部为 banner 留了区域、非全屏，支付页需用当前 VC 全屏 bounds，否则顶部露出背景、底部短一截
+    _payView = [[WADemoPayView alloc]initWithFrame:vc.view.bounds];
     self.payView.hasBackBtn = YES;
     [vc.view addSubview:self.payView];
     [self.payView moveIn:nil];
@@ -503,7 +516,7 @@
 - (void)ad
 {
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _adView = [[WADemoAdView alloc]initWithFrame:self.bounds];
+    _adView = [[WADemoAdView alloc]initWithFrame:vc.view.bounds];
     self.adView.hasBackBtn = YES;
     [vc.view addSubview:self.adView];
     [self.adView moveIn:nil];
@@ -538,7 +551,7 @@
 - (void)userCenter
 {
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _usercenterView = [[WADemoUserCenterViewController alloc]initWithFrame:self.bounds];
+    _usercenterView = [[WADemoUserCenterViewController alloc]initWithFrame:vc.view.bounds];
     self.usercenterView.hasBackBtn = YES;
     [vc.view addSubview:self.usercenterView];
     [self.usercenterView moveIn:nil];
@@ -548,7 +561,7 @@
 
 -(void)checkUpdate{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _hotUpdate = [[WADemoHotUpdateView alloc]initWithFrame:self.bounds];
+    _hotUpdate = [[WADemoHotUpdateView alloc]initWithFrame:vc.view.bounds];
     self.hotUpdate.hasBackBtn = YES;
     [vc.view addSubview:self.hotUpdate];
     [self.hotUpdate moveIn:nil];
@@ -705,7 +718,7 @@
 
 
 - (void)openGameReview{
-    [WAUserProxy openGameReview:^(OpenGameReviewState status) {
+    [WAUserProxy openGameReviewV2:^(OpenGameReviewState status) {
         switch (status) {
             case OpenGameReviewStateError:
                 [self makeToast:@"打开游戏评价失败,请检测游戏评价开关是否开启"];
@@ -747,7 +760,7 @@
     
     
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoClientidSetting * clientidview = [[WADemoClientidSetting alloc]initWithFrame:self.bounds];
+    WADemoClientidSetting * clientidview = [[WADemoClientidSetting alloc]initWithFrame:vc.view.bounds];
     clientidview.hasBackBtn = YES;
     [vc.view addSubview:clientidview];
     [clientidview moveIn:nil];
@@ -777,7 +790,7 @@
 - (void)showAdmob{
     
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    _adMobView = [[WADemoAdMobView alloc]initWithFrame:self.bounds];
+    _adMobView = [[WADemoAdMobView alloc]initWithFrame:vc.view.bounds];
     self.adMobView.hasBackBtn = YES;
     [vc.view addSubview:self.adMobView];
     [self.adMobView moveIn:nil];
@@ -959,6 +972,25 @@
 
     }];
     
+}
+- (void)restore{
+    UIViewController *vc = [WADemoUtil getCurrentVC];
+    self.subscriptionView = [[WADemoSubscriptionView alloc] initWithFrame:vc.view.bounds];
+    self.subscriptionView.hasBackBtn = YES;
+    [vc.view addSubview:self.subscriptionView];
+    [self.subscriptionView moveIn:nil];
+}
+
+// 社媒
+- (void)socialMedia{
+    if ([WAUserProxy isOpenSocialMedia]) {
+        [WAUserProxy openSocialMedia:^(NSError * _Nullable error) {
+            if (error) {
+                [self makeToast:error.userInfo[WAErrorDeveloperMessageKey]];
+            }
+        }];
+    }
+
 }
 @end
 

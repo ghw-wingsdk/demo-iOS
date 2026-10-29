@@ -28,7 +28,11 @@
         self.block = block;
         self.cancelButtonTitle = cancelButtonTitle;
         self.otherButtonTitles = otherButtonTitles;
-        self.frame = [UIScreen mainScreen].bounds;
+        UIWindow *keyWindow = nil;
+        for (UIWindowScene *scene in UIApplication.sharedApplication.connectedScenes) {
+            if (scene.windows.count > 0) { keyWindow = scene.windows.firstObject; break; }
+        }
+        self.frame = keyWindow.bounds;
         [self initUI];
     }
     return self;
@@ -119,9 +123,9 @@
 }
 
 -(void)layoutUI{
-    self.frame = [UIScreen mainScreen].bounds;
-    float screenW = [UIScreen mainScreen].bounds.size.width;
-    float screenH = [UIScreen mainScreen].bounds.size.height;
+    self.frame = self.superview.bounds;
+    float screenW = self.bounds.size.width;
+    float screenH = self.bounds.size.height;
     
     float alert_w_max = 400;
     //    float alert_w = 250;
@@ -191,7 +195,15 @@
     
     float alert_h = btnZone_y + btnZone_h;
     _alertView.frame = CGRectMake(0, 0, alert_w, alert_h);
-    _alertView.center = CGPointMake(screenW/2, screenH/2);
+    // iPhone Duo: superview 可能不是全屏，用 window bounds 计算中心点
+    UIWindow *window = self.window;
+    if (!window) {
+        for (UIWindowScene *scene in UIApplication.sharedApplication.connectedScenes) {
+            if (scene.windows.count > 0) { window = scene.windows.firstObject; break; }
+        }
+    }
+    CGPoint windowCenter = CGPointMake(window.bounds.size.width / 2, window.bounds.size.height / 2);
+    _alertView.center = [self convertPoint:windowCenter fromView:window];
 }
 
 -(void)layoutSubviews{
@@ -203,21 +215,10 @@
 {
     UIViewController *result = nil;
     
-    UIWindow* window = (UIWindow*)[[UIApplication sharedApplication] keyWindow];
-    if (window.windowLevel != UIWindowLevelNormal)
-    {
-        NSArray *windows = [[UIApplication sharedApplication] windows];
-        for(UIWindow* tmpWin in windows)
-        {
-            if (tmpWin.windowLevel == UIWindowLevelNormal)
-            {
-                window = tmpWin;
-                break;
-            }
-        }
-    }
+    UIWindow* window = (UIWindow*)[WADemoUtil currentWindow];
+    // currentWindow 已保证返回 key/normal 窗口，无需再遍历回退（原 UIApplication.windows 也已废弃）
     
-    UIView *frontView = [[window subviews] objectAtIndex:0];
+    UIView *frontView = window.subviews.firstObject;
     id nextResponder = [frontView nextResponder];
     
     if ([nextResponder isKindOfClass:[UIViewController class]])

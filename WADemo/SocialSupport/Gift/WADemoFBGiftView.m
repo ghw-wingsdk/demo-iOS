@@ -53,7 +53,7 @@
 #pragma mark btn action
 - (void)getGiftList{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoGiftListView* giftList = [[WADemoGiftListView alloc]initWithFrame:self.bounds];
+    WADemoGiftListView* giftList = [[WADemoGiftListView alloc]initWithFrame:vc.view.bounds];
     giftList.hasBackBtn = YES;
     [vc.view addSubview:giftList];
     [giftList moveIn:^{

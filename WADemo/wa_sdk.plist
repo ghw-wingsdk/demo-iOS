@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>WaSdkServerUrl-pre</key>
+	<string>http://sdk-test1.gamehollywood.com/sdk_bkd_qa/sdkapi/</string>
+	<key>WaSdkServerUrl-qa</key>
+	<string>http://172.16.100.53/sdk_bkd_qa/sdkapi/</string>
 	<key>WaSdkServerUrl</key>
 	<string>https://api.wingsdk.com/sdkapi/</string>
 	<key>appKey</key>

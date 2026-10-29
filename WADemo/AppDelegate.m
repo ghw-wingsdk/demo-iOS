@@ -25,7 +25,6 @@
     
     [WACoreProxy setDebugMode:YES];
    
-    UIViewController *initialViewController;
     [WAAdMobProxy isOpenBannerAdWithCompletion:^(BOOL isOpen, NSError * _Nonnull error) {
         
         NSLog(@"BannerAd检测广告开关，初始化前调用====%d",isOpen);
@@ -74,17 +73,9 @@
 
     }];
     
-    BOOL openAdStatus =[[NSUserDefaults standardUserDefaults] boolForKey:@"openAdStatus"];
-    openAdStatus=NO;
-    if (openAdStatus) {
-        initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SplashScreenViewController"];
-    } else {
-        initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
-    }
-    
-    // 设置初始视图控制器
-    self.window.rootViewController = initialViewController;
-    [self.window makeKeyAndVisible];
+    // 窗口与根控制器改由 scene 生命周期负责：Info.plist 的 UIApplicationSceneManifest
+    // 指定了 UISceneStoryboardFile=Main，系统据此创建 scene 窗口并赋值给 SceneDelegate.window；
+    // 这里不再用 AppDelegate.window 重复装配，避免形成双窗口导致触摸被拦截。
 
     
     return YES;

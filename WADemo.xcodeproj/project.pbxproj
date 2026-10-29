@@ -27,7 +27,6 @@
 		B27ED4BB2A1720CA00DB1772 /* WADemoPostEventViewBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED44A2A1720C900DB1772 /* WADemoPostEventViewBtn.m */; };
 		B27ED4BC2A1720CA00DB1772 /* WADemoPostEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED44D2A1720C900DB1772 /* WADemoPostEventView.m */; };
 		B27ED4BD2A1720CA00DB1772 /* WADemoAppTrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED44E2A1720C900DB1772 /* WADemoAppTrackingView.m */; };
-		B27ED4BE2A1720CA00DB1772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27ED4502A1720C900DB1772 /* Assets.xcassets */; };
 		B27ED4BF2A1720CA00DB1772 /* WADemoUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED4532A1720C900DB1772 /* WADemoUserCenterViewController.m */; };
 		B27ED4C02A1720CA00DB1772 /* WADemoAccountSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED4562A1720C900DB1772 /* WADemoAccountSwitch.m */; };
 		B27ED4C12A1720CA00DB1772 /* WADemoAccountManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED45A2A1720C900DB1772 /* WADemoAccountManagement.m */; };
@@ -60,8 +59,6 @@
 		B27ED4DD2A1720CA00DB1772 /* WADemoMainUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED49B2A1720CA00DB1772 /* WADemoMainUI.m */; };
 		B27ED4DE2A1720CA00DB1772 /* WADemoAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED49D2A1720CA00DB1772 /* WADemoAdView.m */; };
 		B27ED4DF2A1720CA00DB1772 /* WADemoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED4A02A1720CA00DB1772 /* WADemoUtil.m */; };
-		B27ED4E02A1720CA00DB1772 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27ED4A32A1720CA00DB1772 /* LaunchScreen.storyboard */; };
-		B27ED4E12A1720CA00DB1772 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27ED4A52A1720CA00DB1772 /* Main.storyboard */; };
 		B27ED4E22A1720CA00DB1772 /* WADemoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED4A92A1720CA00DB1772 /* WADemoAlertView.m */; };
 		B27ED4E32A1720CA00DB1772 /* WADemoButtonMain.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED4AB2A1720CA00DB1772 /* WADemoButtonMain.m */; };
 		B27ED4E42A1720CA00DB1772 /* WADemoMaskLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B27ED4B02A1720CA00DB1772 /* WADemoMaskLayer.m */; };
@@ -78,11 +75,11 @@
 		B27ED4F72A172E9600DB1772 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B27ED4F62A172E9600DB1772 /* libresolv.tbd */; };
 		B27ED4F92A172EA200DB1772 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27ED4F82A172EA200DB1772 /* CoreFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B27ED5012A1730AB00DB1772 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27ED5002A1730AB00DB1772 /* Accelerate.framework */; };
-		B28F15312D8276C600A1F71C /* Foundation.framework in Sources */ = {isa = PBXBuildFile; fileRef = B27ED4EA2A172DC000DB1772 /* Foundation.framework */; };
 		B28F15332D82794C00A1F71C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28F15322D82794C00A1F71C /* WebKit.framework */; };
 		B292B11530048DA10074AF38 /* wa_sdk_track_config.plist in Resources */ = {isa = PBXBuildFile; fileRef = B212D46F2E6EB24B0027C8D7 /* wa_sdk_track_config.plist */; };
 		B294C2122A6677F900B1CB1B /* WADemoClientidSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = B294C2112A6677F900B1CB1B /* WADemoClientidSetting.m */; };
 		B2B8D7BB2D70594400B650F2 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B8D7BA2D70594400B650F2 /* PhotosUI.framework */; };
+		B2D5111414A0000000000001 /* WADemoSubscriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D5111414A0000000000002 /* WADemoSubscriptionView.m */; };
 		C43CB4DC8FC68455BF451EDE /* libPods-WADemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA2AF865C6337E0BF1869AB /* libPods-WADemo.a */; };
 /* End PBXBuildFile section */
 
@@ -231,6 +228,8 @@
 		B294C2102A6677F900B1CB1B /* WADemoClientidSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WADemoClientidSetting.h; sourceTree = "<group>"; };
 		B294C2112A6677F900B1CB1B /* WADemoClientidSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WADemoClientidSetting.m; sourceTree = "<group>"; };
 		B2B8D7BA2D70594400B650F2 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		B2D5111414A0000000000002 /* WADemoSubscriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADemoSubscriptionView.m; sourceTree = "<group>"; };
+		B2D5111414A0000000000003 /* WADemoSubscriptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADemoSubscriptionView.h; sourceTree = "<group>"; };
 		B2F633A52A1AFA5400559C40 /* WADemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WADemo.entitlements; sourceTree = "<group>"; };
 		E95E564B248337E1AE3680D8 /* Pods-WADemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WADemo.release.xcconfig"; path = "Target Support Files/Pods-WADemo/Pods-WADemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -405,6 +404,8 @@
 			isa = PBXGroup;
 			children = (
 				B27ED4652A1720C900DB1772 /* WADemoProductList.m */,
+				B2D5111414A0000000000002 /* WADemoSubscriptionView.m */,
+				B2D5111414A0000000000003 /* WADemoSubscriptionView.h */,
 				B27ED4662A1720C900DB1772 /* WADemoIapView.m */,
 				B27ED4672A1720C900DB1772 /* WADemoProductList.h */,
 				B27ED4682A1720C900DB1772 /* WADemoIapView.h */,
@@ -663,9 +664,6 @@
 			files = (
 				B212D4702E6EB24B0027C8D7 /* wa_sdk.plist in Resources */,
 				B292B11530048DA10074AF38 /* wa_sdk_track_config.plist in Resources */,
-				B27ED4E12A1720CA00DB1772 /* Main.storyboard in Resources */,
-				B27ED4BE2A1720CA00DB1772 /* Assets.xcassets in Resources */,
-				B27ED4E02A1720CA00DB1772 /* LaunchScreen.storyboard in Resources */,
 				B27ED4B62A1720CA00DB1772 /* GoogleService-Info.plist in Resources */,
 				B27ED4CA2A1720CA00DB1772 /* Gift.zip in Resources */,
 				B27ED3472A17196F00DB1772 /* LaunchScreen.storyboard in Resources */,
@@ -685,9 +683,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -702,9 +704,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WADemo/Pods-WADemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -740,7 +746,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B28F15312D8276C600A1F71C /* Foundation.framework in Sources */,
 				B27ED4D32A1720CA00DB1772 /* WADemoGiftBoxTV.m in Sources */,
 				B27ED4DD2A1720CA00DB1772 /* WADemoMainUI.m in Sources */,
 				B27ED4BB2A1720CA00DB1772 /* WADemoPostEventViewBtn.m in Sources */,
@@ -774,6 +779,7 @@
 				B27ED4DF2A1720CA00DB1772 /* WADemoUtil.m in Sources */,
 				B27ED34A2A17196F00DB1772 /* main.m in Sources */,
 				B27ED4C62A1720CA00DB1772 /* WADemoProductList.m in Sources */,
+				B2D5111414A0000000000001 /* WADemoSubscriptionView.m in Sources */,
 				B27ED4BF2A1720CA00DB1772 /* WADemoUserCenterViewController.m in Sources */,
 				B27ED4D52A1720CA00DB1772 /* WADemoFriendListTV.m in Sources */,
 				B27ED4D22A1720CA00DB1772 /* WADemoGiftRequestView.m in Sources */,
@@ -956,7 +962,7 @@
 				CODE_SIGN_ENTITLEMENTS = WADemo/WADemo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = Y8Z2D47ET4;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -987,6 +993,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WADemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WADemo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Would Like to Access Your Photos";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your info will be used for personalized ads.";
@@ -999,7 +1006,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.13.1;
+				MARKETING_VERSION = 4.14.0;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-std=c++14",
@@ -1032,7 +1039,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WADemo/WADemoRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = Y8Z2D47ET4;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1063,6 +1070,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WADemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WADemo;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Would Like to Access Your Photos";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your info will be used for personalized ads.";
@@ -1075,7 +1083,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.13.1;
+				MARKETING_VERSION = 4.14.0;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-std=c++14",

@@ -7,6 +7,7 @@
 //
 
 #import "WADemoCscViewController.h"
+#import "WADemoUtil.h"
 #import <WASdkIntf/WASdkIntf.h>
 #import <Toast/Toast.h>
 
@@ -42,7 +43,7 @@ BOOL vip;
 #pragma mark -- 初始化Bar
 - (void)initTitleViews:(NSString *)title
 {
-    CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
+    CGRect rectStatus = [WADemoUtil statusBarFrame];
     CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
 	
 	

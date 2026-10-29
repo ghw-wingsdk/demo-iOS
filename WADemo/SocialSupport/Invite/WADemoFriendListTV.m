@@ -7,6 +7,7 @@
 //
 
 #import "WADemoFriendListTV.h"
+#import "WADemoUtil.h"
 //#import <GHWSdk/GHWSdk.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
@@ -28,7 +29,7 @@
         _friends = [NSArray array];
         _friendSelected = [NSMutableArray array];
         
-        UIViewController *rootController = [[UIApplication sharedApplication] keyWindow].rootViewController;
+        UIViewController *rootController = [WADemoUtil currentWindow].rootViewController;
         
         _heightForFriendsListCell = 50;
         _heightForFriendsListHearder = 100;

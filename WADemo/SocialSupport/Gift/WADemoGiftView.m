@@ -44,7 +44,7 @@
 -(void)fb{
     
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoFBGiftView* fbGiftView = [[WADemoFBGiftView alloc]initWithFrame:self.bounds];
+    WADemoFBGiftView* fbGiftView = [[WADemoFBGiftView alloc]initWithFrame:vc.view.bounds];
     fbGiftView.hasBackBtn = YES;
     [vc.view addSubview:fbGiftView];
     [fbGiftView moveIn:nil];
@@ -52,7 +52,7 @@
 
 -(void)vk{
     UIViewController* vc = [WADemoUtil getCurrentVC];
-    WADemoVKGiftView* vkGiftView = [[WADemoVKGiftView alloc]initWithFrame:self.bounds];
+    WADemoVKGiftView* vkGiftView = [[WADemoVKGiftView alloc]initWithFrame:vc.view.bounds];
     vkGiftView.hasBackBtn = YES;
     [vc.view addSubview:vkGiftView];
     [vkGiftView moveIn:nil];

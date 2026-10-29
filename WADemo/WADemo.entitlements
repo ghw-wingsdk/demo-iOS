@@ -10,6 +10,7 @@
 	</array>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
+		<string>applinks:sdk-test1.gamehollywood.com</string>
 		<string>applinks:api.wingsdk.com</string>
 	</array>
 	<key>com.apple.developer.game-center</key>

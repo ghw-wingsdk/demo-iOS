@@ -48,7 +48,7 @@
 -(instancetype)initWithNaviHeight:(float)naviHeight eventName:(NSString*)eventName{
     self = [super init];
     if (self) {
-        CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
+        CGRect rectStatus = [WADemoUtil statusBarFrame];
         CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
         self.naviHeight = naviHeight + heightStatus;
         self.eventName = eventName;
@@ -88,7 +88,11 @@
     self.backgroundColor = [UIColor whiteColor];
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.layer.borderWidth = 1;
-    self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    UIWindow *keyWindow = nil;
+    for (UIWindowScene *scene in UIApplication.sharedApplication.connectedScenes) {
+        if (scene.windows.count > 0) { keyWindow = scene.windows.firstObject; break; }
+    }
+    self.frame = keyWindow.bounds;
     
     _afBtn = [[WADemoPostEventViewBtn alloc]init];
     [_afBtn setTitle:@"AF" forState:UIControlStateNormal];
@@ -182,12 +186,19 @@ GHWEventTableViewChannel channel;
 }
 
 -(void)deviceOrientationDidChange{
-    float screenH = [UIScreen mainScreen].bounds.size.height;
-    float screenW = [UIScreen mainScreen].bounds.size.width;
+    CGRect winBounds = self.window ? self.window.bounds : ({
+        UIWindow *w = nil;
+        for (UIWindowScene *s in UIApplication.sharedApplication.connectedScenes) {
+            if (s.windows.count > 0) { w = s.windows.firstObject; break; }
+        }
+        w.bounds;
+    });
+    float screenW = winBounds.size.width;
+    float screenH = winBounds.size.height;
     if (_naviHeight!=0) {
         self.frame = CGRectMake(0, _naviHeight, screenW, screenH - _naviHeight);
     }else{
-        float statusBarH = [UIApplication sharedApplication].statusBarFrame.size.height;
+        float statusBarH = [WADemoUtil statusBarFrame].size.height;
         float naviBarH = 0;
         if (_viewController.navigationController) {
             naviBarH = _viewController.navigationController.navigationBar.bounds.size.height;

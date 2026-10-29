@@ -9,6 +9,15 @@
 #import "WADemoNaviView.h"
 #import "WADemoUtil.h"
 
+// 采用 Scene 生命周期(Application Scene Manifest)后，
+// [UIApplication sharedApplication].statusBarFrame 会返回 CGRectZero，
+// 导致 heightStatus=0，自定义导航栏(_naviBar)连同返回按钮被顶到屏幕最上方(y=0)
+// 的状态栏/灵动岛区域，从而“看得到却点不到”。改用当前 windowScene 的 statusBarManager 取高度。
+static CGFloat WADemoStatusBarThickness(void) {
+    CGRect statusBarFrame = [WADemoUtil statusBarFrame];
+    return statusBarFrame.size.width > statusBarFrame.size.height ? statusBarFrame.size.height : statusBarFrame.size.width;
+}
+
 @interface WADemoNaviView()
 @property(nonatomic,strong)UIView* naviBar;
 @property(nonatomic,strong)UILabel* titleLable;
@@ -98,8 +107,7 @@
         return;
     }
     
-    CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
-    CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
+    CGFloat heightStatus = WADemoStatusBarThickness();
     _naviHeight = 44;
     
     _naviBar = [[UIView alloc]init];
@@ -120,7 +128,7 @@
     NSMutableArray* m_btns = [NSMutableArray arrayWithArray:_btns];
     NSMutableArray* m_btnLayout = [NSMutableArray arrayWithArray:_btnLayout];
     _scrollView = [[WADemoScrollView alloc]initWithFrame:CGRectMake(0, _naviBar.frame.origin.y + _naviBar.frame.size.height,
-                                                                    self.bounds.size.width, self.bounds.size.height - _naviHeight)
+                                                                    self.bounds.size.width, self.bounds.size.height - heightStatus - _naviHeight)
                                                     btns:m_btns btnLayout:m_btnLayout];
     
     [self addSubview:_scrollView];
@@ -149,7 +157,7 @@
     __weak WADemoNaviView* weakSelf = self;
     
     [UIView animateWithDuration:.2 animations:^{
-        frame.origin.x = [UIScreen mainScreen].bounds.size.width;
+        frame.origin.x = weakSelf.superview.bounds.size.width;
         weakSelf.frame = frame;
     } completion:^(BOOL finished) {
         [weakSelf removeFromSuperview];
@@ -162,20 +170,19 @@
     }
     
     self.frame = self.superview.bounds;
-    CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
-    CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
+    CGFloat heightStatus = WADemoStatusBarThickness();
     
     _naviBar.frame = CGRectMake(0, heightStatus, self.bounds.size.width, _naviHeight);
     _titleLable.frame = _naviBar.bounds;
     
     _scrollView.frame = CGRectMake(0, _naviBar.frame.origin.y + _naviBar.frame.size.height,
-                                   self.bounds.size.width, self.bounds.size.height - _naviHeight);
+                                   self.bounds.size.width, self.bounds.size.height - heightStatus - _naviHeight);
     [_scrollView deviceOrientationDidChange];
 }
 
 -(void)moveIn:(void (^)(void))finishedBlock{
     __block CGRect frame = self.frame;
-    frame.origin.x = [UIScreen mainScreen].bounds.size.width;
+    frame.origin.x = self.superview.bounds.size.width;
     self.frame = frame;
     __weak WADemoNaviView* weakSelf = self;
     [UIView animateWithDuration:.2 animations:^{

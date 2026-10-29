@@ -7,6 +7,7 @@
 //
 
 #import "WADemoUserCenterViewController.h"
+#import "WADemoUtil.h"
 #import <WASdkIntf/WASdkIntf.h>
 #import "WADemoAlertView.h"
 #import <Toast/Toast.h>
@@ -42,7 +43,7 @@
 #pragma mark -- 初始化Bar
 - (void)initTitleViews:(NSString *)title
 {
-    CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
+    CGRect rectStatus = [WADemoUtil statusBarFrame];
     CGFloat heightStatus = rectStatus.size.width > rectStatus.size.height ? rectStatus.size.height : rectStatus.size.width;
     
     _viewTitle = [[UIView alloc] initWithFrame:CGRectMake(0, heightStatus, self.bounds.size.width, 44)];
@@ -154,7 +155,7 @@
         NSString * nickName = [NSString stringWithFormat:@"青铜%@-%@",serverid,result.userId];
 
         
-        nickName = @"测试 用户😊:/?&=;+!@#$()',* {\"ip\":\"1.1.1.1\",\"os\":\"iOS 18\"}";
+//        nickName = @"测试 用户😊:/?&=;+!@#$()',* {\"ip\":\"1.1.1.1\",\"os\":\"iOS 18\"}";
 
         [WACoreProxy setServerId:serverid];
         [WACoreProxy setGameUserId:gameuserid];

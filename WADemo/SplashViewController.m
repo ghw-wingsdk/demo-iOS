@@ -120,9 +120,9 @@ BOOL umpStatus = NO;
     UIViewController *navigationController = (UIViewController *)[mainStoryBoard
         instantiateViewControllerWithIdentifier:@"ViewController"];
 
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    UIWindow *window = appDelegate.window;
-    window.rootViewController=navigationController;
+    // 窗口现由 scene 生命周期持有，改用 scene 窗口，避免依赖已废弃/可能为 nil 的 appDelegate.window
+    UIWindow *window = [WADemoUtil currentWindow];
+    window.rootViewController = navigationController;
     
 }
 - (void)startTimer {

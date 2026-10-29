@@ -79,7 +79,7 @@
         if (! [WAUserProxy getCurrentLoginResult])
         {
             UIViewController* vc = [WADemoUtil getCurrentVC];
-            WADemoLoginUI *loginUI = [[WADemoLoginUI alloc]initWithFrame:self.bounds];
+            WADemoLoginUI *loginUI = [[WADemoLoginUI alloc]initWithFrame:vc.view.bounds];
             loginUI.hasBackBtn = YES;
             [vc.view addSubview:loginUI];
             [loginUI moveIn:nil];

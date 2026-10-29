@@ -19,7 +19,11 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.naviheight = [UIScreen mainScreen].bounds.size.height - frame.size.height;
+        UIWindow *keyWindow = nil;
+        for (UIWindowScene *scene in UIApplication.sharedApplication.connectedScenes) {
+            if (scene.windows.count > 0) { keyWindow = scene.windows.firstObject; break; }
+        }
+        self.naviheight = keyWindow.bounds.size.height - frame.size.height;
         [self registerClass:[UITableViewCell class] forCellReuseIdentifier:productCellIdentifier];
         self.dataSource = self;
 		self.delegate=self;
@@ -119,7 +123,12 @@ static NSString* productCellIdentifier = @"ProductCellIdentifier";
         [extInfo setObject:@"202222ddddadjjdada0099ll111333" forKey:@"orderId"];
 
         NSString * extInfoStr= [WADemoUtil toJSONStringFromDictionary:extInfo];
-        [WAPayProxy payWithProductId:product.productIdentifier extInfo:extInfoStr delegate:self];
+        // 订阅商品（productType=5）走订阅支付接口 paySub，其余商品走普通支付接口
+        if (product.productType == 5) {
+            [WAPayProxy paySub:product.productIdentifier extInfo:extInfoStr delegate:self];
+        } else {
+            [WAPayProxy payWithProductId:product.productIdentifier extInfo:extInfoStr delegate:self];
+        }
     }
 }
 

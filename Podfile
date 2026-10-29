@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '15.0'
 workspace 'WADemo.xcworkspace'
 
 
@@ -15,6 +15,8 @@ workspace 'WADemo.xcworkspace'
       source 'http://repo.wingsdk.cn:8082/r/WAGhgpImpl.git'
       source 'http://repo.wingsdk.cn:8082/r/WAAdmobImpl.git'
       
+
+
 
 
 target "WADemo" do

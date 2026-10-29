@@ -96,7 +96,7 @@
     
     
     WADemoButtonMain* btn17 = [[WADemoButtonMain alloc]init];
-    [btn17 setTitle:@"创角" forState:UIControlStateNormal];
+    [btn17 setTitle:@"创角V2" forState:UIControlStateNormal];
     [btn17 addTarget:self action:@selector(userCreate) forControlEvents:UIControlEventTouchUpInside];
     [btns addObject:btn17];
     
@@ -320,7 +320,7 @@
         };
     
     
-    WAUserCreateEvent * event =[[WAUserCreateEvent alloc] initWithServerId:serverId gameUserId:gameUserId nickname:nickname registerTime:longInterval optionalParameter:optionalParameterDic];
+    WAUserCreateEventV2 * event =[[WAUserCreateEventV2 alloc] initWithServerId:serverId gameUserId:gameUserId nickname:nickname optionalParameter:optionalParameterDic];
     [event trackEvent];
     
 }
